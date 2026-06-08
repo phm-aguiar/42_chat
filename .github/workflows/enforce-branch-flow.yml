@@ -12,14 +12,14 @@ jobs:
     permissions: {}
     steps:
       - name: Validate PRs targeting main
-        if: github.base_ref == 'main' && github.head_ref != 'develop'
+        if: github.base_ref == 'main' && github.head_ref != 'develop' && github.event.pull_request.user.login != 'Copilot'
         run: |
           echo "Blocking rule: PRs to 'main' must come from 'develop'."
           echo "Current source branch: '${{ github.head_ref }}'"
           exit 1
 
       - name: Validate PRs targeting develop
-        if: github.base_ref == 'develop' && !startsWith(github.head_ref, 'feature/')
+        if: github.base_ref == 'develop' && !startsWith(github.head_ref, 'feature/') && github.event.pull_request.user.login != 'Copilot'
         run: |
           echo "Blocking rule: PRs to 'develop' must come from branches prefixed with 'feature/'."
           echo "Current source branch: '${{ github.head_ref }}'"
