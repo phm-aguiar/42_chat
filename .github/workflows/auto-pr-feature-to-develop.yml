@@ -1,0 +1,37 @@
+name: Auto PR Feature to Develop
+
+on:
+  push:
+    branches:
+      - 'feature/**'
+
+concurrency:
+  group: auto-pr-feature-to-develop-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  create-feature-pr:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create Pull Request to develop
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BRANCH_NAME="${{ github.ref_name }}"
+          PR_EXISTS=$(gh pr list --head "$BRANCH_NAME" --base develop --state open --json id --jq 'length')
+
+          if [ "$PR_EXISTS" -eq "0" ]; then
+            echo "Creating automatic PR from $BRANCH_NAME to develop..."
+            gh pr create \
+              --base develop \
+              --head "$BRANCH_NAME" \
+              --title "feat: $BRANCH_NAME -> develop" \
+              --body "Automatic PR created by GitHub Actions for branch flow feature/* -> develop."
+          else
+            echo "An open PR from $BRANCH_NAME to develop already exists."
+          fi
