@@ -1,0 +1,29 @@
+name: Go CI
+
+on:
+  pull_request:
+    branches:
+      - develop
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: 'stable'
+
+      - name: Run Go tests (if module exists)
+        run: |
+          if [ ! -f go.mod ]; then
+            echo "No go.mod found yet. Skipping Go tests."
+            exit 0
+          fi
+          go test ./...
