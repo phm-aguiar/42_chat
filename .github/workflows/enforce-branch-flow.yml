@@ -9,6 +9,7 @@ on:
 jobs:
   check-flow:
     runs-on: ubuntu-latest
+    permissions: {}
     steps:
       - name: Validate PRs targeting main
         if: github.base_ref == 'main' && github.head_ref != 'develop'
