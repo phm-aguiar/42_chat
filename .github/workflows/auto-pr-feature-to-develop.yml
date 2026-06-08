@@ -5,6 +5,9 @@ on:
     branches:
       - 'feature/**'
 
+concurrency:
+  group: auto-pr-feature-to-develop-${{ github.ref }}
+  cancel-in-progress: false
 jobs:
   create-feature-pr:
     runs-on: ubuntu-latest
