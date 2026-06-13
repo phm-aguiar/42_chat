@@ -96,6 +96,14 @@ Ação sugerida: ...
 skill_view(name="sdd-validate", file_path="scripts/check-sdd.sh")
 ```
 
+## Qualidade de Conteúdo
+
+Além da validação estrutural, consulte `references/content-quality.md` para:
+- Freshness scoring (tiers: fresh/aging/stale/dead)
+- Métricas de cobertura com thresholds green/yellow/red
+- Check de qualidade por artefato SDD (spec.md, plan.md, tasks.md)
+- Scripts de automação para qualidade de conteúdo
+
 ## Guardrails
 
 - **Read-only:** apenas reporte, nunca crie ou modifique arquivos.

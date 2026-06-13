@@ -86,6 +86,11 @@ git commit -m "<tipo>: <título curto>
 git log --oneline -1
 ```
 
+## Referências
+
+- `references/tier-system.md` — Tier system (1/2/3) que ajusta o formato da mensagem conforme a criticalidade do commit
+- `references/forbidden-patterns.md` — Padrões bloqueados (mensagens vagas, atribuição a tools, secrets)
+
 ## Regras
 
 - **Título:** max 72 chars, lowercase, sem ponto final

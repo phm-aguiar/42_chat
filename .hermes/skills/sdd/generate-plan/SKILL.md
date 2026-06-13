@@ -95,6 +95,14 @@ Mostre stack, número de ADRs, itens da auditoria. **Pergunte antes de salvar.**
 write_file(path="specs/features/<id>-<slug>/plan.md", content="<plano>")
 ```
 
+## Referência de Arquitetura
+
+Consulte `references/architecture-patterns.md` para:
+- Decision tree de padrões arquiteturais (modular monolith vs microservices vs event-driven)
+- Padrões Go por domínio (APIs, comunicação, dados)
+- Output guidelines (tecnologias concretas, o que NÃO construir, métricas de sucesso)
+- Anti-padrões (microservices prematuro, overengineering, tecnologia por hype)
+
 ## Guardrails
 
 - **Não invente stack:** use apenas `tech.md`. Vazio = placeholders `{{...}}`.
