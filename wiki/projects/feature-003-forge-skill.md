@@ -44,4 +44,4 @@ provenance:
 
 - [[feature-002-sdd-templates|002: Templates]] — Formatos que a skill usa
 - [[feature-004-sdd-tasks-dag|004: Tasks DAG]] — Upgrade futuro do tasks.md
-- [[skill-forge]] — Skill de referência
+- `skill-forge` — Skill Hermes para criação de novas skills (`.hermes/skills/skill-forge/`)

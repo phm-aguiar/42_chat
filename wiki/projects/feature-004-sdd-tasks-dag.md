@@ -49,10 +49,9 @@ Paralelismo seguro: tasks da mesma fase com `Arquivos` disjuntos e sem dependên
 ## Dependências
 
 - **Nenhuma.** Feature independente (upgrade de skill existente)
-- **Consumida por:** [[feature-005-runtime-orchestrator|005: Runtime Orchestrator]]
+- **Consumida por:** [[feature-005-agent-orchestrator|005: Runtime Orchestrator]]
 
 ## Relacionado
-
 - [[feature-003-forge-skill|003: Forge Skill]] — Feature anterior
-- [[feature-005-runtime-orchestrator|005: Orchestrator]] — Consumidora do DAG
+- [[feature-005-agent-orchestrator|005: Orchestrator]] — Consumidora do DAG
 - [[sdd]] — Metodologia

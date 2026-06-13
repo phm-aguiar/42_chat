@@ -39,8 +39,8 @@ Template vazio — regras pendentes de definição via [[sdd-brainstorm]].
 O [[AGENTS.md]] exige leitura deste arquivo antes de qualquer alteração de código.
 Enquanto vazio, decisões são tomadas ad-hoc com aprovação humana.
 
-## Relacionado
-
+Template vazio — regras pendentes de definição via [[concepts/sdd|sdd-brainstorm]].
+O [[AGENTS.md]] exige leitura deste arquivo antes de qualquer alteração de código.
 - [[tech]] — Stack tecnológica homologada
 - [[sdd]] — Spec-Driven Development pipeline
-- [[sdd-brainstorm]] — Skill que gera specs
+- [[concepts/sdd|sdd-brainstorm]] — Skill que gera specs
