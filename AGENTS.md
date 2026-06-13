@@ -85,7 +85,7 @@ Este projeto segue **Spec-Driven Development (SDD)**. Toda feature segue o fluxo
 ### Agentes (`.hermes/agents/` — invocados via `agent-run`)
 - `onboard` — Inicializa projeto no framework SDD (init repo, explore tech, brainstorm features).
 - `agent-orchestrator` — Executor runtime. Lê `tasks.md` com DAG e spawna subagentes em paralelo via `delegate_task`.
-- `agent-dev` (006) — Pendente. Implementa código a partir de spec.
+- `agent-dev` — ✅ Implementado. Persona fixa com skills plugáveis por stack. Spawnado pelo orchestrator como subagente leaf. Ciclo: lê contexto → planeja → implementa → smoke-test → reporta (DONE/FAIL/BLOCKED). Skills são trilhos, não jaulas.
 - `agent-qa` (007) — Pendente. Testes, Gherkin, lint.
 - `agent-devops` (008) — Pendente. CI/CD, Docker, deploy.
 - `agent-pentester` (009) — Pendente. Segurança, OWASP, secrets.
