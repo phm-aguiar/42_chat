@@ -35,13 +35,30 @@ Este projeto segue **Spec-Driven Development (SDD)**. Toda feature segue o fluxo
 - Valide a estrutura com `sdd-validate` periodicamente.
 - Pergunte ao usuário ANTES de modificar `constitution.md`.
 
-### Skills SDD disponíveis
+### Skills SDD (Hermes Agent — `.hermes/skills/` no repo)
 - Inicializar estrutura: `sdd-init-repo`
 - Mapear stack: `sdd-explore-tech`
 - Validar conformidade: `sdd-validate`
 - Refatorar artefatos: `sdd-refactor-artifact`
 - Gerar plano (plan.md): `sdd-generate-plan`
 - Gerar tarefas (tasks.md): `sdd-generate-tasks`
+
+### Skills de documentação
+- Extrair seção de markdown: `doc-extract`
+- Gerar tabela de conteúdo: `doc-generate-toc`
+- Gerar llms.txt: `doc-generate-llms-txt`
+
+### Skills de tooling
+- Criar nova skill Hermes: `skill-forge`
+- Executar agente com contexto mastigado: `agent-run`
+
+### Agentes (`.hermes/agents/` — invocados via `agent-run`)
+- `sdd-orchestrator` — Orquestrador SDD. Use: `/skill agent-run` → agente: `sdd-orchestrator` → demanda: "..."
+
+> **Nota:** Skills portadas do formato OpenCode para Hermes Agent. O `.opencode/` foi removido.
+> Skills vivem em `.hermes/skills/`, agentes em `.hermes/agents/`. Ambos versionados no repo
+> com symlinks em `~/.hermes/skills/`. O `agent-run` compila contexto limpo (sem corrosão)
+> e spawna subagentes isolados via `delegate_task`.
 
 ## Environment
 - `.env` files are gitignored. No `.env.example` exists yet.
