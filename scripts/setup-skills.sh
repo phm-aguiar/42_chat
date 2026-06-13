@@ -23,6 +23,7 @@ declare -A SKILLS=(
   ["general"]="skill-forge"
   ["agent"]="agent-run"
   ["doc"]="extract generate-toc generate-llms-txt"
+  ["github"]="git-conventional-commit"
 )
 
 count=0
