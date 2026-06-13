@@ -82,5 +82,54 @@ agent-run runtime-orchestrator (005)
 
 ---
 
+## Skills Importadas — Adaptação Pendente (2026-06-13)
+
+21 skills importadas de kepano/obsidian-skills + Ar9av/obsidian-wiki + axtonliu/axton-obsidian-visual-skills.
+Precisam ser adaptadas ao padrão 42_chat (frontmatter, paths, linguagem).
+
+### Wiki (knowledge management — 15 skills)
+
+| Skill | Origem | Função | Prioridade |
+|---|---|---|---|
+| `wiki/setup` | obsidian-wiki | Inicializa estrutura do vault | ALTA |
+| `wiki/ingest` | obsidian-wiki | Pipeline de destilação (ingest→pull→merge→schema) | ALTA |
+| `wiki/query` | obsidian-wiki | Tiered retrieval híbrido (lex+vec) | ALTA |
+| `wiki/capture` | obsidian-wiki | Salva conversa atual como nota | ALTA |
+| `wiki/synthesize` | obsidian-wiki | Acha gaps de síntese entre conceitos | MÉDIA |
+| `wiki/digest` | obsidian-wiki | Resume aprendizado semanal/mensal | MÉDIA |
+| `wiki/dashboard` | obsidian-wiki | Dashboards com Obsidian Bases | MÉDIA |
+| `wiki/dedup` | obsidian-wiki | Deduplica páginas | MÉDIA |
+| `wiki/export` | obsidian-wiki | Exporta grafo (JSON, GraphML, HTML) | BAIXA |
+| `wiki/lint` | obsidian-wiki | Valida integridade do vault (órfãos, links quebrados) | MÉDIA |
+| `wiki/status` | obsidian-wiki | Delta tracking, o que foi ingerido | MÉDIA |
+| `wiki/cross-linker` | obsidian-wiki | Auto-descobre wikilinks não feitos | MÉDIA |
+| `wiki/tag-taxonomy` | obsidian-wiki | Vocabulário controlado de tags | MÉDIA |
+| `wiki/hermes-history-ingest` | obsidian-wiki | Minera sessões do Hermes → vault | ALTA |
+| `wiki/llm-wiki` | obsidian-wiki | Referência do padrão Karpathy | BAIXA |
+
+### Obsidian (formato e tooling — 5 skills)
+
+| Skill | Origem | Função | Prioridade |
+|---|---|---|---|
+| `obsidian/obsidian-markdown` | kepano | Sintaxe OFM: wikilinks, callouts, embeds, properties | ALTA |
+| `obsidian/obsidian-cli` | kepano | Interage com instância rodando do Obsidian | ALTA |
+| `obsidian/obsidian-bases` | kepano | Cria/edita .base files (views, filters, formulas) | MÉDIA |
+| `obsidian/json-canvas` | kepano | Cria/edita .canvas files (nodes, edges, groups) | MÉDIA |
+| `obsidian/defuddle` | kepano | Extrai markdown limpo de URLs | BAIXA |
+
+### Visual (diagramas — 1 skill)
+
+| Skill | Origem | Função | Prioridade |
+|---|---|---|---|
+| `visual/mermaid-visualizer` | axtonliu | Gera diagramas Mermaid profissionais | ALTA |
+
+### Vault
+
+- `wiki/` — vault Obsidian versionado no repo
+- Estrutura: concepts/ entities/ skills/ references/ synthesis/ journal/ projects/ _meta/ _raw/
+- Aberto com: `obsidian vault="42_chat"` ou File → Open Vault → `~/Projetos/42_chat/wiki`
+
+---
+
 ## Atualizado em
-2026-06-12
+2026-06-13

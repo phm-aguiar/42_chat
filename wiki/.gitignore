@@ -1,0 +1,14 @@
+# Obsidian workspace (pessoal, não versionar)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/hotkeys.json
+
+# Cache
+.obsidian/cache/
+.obsidian/text-extract/
+
+# Plugins comunitários (instalar localmente)
+.obsidian/plugins/
+
+# Trash
+.trash/

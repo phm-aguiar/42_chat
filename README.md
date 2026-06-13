@@ -157,22 +157,36 @@ de symlink se aplica em `~/.hermes/agents/`.
 │   │   └── tech.md            # Stack homologado
 │   └── workflows/             # CI/CD (GitHub Actions)
 ├── .hermes/
-│   ├── skills/                # Skills versionadas
-│   │   ├── sdd/               #   Pipeline SDD
-│   │   ├── agent/             #   Runners de agente
-│   │   ├── doc/               #   Documentação
-│   │   └── general/           #   Tooling
+│   ├── skills/                # Skills versionadas (34 skills)
+│   │   ├── sdd/               #   Pipeline SDD (7)
+│   │   ├── wiki/              #   Knowledge management (15)
+│   │   ├── obsidian/          #   Formato + tooling (5)
+│   │   ├── visual/            #   Diagramas Mermaid (1)
+│   │   ├── agent/             #   Runners de agente (1)
+│   │   ├── doc/               #   Documentação (3)
+│   │   ├── general/           #   Tooling (1)
+│   │   └── github/            #   Git workflow (1)
 │   └── agents/                # Definições de agentes
-│       ├── sdd-orchestrator/  #   Gerador de artefatos SDD
-│       └── runtime-orchestrator/ # Orquestrador de execução (005)
+├── wiki/                      # 🆕 Vault Obsidian versionado
+│   ├── index.md               #   Índice mestre
+│   ├── log.md                 #   Log de atividades
+│   ├── concepts/              #   Padrões, arquitetura
+│   ├── entities/              #   Ferramentas, agentes
+│   ├── skills/                #   Skills e uso
+│   ├── references/            #   APIs, specs
+│   ├── synthesis/             #   Análises cross-cutting
+│   ├── journal/               #   Sessões e decisões
+│   ├── projects/              #   Features e ciclo de vida
+│   ├── _meta/                 #   Taxonomia, bases
+│   └── _raw/                  #   Capturas brutas
 ├── specs/
-│   ├── BACKLOG.md             # Backlog de features
+│   ├── BACKLOG.md             # Backlog de features + skills
 │   └── features/
 │       ├── 001-start-repo/
 │       ├── 002-sdd-templates/
 │       ├── 003-forge-skill/
-│       ├── 004-sdd-tasks-dag/ # DAG no tasks.md
-│       └── 005-runtime-orchestrator/ # Orquestrador de execução
+│       ├── 004-sdd-tasks-dag/
+│       └── 005-runtime-orchestrator/
 └── scripts/
     └── setup-skills.sh        # Script de setup para novos membros
 ```

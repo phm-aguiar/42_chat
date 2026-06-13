@@ -48,9 +48,31 @@ Este projeto segue **Spec-Driven Development (SDD)**. Toda feature segue o fluxo
 - Gerar tabela de conteúdo: `doc-generate-toc`
 - Gerar llms.txt: `doc-generate-llms-txt`
 
+### Skills de Wiki (knowledge management)
+- Pipeline de destilação: `wiki-ingest`
+- Busca híbrida lex+vec: `wiki-query`
+- Minerar sessões Hermes: `wiki/hermes-history-ingest`
+- Salvar conversa: `wiki-capture`
+- Auto-wikilinks: `wiki/cross-linker`
+- Validar integridade: `wiki-lint`
+- Vocabulário controlado: `wiki/tag-taxonomy`
+- Setup do vault: `wiki-setup`
+- Status/delta: `wiki-status`
+
+### Skills de Obsidian (formato + tooling)
+- Sintaxe OFM: `obsidian/obsidian-markdown`
+- CLI do Obsidian: `obsidian/obsidian-cli`
+- Bases (.base): `obsidian/obsidian-bases`
+- Canvas (.canvas): `obsidian/json-canvas`
+- Extrair markdown limpo: `obsidian/defuddle`
+
+### Skills visuais
+- Diagramas Mermaid: `visual/mermaid-visualizer`
+
 ### Skills de tooling
 - Criar nova skill Hermes: `skill-forge`
 - Executar agente com contexto mastigado: `agent-run`
+- Commit convencional: `git-conventional-commit`
 
 ### Agentes (`.hermes/agents/` — invocados via `agent-run`)
 - `sdd-orchestrator` — Orquestrador SDD. Use: `/skill agent-run` → agente: `sdd-orchestrator` → demanda: "..."
