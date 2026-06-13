@@ -3,7 +3,7 @@
 ## Metadados
 - **ID:** 004
 - **Status:** draft
-- **Aprovado:** false
+- **Aprovado:** true
 - **Autor:** phm-aguiar
 - **Data:** 2026-06-12
 - **Feature Anterior:** 003-forge-skill

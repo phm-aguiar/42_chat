@@ -1,23 +1,29 @@
-# AGENTS.md
+# AGENTS.md — Framework SDD Autônomo
 
-## Language & toolchain
-- **Go** project. Use `go.mod` when it exists. Currently no source code.
-- `.gitignore` follows the standard Go template (binaries, `.test`, coverage artifacts, `go.work`, `.env`).
+> **Produto:** Framework SDD autônomo com agentes IA.
+> **Não é um projeto Go.** O app 42_chat é um smoke-test futuro.
 
-## Commands
-- Run tests: `go test ./...`
-- To run tests for a single package: `go test ./path/to/package/...`
+## Linguagens do Framework
+- **Python** — Skills (runtime das tools), scripts de validação
+- **YAML** — Config de agentes (`context.yaml`), frontmatter de skills
+- **Markdown** — Specs, docs, wiki vault (`wiki/`)
+- **Shell (bash)** — Scripts auxiliares, CI/CD
 
-## Branch strategy
-- `main` — production. PRs must come from `develop`.
-- `develop` — integration. PRs must come from `feature/*` branches.
-- `feature/*` — feature work. A PR to `develop` is auto-created on push.
-- Only branches from users other than `Copilot` are blocked by the enforce-branch-flow workflow.
+## Comandos
+- Validar estrutura SDD: `sdd-validate`
+- Rodar smoke tests (quando existirem): verificar que agentes carregam sem erro
+- Não há `go test` — o framework não é Go
+
+## Branch Strategy
+- `main` — produção. PRs devem vir de `develop`.
+- `develop` — integração. PRs devem vir de `feature/*` branches.
+- `feature/*` — feature work. PR para `develop` é auto-criado no push.
+- Branch flow é enforced automaticamente (`feature/*` → `develop` → `main`).
 
 ## CI (GitHub Actions)
-- `go test ./...` runs on all PRs targeting `develop` and `main`.
-- Branch flow is enforced automatically — don't open PRs that violate `main <- develop <- feature/*` unless you're `Copilot`.
-- Auto-PR workflows run on push: `feature/*` → `develop` and `develop` → `main`.
+- Branch flow enforcement em todos os PRs.
+- Auto-PR workflows: push em `feature/*` → PR para `develop`; push em `develop` → PR para `main`.
+- Validação SDD (`sdd-validate`) será adicionada ao pipeline quando houver smoke tests.
 
 ## SDD Workflow
 
@@ -25,8 +31,9 @@ Este projeto segue **Spec-Driven Development (SDD)**. Toda feature segue o fluxo
 
 1. `specs/features/<id>-<nome>/spec.md` — Especificação funcional (o QUE, não o COMO)
 2. `specs/features/<id>-<nome>/plan.md` — Plano arquitetural (decisões técnicas, ADR)
-3. `specs/features/<id>-<nome>/tasks.md` — Tarefas atômicas ordenadas
-4. Implementação — Código derivado dos artefatos acima
+3. `specs/features/<id>-<nome>/tasks.md` — Tarefas atômicas em formato DAG (Papel, Dependências, Paralelizável, Arquivos)
+4. Aprovação: `Aprovado: true` no spec.md → `agent-run agent-orchestrator` executa
+5. Implementação — Subagentes (Dev, QA, DevOps, Pentester) spawnados em paralelo pelo orchestrator
 
 ### Regras
 - **Nunca implemente sem spec.md e plan.md aprovados** pelo usuário.
@@ -40,8 +47,9 @@ Este projeto segue **Spec-Driven Development (SDD)**. Toda feature segue o fluxo
 - Mapear stack: `sdd-explore-tech`
 - Validar conformidade: `sdd-validate`
 - Refatorar artefatos: `sdd-refactor-artifact`
+- Brainstorm de features: `sdd-brainstorm`
 - Gerar plano (plan.md): `sdd-generate-plan`
-- Gerar tarefas (tasks.md): `sdd-generate-tasks`
+- Gerar tarefas (tasks.md com DAG): `sdd-generate-tasks`
 
 ### Skills de documentação
 - Extrair seção de markdown: `doc-extract`
@@ -71,16 +79,23 @@ Este projeto segue **Spec-Driven Development (SDD)**. Toda feature segue o fluxo
 
 ### Skills de tooling
 - Criar nova skill Hermes: `skill-forge`
-- Executar agente com contexto mastigado: `agent-run`
+- Executar agente com contexto limpo: `agent-run`
 - Commit convencional: `git-conventional-commit`
 
 ### Agentes (`.hermes/agents/` — invocados via `agent-run`)
-- `sdd-orchestrator` — Orquestrador SDD. Use: `/skill agent-run` → agente: `sdd-orchestrator` → demanda: "..."
+- `onboard` — Inicializa projeto no framework SDD (init repo, explore tech, brainstorm features).
+- `agent-orchestrator` — Executor runtime. Lê `tasks.md` com DAG e spawna subagentes em paralelo via `delegate_task`.
+- `agent-dev` (006) — Pendente. Implementa código a partir de spec.
+- `agent-qa` (007) — Pendente. Testes, Gherkin, lint.
+- `agent-devops` (008) — Pendente. CI/CD, Docker, deploy.
+- `agent-pentester` (009) — Pendente. Segurança, OWASP, secrets.
 
-> **Nota:** Skills portadas do formato OpenCode para Hermes Agent. O `.opencode/` foi removido.
-> Skills vivem em `.hermes/skills/`, agentes em `.hermes/agents/`. Ambos versionados no repo
-> com symlinks em `~/.hermes/skills/`. O `agent-run` compila contexto limpo (sem corrosão)
+> **Nota:** Agentes e skills vivem em `.hermes/agents/` e `.hermes/skills/`, versionados no repo,
+> com symlinks em `~/.hermes/`. O `agent-run` compila contexto limpo (sem corrosão de sessão)
 > e spawna subagentes isolados via `delegate_task`.
 
 ## Environment
-- `.env` files are gitignored. No `.env.example` exists yet.
+- `.env` files são gitignored.
+- Homelab: RPi 5 (zeenyt-1), Docker, Tailscale.
+- Memory: Honcho self-hosted.
+- Wiki vault: `wiki/` versionado como parte do framework.

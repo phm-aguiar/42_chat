@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "created": "2026-06-13",
+  "updated": "2026-06-13",
+  "stats": {
+    "total_sources_ingested": 6,
+    "total_pages": 8
+  },
+  "sources": {
+    "specs/features/001-start-repo/": {
+      "ingested_at": "2026-06-13",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": ["projects/feature-001-start-repo.md"]
+    },
+    "specs/features/002-sdd-templates/": {
+      "ingested_at": "2026-06-13",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": ["projects/feature-002-sdd-templates.md"]
+    },
+    "specs/features/003-forge-skill/": {
+      "ingested_at": "2026-06-13",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": ["projects/feature-003-forge-skill.md"]
+    },
+    "specs/features/004-sdd-tasks-dag/": {
+      "ingested_at": "2026-06-13",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": ["projects/feature-004-sdd-tasks-dag.md"]
+    },
+    "specs/features/005-runtime-orchestrator/": {
+      "ingested_at": "2026-06-13",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": ["projects/feature-005-runtime-orchestrator.md"]
+    },
+    ".github/memory/constitution.md": {
+      "ingested_at": "2026-06-13",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": ["concepts/constitution.md"]
+    }
+  },
+  "projects": {
+    "42_chat": {
+      "source_cwd": "/home/zeenyt__/Projetos/42_chat",
+      "vault_path": "wiki/"
+    }
+  }
+}

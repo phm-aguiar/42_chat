@@ -1,4 +1,4 @@
-# Receita de contexto para o agente sdd-orchestrator
+# Receita de contexto para o agente onboard
 # O agent-run lê este arquivo e compila o contexto antes de spawnar
 
 include:
@@ -14,13 +14,12 @@ include:
   # Termos pra buscar no histórico da sessão
   session_searches:
     - SDD
+    - onboard
+    - init
     - feature
     - spec
-    - plan
-    - tasks
 
-  # Se a demanda mencionar um ID de feature (ex: "004-login"),
-  # o agent-run resolve specs/features/{id}/* e inclui:
+  # Se a demanda mencionar um ID de feature, inclui os artefatos
   feature_artifacts:
     - spec.md
     - plan.md
