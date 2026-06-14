@@ -3,7 +3,7 @@ title: "defuddle"
 category: skills
 tags: [obsidian, skill, extracao, markdown]
 sources: [.hermes/skills/obsidian/defuddle/SKILL.md]
-summary: Extrai conteúdo limpo em markdown de páginas web, removendo ruído (ads, nav, sidebars). Usado como pré-processamento antes do wiki-ingest.
+summary: "Extrai conteúdo limpo em markdown de páginas web, removendo ruído (ads, nav, sidebars). Usado como pré-processamento antes do wiki-ingest."
 lifecycle: draft
 created: "2026-06-13"
 updated: "2026-06-13"

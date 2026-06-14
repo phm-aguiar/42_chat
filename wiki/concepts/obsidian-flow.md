@@ -4,7 +4,7 @@ category: concepts
 tags: [obsidian, wiki, fluxo, integracao]
 aliases: [obsidian-flow, fluxo-wiki]
 sources: []
-summary: Como o subsistema wiki/Obsidian se integra ao framework SDD: quem inicia cada operação, quando ela é disparada, e como o ciclo de vida do vault (ingest → cross-link → lint → query) se encaixa no pipeline de desenvolvimento.
+summary: "Como o subsistema wiki/Obsidian se integra ao framework SDD: quem inicia cada operação, quando ela é disparada, e como o ciclo de vida do vault (ingest → cross-link → lint → query) se encaixa no pipeline de desenvolvimento."
 lifecycle: draft
 created: "2026-06-13"
 updated: "2026-06-13"

@@ -3,7 +3,7 @@ title: "cross-linker"
 category: skills
 tags: [wiki, skill, links, grafo, conectividade]
 sources: [.hermes/skills/wiki/cross-linker/SKILL.md]
-summary: Descobre wikilinks faltantes no vault. Escaneia menções não-linkadas e adiciona [[wikilinks]] onde faz sentido. Essencial após múltiplos ingests para manter o grafo de conhecimento conectado.
+summary: "Descobre wikilinks faltantes no vault. Escaneia menções não-linkadas e adiciona [[wikilinks]] onde faz sentido. Essencial após múltiplos ingests para manter o grafo de conhecimento conectado."
 lifecycle: draft
 created: "2026-06-13"
 updated: "2026-06-13"

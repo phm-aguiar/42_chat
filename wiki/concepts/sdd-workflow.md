@@ -4,7 +4,7 @@ category: concepts
 tags: [sdd, workflow, pipeline, tutorial]
 aliases: [pipeline, fluxo-sdd]
 sources: []
-summary: Pipeline completo do Spec-Driven Development: brainstorm → spec → plan → tasks (DAG) → orchestrator → agentes. Cada etapa explicada com o exemplo real da feature 006 (agent-dev).
+summary: "Pipeline completo do Spec-Driven Development: brainstorm → spec → plan → tasks (DAG) → orchestrator → agentes. Cada etapa explicada com o exemplo real da feature 006 (agent-dev)."
 lifecycle: draft
 created: "2026-06-13"
 updated: "2026-06-13"

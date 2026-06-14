@@ -4,7 +4,7 @@ category: concepts
 tags: [wiki, obsidian, knowledge-management, arquitetura]
 aliases: [modelo-wiki, llm-wiki]
 sources: []
-summary: O framework adota o modelo LLM Wiki (Karpathy) de 3 camadas: raw sources → wiki compilado → schema. Explica por que compilar conhecimento é superior a recuperar, e como o vault Obsidian versionado elimina amnésia cross-sessão.
+summary: "O framework adota o modelo LLM Wiki (Karpathy) de 3 camadas: raw sources → wiki compilado → schema. Explica por que compilar conhecimento é superior a recuperar, e como o vault Obsidian versionado elimina amnésia cross-sessão."
 lifecycle: draft
 created: "2026-06-13"
 updated: "2026-06-13"

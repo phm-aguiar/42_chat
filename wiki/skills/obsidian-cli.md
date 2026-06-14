@@ -3,7 +3,7 @@ title: "obsidian-cli"
 category: skills
 tags: [obsidian, skill, cli, tooling]
 sources: [.hermes/skills/obsidian/obsidian-cli/SKILL.md]
-summary: CLI do Obsidian para operações no vault: abrir arquivos, buscar, navegar. Usado por skills que precisam interagir com o Obsidian como aplicação.
+summary: "CLI do Obsidian para operações no vault: abrir arquivos, buscar, navegar. Usado por skills que precisam interagir com o Obsidian como aplicação."
 lifecycle: draft
 created: "2026-06-13"
 updated: "2026-06-13"

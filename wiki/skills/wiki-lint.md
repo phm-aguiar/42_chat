@@ -3,7 +3,7 @@ title: "wiki-lint"
 category: skills
 tags: [wiki, skill, lint, auditoria, qualidade]
 sources: [.hermes/skills/wiki/lint/SKILL.md]
-summary: Audita a saúde do vault Obsidian: broken links, páginas órfãs, frontmatter faltante, contradições, stale content. Com --consolidate, corrige automaticamente.
+summary: "Audita a saúde do vault Obsidian: broken links, páginas órfãs, frontmatter faltante, contradições, stale content. Com --consolidate, corrige automaticamente."
 lifecycle: draft
 created: "2026-06-13"
 updated: "2026-06-13"

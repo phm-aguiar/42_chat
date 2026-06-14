@@ -3,7 +3,7 @@ title: "42_chat — Framework SDD Autônomo"
 category: project
 tags: [sdd, framework, agents, ai]
 source_path: /home/zeenyt__/Projetos/42_chat
-summary: Framework SDD autônomo com agentes IA e humanos in loop. Pipeline: brainstorm → spec → plan → tasks (DAG) → orchestrator → subagentes.
+summary: "Framework SDD autônomo com agentes IA e humanos in loop. Pipeline: brainstorm → spec → plan → tasks (DAG) → orchestrator → subagentes."
 lifecycle: draft
 created: "2026-06-13"
 updated: "2026-06-13"

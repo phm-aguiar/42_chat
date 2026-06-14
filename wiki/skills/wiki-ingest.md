@@ -3,7 +3,7 @@ title: "wiki-ingest"
 category: skills
 tags: [wiki, skill, ingest, destilacao]
 sources: [.hermes/skills/wiki/ingest/SKILL.md]
-summary: Destila raw sources (specs, docs, logs) em páginas wiki interligadas. É o entry point do pipeline wiki — transforma artefatos do framework em conhecimento navegável.
+summary: "Destila raw sources (specs, docs, logs) em páginas wiki interligadas. É o entry point do pipeline wiki — transforma artefatos do framework em conhecimento navegável."
 lifecycle: draft
 created: "2026-06-13"
 updated: "2026-06-13"

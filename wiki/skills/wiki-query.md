@@ -3,7 +3,7 @@ title: "wiki-query"
 category: skills
 tags: [wiki, skill, busca, query, retrieval]
 sources: [.hermes/skills/wiki/query/SKILL.md]
-summary: Busca híbrida (lexical + vetorial) no vault Obsidian. Modo index-only (barato, lê só frontmatter) ou full-read (profundo, lê corpos). Usado pelo agente principal para recuperar conhecimento compilado.
+summary: "Busca híbrida (lexical + vetorial) no vault Obsidian. Modo index-only (barato, lê só frontmatter) ou full-read (profundo, lê corpos). Usado pelo agente principal para recuperar conhecimento compilado."
 lifecycle: draft
 created: "2026-06-13"
 updated: "2026-06-13"

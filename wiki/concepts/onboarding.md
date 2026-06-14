@@ -4,7 +4,7 @@ category: concepts
 tags: [sdd, onboarding, tutorial, iniciante]
 aliases: [getting-started, como-comecar]
 sources: []
-summary: Guia passo a passo para iniciar um projeto do zero com o framework SDD autônomo. Cobre init repo, brainstorm, spec, plan, tasks e execução com orchestrator.
+summary: "Guia passo a passo para iniciar um projeto do zero com o framework SDD autônomo. Cobre init repo, brainstorm, spec, plan, tasks e execução com orchestrator."
 lifecycle: draft
 created: "2026-06-13"
 updated: "2026-06-13"
