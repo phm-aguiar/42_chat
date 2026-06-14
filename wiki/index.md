@@ -25,6 +25,7 @@ updated: "2026-06-14"
 - [[concepts/sdd|SDD]] — Spec-Driven Development: metodologia e pipeline
 - [[concepts/sdd-workflow|SDD Workflow]] — Pipeline completo com exemplo real
 - [[concepts/onboarding|Onboarding]] — Como começar um projeto do zero
+- [[concepts/vault-taxonomy|Taxonomia do Vault]] — Função de cada diretório do vault
 
 ## Wiki & Conhecimento
 
