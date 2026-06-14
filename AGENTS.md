@@ -3,6 +3,11 @@
 > **Produto:** Framework SDD autônomo com agentes IA.
 > **Não é um projeto Go.** O app 42_chat é um smoke-test futuro.
 
+**⚠️ PRIMEIRO PASSO OBRIGATÓRIO:** Antes de qualquer ação neste repositório,
+leia `llms.txt` na raiz. Ele é o mapa do repositório — lista specs, agentes,
+skills e a estrutura completa. Não varra o repo às cegas. Use `llms.txt` como
+entry point, depois consulte `wiki/index.md` ou `wiki-query` para detalhes.
+
 ## Linguagens do Framework
 - **Python** — Skills (runtime das tools), scripts de validação
 - **YAML** — Config de agentes (`context.yaml`), frontmatter de skills
@@ -22,12 +27,12 @@ um índice navegável para LLMs (`llms.txt`). Antes de implementar, decidir ou s
 coisa, **consulte a base**. Não reinvente conhecimento que já foi compilado.
 
 ### Entry points
-| Recurso | Caminho | Quando usar |
-|---|---|---|
-| `llms.txt` | Raiz do repo | Navegação inicial — lista specs, agentes, skills e links |
-| `wiki/index.md` | `wiki/index.md` | Catálogo completo do vault com seções por categoria |
-| `wiki-query` | Skill | Busca conhecimento compilado (ex: "o que já decidimos sobre X?") |
-| `wiki-lint` | Skill | Audita saúde do vault (broken links, órfãos, frontmatter) |
+| Prioridade | Recurso | Caminho | Quando usar |
+|---|---|---|---|
+| **1º** | `llms.txt` | Raiz do repo | **Sempre.** Primeiro arquivo a ser lido. Mapa completo do repositório |
+| 2º | `wiki/index.md` | `wiki/index.md` | Catálogo detalhado do vault com seções por categoria |
+| 3º | `wiki-query` | Skill | Busca conhecimento compilado (ex: "o que já decidimos sobre X?") |
+| 4º | `wiki-lint` | Skill | Audita saúde do vault (broken links, órfãos, frontmatter) |
 
 ### Gatilhos — Quando usar cada skill da base
 
