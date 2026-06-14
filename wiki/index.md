@@ -24,8 +24,21 @@ updated: "2026-06-13"
 - [[concepts/sdd|SDD]] — Spec-Driven Development: metodologia e pipeline
 - [[concepts/sdd-workflow|SDD Workflow]] — Pipeline completo explicado
 - [[concepts/onboarding|Onboarding]] — Como começar um projeto do zero
+- [[concepts/wiki-model|Wiki Model]] — Por que wiki, 3 camadas, ganhos
+- [[concepts/obsidian-flow|Fluxo Obsidian]] — Integração wiki + framework
 - [[concepts/constitution|Constituição]] — Regras arquiteturais do framework
 - [[concepts/tech|Stack Tecnológica]] — Stack homologada
+
+## Wiki & Obsidian
+
+- [[concepts/wiki-model|Wiki Model]] — Modelo de 3 camadas (sources → wiki → schema)
+- [[concepts/obsidian-flow|Fluxo Obsidian]] — Ciclo de vida do vault integrado ao pipeline
+- [[skills/wiki-ingest|wiki-ingest]] — Destila sources em páginas wiki
+- [[skills/wiki-lint|wiki-lint]] — Audita saúde do vault
+- [[skills/wiki-query|wiki-query]] — Busca conhecimento compilado
+- [[skills/wiki-capture|wiki-capture]] — Salva sessão atual
+- [[skills/wiki-cross-linker|cross-linker]] — Descobre wikilinks faltantes
+- [[skills/obsidian-markdown|obsidian-markdown]] — Sintaxe OFM
 
 ## Projeto: 42_chat (Framework SDD)
 
