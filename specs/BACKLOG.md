@@ -38,16 +38,42 @@ agent-run agent-orchestrator → execução paralela (Dev, QA)
 
 ## Próximas Features (agentes do squad)
 
-> O orchestrator está pronto, mas os subagentes que ele spawna ainda não existem.
-> Features 006-009 implementam os agentes especializados.
+> O orchestrator está pronto. Agentes Dev (006) e QA (007) implementados.
+> Features 008-009 em standby até fundamentação.
 
 | ID | Feature | O quê | Depende de |
 |----|---------|-------|------------|
 | 008 | agent-devops | Agente DevOps: CI/CD, Docker, deploy, integração, performance | 005 |
 | 009 | agent-pentester | Agente Pentester: segurança, OWASP, secrets, dependências | 005 |
 
-> ⚠️ **Standby:** Features 008 (DevOps) e 009 (Pentester) estão em backlog até fundamentação.
-> Próximas features serão de **criação de skills** (gherkin-scenarios, go-unit-tests, etc.).
+> ⚠️ **Standby:** Features 008 (DevOps) e 009 (Pentester) em backlog até fundamentação.
+
+## Próximas Features (skills de agente)
+
+> Skills plugáveis que os agentes Dev e QA carregam durante o ciclo de trabalho.
+
+| ID | Skill | Agente | Status |
+|----|-------|--------|--------|
+| 010 | gherkin-scenarios | QA | ✅ Implementado |
+| 011 | go-unit-tests | QA | ✅ Implementado |
+| 012 | local-test-runner | QA | ✅ Implementado |
+| 013 | tdd-workflow | QA | ✅ Implementado |
+| 014 | cucumber-step-definitions | QA | ✅ Implementado |
+| 015 | bdd-spec-process | QA | ✅ Implementado |
+| 016 | playwright-bdd-e2e | QA | ✅ Implementado |
+| 017 | go-implement | Dev | ❌ Pendente |
+| 018 | python-implement | Dev | ❌ Pendente |
+| 019 | build-check (smoke-test) | Dev | ❌ Pendente |
+
+## Próximas Features (aplicação)
+
+> O framework SDD está funcional. O próximo passo é usar o framework para
+> construir o 42_chat — a aplicação de chat que serve como smoke-test real.
+
+| ID | Feature | O quê | Status |
+|----|---------|-------|--------|
+| 100 | 42_chat core | Aplicação de chat (Go): HTTP, WebSocket, mensagens | ❌ Backlog |
+| 101 | 42_chat deploy | Deploy no homelab (RPi 5, Docker, Tailscale) | ❌ Backlog |
 
 ## Pipeline Completo (após 006-009)
 
