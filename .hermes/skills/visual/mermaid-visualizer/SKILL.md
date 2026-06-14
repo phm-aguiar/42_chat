@@ -1,8 +1,19 @@
 ---
 name: mermaid-visualizer
-description: Transform text content into professional Mermaid diagrams for presentations and documentation. Use when users ask to visualize concepts, create flowcharts, or make diagrams from text. Supports process flows, system architectures, comparisons, mindmaps, and more with built-in syntax error prevention.
+description: >
+  Transform text content into professional Mermaid diagrams for presentations and documentation. Use when users ask to visualize concepts, create flowcharts, or make diagrams from text. Supports process flows, system architectures, comparisons, mindmaps, and more with built-in syntax error prevention.
+version: 1.0.0
+author: phm-aguiar
+license: MIT
+platforms: [linux, macos, windows]
+metadata:
+  hermes:
+    tags: ['visual', 'mermaid-visualizer']
+    related_skills: []
+    category: visual
+    resources:
+      - SKILL.md
 ---
-
 # Mermaid Visualizer
 
 ## Overview

@@ -1,13 +1,19 @@
 ---
 name: wiki-export
 description: >
-  Export the Obsidian wiki's knowledge graph to structured formats for use in external tools.
-  Use this skill when the user says "export wiki", "export graph", "export to JSON", "export to Gephi",
-  "export to Neo4j", "graphml", "visualize wiki", "knowledge graph export", or wants to use their
-  wiki data in another tool. Outputs graph.json, graph.graphml, cypher.txt (Neo4j), and graph.html
-  (interactive browser visualization) into a wiki-export/ directory at the vault root.
+  Export the Obsidian wiki's knowledge graph to structured formats for use in external tools. Use this skill when the user says "export wiki", "export graph", "export to JSON", "export to Gephi", "export to Neo4j", "graphml", "visualize wiki", "knowledge graph export", or wants to use their wiki data in another tool. Outputs graph.json, graph.graphml, cypher.txt (Neo4j), and graph.html (interactive browser visualization) into a wiki-export/ directory at the vault root.
+version: 1.0.0
+author: phm-aguiar
+license: MIT
+platforms: [linux, macos, windows]
+metadata:
+  hermes:
+    tags: ['wiki', 'export']
+    related_skills: []
+    category: wiki
+    resources:
+      - SKILL.md
 ---
-
 # Wiki Export — Knowledge Graph Export
 
 You are exporting the wiki's wikilink graph to structured formats so it can be used in external tools (Gephi, Neo4j, custom scripts, browser visualization).

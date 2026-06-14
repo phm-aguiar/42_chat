@@ -1,15 +1,19 @@
 ---
 name: wiki-lint
 description: >
-  Audit and maintain the health of the Obsidian wiki. Use this skill when the user wants to check their
-  wiki for issues, find orphaned pages, detect contradictions, identify stale content, fix broken wikilinks,
-  or perform general maintenance on their knowledge base. Also triggers on "clean up the wiki",
-  "what needs fixing", "audit my notes", or "wiki health check". Add --consolidate to switch from
-  report-only to act-and-report mode (the "dream cycle"): fixes broken links, adds missing cross-references
-  for orphans, corrects lifecycle states, demotes stale peripheral pages, normalizes tag aliases, and adds
-  contradiction callouts — all with a dry-run preview and explicit user confirmation before any writes.
+  Audit and maintain the health of the Obsidian wiki. Use this skill when the user wants to check their wiki for issues, find orphaned pages, detect contradictions, identify stale content, fix broken wikilinks, or perform general maintenance on their knowledge base. Also triggers on "clean up the wiki", "what needs fixing", "audit my notes", or "wiki health check". Add --consolidate to switch from report-only to act-and-report mode (the "dream cycle"): fixes broken links, adds missing cross-references for orphans, corrects lifecycle states, demotes stale peripheral pages, normalizes tag aliases, and adds contradiction callouts — all with a dry-run preview and explicit user confirmation before any writes.
+version: 1.0.0
+author: phm-aguiar
+license: MIT
+platforms: [linux, macos, windows]
+metadata:
+  hermes:
+    tags: ['wiki', 'lint']
+    related_skills: []
+    category: wiki
+    resources:
+      - SKILL.md
 ---
-
 # Wiki Lint — Health Audit
 
 You are performing a health check on an Obsidian wiki. Your goal is to find and fix structural issues that degrade the wiki's value over time.

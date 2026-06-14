@@ -1,13 +1,19 @@
 ---
 name: wiki-synthesize
 description: >
-  Systematically discover synthesis opportunities across the Obsidian wiki — pairs or clusters of
-  concepts that co-occur frequently across pages but have no synthesis page connecting them. Creates
-  new synthesis/ pages that draw explicit cross-cutting conclusions. Use when the user says "synthesize
-  my wiki", "find connections", "what concepts keep coming up together", "/wiki-synthesize", or after
-  a large ingest when the vault has grown significantly.
+  Systematically discover synthesis opportunities across the Obsidian wiki — pairs or clusters of concepts that co-occur frequently across pages but have no synthesis page connecting them. Creates new synthesis/ pages that draw explicit cross-cutting conclusions. Use when the user says "synthesize my wiki", "find connections", "what concepts keep coming up together", "/wiki-synthesize", or after a large ingest when the vault has grown significantly.
+version: 1.0.0
+author: phm-aguiar
+license: MIT
+platforms: [linux, macos, windows]
+metadata:
+  hermes:
+    tags: ['wiki', 'synthesize']
+    related_skills: []
+    category: wiki
+    resources:
+      - SKILL.md
 ---
-
 # Wiki Synthesize — First-Class Synthesis Discovery
 
 You are scanning the wiki for concepts that co-occur across many pages but have no dedicated synthesis page connecting them. Your job is to surface these gaps and fill the most valuable ones with cross-cutting synthesis pages.

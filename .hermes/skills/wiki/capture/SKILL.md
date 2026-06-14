@@ -1,16 +1,19 @@
 ---
 name: wiki-capture
 description: >
-  Save the current conversation as a permanent, structured wiki note. Use this skill when the user
-  says "save this", "/wiki-capture", "capture this", "file this conversation", "preserve this",
-  "add this to my wiki", or wants to turn what was just discussed into lasting knowledge. The skill
-  classifies the content, rewrites it as declarative knowledge (not a chat transcript), and places
-  it in the correct vault category. Also supports a fast QUICK MODE (`/wiki-capture --quick`, "quick
-  capture", "capture this finding", "save this bug fix", "save this gotcha", "drop this to raw", "quick
-  save to wiki") that drops findings to the `_raw/` staging area in under 60 seconds with no manifest
-  or index writes — used by the session-end Stop hook to auto-preserve findings.
+  Save the current conversation as a permanent, structured wiki note. Use this skill when the user says "save this", "/wiki-capture", "capture this", "file this conversation", "preserve this", "add this to my wiki", or wants to turn what was just discussed into lasting knowledge. The skill classifies the content, rewrites it as declarative knowledge (not a chat transcript), and places it in the correct vault category. Also supports a fast QUICK MODE (`/wiki-capture --quick`, "quick capture", "capture this finding", "save this bug fix", "save this gotcha", "drop this to raw", "quick save to wiki") that drops findings to the `_raw/` staging area in under 60 seconds with no manifest or index writes — used by the session-end Stop hook to auto-preserve findings.
+version: 1.0.0
+author: phm-aguiar
+license: MIT
+platforms: [linux, macos, windows]
+metadata:
+  hermes:
+    tags: ['wiki', 'capture']
+    related_skills: []
+    category: wiki
+    resources:
+      - SKILL.md
 ---
-
 # Wiki Capture — Conversation to Wiki Note
 
 You are preserving knowledge from the current conversation as a permanent wiki note. The goal is to extract the *substance* — the knowledge itself — not a summary of what was said.

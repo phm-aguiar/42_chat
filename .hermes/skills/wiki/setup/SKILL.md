@@ -1,13 +1,19 @@
 ---
 name: wiki-setup
 description: >
-  Initialize a new Obsidian wiki vault with the correct structure, special files, and configuration.
-  Use this skill when the user wants to set up a new wiki from scratch, initialize the vault structure,
-  create the .env file, or says things like "set up my wiki", "initialize obsidian", "create a new vault",
-  "get started with the wiki". Also use when the user needs to reconfigure their existing vault or
-  fix a broken setup.
+  Initialize a new Obsidian wiki vault with the correct structure, special files, and configuration. Use this skill when the user wants to set up a new wiki from scratch, initialize the vault structure, create the .env file, or says things like "set up my wiki", "initialize obsidian", "create a new vault", "get started with the wiki". Also use when the user needs to reconfigure their existing vault or fix a broken setup.
+version: 1.0.0
+author: phm-aguiar
+license: MIT
+platforms: [linux, macos, windows]
+metadata:
+  hermes:
+    tags: ['wiki', 'setup']
+    related_skills: []
+    category: wiki
+    resources:
+      - SKILL.md
 ---
-
 # Obsidian Setup — Vault Initialization
 
 You are setting up a new Obsidian wiki vault (or repairing an existing one).

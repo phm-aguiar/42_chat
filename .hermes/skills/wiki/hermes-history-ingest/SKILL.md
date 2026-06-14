@@ -1,13 +1,19 @@
 ---
 name: hermes-history-ingest
 description: >
-  Ingest Hermes agent history into the Obsidian wiki. Use this skill when the user wants to mine
-  their past Hermes sessions for knowledge, import their ~/.hermes folder, extract insights from
-  previous Hermes conversations, or says things like "process my Hermes history", "add my Hermes
-  memories to the wiki", "ingest ~/.hermes", or "what have I worked on in Hermes". Also triggers
-  when the user mentions Hermes memories, Hermes sessions, ~/.hermes/memories, or Hermes skill logs.
+  Ingest Hermes agent history into the Obsidian wiki. Use this skill when the user wants to mine their past Hermes sessions for knowledge, import their ~/.hermes folder, extract insights from previous Hermes conversations, or says things like "process my Hermes history", "add my Hermes memories to the wiki", "ingest ~/.hermes", or "what have I worked on in Hermes". Also triggers when the user mentions Hermes memories, Hermes sessions, ~/.hermes/memories, or Hermes skill logs.
+version: 1.0.0
+author: phm-aguiar
+license: MIT
+platforms: [linux, macos, windows]
+metadata:
+  hermes:
+    tags: ['wiki', 'hermes-history-ingest']
+    related_skills: []
+    category: wiki
+    resources:
+      - SKILL.md
 ---
-
 # Hermes History Ingest — Conversation & Memory Mining
 
 You are extracting knowledge from the user's Hermes agent history and distilling it into the Obsidian wiki. Hermes stores both free-form memories and structured session transcripts — focus on durable knowledge, not operational telemetry.

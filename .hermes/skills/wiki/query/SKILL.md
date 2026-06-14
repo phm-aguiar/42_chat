@@ -1,16 +1,19 @@
 ---
 name: wiki-query
 description: >
-  Answer questions by searching the compiled Obsidian wiki. Use this skill when the user asks a question
-  about their knowledge base, wants to find information across their wiki, asks "what do I know about X",
-  "find everything related to Y", or wants synthesized answers with citations from their wiki pages.
-  Also use when the user wants to explore connections between topics in their wiki, or asks a multi-hop
-  "how is X connected to Y", "what links X to Y", "trace the chain from X to Z", or "what does X depend on
-  transitively" question — answered by walking typed edges across multiple hops. Works from any project.
-  Includes an index-only fast mode triggered by "quick answer", "just scan", "don't read the pages",
-  "fast lookup" — returns answers from page summaries and frontmatter without reading page bodies.
+  Answer questions by searching the compiled Obsidian wiki. Use this skill when the user asks a question about their knowledge base, wants to find information across their wiki, asks "what do I know about X", "find everything related to Y", or wants synthesized answers with citations from their wiki pages. Also use when the user wants to explore connections between topics in their wiki, or asks a multi-hop "how is X connected to Y", "what links X to Y", "trace the chain from X to Z", or "what does X depend on transitively" question — answered by walking typed edges across multiple hops. Works from any project. Includes an index-only fast mode triggered by "quick answer", "just scan", "don't read the pages", "fast lookup" — returns answers from page summaries and frontmatter without reading page bodies.
+version: 1.0.0
+author: phm-aguiar
+license: MIT
+platforms: [linux, macos, windows]
+metadata:
+  hermes:
+    tags: ['wiki', 'query']
+    related_skills: []
+    category: wiki
+    resources:
+      - SKILL.md
 ---
-
 # Wiki Query — Knowledge Retrieval
 
 You are answering questions against a compiled Obsidian wiki, not raw source documents. The wiki contains pre-synthesized, cross-referenced knowledge.

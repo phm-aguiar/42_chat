@@ -1,14 +1,19 @@
 ---
 name: wiki-dedup
 description: >
-  Scan the Obsidian wiki for page-level identity collisions — different pages covering the same
-  concept under different names (e.g. "RSC" vs "React Server Components") — and merge them.
-  Use this skill when the user says "dedup my wiki", "find duplicate pages", "merge duplicates",
-  "identity resolution", "consolidate my wiki", "I have duplicate pages", or "my wiki has two pages
-  for the same thing". Distinct from wiki-lint (which checks structure) and cross-linker (which adds
-  links) — this skill makes destructive page-level merges and requires careful confirmation.
+  Scan the Obsidian wiki for page-level identity collisions — different pages covering the same concept under different names (e.g. "RSC" vs "React Server Components") — and merge them. Use this skill when the user says "dedup my wiki", "find duplicate pages", "merge duplicates", "identity resolution", "consolidate my wiki", "I have duplicate pages", or "my wiki has two pages for the same thing". Distinct from wiki-lint (which checks structure) and cross-linker (which adds links) — this skill makes destructive page-level merges and requires careful confirmation.
+version: 1.0.0
+author: phm-aguiar
+license: MIT
+platforms: [linux, macos, windows]
+metadata:
+  hermes:
+    tags: ['wiki', 'dedup']
+    related_skills: []
+    category: wiki
+    resources:
+      - SKILL.md
 ---
-
 # Wiki Dedup — Identity Resolution and Page-Level Deduplication
 
 You are finding and merging wiki pages that cover the same concept under different names. This is a write-heavy, potentially destructive skill — page merges cannot be automatically undone. Work carefully and confirm before acting in merge mode.

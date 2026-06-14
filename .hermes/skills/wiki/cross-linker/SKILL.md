@@ -1,15 +1,19 @@
 ---
 name: cross-linker
 description: >
-  Scan the Obsidian wiki and automatically discover missing cross-references between pages.
-  Use this skill when the user says "link my pages", "find missing links", "cross-reference",
-  "connect my wiki", "add wikilinks", "what pages should be linked", or after any large ingestion
-  to ensure new pages are woven into the existing knowledge graph. Also trigger when the user
-  mentions "orphan pages" in the context of wanting to connect them, or says things like
-  "my wiki feels disconnected" or "pages aren't linked well". This is a write-heavy skill —
-  it actually modifies pages to add links, unlike wiki-lint which just reports issues.
+  Scan the Obsidian wiki and automatically discover missing cross-references between pages. Use this skill when the user says "link my pages", "find missing links", "cross-reference", "connect my wiki", "add wikilinks", "what pages should be linked", or after any large ingestion to ensure new pages are woven into the existing knowledge graph. Also trigger when the user mentions "orphan pages" in the context of wanting to connect them, or says things like "my wiki feels disconnected" or "pages aren't linked well". This is a write-heavy skill — it actually modifies pages to add links, unlike wiki-lint which just reports issues.
+version: 1.0.0
+author: phm-aguiar
+license: MIT
+platforms: [linux, macos, windows]
+metadata:
+  hermes:
+    tags: ['wiki', 'cross-linker']
+    related_skills: []
+    category: wiki
+    resources:
+      - SKILL.md
 ---
-
 # Cross-Linker — Automated Wiki Cross-Referencing
 
 You are weaving the wiki's knowledge graph tighter by finding and inserting missing `[[wikilinks]]` between pages that should reference each other but currently don't.

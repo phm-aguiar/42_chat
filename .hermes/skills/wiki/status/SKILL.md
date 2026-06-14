@@ -1,15 +1,19 @@
 ---
 name: wiki-status
 description: >
-  Show the current state of the wiki — what's been ingested, what's pending, and the delta between sources
-  and wiki content. Use this skill when the user asks "what's the status", "how much is ingested",
-  "what's left to process", "show me the delta", "what changed since last ingest", "wiki dashboard",
-  or wants an overview of their knowledge base health and completeness. Also use before deciding whether
-  to append or rebuild. Includes an insights mode triggered by "wiki insights", "what's central",
-  "show me the hubs", "central pages", "what's connected", "wiki structure" — analyzes the shape of
-  the wiki itself to surface top hubs, cross-domain bridges, and orphan-adjacent pages.
+  Show the current state of the wiki — what's been ingested, what's pending, and the delta between sources and wiki content. Use this skill when the user asks "what's the status", "how much is ingested", "what's left to process", "show me the delta", "what changed since last ingest", "wiki dashboard", or wants an overview of their knowledge base health and completeness. Also use before deciding whether to append or rebuild. Includes an insights mode triggered by "wiki insights", "what's central", "show me the hubs", "central pages", "what's connected", "wiki structure" — analyzes the shape of the wiki itself to surface top hubs, cross-domain bridges, and orphan-adjacent pages.
+version: 1.0.0
+author: phm-aguiar
+license: MIT
+platforms: [linux, macos, windows]
+metadata:
+  hermes:
+    tags: ['wiki', 'status']
+    related_skills: []
+    category: wiki
+    resources:
+      - SKILL.md
 ---
-
 # Wiki Status — Audit & Delta
 
 You are computing the current state of the wiki: what's been ingested, what's new since last ingest, and what the delta looks like. This helps the user decide whether to append (ingest the delta) or rebuild (archive and reprocess everything).

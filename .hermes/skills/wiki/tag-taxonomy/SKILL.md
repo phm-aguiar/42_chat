@@ -1,14 +1,19 @@
 ---
 name: tag-taxonomy
 description: >
-  Enforce consistent tagging across the Obsidian wiki using a controlled vocabulary.
-  Use this skill when the user says "fix my tags", "normalize tags", "clean up tags",
-  "tag audit", "what tags should I use", "tag taxonomy", or whenever you're creating or
-  updating wiki pages and need to choose the right tags. Also trigger when the user asks
-  about tag conventions, wants to add a new tag to the taxonomy, or says "my tags are a mess".
-  Always consult this skill's taxonomy file before assigning tags to any wiki page.
+  Enforce consistent tagging across the Obsidian wiki using a controlled vocabulary. Use this skill when the user says "fix my tags", "normalize tags", "clean up tags", "tag audit", "what tags should I use", "tag taxonomy", or whenever you're creating or updating wiki pages and need to choose the right tags. Also trigger when the user asks about tag conventions, wants to add a new tag to the taxonomy, or says "my tags are a mess". Always consult this skill's taxonomy file before assigning tags to any wiki page.
+version: 1.0.0
+author: phm-aguiar
+license: MIT
+platforms: [linux, macos, windows]
+metadata:
+  hermes:
+    tags: ['wiki', 'tag-taxonomy']
+    related_skills: []
+    category: wiki
+    resources:
+      - SKILL.md
 ---
-
 # Tag Taxonomy — Controlled Vocabulary for Wiki Tags
 
 You are enforcing consistent tagging across the wiki by normalizing tags to a controlled vocabulary.
