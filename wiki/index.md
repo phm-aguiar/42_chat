@@ -80,6 +80,16 @@ updated: "2026-06-13"
 - [[skills/skill-forge|skill-forge]] — Cria novas skills
 - [[skills/git-conventional-commit|git-conventional-commit]] — Commits padronizados
 
+## Skills de QA (agent-qa)
+
+- [[skills/gherkin-scenarios|gherkin-scenarios]] — Escrever cenários Gherkin
+- [[skills/go-unit-tests|go-unit-tests]] — Testes unitários em Go
+- [[skills/local-test-runner|local-test-runner]] — Build + vet + test + cover
+- [[skills/tdd-workflow|tdd-workflow]] — Ciclo RED-GREEN-REFACTOR
+- [[skills/cucumber-step-definitions|cucumber-step-definitions]] — Step definitions com Godog
+- [[skills/bdd-spec-process|bdd-spec-process]] — Processo discovery BDD
+- [[skills/playwright-bdd-e2e|playwright-bdd-e2e]] — E2E com Playwright + BDD
+
 ## Projeto: 42_chat (Framework SDD)
 
 ### Agentes
