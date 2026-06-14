@@ -11,7 +11,7 @@
 
 ## Propósito
 > Automatizar a supervisão da fase de implementação SDD, permitindo paralelismo real
-> entre subagentes especializados (Dev, QA, Testes) enquanto garante rastreabilidade
+> entre subagentes especializados (Dev, QA) enquanto garante rastreabilidade
 > total à spec. Elimina a necessidade de babysitting humano durante a execução das
 > tasks, com ciclo de retry inteligente e escalação seletiva de bloqueios.
 
@@ -52,7 +52,7 @@ interrompe o humano quando há um bloqueio real que requer decisão.
 - Gerar artefatos SDD (spec.md, plan.md, tasks.md) — responsabilidade do `sdd-orchestrator`
 - Implementar código — responsabilidade do subagente Dev
 - Escrever cenários de teste (Gherkin/Cucumber) — responsabilidade do subagente QA
-- Executar testes unitários/integração — responsabilidade do subagente Test
+- Executar testes unitários/integração — responsabilidade do subagente QA
 - Tomar decisões arquiteturais — definido em `plan.md` + aprovação humana
 - Substituir o `sdd-orchestrator` existente — são complementares
 

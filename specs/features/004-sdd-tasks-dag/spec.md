@@ -35,7 +35,7 @@ dependências, os arquivos que afeta, e se é paralelizável com outras da mesma
 ### Dentro do escopo
 - Verificar `Aprovado: true` no spec.md antes de gerar tasks (approval gate)
 - Ler `spec.md` e `plan.md` para extrair responsabilidades e escopo técnico
-- Propor decomposição interativa: tasks atômicas por responsabilidade (Dev, QA, Test)
+- Propor decomposição interativa: tasks atômicas por responsabilidade (Dev, QA)
 - Agrupar tasks em fases (Fase 1, Fase 2, ...) com dependências explícitas
 - Detectar paralelismo: tasks da mesma fase sem dependência entre si E sem conflito de arquivos → marcadas como paralelizáveis
 - Garantir isolamento de arquivos: **nunca** sugerir tasks paralelas que tocam o mesmo arquivo
@@ -56,7 +56,7 @@ dependências, os arquivos que afeta, e se é paralelizável com outras da mesma
 1. Usuário altera `Aprovado: true` no spec.md da feature
 2. Usuário invoca: `sdd-generate-tasks` para `specs/features/004-*/`
 3. Skill lê `spec.md` (funcionalidade, cenários) + `plan.md` (ADRs, stack)
-4. Skill propõe Fase 1: tasks atômicas derivadas do spec, com papéis (Dev, QA, Test)
+4. Skill propõe Fase 1: tasks atômicas derivadas do spec, com papéis (Dev, QA)
 5. Usuário revisa: aprova, ajusta IDs, reordena, ou adiciona/remove tasks
 6. Skill avança para Fase 2, repete interação
 7. Ao final de todas as fases, skill monta DAG completo
@@ -116,7 +116,7 @@ Cada seção de fase contém tasks com metadados estruturados:
   - **Arquivos:** `specs/features/004-*/acceptance/chat.feature`
 
 - [ ] **T005:** Criar testes unitários do modelo Message
-  - **Papel:** Test
+  - **Papel:** QA
   - **Dependências:** T001
   - **Paralelizável:** true
   - **Arquivos:** `internal/model/message_test.go`
@@ -133,7 +133,7 @@ Cada seção de fase contém tasks com metadados estruturados:
 - `Paralelizável: true` → task pode rodar simultaneamente com outras `true` da mesma fase que não compartilhem arquivos
 - `Paralelizável: false` → task é naturalmente sequencial (dependência explícita ou conflito de arquivo)
 - `Arquivos:` → lista exaustiva de paths que a task vai criar/modificar. Usado pra detecção de conflito
-- `Papel:` → Dev, QA, ou Test. Define o toolset do subagente no runtime-orchestrator
+- `Papel:` → Dev ou QA. Define o toolset do subagente no runtime-orchestrator
 
 ## Edge Cases
 
@@ -164,7 +164,7 @@ Cada seção de fase contém tasks com metadados estruturados:
 ## Abordagem Escolhida
 > **Skill interativa com decomposição por responsabilidade.** O `sdd-generate-tasks` lê
 > `spec.md` (funcionalidade, cenários BDD, constraints) e `plan.md` (ADRs, stack, contratos).
-> A partir disso, propõe tasks atômicas agrupadas por papel (Dev, QA, Test) e por fase.
+> A partir disso, propõe tasks atômicas agrupadas por papel (Dev, QA) e por fase.
 > A detecção de paralelismo usa isolamento de arquivos como regra primária: duas tasks
 > da mesma fase são paralelizáveis se e somente se seus conjuntos de `Arquivos` forem disjuntos.
 > O usuário aprova cada fase interativamente via `clarify()`. Ao final, o DAG completo é

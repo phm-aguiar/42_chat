@@ -32,7 +32,7 @@ sdd-generate-plan → plan.md
      ↓
 sdd-generate-tasks (DAG) → tasks.md
      ↓
-agent-run agent-orchestrator → execução paralela (Dev, QA, Test)
+agent-run agent-orchestrator → execução paralela (Dev, QA)
 ```
 
 ## Próximas Features (agentes do squad)

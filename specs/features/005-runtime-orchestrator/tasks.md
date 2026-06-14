@@ -14,7 +14,7 @@
   - **Paralelizável:** true
   - **Arquivos:** `.hermes/agents/agent-orchestrator/context.yaml`
 
-- [x] **T003:** Criar `.hermes/agents/agent-orchestrator/references/subagent-prompts.md` com templates de prompt por papel (Dev, QA, Test)
+- [x] **T003:** Criar `.hermes/agents/agent-orchestrator/references/subagent-prompts.md` com templates de prompt por papel (Dev, QA)
   - **Papel:** Dev
   - **Dependências:** Nenhuma
   - **Paralelizável:** true

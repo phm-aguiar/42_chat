@@ -3,7 +3,7 @@ name: sdd-generate-tasks
 description: >
   Use ONLY when the user asks to generate or create a tasks.md for an SDD feature from
   existing spec.md and plan.md. Produces a DAG (Directed Acyclic Graph) of atomic tasks
-  with metadata: Papel (Dev/QA/Test), Dependências, Paralelizável, Arquivos. Includes
+  with metadata: Papel (Dev/QA), Dependências, Paralelizável, Arquivos. Includes
   approval gate (Aprovado: true), phase-by-phase user interaction, and DAG validation
   (cycle detection, broken deps, orphan tasks). Trigger keywords: gerar tasks, criar
   tasks.md, generate tasks, criar tarefas.
@@ -68,7 +68,7 @@ Para cada elemento extraído no Passo 2, crie UMA tarefa. Cada task deve ter:
 
 ```markdown
 - [ ] **Tnnn:** Descrição da tarefa
-  - **Papel:** Dev | QA | Test
+  - **Papel:** Dev | QA
   - **Dependências:** Txxx, Tyyy | Nenhuma
   - **Paralelizável:** true | false
   - **Arquivos:** `path/to/file.go`
@@ -76,7 +76,7 @@ Para cada elemento extraído no Passo 2, crie UMA tarefa. Cada task deve ter:
 
 **Regras de preenchimento:**
 
-- **Papel:** derive da natureza da task. Código = Dev. Testes/cenários = QA. Testes unitários = Test.
+- **Papel:** derive da natureza da task. Código/implementação = Dev. Testes (unitários, integração, Gherkin, lint) = QA.
 - **Dependências:** liste TODOS os IDs de tasks que devem estar concluídas antes desta.
 - **Paralelizável:** `true` se e somente se NÃO compartilha arquivos com outra task `Paralelizável: true` da mesma fase E não tem dependência não satisfeita na mesma fase.
 - **Arquivos:** lista exaustiva de paths que a task vai criar ou modificar. Essencial para detecção de conflitos.

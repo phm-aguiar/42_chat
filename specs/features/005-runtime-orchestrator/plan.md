@@ -4,7 +4,7 @@
 
 - **Stack Tecnológico:** Hermes Agent (`AGENT.md` + `context.yaml`), invocado via `agent-run`. Zero dependências de runtime externas. Subagentes spawnados exclusivamente via `delegate_task`.
 - **Feature Fonte:** `specs/features/005-runtime-orchestrator/spec.md`
-- **Escopo:** Agente supervisor que lê `tasks.md` com formato DAG (feature 004), spawna subagentes especializados (Dev, QA, Test) em paralelo com janela deslizante de 3, aplica política de retry (3 tentativas com contexto enriquecido), valida evidência de conclusão, e escala bloqueios para o humano.
+- **Escopo:** Agente supervisor que lê `tasks.md` com formato DAG (feature 004), spawna subagentes especializados (Dev, QA) em paralelo com janela deslizante de 3, aplica política de retry (3 tentativas com contexto enriquecido), valida evidência de conclusão, e escala bloqueios para o humano.
 
 ## 2. Design de Contratos e Fronteiras
 

@@ -17,7 +17,7 @@ detecção de paralelismo, mapeamento spec→tasks e fases canônicas.
 
 ```markdown
 - [ ] **Tnnn:** Descrição da tarefa
-  - **Papel:** Dev | QA | Test
+  - **Papel:** Dev | QA
   - **Dependências:** Txxx, Tyyy | Nenhuma
   - **Paralelizável:** true | false
   - **Arquivos:** `path/to/file.go`, `path/to/other.go`
@@ -27,7 +27,7 @@ detecção de paralelismo, mapeamento spec→tasks e fases canônicas.
 
 | Campo | Descrição | Valores |
 |---|---|---|
-| `Papel` | Tipo de subagente que executa | `Dev`, `QA`, `Test` |
+| `Papel` | Tipo de subagente que executa | `Dev`, `QA` |
 | `Dependências` | IDs que devem estar `[x]` antes | `T001, T002` ou `Nenhuma` |
 | `Paralelizável` | Pode rodar com outras da mesma fase | `true` ou `false` |
 | `Arquivos` | Paths que a task cria/modifica | Lista exaustiva, extensões explícitas |
@@ -59,7 +59,7 @@ Se violarem a regra 2:
 | Contratos (OpenAPI/AsyncAPI) | "Criar/atualizar contrato Y" | Dev |
 | Decisões arquiteturais (ADR) | "Implementar ADR-NNN: descrição" | Dev |
 | Componentes do plan | "Criar diretório/arquivo para componente Y" | Dev |
-| Portões do constitution.md | "Adicionar teste para Z" | Test |
+| Portões do constitution.md | "Adicionar teste para Z" | QA |
 | Ferramentas de build/CI | "Configurar pipeline/linter Y" | Dev |
 | Smoke test fim a fim | "Executar smoke test" | QA |
 | Documentação | "Atualizar README/llms.txt" | Dev |
@@ -72,7 +72,7 @@ Agrupe tarefas nestas 4 fases. Tasks na mesma fase que satisfazem as regras de p
 |---|---|---|
 | **Fase 1: Fundação** | Contratos, schemas, configs, estrutura | Dev |
 | **Fase 2: Implementação** | Lógica de negócio, adapters, handlers | Dev + QA |
-| **Fase 3: Validação** | Testes, CI, linting, smoke test | QA + Test |
+| **Fase 3: Validação** | Testes, CI, linting, smoke test | QA |
 | **Fase 4: Documentação** | README, llms.txt, AGENTS.md | Dev |
 
 ## Exemplo de DAG completo
@@ -107,7 +107,7 @@ Agrupe tarefas nestas 4 fases. Tasks na mesma fase que satisfazem as regras de p
   - **Arquivos:** `specs/features/004-*/acceptance/chat.feature`
 
 - [ ] **T005:** Criar testes unitários do modelo Message
-  - **Papel:** Test
+  - **Papel:** QA
   - **Dependências:** T001
   - **Paralelizável:** true
   - **Arquivos:** `internal/model/message_test.go`

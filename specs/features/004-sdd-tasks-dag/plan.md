@@ -20,7 +20,7 @@
 ```markdown
 ## Fase N: Nome da Fase
 - [ ] **Tnnn:** Descrição da task
-  - **Papel:** Dev | QA | Test
+  - **Papel:** Dev | QA
   - **Dependências:** Txxx, Tyyy | Nenhuma
   - **Paralelizável:** true | false
   - **Arquivos:** `path/to/file.go`, `path/to/other.go`
