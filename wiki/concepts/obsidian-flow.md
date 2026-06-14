@@ -43,14 +43,14 @@ PR merge                        wiki atualizado no repo
 O subsistema wiki é orquestrado pelo **agente principal** (o que interage com o humano).
 Não é um agente separado — é um conjunto de skills que o agente principal invoca.
 
-| Operação | Quem inicia | Quando |
-|---|---|---|
-| `wiki-capture` | Agente principal | Após sessão importante (decisão arquitetural, feature complexa) |
-| `wiki-ingest` | Agente principal | Após feature implementada — destila spec/plan/tasks em página wiki |
-| `cross-linker` | Agente principal | Após múltiplas páginas novas — descobre `[[wikilinks]]` faltantes |
-| `wiki-lint` | Agente principal (ou cron) | Periodicamente ou após mudanças estruturais — audita saúde |
-| `wiki-query` | Agente principal | Quando precisa buscar conhecimento compilado (ex: "o que já decidimos sobre X?") |
-| `wiki-status` | Agente principal | Para ver delta do vault (o que mudou desde última ingest) |
+| Operação       | Quem inicia                | Quando                                                                           |
+| -------------- | -------------------------- | -------------------------------------------------------------------------------- |
+| `wiki-capture` | Agente principal           | Após sessão importante (decisão arquitetural, feature complexa)                  |
+| `wiki-ingest`  | Agente principal           | Após feature implementada — destila spec/plan/tasks em página wiki               |
+| `cross-linker` | Agente principal           | Após múltiplas páginas novas — descobre `[[wikilinks]]` faltantes                |
+| `wiki-lint`    | Agente principal (ou cron) | Periodicamente ou após mudanças estruturais — audita saúde                       |
+| `wiki-query`   | Agente principal           | Quando precisa buscar conhecimento compilado (ex: "o que já decidimos sobre X?") |
+| `wiki-status`  | Agente principal           | Para ver delta do vault (o que mudou desde última ingest)                        |
 
 ## Ciclo de Vida do Vault
 
