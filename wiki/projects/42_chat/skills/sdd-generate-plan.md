@@ -28,6 +28,6 @@
 28|## Relacionado
 29|- [[projects/42_chat/skills/sdd-brainstorm]] — Passo anterior
 30|- [[projects/42_chat/skills/sdd-generate-tasks]] — Próximo passo
-31|- [[concepts/constitution]] — Auditado pelo plan
-32|- [[concepts/tech]] — Stack usada no plano
+31|- [[concepts/sdd]] — Auditado pelo plan
+32|- [[concepts/sdd]] — Stack usada no plano
 33|

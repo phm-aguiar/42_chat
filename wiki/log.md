@@ -15,11 +15,11 @@
 15|| 2026-06-13 | Features 001-003 reclassificadas como experimentais | [[projects/42_chat/features/feature-001-start-repo|001-003]] |
 16|| 2026-06-13 | Ingest specs: features 001-005 no vault | 5 project pages |
 | 2026-06-13 | Feature 006 (agent-dev): spec → plan → tasks → implementado | [[projects/42_chat/features/feature-006-agent-dev|006]] |
-| 2026-06-13 | Constitution atualizado: regra do vault Obsidian fiel (portão + regra + anti-padrão) | [[concepts/constitution|constitution.md]] |
+| 2026-06-13 | Constitution atualizado: regra do vault Obsidian fiel (portão + regra + anti-padrão) | [[concepts/sdd|SDD]] |
 | 2026-06-13 | Vault refatorado: taxonomia llm-wiki (projects/ → projects/42_chat/{features,agents,skills}) | [[index]] |
 | 2026-06-13 | Tutoriais: sdd-workflow + onboarding + TUTORIAL.md | [[concepts/sdd-workflow|workflow]], [[concepts/onboarding|onboarding]] |
 | 2026-06-13 | Subsistema wiki documentado: wiki-model + obsidian-flow + 6 skills | [[concepts/wiki-model|wiki-model]], [[concepts/obsidian-flow|obsidian-flow]] |
-| 2026-06-13 | Papel 'Test' removido — unificado no QA (Dev e QA são os únicos papéis) | [[concepts/constitution|constitution]] |
+| 2026-06-13 | Papel 'Test' removido — unificado no QA (Dev e QA são os únicos papéis) | [[concepts/sdd|SDD]] |
 19|| 2026-06-13 | Infraestrutura wiki: .env, hot.md, .manifest.json | Vault funcional |
 20|| 2026-06-13 | Vault inicializado. 21 skills importadas. | [[index]], estrutura de diretórios |
 21|

@@ -174,6 +174,6 @@ sdd-validate
 ## Relacionado
 
 - [[concepts/sdd-workflow|SDD Workflow]] — Pipeline completo explicado em detalhes
-- [[concepts/constitution|Constituição]] — Regras que governam o framework
-- [[concepts/tech|Stack]] — Tecnologias homologadas
+- [[concepts/sdd|SDD]] — Regras que governam o framework
+- [[concepts/sdd|SDD]] — Tecnologias homologadas
 - [[projects/42_chat/features/feature-006-agent-dev|Feature 006]] — Exemplo real de feature implementada

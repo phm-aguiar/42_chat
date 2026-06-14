@@ -161,6 +161,6 @@ Feature 006 implementada — 6/6 tasks concluídas
 ## Relacionado
 
 - [[concepts/onboarding|Onboarding]] — Como começar um projeto do zero
-- [[concepts/constitution|Constituição]] — Regras arquiteturais
-- [[concepts/tech|Stack Tecnológica]] — Stack homologada
+- [[concepts/sdd|SDD]] — Regras arquiteturais
+- [[concepts/sdd|SDD]] — Stack homologada
 - [[projects/42_chat/features/feature-006-agent-dev|Feature 006]] — Exemplo real usado neste documento

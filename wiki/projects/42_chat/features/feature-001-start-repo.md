@@ -39,8 +39,8 @@
 39|
 40|## Relacionado
 41|
-42|- [[constitution]] — Template criado nesta feature
-43|- [[tech]] — Stack mapeada nesta feature
+42|- [[concepts/sdd]] — Template criado nesta feature
+43|- [[concepts/sdd]] — Stack mapeada nesta feature
 44|- [[projects/42_chat/42_chat]] — Projeto principal
 45|- [[sdd]] — Metodologia
 46|

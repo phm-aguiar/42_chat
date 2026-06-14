@@ -156,6 +156,6 @@ As skills vivem em `.hermes/skills/wiki/` e são invocadas via `skill_view()`:
 ## Relacionado
 
 - [[concepts/wiki-model|Wiki Model]] — Por que adotamos esse modelo
-- [[concepts/constitution|Constituição]] — Regra do vault fiel (portão #4)
+- [[concepts/sdd|SDD]] — Regra do vault fiel (portão #4)
 - [[concepts/sdd-workflow|SDD Workflow]] — Onde o wiki se encaixa
 - [[concepts/onboarding|Onboarding]] — Setup inicial do vault

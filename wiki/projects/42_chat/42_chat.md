@@ -59,8 +59,8 @@ agent-orchestrator
 ## Conceitos
 
 - [[concepts/sdd|SDD]] — Metodologia
-- [[concepts/constitution|Constituição]] — Regras
-- [[concepts/tech|Stack]] — Tecnologias
+- [[concepts/sdd|SDD]] — Regras
+- [[concepts/sdd|SDD]] — Tecnologias
 
 ## Repositório
 

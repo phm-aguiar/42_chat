@@ -109,5 +109,5 @@ O fluxo é disparado pelo **agente principal** (o que está conversando com o hu
 ## Relacionado
 
 - [[concepts/obsidian-flow|Fluxo Obsidian]] — Como o subsistema wiki opera no dia a dia
-- [[concepts/constitution|Constituição]] — Regra do vault fiel
+- [[concepts/sdd|SDD]] — Regra do vault fiel
 - [[concepts/sdd-workflow|SDD Workflow]] — Onde o wiki se encaixa no pipeline

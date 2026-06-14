@@ -14,31 +14,39 @@ updated: "2026-06-13"
 ## Estrutura
 
 - [[concepts/]] — Padrões, arquitetura, decisões de design (cross-project)
+- [[skills/]] — Skills do framework (wiki, obsidian, visual)
 - [[projects/42_chat/42_chat|42_chat]] — Overview do framework SDD
 - [[projects/42_chat/features/]] — Features do framework
 - [[projects/42_chat/agents/]] — Agentes Hermes
 - [[projects/42_chat/skills/]] — Skills SDD
 
-## Concepts (globais)
+## Conceitos (cross-project)
 
 - [[concepts/sdd|SDD]] — Spec-Driven Development: metodologia e pipeline
-- [[concepts/sdd-workflow|SDD Workflow]] — Pipeline completo explicado
+- [[concepts/sdd-workflow|SDD Workflow]] — Pipeline completo com exemplo real
 - [[concepts/onboarding|Onboarding]] — Como começar um projeto do zero
-- [[concepts/wiki-model|Wiki Model]] — Por que wiki, 3 camadas, ganhos
-- [[concepts/obsidian-flow|Fluxo Obsidian]] — Integração wiki + framework
-- [[concepts/constitution|Constituição]] — Regras arquiteturais do framework
-- [[concepts/tech|Stack Tecnológica]] — Stack homologada
 
-## Wiki & Obsidian
+## Wiki & Conhecimento
 
 - [[concepts/wiki-model|Wiki Model]] — Modelo de 3 camadas (sources → wiki → schema)
 - [[concepts/obsidian-flow|Fluxo Obsidian]] — Ciclo de vida do vault integrado ao pipeline
 - [[skills/wiki-ingest|wiki-ingest]] — Destila sources em páginas wiki
-- [[skills/wiki-lint|wiki-lint]] — Audita saúde do vault
+- [[skills/wiki-lint|wiki-lint]] — Audita saúde do vault (13 checks)
 - [[skills/wiki-query|wiki-query]] — Busca conhecimento compilado
 - [[skills/wiki-capture|wiki-capture]] — Salva sessão atual
 - [[skills/wiki-cross-linker|cross-linker]] — Descobre wikilinks faltantes
-- [[skills/obsidian-markdown|obsidian-markdown]] — Sintaxe OFM
+
+## Skills de Obsidian
+
+- [[skills/obsidian-markdown|obsidian-markdown]] — Sintaxe OFM de referência
+- [[skills/obsidian-cli|obsidian-cli]] — CLI para operações no vault
+- [[skills/obsidian-bases|obsidian-bases]] — Tabelas dinâmicas (.base)
+- [[skills/json-canvas|json-canvas]] — Mapas visuais (.canvas)
+- [[skills/defuddle|defuddle]] — Extrai markdown limpo de páginas web
+
+## Skills Visuais
+
+- [[skills/mermaid-visualizer|mermaid-visualizer]] — Diagramas Mermaid (flowchart, sequence, ERD)
 
 ## Projeto: 42_chat (Framework SDD)
 
@@ -61,8 +69,6 @@ updated: "2026-06-13"
 - 009: Agent Pentester — Segurança, OWASP, secrets
 
 **Experimentais (001-003):**
-> Laboratório de aprendizado SDD. Não fazem parte do pipeline ativo.
-
 - [[projects/42_chat/features/feature-001-start-repo|001: Estrutura]] ✅ — Templates base, CI/CD
 - [[projects/42_chat/features/feature-002-sdd-templates|002: Templates SDD]] ✅ — Formatos canônicos
 - [[projects/42_chat/features/feature-003-forge-skill|003: Forge Skill]] 🔄 — Scaffold de skills
@@ -72,3 +78,11 @@ updated: "2026-06-13"
 - [[projects/42_chat/skills/sdd-brainstorm|sdd-brainstorm]] — Entrevista interativa → spec.md
 - [[projects/42_chat/skills/sdd-generate-plan|sdd-generate-plan]] — Decisões arquiteturais → plan.md
 - [[projects/42_chat/skills/sdd-generate-tasks|sdd-generate-tasks]] — DAG de tasks → tasks.md (v2.0.0)
+
+## Fontes Canônicas
+
+As regras arquiteturais e stack tecnológica são mantidas em `.github/memory/` (versionadas no repo).
+O vault referencia, mas não duplica. Consulte os arquivos diretamente:
+
+- `.github/memory/constitution.md` — Regras, portões de qualidade, anti-padrões
+- `.github/memory/tech.md` — Stack homologada (linguagens, frameworks, CI/CD)
