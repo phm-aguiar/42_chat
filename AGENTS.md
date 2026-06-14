@@ -29,15 +29,26 @@ coisa, **consulte a base**. Não reinvente conhecimento que já foi compilado.
 | `wiki-query` | Skill | Busca conhecimento compilado (ex: "o que já decidimos sobre X?") |
 | `wiki-lint` | Skill | Audita saúde do vault (broken links, órfãos, frontmatter) |
 
-### Fluxo de consulta
-1. **Antes de implementar:** `wiki-query` para ver se já existe decisão/documentação sobre o tema
-2. **Após implementar:** `wiki-ingest` para destilar spec/plan/tasks em página wiki
-3. **Após mudança estrutural:** `wiki-lint` para validar integridade do vault
-4. **Periodicamente:** `doc-generate-llms-txt` para manter `llms.txt` atualizado
+### Gatilhos — Quando usar cada skill da base
 
-> **Regra de ouro:** O vault é a memória de longo prazo do framework.
-> Toda decisão arquitetural, feature implementada, ou mudança estrutural
-> deve ser refletida no vault. Vault desatualizado bloqueia PR.
+**Tabela de decisão. Siga exatamente.** Antes de qualquer ação, verifique se o gatilho se aplica.
+
+| Gatilho (o que você vai fazer) | Ação obrigatória | Skill |
+|---|---|---|
+| Implementar feature, agente, ou skill | Buscar decisões prévias sobre o tema | `wiki-query` (grep no vault) |
+| Sugerir arquitetura ou ADR | Verificar se já existe ADR similar | `wiki-query` |
+| Adicionar dependência ao `tech.md` | Verificar stack atual e constitution | Ler `.github/memory/tech.md` + `wiki-query` |
+| Feature/agente/skill concluída | Criar/atualizar página wiki | `wiki-ingest` |
+| Mover, renomear ou criar páginas wiki | Validar integridade do vault | `wiki-lint` |
+| Antes de commit | Validar estrutura SDD + vault | `sdd-validate` + `wiki-lint` |
+| Nova sessão (primeiro contato) | Carregar contexto do vault | Ler `llms.txt` + `wiki/index.md` |
+| Mudança no `constitution.md` ou `tech.md` | Atualizar `concepts/sdd.md` no vault | `wiki-ingest` |
+| Após criar/modificar múltiplas páginas | Descobrir wikilinks faltantes | `wiki/cross-linker` |
+| Sessão importante (decisões, debug) | Salvar conversa no vault | `wiki-capture` |
+
+> **Regra de enforcement:** Se você executou uma ação da coluna "Gatilho" e NÃO executou a
+> "Ação obrigatória" correspondente, **pare e execute a ação obrigatória antes de continuar.**
+> O vault é a memória de longo prazo do framework. Vault desatualizado bloqueia PR.
 
 ## Branch Strategy
 - `main` — produção. PRs devem vir de `develop`.

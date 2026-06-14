@@ -33,4 +33,4 @@ docs:
 ```
 
 ## Relacionado
-- [[concepts/constitution]] — Portoes de qualidade que o commit deve respeitar
+- [[concepts/sdd|SDD]] — Metodologia

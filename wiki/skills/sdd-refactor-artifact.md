@@ -28,4 +28,4 @@ updated: "2026-06-13"
 
 ## Relacionado
 - [[skills/sdd-validate]] — Valida apos refatoracao
-- [[skills/sdd-brainstorm]] — Gera spec no formato correto
+- [[projects/42_chat/skills/sdd-brainstorm]] — Gera spec no formato correto

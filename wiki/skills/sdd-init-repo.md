@@ -27,4 +27,4 @@ updated: "2026-06-13"
 
 ## Relacionado
 - [[skills/sdd-explore-tech]] — Mapeia stack apos init
-- [[skills/sdd-brainstorm]] — Primeira feature apos init
+- [[projects/42_chat/skills/sdd-brainstorm]] — Primeira feature apos init
