@@ -82,6 +82,19 @@ Vault Obsidian versionado em `wiki/`. Estrutura segue taxonomia `llm-wiki`:
 - `skills/` — Documentação das 34 skills
 - `projects/42_chat/` — Features, agentes e skills do framework
 
+## QA & BDD (Referências para Feature 007 — agent-qa)
+
+Base de conhecimento de QA refinada a partir de documentações em `qafiles/`:
+
+- [QA & BDD Overview](wiki/references/qa-overview.md) — Estratégia de QA no framework SDD
+- [Gherkin Syntax](wiki/references/gherkin-syntax.md) — Sintaxe completa do Gherkin
+- [Gherkin Best Practices](wiki/references/gherkin-best-practices.md) — Boas práticas e anti-patterns
+- [Gherkin Examples](wiki/references/gherkin-examples.md) — Feature files de exemplo
+- [Cucumber Basics](wiki/references/cucumber-basics.md) — Framework Cucumber e step definitions
+- [Playwright BDD](wiki/references/playwright-bdd.md) — Integração Playwright + BDD
+- [BDD Specification Process](wiki/references/bdd-specification-process.md) — Fluxo Gherkin Expert
+- [TDD Methodology](wiki/references/tdd-methodology.md) — Ciclo Red-Green-Refactor-Commit
+
 ## Links
 
 - [Constituição](.github/memory/constitution.md)

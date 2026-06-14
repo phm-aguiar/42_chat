@@ -87,16 +87,17 @@ updated: "2026-06-13"
 - [[projects/42_chat/agents/agent-onboard|onboard]] ✅ — Inicializa projetos no SDD
 - [[projects/42_chat/agents/agent-orchestrator|agent-orchestrator]] ✅ — Executor runtime com DAG
 - `agent-dev` ✅ — Implementado (006). Persona fixa com skills plugáveis.
+- `agent-qa` ✅ — Implementado (007). Guardião da qualidade.
 
 ### Features
 
-**Ativas (004-006):**
+**Ativas (004-007):**
 - [[projects/42_chat/features/feature-004-sdd-tasks-dag|004: Tasks com DAG]] ✅ — `sdd-generate-tasks` v2.0.0
 - [[projects/42_chat/features/feature-005-agent-orchestrator|005: Agent Orchestrator]] ✅ — Runtime de execução paralela
 - [[projects/42_chat/features/feature-006-agent-dev|006: Agent Dev]] ✅ — Persona implementadora
+- [[projects/42_chat/features/feature-007-agent-qa|007: Agent QA]] ✅ — Guardião da qualidade
 
-**Pendentes (007-009):**
-- 007: Agent QA — Testes, Gherkin, lint
+**Pendentes (008-009):**
 - 008: Agent DevOps — CI/CD, Docker, deploy
 - 009: Agent Pentester — Segurança, OWASP, secrets
 
@@ -110,6 +111,20 @@ updated: "2026-06-13"
 - [[projects/42_chat/skills/sdd-brainstorm|sdd-brainstorm]] — Entrevista interativa → spec.md
 - [[projects/42_chat/skills/sdd-generate-plan|sdd-generate-plan]] — Decisões arquiteturais → plan.md
 - [[projects/42_chat/skills/sdd-generate-tasks|sdd-generate-tasks]] — DAG de tasks → tasks.md (v2.0.0)
+
+## Referências de QA (agent-qa — Feature 007)
+
+Base de conhecimento para o agente de QA: BDD, Gherkin, Cucumber, Playwright BDD e TDD.
+Documentos refinados a partir de insumos em `qafiles/`.
+
+- [[references/qa-overview|QA & BDD no Framework SDD]] — Visão geral da estratégia de QA
+- [[references/gherkin-syntax|Gherkin Syntax Reference]] — Sintaxe completa do Gherkin
+- [[references/gherkin-best-practices|Gherkin Best Practices]] — Boas práticas e anti-patterns
+- [[references/gherkin-examples|Gherkin Examples]] — Exemplos reais de feature files
+- [[references/cucumber-basics|Cucumber Basics]] — Framework Cucumber e step definitions
+- [[references/playwright-bdd|Playwright BDD]] — Integração Playwright + BDD
+- [[references/bdd-specification-process|BDD Specification Process]] — Fluxo Gherkin Expert
+- [[references/tdd-methodology|TDD Methodology]] — Ciclo Red-Green-Refactor e anti-patterns
 
 ## Fontes Canônicas
 
