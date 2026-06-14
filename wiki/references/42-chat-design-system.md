@@ -3,9 +3,7 @@ title: "42 Chat — Design System"
 category: references
 tags: [42_chat, design, frontend, css, tailwind]
 sources:
-  - ideia/ideias.md
-  - ideia/resumo-ideias.md
-  - ideia/descricao-imagens.md
+  - wiki/_raw/42-chat-research.md
 summary: "Sistema de design brutalista/cyberpunk para o chat da 42: paleta preto/branco com neon (amarelo #D4ED31, ciano #00E5FF, magenta #FF007A, azul #304FFE), tipografia geométrica (Montserrat/Poppins/Gotham), border-radius zero, e filtros CSS para fotos de perfil."
 provenance:
   extracted: 0.90
