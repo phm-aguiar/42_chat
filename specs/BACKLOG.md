@@ -22,6 +22,7 @@
 | 004 | sdd-tasks-dag (DAG no tasks.md) | ✅ Implementado — `sdd-generate-tasks` v2.0.0 |
 | 005 | agent-orchestrator (runtime SDD) | ✅ Implementado — agente em `.hermes/agents/agent-orchestrator/` |
 | 006 | agent-dev (persona implementadora) | ✅ Implementado — agente em `.hermes/agents/agent-dev/`, spec/plan/tasks em `specs/features/006-agent-dev/` |
+| 007 | agent-qa (guardião da qualidade) | ✅ Implementado — agente em `.hermes/agents/agent-qa/`, spec/plan/tasks em `specs/features/007-agent-qa/` |
 
 ## Pipeline Ativo
 
@@ -42,9 +43,11 @@ agent-run agent-orchestrator → execução paralela (Dev, QA)
 
 | ID | Feature | O quê | Depende de |
 |----|---------|-------|------------|
-| 007 | agent-qa | Agente QA: testes unitários, Gherkin/Cucumber, lint, cobertura | 005 |
-| 008 | agent-devops | Agente DevOps: CI/CD, Docker, deploy, validação de pipeline | 005 |
+| 008 | agent-devops | Agente DevOps: CI/CD, Docker, deploy, integração, performance | 005 |
 | 009 | agent-pentester | Agente Pentester: segurança, OWASP, secrets, dependências | 005 |
+
+> ⚠️ **Standby:** Features 008 (DevOps) e 009 (Pentester) estão em backlog até fundamentação.
+> Próximas features serão de **criação de skills** (gherkin-scenarios, go-unit-tests, etc.).
 
 ## Pipeline Completo (após 006-009)
 
