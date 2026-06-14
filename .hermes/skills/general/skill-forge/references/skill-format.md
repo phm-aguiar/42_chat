@@ -35,11 +35,10 @@ Regras:
 - Nunca criar diretamente em `~/.hermes/skills/`. Se já existir um diretório
   real ali (não symlink), provavelmente é de outro projeto — abortar.
 
-### Quando NÃO usar categoria
+### Categorias padronizadas
 
-A maioria das skills do repo atual vive em `.hermes/skills/<nome>/` (sem
-subpasta de categoria). O scaffold padrão da `skill-forge` cria COM categoria
-porque escala melhor. Se quiser alinhar ao layout flat, use `--no-category`.
+Todas as skills do framework 42_chat usam categoria. Categorias ativas:
+`sdd`, `doc`, `qa`, `wiki`, `obsidian`, `visual`, `agent`, `github`, `general`.
 
 ## 3. Frontmatter YAML (obrigatório)
 
@@ -171,7 +170,20 @@ caiu num loop infinito ao processar Y. Solução: adicionar timeout no passo Z".
 ### Idempotência explícita
 Toda skill que escreve arquivos DEVE declarar o que acontece rodando 2x.
 
-### Sempre referencie paths relativos
+### 5. Referencie a wiki, nao duplique
+
+Se sua skill precisa de documentacao extensa (ex: fundamentos de TDD, sintaxe
+Gherkin), **referencie a wiki** em vez de duplicar conteudo:
+
+```markdown
+## Referencia
+Consulte [[references/tdd-methodology]] no vault para a metodologia completa.
+```
+
+Isso mantem o SKILL.md enxuto e garante que a documentacao detalhada fique no
+vault, onde outras skills tambem podem referencia-la.
+
+### 6. Sempre referencie paths relativos
 ```markdown
 # BOM
 Use `assets/template.md` como base.

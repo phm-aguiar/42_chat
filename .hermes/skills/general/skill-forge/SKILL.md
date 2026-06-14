@@ -52,10 +52,8 @@ passos atomicamente.
 └── references/           (documentos de referência — carregados sob demanda)
 ```
 
-> Nota: o repositório 42_chat, até a data desta versão, mantém as skills **sem**
-> subpasta de categoria em `.hermes/skills/<nome>/`. Esta skill, porém, **sempre**
-> cria com categoria (mais organizado, escala melhor). Se quiser alinhar com o
-> layout atual (sem categoria), passe `--no-category` ao `scaffold-skill.sh`.
+> Nota: todas as skills do framework 42_chat usam categoria (ex: `qa/gherkin-scenarios`,
+> `sdd/brainstorm`, `wiki/ingest`). Isso escala melhor e é o padrão desde jun/2026.
 
 ## Pré-requisitos
 
@@ -79,8 +77,8 @@ Pergunte ao usuário (use `clarify` se for múltipla escolha):
 
 1. **Nome da skill** (lowercase, hyphen-separated, max 64 chars). Ex: `review-code`,
    `deploy-k8s`.
-2. **Categoria** (obrigatória). Categorias aceitas no 42_chat: `sdd`, `doc`,
-   `agent-runtime`, `devops`, `general`. Se outra, pergunte antes.
+2. **Categoria** (obrigatória). Categorias aceitas: `sdd`, `doc`, `qa`,
+   `wiki`, `obsidian`, `visual`, `agent`, `github`, `general`. Se outra, pergunte antes.
 3. **Descrição** (1-3 frases, com gatilhos / trigger keywords). Sem `description`
    a skill é **ignorada** pelo Hermes.
 4. **Propósito** detalhado e fluxo de execução.
@@ -172,9 +170,10 @@ metadata:
 
 Antes de declarar pronto:
 
-1. Rode `sdd-validate` (se o repo segue SDD) — não é obrigatório, mas recomendado
-   pra projetos SDD.
-2. Confirme que o symlink na home aponta pro caminho certo:
+1. Rode `sdd-validate` (se o repo segue SDD).
+2. Rode `wiki-lint` para garantir que o vault está saudável.
+3. Documente a skill no vault com `wiki-ingest` — crie/atualize a página em `wiki/skills/<nome>.md`.
+4. Confirme que o symlink na home aponta pro caminho certo:
    ```bash
    ls -la ~/.hermes/skills/<categoria>/<nome>
    readlink -f ~/.hermes/skills/<categoria>/<nome>
