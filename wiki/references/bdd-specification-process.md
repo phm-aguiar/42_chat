@@ -1,4 +1,6 @@
 ---
+title: "BDD Specification Process"
+category: references
 tags:
   - bdd
   - gherkin
@@ -11,7 +13,8 @@ aliases:
   - BDD
   - Gherkin
   - Processo de Especificação BDD
-created: 2026-06-13
+created: "2026-06-13"
+updated: "2026-06-14"
 source: /home/zeenyt__/Projetos/42_chat/qafiles/bdd-spec/
 ---
 

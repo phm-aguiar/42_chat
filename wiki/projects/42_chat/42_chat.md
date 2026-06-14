@@ -62,6 +62,15 @@ agent-orchestrator
 - [[concepts/sdd|SDD]] — Regras
 - [[concepts/sdd|SDD]] — Tecnologias
 
+## Referências do 42 Chat App
+
+Documentação técnica do chat P2P para a 42 SP (pesquisa e ideação):
+
+- [[references/42-chat-platform-architecture|Platform Architecture]] — Stack Go/React/PostgreSQL/Docker/AWS
+- [[references/42-chat-design-system|Design System]] — Identidade visual brutalista/hacker
+- [[references/42-chat-engineering-requirements|Engineering Requirements]] — Concorrência, tuning Linux, graceful shutdown, caching
+- [[references/42-chat-architecture-diagram|Architecture Diagram]] — Diagramas Mermaid (auth, hub, deploy, mensagens)
+
 ## Repositório
 
 - `specs/features/` — Specs SDD

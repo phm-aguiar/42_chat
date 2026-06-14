@@ -1,12 +1,14 @@
 ---
+title: "Gherkin Examples"
+category: references
 tags:
   - gherkin
   - bdd
   - cucumber
   - exemplos
   - referência
-created: 2026-06-13
-source: "[[gherkin-examples/Examples real-world examples gherkin.md]]"
+created: "2026-06-13"
+updated: "2026-06-14"
 ---
 
 # Exemplos de Gherkin — Referência Completa

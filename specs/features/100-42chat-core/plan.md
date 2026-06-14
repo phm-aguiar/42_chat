@@ -1,9 +1,10 @@
 # Plano Arquitetural: 42 Chat Core (feature 100)
 
 ## 1. Metadados do Plano
-- **Stack Tecnológico:** Go (Chi, gorilla/websocket), PostgreSQL, React/Vite (Tailwind, Shadcn/ui), Docker Compose, AWS EC2 t2.micro
+- **Stack Tecnológico:** Go (Chi, gorilla/websocket), PostgreSQL (Docker), React/Vite (Tailwind, Shadcn/ui), Docker Compose, AWS EC2 t2.micro
 - **Feature Fonte:** `specs/features/100-42chat-core/spec.md`
-- **Escopo:** MVP com sala única "general": login OAuth2 42, WebSocket Hub, persistência PostgreSQL, frontend brutalista, graceful shutdown
+- **Referências Wiki:** [[references/42-chat-platform-architecture]], [[references/42-chat-design-system]], [[references/42-chat-engineering-requirements]], [[references/42-chat-architecture-diagram]]
+- **Escopo:** MVP com sala única "general": login OAuth2 42, WebSocket Hub (modelo híbrido RWMutex + channels), persistência PostgreSQL, frontend brutalista 42, graceful shutdown, observabilidade
 
 ## 2. Design de Contratos e Fronteiras
 
@@ -11,39 +12,39 @@
 ```
 cmd/
   server/
-    main.go                 # Entry point: configura e inicia o servidor
+    main.go                 # Entry point: configuração, graceful shutdown
 internal/
   auth/
-    oauth42.go              # OAuth2 42: authorize, callback, token exchange, JWT
+    oauth42.go              # OAuth2 42: authorize, callback, token exchange, JWT (12h)
   chat/
-    hub.go                  # WebSocket Hub: gerencia clients, broadcast, register/unregister
-    client.go               # WebSocket Client: leitura/escrita, ping/pong, readPump/writePump
+    hub.go                  # WebSocket Hub: modelo híbrido RWMutex + channels
+    client.go               # WebSocket Client: readPump, writePump, ping/pong
     message.go              # Modelo de mensagem
   api/
-    routes.go               # Rotas REST: /api/auth/*, /api/messages, /api/me, /metrics
+    routes.go               # Rotas REST (Chi): /api/auth/*, /api/messages, /api/me, /metrics
     handler_auth.go         # Handlers de autenticação
     handler_messages.go     # Handlers de histórico de mensagens
     middleware.go            # Middleware JWT, CORS, rate limit
   repository/
-    users.go                # Queries SQL: users (upsert, find by id/login)
-    messages.go             # Queries SQL: messages (insert, fetch recent, soft delete, expurgo)
-    db.go                   # Conexão PostgreSQL, pool, migrations
+    users.go                # Queries SQL: users (upsert com current_host, find by id/login)
+    messages.go             # Queries SQL: messages (insert, fetch recent, soft delete, expurgo 6 meses)
+    db.go                   # Conexão PostgreSQL, pool config (max_connections=100), migrations
   cache/
-    user_cache.go           # Cache em memória: perfil do aluno (15 min TTL)
+    user_cache.go           # Cache anti-rate-limit 3 camadas: JWT, PostgreSQL, batch ingest
   observability/
-    metrics.go              # Métricas Prometheus: goroutines, conexões WS, latência DB
+    metrics.go              # /metrics: goroutines, memória, DB.Stats(), conexões WS ativas
 web/
   src/
-    App.jsx                  # Shell principal: OAuth2 redirect, Zustand store, tema
+    App.jsx                  # Shell principal: OAuth2 redirect, Zustand store, tema 42
     components/
-      ChatRoom.jsx           # Sala de chat: mensagens, input, WebSocket
-      MessageBubble.jsx      # Bolha de mensagem (estilo brutalista)
-      LoginButton.jsx        # Botão "Entrar com a 42"
+      ChatRoom.jsx           # Sala de chat: mensagens, input, WebSocket hook
+      MessageBubble.jsx      # Bolha de mensagem (preto + borda neon)
+      LoginButton.jsx        # Botão "Entrar com a 42" (lime #D4ED31)
     store/
       authStore.js           # Zustand: JWT, user info
       chatStore.js           # Zustand: mensagens, status WS
     hooks/
-      useWebSocket.js        # Hook: conexão, reconexão, ping/pong
+      useWebSocket.js        # Hook: conexão JWT, reconexão com backoff, ping/pong
 docker-compose.yml           # Go + PostgreSQL
 Dockerfile                   # Build multi-stage Go
 ```
@@ -55,7 +56,7 @@ Dockerfile                   # Build multi-stage Go
 | GET | /api/auth/callback | Callback OAuth2, retorna JWT | Não |
 | GET | /api/me | Dados do usuário logado | JWT |
 | GET | /api/messages?before=&limit=50 | Histórico de mensagens | JWT |
-| GET | /metrics | Métricas Prometheus | Não (interno) |
+| GET | /metrics | Métricas (goroutines, DB stats, WS connections) | Não (interno) |
 
 ### Contrato WebSocket
 - **Endpoint:** `ws://host/ws?token=<JWT>`
@@ -73,21 +74,23 @@ Dockerfile                   # Build multi-stage Go
   {"type": "system", "content": "marvin entrou na sala"}
   ```
 
-### Contrato WebSocket Hub
-- `Hub` gerencia `map[*Client]bool` protegido por `sync.RWMutex`
-- `register` channel: novo client conectado
-- `unregister` channel: client desconectado
-- `broadcast` channel: mensagem para todos os clients
-- Ping/Pong: servidor envia ping a cada 30s, client responde pong
-- Read timeout: 60s sem mensagem = desconexão
-- Write timeout: 10s
+### Contrato WebSocket Hub (Modelo Híbrido)
+- **`sync.RWMutex`** protege o mapa de clients (`map[*Client]bool`)
+  - Leituras de broadcast paralelas (RLock)
+  - Bloqueio exclusivo apenas em insert/remove (Lock)
+- **`send chan []byte`** como buffer elástico de saída por client
+  - Evita bloqueio do Hub durante broadcast lento
+- **Ping/Pong:** servidor envia ping a cada 30s (ticker), client responde pong
+- **Read deadline:** 60s sem mensagem = desconexão
+- **Write deadline:** 10s
 
-### Modelagem PostgreSQL (Migrations)
+### Modelagem PostgreSQL
 ```sql
 CREATE TABLE users (
     id INTEGER PRIMARY KEY,
     login VARCHAR(50) NOT NULL UNIQUE,
     image_url TEXT,
+    current_host VARCHAR(20),        -- ex: e1z2m4
     level NUMERIC(4,2),
     created_at TIMESTAMP DEFAULT NOW()
 );
@@ -97,12 +100,26 @@ CREATE TABLE messages (
     user_id INTEGER NOT NULL REFERENCES users(id),
     content TEXT NOT NULL CHECK (char_length(content) <= 5000),
     created_at TIMESTAMP DEFAULT NOW(),
-    deleted_at TIMESTAMP
+    deleted_at TIMESTAMP              -- soft delete
 );
 
 CREATE INDEX idx_messages_created_at ON messages(created_at);
 CREATE INDEX idx_messages_deleted_at ON messages(deleted_at);
 ```
+
+### PostgreSQL Tuning (1GB RAM total)
+| Parâmetro | Valor | Justificativa |
+|---|---|---|
+| `shared_buffers` | 256MB (~25% RAM) | Cache de dados em memória |
+| `effective_cache_size` | 512MB | Estimativa para query planner |
+| `work_mem` | 16MB | Memória por operação sort/hash |
+| `max_connections` | 100 | Alinhado ao pool Go |
+
+### Tuning Linux (EC2 t2.micro)
+| Parâmetro | Valor |
+|---|---|
+| `fs.file-max` | 100000 |
+| `ulimit -n` | 65535 |
 
 ## 3. Decisões Arquiteturais (ADRs)
 
@@ -116,41 +133,59 @@ CREATE INDEX idx_messages_deleted_at ON messages(deleted_at);
 ### ADR-2: PostgreSQL desde o MVP (não SQLite)
 - **Decisão:** PostgreSQL em container Docker desde o primeiro commit
 - **Justificativa:** Auditoria do Bocal exige integridade transacional. PostgreSQL
-  suporta concorrência real, soft delete, e migrations. Evita migração dolorosa depois
+  suporta concorrência real, soft delete, CHECK constraints, e migrations.
 - **Alternativa Rejeitada:** SQLite — sem concorrência real, sem suporte a múltiplos
   leitores/escritores simultâneos
 
-### ADR-3: JWT interno após OAuth2 42
-- **Decisão:** Backend gera JWT próprio após validar token da 42
-- **Justificativa:** Evita chamar API 42 em cada requisição. JWT carrega user_id
-  e login, validado no middleware. Expiração de 24h
+### ADR-3: JWT interno (12h) após OAuth2 42
+- **Decisão:** Backend gera JWT próprio com 12h de expiração após validar token da 42.
+  Claims: user_id, login. Validado no middleware.
+- **Justificativa:** Evita chamar API 42 em cada requisição. 12h cobre um dia inteiro
+  no campus, reduzindo tráfego contra rate limit da 42
 - **Alternativa Rejeitada:** Sessão em cookie — não funciona bem com WebSocket upgrade
 
-### ADR-4: Cache em memória para perfil do aluno
-- **Decisão:** `sync.Map` em Go com TTL de 15 minutos para dados da API 42
-- **Justificativa:** API 42 tem rate limit (~2 req/s). Buscar foto/nível/host a cada
-  mensagem quebraria o limite. Cache resolve com zero dependência externa
-- **Alternativa Rejeitada:** Redis — dependência extra desnecessária pra 300 alunos
+### ADR-4: Cache anti-rate-limit em 3 camadas
+- **Decisão:** (1) JWT 12h elimina revalidação contínua, (2) perfil do aluno cacheado
+  no PostgreSQL no primeiro login, (3) mapeamento de laboratório via ingestão batch 30s
+- **Justificativa:** API 42 impõe ~2 req/s e 1200 req/h. As 3 camadas reduzem tráfego
+  de N chamadas por visualização para 1 chamada por aluno por período
+- **Alternativa Rejeitada:** Redis como cache externo — dependência extra desnecessária
+  pra 300 alunos
 
-### ADR-5: WebSocket Hub com Channels (não Mutex direto)
-- **Decisão:** Goroutine dedicada ao Hub, comunica via channels (register, unregister, broadcast)
-- **Justificativa:** Channels são idiomáticos em Go e evitam race conditions sem locks manuais.
-  Uma goroutine central processa todas as operações no mapa de clients sequencialmente
-- **Alternativa Rejeitada:** sync.RWMutex direto — mais propenso a deadlocks em código concorrente
+### ADR-5: WebSocket Hub — Modelo Híbrido (RWMutex + send chan)
+- **Decisão:** `sync.RWMutex` no mapa de clients para leituras paralelas de broadcast
+  com bloqueio apenas em insert/remove. Cada client tem `send chan []byte` como buffer
+  elástico de saída
+- **Justificativa:** Channels puros adicionam latência de round-trip via goroutine por
+  mensagem. Mutex exclusivo estrangula leituras simultâneas. O híbrido combina o melhor
+  dos dois: leituras rápidas com RLock, buffer assíncrono por client
+- **Alternativas Rejeitadas:** (a) Channels puros — round-trip overhead, (b) Mutex
+  exclusivo — bloqueia leituras, (c) RWMutex puro — sem buffer de saída, risco de
+  bloqueio no broadcast lento
 
-### ADR-6: Frontend React com Microfrontends futuros
-- **Decisão:** React + Vite + Tailwind + Shadcn/ui com Zustand. Estrutura preparada pra
-  Module Federation (Shell + Microapps) mas sem implementar no MVP
-- **Justificativa:** Shadcn/ui dá componentes copy-paste customizáveis (border-radius: 0).
-  Zustand é simples. Module Federation fica pra features futuras
-- **Alternativa Rejeitada:** Next.js — overengineering. Vite é mais leve e rápido
+### ADR-6: Frontend React com tema brutalista 42 documentado na wiki
+- **Decisão:** React + Vite + Tailwind + Shadcn/ui com Zustand. Cores exatas do design
+  system: Preto #000000, Lime #D4ED31 (CTA), Ciano #00E5FF (links), Magenta #FF007A
+  (notificações), Azul #304FFE (sobreposições). border-radius: 0 global. Dot grid
+  background. Tipografia Montserrat/Poppins/Gotham
+- **Justificativa:** Sistema de design completo documentado em [[references/42-chat-design-system]].
+  Tailwind config com classes `42-*` garante consistência sem CSS manual
+- **Alternativa Rejeitada:** CSS customizado — difícil manter consistência com o design
+  system documentado
 
 ### ADR-7: Graceful shutdown com signal handling
-- **Decisão:** Interceptar SIGINT/SIGTERM, fechar HTTP server, drenar WebSocket Hub,
-  commitar mensagens pendentes no PostgreSQL, fechar pool de conexões
+- **Decisão:** Interceptar SIGINT/SIGTERM → parar HTTP server → notificar clientes →
+  flush buffer de mensagens → PostgreSQL → fechar pool de conexões → encerrar
 - **Justificativa:** Evita corrupção de dados e desconexões abruptas. Essencial pra deploy
   contínuo sem perda de mensagens
 - **Alternativa Rejeitada:** Kill imediato — perda de mensagens em buffer
+
+### ADR-8: Observabilidade com /metrics
+- **Decisão:** Endpoint `/metrics` expondo goroutines ativas, memória, DB.Stats()
+  (idle connections, in-use, wait count), conexões WebSocket ativas. Goroutine
+  secundária coleta DB.Stats() a cada 10s
+- **Justificativa:** Essencial para diagnosticar gargalos antes que virem outage.
+  DB.Stats() revela pool exhaustion, wait events, conexões idle
 
 ## 4. Auditoria de Constituição
 
@@ -162,12 +197,9 @@ CREATE INDEX idx_messages_deleted_at ON messages(deleted_at);
 - [x] **Skills versionadas** — N/A
 - [x] **Pipeline imutável** — SDD: spec → plan → tasks → orchestrator
 - [x] **Isolamento de agentes** — N/A
-- [x] **Framework primeiro, app depois** — Esta feature É a aplicação. O framework já existe (agentes, skills, wiki)
-- [x] **Specs são do framework** — Spec 100 descreve a aplicação, não o framework. OK — é o propósito final do framework
-- [x] **Knowledge management first-class** — Vault será atualizado
+- [x] **Framework primeiro, app depois** — O framework já existe. Esta feature É a aplicação
+- [x] **Specs são do framework** — Spec 100 descreve a aplicação
+- [x] **Knowledge management first-class** — Vault será atualizado; referências wiki já documentadas
 - [x] **Nunca implementar sem spec aprovada** — Spec aprovado
-- [x] **Corrosão de contexto** — N/A
-- [x] **Agentes que delegam** — N/A
-- [x] **Skills fora do padrão** — N/A
-- [x] **Ferramentas inventadas** — Todas as dependências estão em tech.md ou especificadas aqui
+- [x] **Todas as dependências especificadas** — Stack completa documentada em platform-architecture
 - [x] **Vault desatualizado** — Será atualizado após implementação

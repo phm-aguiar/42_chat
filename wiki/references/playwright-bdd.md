@@ -1,12 +1,14 @@
 ---
+title: "Playwright BDD — Referência Completa"
+category: references
 tags:
   - reference
   - playwright
   - bdd
   - testing
   - gherkin
-title: "Playwright BDD — Referência Completa"
-date: 2026-06-13
+created: "2026-06-13"
+updated: "2026-06-14"
 ---
 
 # Playwright BDD — Referência Completa

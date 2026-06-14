@@ -1,10 +1,10 @@
 {
   "version": 1,
   "created": "2026-06-13",
-  "updated": "2026-06-13",
+  "updated": "2026-06-14",
   "stats": {
-    "total_sources_ingested": 6,
-    "total_pages": 8
+    "total_sources_ingested": 10,
+    "total_pages": 12
   },
   "sources": {
     "specs/features/001-start-repo/": {
@@ -42,6 +42,57 @@
       "source_type": "document",
       "project": "42_chat",
       "pages_created": ["concepts/constitution.md"]
+    },
+    "/home/zeenyt__/Projetos/42_chat/ideia/pesquisa.md": {
+      "ingested_at": "2026-06-14T03:44:23+00:00",
+      "size_bytes": 56790,
+      "modified_at": "2026-06-14T03:44:23+00:00",
+      "content_hash": "sha256:537d976aaf4366e500b71fa5ef105cf05d204def446468e123159153de93c6c8",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/42-chat-platform-architecture.md",
+        "references/42-chat-design-system.md",
+        "references/42-chat-engineering-requirements.md",
+        "references/42-chat-architecture-diagram.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/ideia/resumo-ideias.md": {
+      "ingested_at": "2026-06-14T03:32:20+00:00",
+      "size_bytes": 3422,
+      "modified_at": "2026-06-14T03:32:20+00:00",
+      "content_hash": "sha256:c33199847974a6fd318da17a977047b7494fd59a31804e29684c6793a2ec6126",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/42-chat-platform-architecture.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/ideia/ideias.md": {
+      "ingested_at": "2026-06-14T03:29:33+00:00",
+      "size_bytes": 21955,
+      "modified_at": "2026-06-14T03:29:33+00:00",
+      "content_hash": "sha256:3a1b6c5bb68006b1c8e266d913731df61721b802f6fb9f0df9012f667c999fa0",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/42-chat-platform-architecture.md",
+        "references/42-chat-design-system.md",
+        "references/42-chat-engineering-requirements.md",
+        "references/42-chat-architecture-diagram.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/ideia/descricao-imagens.md": {
+      "ingested_at": "2026-06-14T04:28:14+00:00",
+      "size_bytes": 3673,
+      "modified_at": "2026-06-14T04:28:14+00:00",
+      "content_hash": "sha256:3d9766ee109721ccf84f95746674cf24a800d011374cfffefe37c9f1c533c7a5",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_updated": [
+        "references/42-chat-design-system.md"
+      ]
     }
   },
   "projects": {

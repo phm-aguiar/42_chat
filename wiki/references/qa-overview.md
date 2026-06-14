@@ -1,6 +1,7 @@
 ---
 title: "QA & BDD no Framework SDD"
 summary: "Visão geral da estratégia de Quality Assurance no framework SDD, integrando BDD, TDD e o agente QA (feature 007) para garantir qualidade desde a especificação até a execução. Este documento mapeia o ecossistema de referências de QA, define quando cada ferramenta se aplica e orienta o uso das skills do agent-qa."
+category: references
 tags:
   - qa
   - bdd
@@ -10,7 +11,8 @@ tags:
 base_confidence: 0.90
 lifecycle: evolving
 tier: overview
-created: 2026-06-13
+created: "2026-06-13"
+updated: "2026-06-14"
 aliases:
   - Estratégia de QA
   - QA Strategy

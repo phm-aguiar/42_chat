@@ -22,7 +22,7 @@
 
 ## Fase 2: PostgreSQL + Auth
 
-- [ ] **T004:** Criar conexão PostgreSQL com pool + migrations SQL (CREATE TABLE users, messages, índices)
+- [ ] **T004:** Criar conexão PostgreSQL com pool (max_connections=100) + migrations SQL (CREATE TABLE users com current_host, messages com CHECK content length, índices) + tuning (shared_buffers, effective_cache_size, work_mem)
   - **Papel:** Dev
   - **Dependências:** T001
   - **Paralelizável:** false
@@ -34,7 +34,7 @@
   - **Paralelizável:** true
   - **Arquivos:** `internal/repository/users.go`, `internal/repository/messages.go`
 
-- [ ] **T006:** Implementar OAuth2 42: authorize URL, callback handler, token exchange, fetch /v2/me, JWT generate + validate
+- [ ] **T006:** Implementar OAuth2 42: authorize URL, callback handler, token exchange, fetch /v2/me (com current_host), JWT generate (12h) + validate. Cache anti-rate-limit 3 camadas
   - **Papel:** Dev
   - **Dependências:** T004
   - **Paralelizável:** true
@@ -42,7 +42,7 @@
 
 ## Fase 3: WebSocket Hub + Chat
 
-- [ ] **T007:** Criar WebSocket Hub (goroutine central, channels register/unregister/broadcast, sync.RWMutex, broadcast mensagem formatada)
+- [ ] **T007:** Criar WebSocket Hub com modelo híbrido: sync.RWMutex no mapa de clients (RLock em broadcast, Lock em insert/remove) + send chan como buffer elástico de saída por client. Channels: register, unregister, broadcast
   - **Papel:** Dev
   - **Dependências:** T002
   - **Paralelizável:** false
@@ -68,7 +68,7 @@
   - **Paralelizável:** false
   - **Arquivos:** `internal/api/routes.go`, `internal/api/handler_auth.go`, `internal/api/handler_messages.go`, `internal/api/middleware.go`
 
-- [ ] **T011:** Integrar graceful shutdown: signal handling (SIGINT/SIGTERM), fechar HTTP server, drenar Hub, fechar DB pool
+- [ ] **T011:** Integrar graceful shutdown: signal handling (SIGINT/SIGTERM), parar HTTP server, notificar clientes WS, flush buffer → PostgreSQL, fechar DB pool. Tuning Linux: fs.file-max, ulimit
   - **Papel:** Dev
   - **Dependências:** T007, T010
   - **Paralelizável:** false
@@ -76,7 +76,7 @@
 
 ## Fase 5: Frontend
 
-- [ ] **T012:** Criar frontend React: Vite init + Tailwind + Shadcn/ui + Zustand stores (authStore, chatStore)
+- [ ] **T012:** Criar frontend React: Vite init + Tailwind config com cores 42-* (#D4ED31, #00E5FF, #FF007A, #304FFE) + Shadcn/ui + Zustand stores (authStore, chatStore)
   - **Papel:** Dev
   - **Dependências:** T006
   - **Paralelizável:** true
@@ -88,7 +88,7 @@
   - **Paralelizável:** false
   - **Arquivos:** `web/src/components/ChatRoom.jsx`, `web/src/components/MessageBubble.jsx`, `web/src/hooks/useWebSocket.js`
 
-- [ ] **T014:** Aplicar tema brutalista 42 no Tailwind: fundo preto, texto branco, verde neon/ciano/magenta, border-radius: 0, dot grid background, fontes bold
+- [ ] **T014:** Aplicar tema brutalista 42 completo: cores exatas, border-radius:0 global, dot grid background (radial-gradient), avatar grayscale + borda neon, títulos CAIXA ALTA Black/Extra-Bold, botão lime flat, balões mensagem com borda neon
   - **Papel:** Dev
   - **Dependências:** T012
   - **Paralelizável:** true

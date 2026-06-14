@@ -3,7 +3,7 @@ title: "Activity Log"
 category: journal
 tags: [meta, log]
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-14"
 ---
 
 # Activity Log
@@ -25,3 +25,9 @@ updated: "2026-06-13"
 | 2026-06-13 | Infraestrutura wiki: .env, hot.md, .manifest.json | Vault funcional |
 | 2026-06-13 | Vault inicializado. 21 skills importadas. | [[index]], estrutura de diretórios |
 | 2026-06-13 | **Refinamento QA:** 27 arquivos brutos de qafiles/ destilados em 8 páginas de referência no vault | [[references/qa-overview]], [[references/gherkin-syntax]], [[references/gherkin-best-practices]], [[references/gherkin-examples]], [[references/cucumber-basics]], [[references/playwright-bdd]], [[references/bdd-specification-process]], [[references/tdd-methodology]] |
+| 2026-06-14 | **Consolidation: 3 documentos de ideia/ → 4 páginas de referência (arquitetura, design, engenharia, diagrama)** | [[references/42-chat-platform-architecture]], [[references/42-chat-design-system]], [[references/42-chat-engineering-requirements]], [[references/42-chat-architecture-diagram]] |
+| 2026-06-14 | **Lint: 8 frontmatters QA corrigidos (missing title/created/updated/category)** | [[references/bdd-specification-process]], [[references/cucumber-basics]], [[references/gherkin-syntax]], [[references/gherkin-best-practices]], [[references/gherkin-examples]], [[references/playwright-bdd]], [[references/tdd-methodology]], [[references/qa-overview]] |
+| 2026-06-14 | **Enriquecimento: engineering-requirements expandido com 8 seções do pesquisa.md (tabelas, heurísticas, BDD+Hermes)** | [[references/42-chat-engineering-requirements]] |
+| 2026-06-14 | **Cross-linker: project overview linka 4 novas referências + cross-refs internos** | [[projects/42_chat/42_chat]] |
+| 2026-06-14 | **Dedup: audit concluído — 0 duplicatas; 4 páginas com prefixo comum mas tópicos distintos** | Vault saudável |
+| 2026-06-14 | **Design System atualizado com descricao-imagens.md: hex codes precisos, tipografia real, grafismos tech, UI components** | [[references/42-chat-design-system]] |

@@ -3,7 +3,7 @@ title: "42_chat — Knowledge Base"
 category: index
 tags: [meta]
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-14"
 ---
 
 # 42_chat Knowledge Base
@@ -135,6 +135,15 @@ Documentos refinados a partir de insumos em `qafiles/`.
 - [[references/playwright-bdd|Playwright BDD]] — Integração Playwright + BDD
 - [[references/bdd-specification-process|BDD Specification Process]] — Fluxo Gherkin Expert
 - [[references/tdd-methodology|TDD Methodology]] — Ciclo Red-Green-Refactor e anti-patterns
+
+## Referências do 42 Chat (Pesquisa e Ideação)
+
+Pesquisa, arquitetura e design do chat P2P para o campus 42 SP. Consolidado de documentos de brainstorm e análise técnica.
+
+- [[references/42-chat-platform-architecture|42 Chat Platform Architecture]] — Stack completa: Go, React, PostgreSQL, Docker, AWS
+- [[references/42-chat-design-system|42 Chat Design System]] — Paleta brutalista, tipografia, regras CSS/Tailwind
+- [[references/42-chat-engineering-requirements|42 Chat Engineering Requirements]] — Concorrência, graceful shutdown, caching, SO, segurança
+- [[references/42-chat-architecture-diagram|42 Chat Architecture Diagram]] — Diagramas Mermaid (auth flow, hub, deploy, mensagens)
 
 ## Fontes Canônicas
 

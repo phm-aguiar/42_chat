@@ -1,12 +1,15 @@
 ---
+title: "Gherkin — Boas Práticas"
+category: references
 tags:
   - bdd
   - gherkin
   - boas-praticas
   - referência
   - qualidade
-title: "Gherkin — Boas Práticas"
-description: "Guia completo de boas práticas, anti-patterns, estilo declarativo vs imperativo, e dicas de revisão para escrever cenários Gherkin claros, manteníveis e orientados a comportamento."
+summary: "Guia completo de boas práticas, anti-patterns, estilo declarativo vs imperativo, e dicas de revisão para escrever cenários Gherkin claros, manteníveis e orientados a comportamento."
+created: "2026-06-13"
+updated: "2026-06-14"
 ---
 
 # Gherkin — Boas Práticas

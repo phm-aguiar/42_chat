@@ -6,9 +6,9 @@ tags:
   - bdd
   - step-definitions
   - reference
-base_confidence: 0.95
-lifecycle: stable
-tier: reference
+category: references
+created: "2026-06-13"
+updated: "2026-06-14"
 ---
 
 # Cucumber & BDD — Referência Completa
