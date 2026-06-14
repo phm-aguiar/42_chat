@@ -1,0 +1,91 @@
+# 42_chat — Framework SDD Autônomo
+
+> Framework SDD autônomo com agentes IA e humanos in loop. Pipeline: brainstorm → spec → plan → tasks (DAG) → orchestrator → subagentes.
+
+## Navegação do Repositório
+
+- `.github/memory/constitution.md`: Princípios invioláveis do framework (portões de qualidade, restrições, anti-padrões).
+- `.github/memory/tech.md`: Stack tecnológica homologada (Hermes Agent, Python, YAML, Markdown, Obsidian).
+- `AGENTS.md`: Instruções para agentes de IA que interagem com o repo.
+- `TUTORIAL.md`: Guia rápido de 6 passos para começar com o framework.
+- `specs/BACKLOG.md`: Backlog de features com status (concluídas, pendentes, pipeline).
+
+## Especificações (Spec-Driven Development)
+
+- `specs/features/001-start-repo/` — Estrutura base do repositório [spec](specs/features/001-start-repo/spec.md) [plan](specs/features/001-start-repo/plan.md) [tasks](specs/features/001-start-repo/tasks.md)
+- `specs/features/002-sdd-templates/` — Templates canônicos SDD (spec/plan/tasks) [spec](specs/features/002-sdd-templates/spec.md) [plan](specs/features/002-sdd-templates/plan.md) [tasks](specs/features/002-sdd-templates/tasks.md)
+- `specs/features/003-forge-skill/` — Scaffold de skills Hermes [spec](specs/features/003-forge-skill/spec.md) [plan](specs/features/003-forge-skill/plan.md) [tasks](specs/features/003-forge-skill/tasks.md)
+- `specs/features/004-sdd-tasks-dag/` — Tasks com DAG (dependências, paralelismo, isolamento) [spec](specs/features/004-sdd-tasks-dag/spec.md) [plan](specs/features/004-sdd-tasks-dag/plan.md) [tasks](specs/features/004-sdd-tasks-dag/tasks.md)
+- `specs/features/005-runtime-orchestrator/` — Runtime orchestrator (spawna subagentes em paralelo) [spec](specs/features/005-runtime-orchestrator/spec.md) [plan](specs/features/005-runtime-orchestrator/plan.md) [tasks](specs/features/005-runtime-orchestrator/tasks.md)
+- `specs/features/006-agent-dev/` — Agente implementador (persona fixa, skills plugáveis) [spec](specs/features/006-agent-dev/spec.md) [plan](specs/features/006-agent-dev/plan.md) [tasks](specs/features/006-agent-dev/tasks.md)
+
+## Agentes Hermes
+
+Agentes definidos em `.hermes/agents/`, versionados no repo:
+
+- `onboard` — Inicializa projeto no framework SDD (init repo, explore tech, brainstorm features).
+- `agent-orchestrator` — Executor runtime. Lê `tasks.md` com DAG e spawna subagentes em paralelo via `delegate_task`.
+- `agent-dev` — Persona implementadora. Ciclo: lê contexto → planeja → implementa → smoke-test → reporta (DONE/FAIL/BLOCKED).
+
+## Skills do Framework (34 skills)
+
+### Pipeline SDD
+- [sdd-brainstorm](wiki/projects/42_chat/skills/sdd-brainstorm.md) — Entrevista interativa → spec.md
+- [sdd-generate-plan](wiki/projects/42_chat/skills/sdd-generate-plan.md) — Decisões arquiteturais → plan.md
+- [sdd-generate-tasks](wiki/projects/42_chat/skills/sdd-generate-tasks.md) — DAG de tasks → tasks.md (v2.0.0)
+- [sdd-init-repo](wiki/skills/sdd-init-repo.md) — Inicializa estrutura SDD
+- [sdd-explore-tech](wiki/skills/sdd-explore-tech.md) — Mapeia stack tecnológica
+- [sdd-validate](wiki/skills/sdd-validate.md) — Valida conformidade SDD (PASS/FAIL/WARN)
+- [sdd-refactor-artifact](wiki/skills/sdd-refactor-artifact.md) — Normaliza artefatos SDD
+
+### Documentação
+- [doc-extract](wiki/skills/doc-extract.md) — Extrai seções de markdown
+- [doc-generate-llms-txt](wiki/skills/doc-generate-llms-txt.md) — Gera llms.txt
+- [doc-generate-toc](wiki/skills/doc-generate-toc.md) — Gera tabela de conteúdo
+
+### Wiki & Knowledge Management
+- [wiki-ingest](wiki/skills/wiki-ingest.md) — Destila sources em páginas wiki
+- [wiki-lint](wiki/skills/wiki-lint.md) — Audita saúde do vault (13 checks)
+- [wiki-query](wiki/skills/wiki-query.md) — Busca híbrida no vault
+- [wiki-capture](wiki/skills/wiki-capture.md) — Salva sessão atual
+- [wiki-cross-linker](wiki/skills/wiki-cross-linker.md) — Descobre wikilinks faltantes
+- [wiki-setup](wiki/skills/wiki-setup.md) — Inicializa vault Obsidian
+- [wiki-status](wiki/skills/wiki-status.md) — Estado atual do vault
+- [wiki-dashboard](wiki/skills/wiki-dashboard.md) — Dashboards no vault
+- [wiki-digest](wiki/skills/wiki-digest.md) — Resumo periódico
+- [wiki-export](wiki/skills/wiki-export.md) — Exporta grafo de conhecimento
+- [wiki-synthesize](wiki/skills/wiki-synthesize.md) — Síntese cross-cutting
+- [wiki-dedup](wiki/skills/wiki-dedup.md) — Detecta duplicatas
+- [wiki-tag-taxonomy](wiki/skills/wiki-tag-taxonomy.md) — Gerencia taxonomia de tags
+- [wiki-hermes-history-ingest](wiki/skills/wiki-hermes-history-ingest.md) — Ingere histórico do Hermes
+- [llm-wiki](wiki/skills/wiki-llm-wiki.md) — Fundação teórica do modelo wiki
+
+### Obsidian
+- [obsidian-markdown](wiki/skills/obsidian-markdown.md) — Sintaxe OFM
+- [obsidian-cli](wiki/skills/obsidian-cli.md) — CLI do Obsidian
+- [obsidian-bases](wiki/skills/obsidian-bases.md) — Tabelas .base
+- [json-canvas](wiki/skills/json-canvas.md) — Mapas .canvas
+- [defuddle](wiki/skills/defuddle.md) — Extração limpa de markdown
+
+### Visual
+- [mermaid-visualizer](wiki/skills/mermaid-visualizer.md) — Diagramas Mermaid
+
+### Tooling
+- [agent-run](wiki/skills/agent-run.md) — Runtime genérico de agentes
+- [skill-forge](wiki/skills/skill-forge.md) — Cria novas skills
+- [git-conventional-commit](wiki/skills/git-conventional-commit.md) — Commits padronizados
+
+## Wiki Vault
+
+Vault Obsidian versionado em `wiki/`. Estrutura segue taxonomia `llm-wiki`:
+- `concepts/` — Conceitos cross-project (SDD, workflow, wiki-model)
+- `skills/` — Documentação das 34 skills
+- `projects/42_chat/` — Features, agentes e skills do framework
+
+## Links
+
+- [Constituição](.github/memory/constitution.md)
+- [Stack Tecnológica](.github/memory/tech.md)
+- [Guia do Agente](AGENTS.md)
+- [Tutorial](TUTORIAL.md)
+- [Vault Wiki](wiki/index.md)

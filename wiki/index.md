@@ -48,6 +48,38 @@ updated: "2026-06-13"
 
 - [[skills/mermaid-visualizer|mermaid-visualizer]] — Diagramas Mermaid (flowchart, sequence, ERD)
 
+## Skills SDD (toolkit)
+
+- [[skills/sdd-init-repo|sdd-init-repo]] — Inicializa estrutura SDD
+- [[skills/sdd-explore-tech|sdd-explore-tech]] — Mapeia stack tecnológica
+- [[skills/sdd-validate|sdd-validate]] — Valida conformidade SDD
+- [[skills/sdd-refactor-artifact|sdd-refactor-artifact]] — Normaliza artefatos
+
+## Skills de Documentação
+
+- [[skills/doc-extract|doc-extract]] — Extrai seções de markdown
+- [[skills/doc-generate-llms-txt|doc-generate-llms-txt]] — Gera llms.txt
+- [[skills/doc-generate-toc|doc-generate-toc]] — Gera tabela de conteúdo
+
+## Skills Wiki (toolkit)
+
+- [[skills/wiki-setup|wiki-setup]] — Inicializa vault
+- [[skills/wiki-status|wiki-status]] — Estado/delta do vault
+- [[skills/wiki-dashboard|wiki-dashboard]] — Dashboards
+- [[skills/wiki-digest|wiki-digest]] — Resumo periódico
+- [[skills/wiki-export|wiki-export]] — Exporta grafo
+- [[skills/wiki-synthesize|wiki-synthesize]] — Síntese cross-cutting
+- [[skills/wiki-dedup|wiki-dedup]] — Deduplicação
+- [[skills/wiki-tag-taxonomy|wiki-tag-taxonomy]] — Taxonomia de tags
+- [[skills/wiki-hermes-history-ingest|hermes-history-ingest]] — Ingere histórico
+- [[skills/wiki-llm-wiki|llm-wiki]] — Fundação teórica
+
+## Skills de Tooling
+
+- [[skills/agent-run|agent-run]] — Runtime de agentes
+- [[skills/skill-forge|skill-forge]] — Cria novas skills
+- [[skills/git-conventional-commit|git-conventional-commit]] — Commits padronizados
+
 ## Projeto: 42_chat (Framework SDD)
 
 ### Agentes
