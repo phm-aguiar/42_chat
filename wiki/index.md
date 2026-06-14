@@ -22,6 +22,8 @@ updated: "2026-06-13"
 ## Concepts (globais)
 
 - [[concepts/sdd|SDD]] — Spec-Driven Development: metodologia e pipeline
+- [[concepts/sdd-workflow|SDD Workflow]] — Pipeline completo explicado
+- [[concepts/onboarding|Onboarding]] — Como começar um projeto do zero
 - [[concepts/constitution|Constituição]] — Regras arquiteturais do framework
 - [[concepts/tech|Stack Tecnológica]] — Stack homologada
 
