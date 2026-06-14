@@ -22,7 +22,7 @@ updated: "2026-06-14"
 | 2026-06-13 | Feature 007 (agent-qa): spec → plan → tasks → implementado → smoke-test | [[projects/42_chat/features/feature-007-agent-qa|007]] |
 | 2026-06-13 | Documentacao de QA coletada: qafiles/ organizados em 8 categorias | [[references/qa-overview]] |
 | 2026-06-13 | Frontmatter YAML corrigido em 28 paginas (prefixos, aspas) | [[index]] |
-| 2026-06-13 | Infraestrutura wiki: .env, hot.md, .manifest.json | Vault funcional |
+| 2026-06-14 | Sessao capturada: feature 007 QA + 7 skills + feature 100 42 Chat + taxonomia vault | [[journal/2026-06-14-sessao-qa-skills-42chat]] |
 | 2026-06-13 | Vault inicializado. 21 skills importadas. | [[index]], estrutura de diretórios |
 | 2026-06-13 | **Refinamento QA:** 27 arquivos brutos de qafiles/ destilados em 8 páginas de referência no vault | [[references/qa-overview]], [[references/gherkin-syntax]], [[references/gherkin-best-practices]], [[references/gherkin-examples]], [[references/cucumber-basics]], [[references/playwright-bdd]], [[references/bdd-specification-process]], [[references/tdd-methodology]] |
 | 2026-06-14 | **Consolidation: 3 documentos de ideia/ → 4 páginas de referência (arquitetura, design, engenharia, diagrama)** | [[references/42-chat-platform-architecture]], [[references/42-chat-design-system]], [[references/42-chat-engineering-requirements]], [[references/42-chat-architecture-diagram]] |
