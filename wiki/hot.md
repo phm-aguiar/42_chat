@@ -10,9 +10,9 @@ updated: "2026-06-16"
 
 ## Recent Activity
 
+- 2026-06-16 INGEST JWT + 42 API: 4 páginas (go-jwt, go-jwt-api-ref, 42-api-spec, 42-api-endpoints)
 - 2026-06-16 INGEST WebSocket: 5 páginas gorilla/websocket (core, server, client, hub, testing) + 7 templates
 - 2026-06-16 VALIDAÇÕES: dedup + lint + cross-linker (37 pages) + tag-taxonomy + synthesize (2 pages)
-- 2026-06-16 INGEST raw batch 2: 51 → 48 páginas (Go impl, agent skills, thinking, arch, templates, brand)
 
 ## Active Threads
 

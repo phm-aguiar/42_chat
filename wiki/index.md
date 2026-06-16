@@ -3,9 +3,9 @@ title: "42_chat — Knowledge Base"
 category: index
 tags: [meta]
 created: "2026-06-13"
-updated: "2026-06-15"
+updated: "2026-06-16"
 ---
-
+	
 # 42_chat Knowledge Base
 
 > Vault do framework SDD autônomo. Agentes: `onboard` + `agent-orchestrator` + `agent-dev`.
@@ -186,6 +186,11 @@ Guia de boas práticas Go destilado dos style guides oficiais (Google, Uber, Eff
 - [[references/go-websocket-hub|Go WebSocket Hub]] — Broadcast, rooms, direct messaging
 - [[references/go-websocket-testing|Go WebSocket Testing]] — httptest, race detection, mocks
 
+### JWT (golang-jwt v5)
+
+- [[references/go-jwt|Go JWT]] — Biblioteca golang-jwt v5: overview, setup, exemplos, migration v4→v5 ( #go #jwt #auth)
+- [[references/go-jwt-api-reference|Go JWT API Reference]] — API completa: Token, Claims, Parser, Validator, ParserOptions, signing methods, request sub-package
+
 ## Referências de Arquitetura e Processos
 
 Templates e guias para system design, code review, PRs e documentação de arquitetura.
@@ -269,6 +274,11 @@ Pesquisa, arquitetura e design do chat P2P para o campus 42 SP. Consolidado de d
   - [[references/42-chat-sec7-microfrontends|Sec 7: Microfrontends]]
   - [[references/42-chat-sec8-matchmaking-p2p|Sec 8: Matchmaking P2P]]
   - [[references/42-chat-sec9-observabilidade-bdd|Sec 9: Observabilidade e BDD]]
+
+### API 42
+
+- [[references/42-api-specification|42 API Specification]] — Guia de uso: OAuth2, paginação, filtros, rate limits (2 req/s, 1200 req/h) ( #42 #api)
+- [[references/42-api-endpoints|42 API Endpoints]] — Catálogo de endpoints: 96 recursos, 739 endpoints organizados por relevância
 
 ## Fontes Canônicas
 

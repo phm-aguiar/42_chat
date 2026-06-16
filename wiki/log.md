@@ -9,6 +9,7 @@ updated: "2026-06-16"
 
 | Data | Ação | Artefatos |
 |---|---|---|
+| 2026-06-16 | **Ingest raw JWT + 42 API:** 6 arquivos de _raw/ promovidos → 4 páginas (go-jwt MoC + API ref, 42 API spec + endpoints catalog) | [[references/go-jwt]], [[references/go-jwt-api-reference]], [[references/42-api-specification]], [[references/42-api-endpoints]] |
 | 2026-06-16 | **Resolução wiki-status:** manifest corrigido (109→171), 3 tiers promovidos a core, 27 tags normalizados (single-quote→unquoted), ai-brag-document linkado, synthesis Thinking×Go criada | [[synthesis/thinking-go]] |
 | 2026-06-16 | **Ingest raw WebSocket:** 5 SKILL.md (core, server, client, hub, testing) + 7 supporting files → 5 páginas de referência gorilla/websocket | [[references/go-websocket-core]], [[references/go-websocket-hub]] |
 | 2026-06-16 | **Validações:** dedup (1 merge candidate), lint (3 broken links fix + 50+ orphans), cross-linker (37 pages linked), tag-taxonomy (_meta/taxonomy.md criado), synthesize (2 synthesis pages: SDD×Go, Thinking×Architecture) | [[synthesis/sdd-go]], [[synthesis/thinking-architecture]] |

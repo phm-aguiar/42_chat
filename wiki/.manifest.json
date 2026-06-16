@@ -3,8 +3,8 @@
   "created": "2026-06-13",
   "updated": "2026-06-16",
   "stats": {
-    "total_sources_ingested": 110,
-    "total_pages": 171
+    "total_sources_ingested": 116,
+    "total_pages": 136
   },
   "sources": {
     "specs/features/001-start-repo/": {
@@ -1560,6 +1560,79 @@
       "project": "42_chat",
       "pages_created": [
         "references/go-cache.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/golang-jwt-v5.3.1-README.md": {
+      "ingested_at": "2026-06-16T23:00:00+00:00",
+      "size_bytes": 4607,
+      "modified_at": "1781584103",
+      "content_hash": "sha256:de9fbde3b041f15b5e60fd22aadb31a9e70c29e4f7a22cd61ac9f335f6885da2",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-jwt.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/golang-jwt-v5.3.1-Migration.md": {
+      "ingested_at": "2026-06-16T23:00:00+00:00",
+      "size_bytes": 5997,
+      "modified_at": "1781584103",
+      "content_hash": "sha256:59c9747fd9f020f00eb88baf2d56d909db4ac267a511ac2c3b48d3fbb966b6ec",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [],
+      "pages_updated": [
+        "references/go-jwt.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/golang-jwt-v5.3.1-Examples.md": {
+      "ingested_at": "2026-06-16T23:00:00+00:00",
+      "size_bytes": 9858,
+      "modified_at": "1781584103",
+      "content_hash": "sha256:cd35abdd7bfd594aece7e2d9ca4e94dbb974b04e5c9fcf0c046eb0e4f97197df",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [],
+      "pages_updated": [
+        "references/go-jwt.md",
+        "references/go-jwt-api-reference.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/golang-jwt-v5.3.1-API-Reference.md": {
+      "ingested_at": "2026-06-16T23:00:00+00:00",
+      "size_bytes": 19021,
+      "modified_at": "1781584103",
+      "content_hash": "sha256:853e69461ca9444cda9f33d0d5c084a6350c58f0b05105dcf1c0c405ad05a069",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-jwt-api-reference.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/42_api_raw": {
+      "ingested_at": "2026-06-16T23:00:00+00:00",
+      "size_bytes": 15061,
+      "modified_at": "1781583516",
+      "content_hash": "sha256:895b329b60d3b52d7ab884ac82817bebc3c6938fe2f085e470d76d78a2081f7f",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/42-api-specification.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/42_api_docs.md": {
+      "ingested_at": "2026-06-16T23:00:00+00:00",
+      "size_bytes": 44048,
+      "modified_at": "1781583351",
+      "content_hash": "sha256:d2d726231d0317c3c6ee06fbdf395824fa6dcce8cb03c2b745241fc82db04044",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/42-api-endpoints.md"
       ],
       "pages_updated": []
     }
