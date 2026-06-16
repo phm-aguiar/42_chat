@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>42&#39;s API guides | Specification</title>
+<meta name="description" content="Guides for Specification">
+<meta name="keywords" content="specification, 42, api, guides">
+<meta property="og:title" content="Specification">
+<meta property="og:description" content="Guides for Specification">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@42born2code">
+<meta name="twitter:title" content="Specification">
+<meta name="twitter:description" content="Guides for Specification">
+<meta name="author" content="https://plus.google.com/u/0/115378296196014576465">
+<meta name="publisher" content="https://plus.google.com/u/0/115378296196014576465">
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<meta content='width=device-width,height=device-height,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0' name='viewport'>
+<link href='/apple-touch-icon-57x57.png' rel='apple-touch-icon' sizes='57x57'>
+<link href='/apple-touch-icon-60x60.png' rel='apple-touch-icon' sizes='60x60'>
+<link href='/apple-touch-icon-72x72.png' rel='apple-touch-icon' sizes='72x72'>
+<link href='/apple-touch-icon-76x76.png' rel='apple-touch-icon' sizes='76x76'>
+<link href='/apple-touch-icon-114x114.png' rel='apple-touch-icon' sizes='114x114'>
+<link href='/apple-touch-icon-120x120.png' rel='apple-touch-icon' sizes='120x120'>
+<link href='/apple-touch-icon-144x144.png' rel='apple-touch-icon' sizes='144x144'>
+<link href='/apple-touch-icon-152x152.png' rel='apple-touch-icon' sizes='152x152'>
+<link href='/apple-touch-icon-180x180.png' rel='apple-touch-icon' sizes='180x180'>
+<link href='/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
+<link href='/android-chrome-192x192.png' rel='icon' sizes='192x192' type='image/png'>
+<link href='/favicon-96x96.png' rel='icon' sizes='96x96' type='image/png'>
+<link href='/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
+<link href='/manifest.json' rel='manifest'>
+<link color='#1a252f' href='/safari-pinned-tab.svg' rel='mask-icon'>
+<meta content='#1a252f' name='msapplication-TileColor'>
+<meta content='/mstile-144x144.png' name='msapplication-TileImage'>
+<meta content='#1a252f' name='theme-color'>
+<link type='text/css' rel='stylesheet' href='/apidoc/stylesheets/bundled/bootstrap.min.css'/>
+<link type='text/css' rel='stylesheet' href='/apidoc/stylesheets/bundled/prettify.css'/>
+<link type='text/css' rel='stylesheet' href='/apidoc/stylesheets/bundled/bootstrap-responsive.min.css'/>
+<link type='text/css' rel='stylesheet' href='/apidoc/stylesheets/bundled/material_icons.css'/>
+<link href='/apidoc/stylesheets/application.css' rel='stylesheet' type='text/css'>
+<!-- IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body class='documentation' data-active='specification'>
+<div class='container'>
+<div class='row'>
+<div class='main-container' id='container'>
+<nav class='navbar main-api-nav'>
+<header class='main-page-header navbar-left'>
+<a class='logo' href='/apidoc' style='background-image: url(/assets/42_logo_api.svg)'>
+API
+<small>
+Documentation and guides for the developers.
+</small>
+</a>
+</header>
+<ul class='nav navbar-nav navbar-right'>
+<li><a href="/apidoc">Reference</a></li>
+<li><a href="/apidoc/guides/specification">Guides</a></li>
+</ul>
+</nav>
+
+<div class='visible-xxs'>
+<ul class='nav guides-menu' id='page-menu'>
+<li class='link-to-specification'><a href="/apidoc/guides/specification">Specification</a></li>
+<li class='link-to-getting_started'><a href="/apidoc/guides/getting_started">Getting started</a></li>
+<li class='link-to-web_application_flow'><a href="/apidoc/guides/web_application_flow">Web application flow</a></li>
+<li class='link-to-contributing'><a href="/apidoc/guides/contributing">Contributing</a></li>
+<li class='link-to-readme'><a href="/apidoc/guides/README">Readme</a></li>
+</ul>
+
+</div>
+<div class='col-lg-9 main-column'>
+<p>The 42 API provide programmatic access to read and write 42&#39;s data. You can get and interact with the whole intranet data, and do things such creating a new message on the forum, read users profiles, get datas on a project, and more.
+On his second version, it identifies 42 applications and users using OAuth, and responses are available in JSON.</p>
+
+<p>Whether you&#39;re looking to build an official 42 integration for your service, or you just want to build something awesome, <a href="/apidoc/guides/getting_started">we can help you get started</a>.</p>
+
+<p>The API works over the https protocol. and accessed from the <em>api.intra.42.fr</em> domain.</p>
+
+<ul>
+<li>The current endpoint is <a href="https://api.intra.42.fr/v2">https://api.intra.42.fr/v2</a>.</li>
+<li>All data is sent and received as JSON.</li>
+<li>Blank fields are included as null instead of being omitted.</li>
+<li>All timestamps are returned in ISO 8601 format</li>
+</ul>
+
+<hr>
+
+<h2 id="current-version">Current version</h2>
+
+<p>The current API version is <em>2.0</em>.</p>
+
+<h2 id="authentication">Authentication</h2>
+
+<p>The authentication on the 42 API works with <a href="http://oauth.net/2/">OAuth2</a>.</p>
+
+<p>OAuth2 is a protocol that lets external apps request authorization to private details in a user’s 42 account without getting their password. This is preferred over a basic authentication because tokens can be limited to specific types of data, and can be revoked by users at any time.</p>
+
+<p>All developers need to <a href="https://profile.intra.42.fr/oauth/applications/new">register their application</a> before getting started. A registered OAuth application is assigned a unique Client ID and Client Secret. The Client Secret should not be shared.</p>
+
+<p>Once the access token aquired, it can be passed in the URL with the <code>access_token</code> parameter, or in the <code>Authorization: Bearer YOUR_TOKEN</code> header field.</p>
+
+<h2 id="errors">Errors</h2>
+
+<p>The 42 API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Http Code</th>
+<th style="text-align: right">Error code</th>
+<th style="text-align: right">Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td style="text-align: right"></td>
+<td style="text-align: right">The request is malformed</td>
+</tr>
+<tr>
+<td>401</td>
+<td style="text-align: right"></td>
+<td style="text-align: right">Unauthorized</td>
+</tr>
+<tr>
+<td>403</td>
+<td style="text-align: right"></td>
+<td style="text-align: right">Forbidden</td>
+</tr>
+<tr>
+<td>404</td>
+<td style="text-align: right"></td>
+<td style="text-align: right">Page or resource is not found</td>
+</tr>
+<tr>
+<td>422</td>
+<td style="text-align: right"></td>
+<td style="text-align: right">Unprocessable entity</td>
+</tr>
+<tr>
+<td>500</td>
+<td style="text-align: right"></td>
+<td style="text-align: right">We have a problem with our server. Please try again later.</td>
+</tr>
+<tr>
+<td>Connection refused</td>
+<td style="text-align: right"></td>
+<td style="text-align: right">Most likely cause is not using HTTPS.</td>
+</tr>
+</tbody></table>
+
+<h2 id="scopes">Scopes</h2>
+
+<p>App can have different access scopes.</p>
+
+<p>Authorization scopes are a way to determine to what extent the client can use resources located in the provider.</p>
+
+<p>When the client requests the authorization it specifies in which scope they would like to be authorized. This information is then displayed to the user - resource owner - and they can decide whether or not they accept the given application to be able to act in specified scopes.</p>
+
+<p>Requesting a resource with wrong or insufficient scopes will return a <code>403 Forbidden</code> response, with more details in the <code>WWW-Authenticate</code> response header. For example, for an application without the <code>projects</code> scope:</p>
+
+<pre><code class="http">POST https://api.intra.42.fr/v2/topics/4242/messages
+
+HTTP/1.1 403 Forbidden
+Cache-Control: no-store
+Content-Type: application/json; charset=utf-8
+Pragma: no-cache
+Transfer-Encoding: chunked
+Vary: Origin
+WWW-Authenticate: Bearer realm=&quot;42 API&quot;, error=&quot;insufficient scope&quot;, error_description=&quot;The action need the following scopes: [forum]&quot;
+X-Application-Id: 7
+X-Application-Name: Brobot
+X-Application-Roles: None
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Meta-Request-Version: 0.4.0
+X-Rack-CORS: preflight-hit; no-origin
+X-Request-Id: bb64ca44-142b-46a6-b590-af95e2e05e66
+X-Runtime: 0.045248
+X-XSS-Protection: 1; mode=block
+
+{
+    &quot;error&quot;: &quot;Forbidden&quot;,
+    &quot;message&quot;: &quot;Insufficient scope. The action need the following scopes: [forum] (Create, update and destroy topics and messages)&quot;
+}
+</code></pre>
+
+<h2 id="pagination">Pagination</h2>
+
+<p>The 42 API paginates all resources on the <q>index</q> method.</p>
+
+<p>Requests that return multiple items will be paginated to 30 items by default. You have two ways to specify further pages:
+<ul>
+<li>The <code>page</code> parameter. You can also set a custom page size (up to 100) with the <code>per_page</code> parameter. </li>
+<li>The <code>page[number]</code> paramater with the <code>page[size]</code> parameter.</li>
+</ul>
+Note that for technical reasons not all endpoints can go up to 100 on the the <code>per_page</code> / <code>page[size]</code> parameter.</p>
+
+<p>The <code>Link</code> HTTP response header contains pagination data with <code>first</code>, <code>previous</code>, <code>next</code> and <code>last</code> raw pages links when available, under the format</p>
+
+<pre><code>link: &lt;http://api.intra.42.fr/v2/{Resource}?page=X+1&gt;; rel=&quot;next&quot;, &lt;http://api.intra.42.fr/v2/{Resource}?page=X-1&gt;; rel=&quot;prev&quot;, &lt;http://api.intra.42.fr/v2/{Resource}?page=1&gt;; rel=&quot;first&quot;, &lt;http://api.intra.42.fr/v2/{Resource}?page=X+n&gt;; rel=&quot;last&quot;
+</code></pre>
+
+<p>There is also:</p>
+
+<ul>
+<li>A <code>X-Page</code> header field, which contains the current page.</li>
+<li>A <code>X-Per-Page</code> header field, which contains the current pagination length.</li>
+<li>A <code>X-Total</code> header field, which contains the count of pages.</li>
+</ul>
+
+<h2 id="filtering">Filtering</h2>
+
+<p>The <code>filter</code> query parameter can be used to filter a collection on one or several fields for one or several values. The <code>filter</code> parameter takes the field to filter as a key, and the values to filter as the value. Multiples values must be comma-separated (<code>,</code>).</p>
+
+<p>For example, the following is a request for all users who have their piscine in 2013, but only in September or July:</p>
+
+<pre><code class="http">GET /users?filter[pool_year]=2013&amp;filter[pool_month]=september,july HTTP/1.1
+</code></pre>
+
+<h2 id="sorting">Sorting</h2>
+
+<p>All index endpoints support multiple sort fields by allowing comma-separated (<code>,</code>) sort fields, they are applied in the order specified.</p>
+
+<p>The sort order for each sort field is ascending unless it is prefixed with a minus (U+002D HYPHEN-MINUS, “-“), in which case it is descending.</p>
+
+<p>For example, <code>GET /users?sort=kind,-login</code> will return the users sorted by kind. Any users with the same kind will then be sorted by their login in descending alphabetical order.</p>
+
+<h2 id="rate-limiting">Rate limiting</h2>
+
+<p>By default, your applications has limited to <code>2 requests/second</code> and <code>1200 requests / hour</code></p>
+
+<h2 id="json-api-format">JSON-API format (Decommissioned)</h2>
+
+<strike>
+  <p>The API actually support (in an alpha-stage) the <a href="http://jsonapi.org/">JSON-API</a> format specification.
+    You can request a JSON-API by specifying the request <code>ContentType</code> as <code>application/vnd.api+json</code>.</p>
+</strike>
+
+<h2 id="getting-informations-about-your-token">Getting informations about your token</h2>
+
+<p>If you want to know more about your token, you can fetch <strong><a href="https://api.intra.42.fr/oauth/token/info">https://api.intra.42.fr/oauth/token/info</a></strong>.</p>
+
+<pre><code class="bash">curl -H &quot;Authorization: Bearer YOUR_ACCESS_TOKEN&quot; https://api.intra.42.fr/oauth/token/info
+
+# {&quot;resource_owner_id&quot;:74,&quot;scopes&quot;:[&quot;public&quot;],&quot;expires_in_seconds&quot;:7174,&quot;application&quot;:{&quot;uid&quot;:&quot;3089cd94d72cc9109800a5eea5218ed4c3e891ec1784874944225878b95867f9&quot;},&quot;created_at&quot;:1439460680}%
+</code></pre>
+
+</div>
+<div class='col-lg-3 side-column'>
+<nav data-offset-bottom='200' data-offset-top='0' data-spy='affix'>
+<ul class='nav guides-menu' id='page-menu'>
+<li class='link-to-specification'><a href="/apidoc/guides/specification">Specification</a></li>
+<li class='link-to-getting_started'><a href="/apidoc/guides/getting_started">Getting started</a></li>
+<li class='link-to-web_application_flow'><a href="/apidoc/guides/web_application_flow">Web application flow</a></li>
+<li class='link-to-contributing'><a href="/apidoc/guides/contributing">Contributing</a></li>
+<li class='link-to-readme'><a href="/apidoc/guides/README">Readme</a></li>
+</ul>
+
+</nav>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<script type='text/javascript' src='/apidoc/javascripts/bundled/jquery.min.js'></script>
+<script type='text/javascript' src='/apidoc/javascripts/bundled/bootstrap.js'></script>
+<script type='text/javascript' src='/apidoc/javascripts/bundled/prettify.js'></script>
+<script type='text/javascript' src='/apidoc/javascripts/moon_raker.js'></script>
+<div class='container'>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-79725177-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</div>
+<footer>
+<div class='api-footer'>
+Proudly made with tons of
+<i class='material-icons reed'>favorite</i>
+by the
+<span class='reed'>dev unit.</span>
+</div>
+</footer>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0c701e1fd9df211',t:'MTc4MTU4MzQ3Mg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

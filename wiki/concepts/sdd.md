@@ -5,6 +5,9 @@ tags: [sdd, metodologia, pipeline]
 summary: "Metodologia onde specs são a fonte primária; código deriva delas."
 created: "2026-06-13"
 updated: "2026-06-13"
+lifecycle: reviewed
+lifecycle_changed: "2026-06-15"
+lifecycle_reason: "auto-promoted by wiki-lint: well-established reference page"
 sources: []
 ---
 
@@ -43,3 +46,4 @@ As regras arquiteturais e a stack tecnológica vivem em `.github/memory/` (versi
 - [[concepts/sdd-workflow|SDD Workflow]] — Pipeline completo com exemplo real
 - [[concepts/onboarding|Onboarding]] — Como começar
 - [[concepts/wiki-model|Wiki Model]] — Knowledge management
+- [[synthesis/sdd-go|SDD × Go]] — Aplicação do SDD em projetos Go

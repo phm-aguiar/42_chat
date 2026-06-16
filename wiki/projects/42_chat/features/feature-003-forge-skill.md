@@ -34,8 +34,8 @@ provenance:
 
 ## Tasks pendentes
 
-- **T006:** Adicionar ao sdd-refactor-artifact suporte a plan.md + tasks.md
-- **T007:** Testar skill dummy com forge-new-skill + sdd-validate
+- **T006:** Adicionar ao [[skills/sdd-refactor-artifact|sdd-refactor-artifact]] suporte a plan.md + tasks.md
+- **T007:** Testar skill dummy com forge-new-skill + [[skills/sdd-validate|sdd-validate]]
 - **T008:** Escopo (projeto vs global) com confirmação do usuário
 - **T009:** plan.md + tasks.md da própria feature 003
 - **T010:** llms.txt na raiz

@@ -13,7 +13,7 @@ platforms: [linux, macos, windows]
 metadata:
   hermes:
     tags: [Skill-Creation, Scaffold, Authoring]
-    related_skills: [hermes-agent-skill-authoring]
+    related_skills: [wiki-query, hermes-agent-skill-authoring]
     category: general
     resources:
       - SKILL.md
@@ -159,7 +159,7 @@ platforms: [linux, macos, windows]
 metadata:
   hermes:
     tags: [tag1, tag2]
-    related_skills: [skill-relacionada-1]
+    related_skills: [wiki-query, skill-relacionada-1]
     resources:                 ← recomendado: lista os arquivos da skill
       - SKILL.md
       - assets/template.md

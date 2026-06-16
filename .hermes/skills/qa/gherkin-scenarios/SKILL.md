@@ -12,7 +12,7 @@ platforms: [linux, macos, windows]
 metadata:
   hermes:
     tags: [QA, Gherkin, BDD, Testing, Feature]
-    related_skills: [go-unit-tests, local-test-runner]
+    related_skills: [wiki-query, go-unit-tests, local-test-runner]
     category: qa
     resources:
       - SKILL.md

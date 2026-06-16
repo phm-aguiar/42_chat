@@ -35,7 +35,7 @@ provenance:
 ## Tasks pendentes
 
 - **T008:** Geração de plan.md + tasks.md a partir de spec.md
-- **T009:** sdd-validate verifica conformidade dos templates
+- **T009:** [[skills/sdd-validate|sdd-validate]] verifica conformidade dos templates
 - **T010:** Testes de snapshot para refatorador
 - **T011:** Exemplos antes/depois na spec
 

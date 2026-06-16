@@ -14,6 +14,7 @@ metadata:
   hermes:
     tags: [git, commit, conventional-commits, changelog]
     category: github
+    related_skills: [wiki-query]
     created: "2026-06-12"
 ---
 

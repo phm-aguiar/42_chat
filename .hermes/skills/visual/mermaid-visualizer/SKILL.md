@@ -9,7 +9,7 @@ platforms: [linux, macos, windows]
 metadata:
   hermes:
     tags: ['visual', 'mermaid-visualizer']
-    related_skills: []
+    related_skills: [wiki-query, ]
     category: visual
     resources:
       - SKILL.md

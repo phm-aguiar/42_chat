@@ -13,7 +13,7 @@ Você recebe do orchestrator um contexto compilado contendo:
 - **Spec relevante:** seções do `spec.md` que se aplicam à sua task
 - **ADRs do plan:** decisões arquiteturais do `plan.md`
 - **Task atômica:** ID, descrição, Papel, Arquivos que você deve modificar
-- **Skills da stack:** skills injetadas pelo orchestrator conforme `tech.md` (ex: `go-implement`, `smoke-check`)
+- **Skills da stack:** skills injetadas pelo orchestrator conforme `tech.md` (ex: `go-implement`, `react-implement`, `build-check`)
 - **Dependências satisfeitas:** IDs das tasks já concluídas
 - **Tentativa:** N/3 (se for retry, inclui o erro da tentativa anterior)
 
@@ -35,7 +35,7 @@ Antes de escrever uma linha de código:
 
 ### 4. Smoke-test
 Antes de reportar DONE, execute smoke-test:
-1. Use a skill `smoke-check` se disponível
+1. Use a skill `build-check` se disponível
 2. Se não houver skill, use o comando padrão da stack: `go build ./...`, `python -m compileall .`, `cargo check`, etc.
 3. Smoke-test deve passar com **exit code 0**
 4. Se falhar → analise o erro, corrija, repita. Se não conseguir corrigir → reporte FAIL

@@ -2,7 +2,7 @@
 title: "Wiki Model — Knowledge Management do Framework"
 category: concepts
 tags: [wiki, obsidian, knowledge-management, arquitetura]
-aliases: [modelo-wiki, llm-wiki]
+aliases: [modelo-wiki, [[skills/wiki-llm-wiki|llm-wiki]]]
 sources: []
 summary: "O framework adota o modelo LLM Wiki (Karpathy) de 3 camadas: raw sources → wiki compilado → schema. Explica por que compilar conhecimento é superior a recuperar, e como o vault Obsidian versionado elimina amnésia cross-sessão."
 lifecycle: draft
@@ -39,7 +39,7 @@ são plugáveis, que o contrato é DONE/FAIL/BLOCKED. Não precisa re-derivar na
 
 ## As 3 Camadas
 
-O modelo é baseado no [LLM Wiki](https://github.com/karpathy/llm-wiki) de Andrej Karpathy:
+O modelo é baseado no [LLM Wiki](https://github.com/karpathy/[[skills/wiki-llm-wiki|llm-wiki]]) de Andrej Karpathy:
 
 ```
 Layer 1: Raw Sources (imutável)
@@ -56,7 +56,7 @@ São a "fonte da verdade" — nunca modificados pelo sistema wiki.
 ### Layer 2: Wiki Compilado
 O vault Obsidian (`wiki/`) versionado no repo. Cada página tem:
 - Frontmatter YAML (title, category, tags, sources, timestamps)
-- `[[wikilinks]]` conectando conceitos relacionados
+- `[[skills/obsidian-markdown|wikilinks]]` conectando conceitos relacionados
 - Provenance: cada claim rastreável a uma source
 
 ### Layer 3: Schema
@@ -75,7 +75,7 @@ O agente não precisa re-descobrir que "skills são trilhos, não jaulas" — es
 
 ### 2. Rastreabilidade
 Toda decisão arquitetural (ADR) está linkada à feature que a motivou.
-`[[wikilinks]]` formam um grafo navegável de decisões.
+`[[skills/obsidian-markdown|wikilinks]]` formam um grafo navegável de decisões.
 
 ### 3. Onboarding zero-atrito
 Um novo colaborador abre `wiki/index.md` e navega:

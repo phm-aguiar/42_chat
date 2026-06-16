@@ -7,8 +7,14 @@ tags:
   - cucumber
   - exemplos
   - referência
+summary: "Exemplos reais de feature files Gherkin: busca de produtos, carrinho de compras, login, saque bancário, validação de senha, controle de acesso. Inclui comparações lado a lado: declarativo vs imperativo, behavior-focused vs UI-specific, focused vs multiple behaviors, meaningful vs generic data."
 created: "2026-06-13"
-updated: "2026-06-14"
+updated: "2026-06-15"
+lifecycle: reviewed
+lifecycle_changed: "2026-06-15"
+lifecycle_reason: "auto-promoted by wiki-lint: well-established reference page"
+sources:
+  - "wiki/_raw/qa/gherkin-examples/Examples real-world examples gherkin.md"
 ---
 
 # Exemplos de Gherkin — Referência Completa
@@ -340,4 +346,10 @@ Feature: Account Access Control
 
 ---
 
-*Fonte: [[gherkin-examples/Examples real-world examples gherkin.md]]*
+*Fonte: `wiki/_raw/qa/gherkin-examples/Examples real-world examples gherkin.md` (fonte bruta já ingerida)*
+
+## Ver Também
+
+- [[references/gherkin-syntax|Gherkin Syntax]] — Sintaxe usada nos exemplos
+- [[references/gherkin-best-practices|Gherkin Best Practices]] — Práticas ilustradas nos exemplos
+- [[references/cucumber-basics|Cucumber Basics]] — Como automatizar estes cenários

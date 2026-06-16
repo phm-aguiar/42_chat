@@ -13,7 +13,7 @@ platforms: [linux, macos, windows]
 metadata:
   hermes:
     tags: [Agent-Runtime, Subagent, Context-Compiler, Delegation]
-    related_skills: [skill-forge]
+    related_skills: [wiki-query, skill-forge]
     category: agent
     resources:
       - SKILL.md

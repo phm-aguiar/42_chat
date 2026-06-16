@@ -146,12 +146,14 @@ O diretório `wiki/references/` contém seis páginas que formam a base de conhe
 
 | # | Página | Conteúdo | Quando consultar |
 |---|--------|----------|------------------|
-| 1 | [[bdd-specification-process\|Processo de Especificação BDD]] | Metodologia BDD, estrutura Gherkin, palavras-chave, cenários, Background, Scenario Outline, Rules, boas práticas de escrita | Durante a especificação (sdd-brainstorm) e quando o agent-qa for interpretar cenários da spec |
-| 2 | [[gherkin-syntax\|Sintaxe Gherkin — Referência Completa]] | Referência completa da sintaxe: keywords, step arguments, Doc Strings, Data Tables, tags, internacionalização, organização de diretórios | Consulta rápida durante a escrita de qualquer arquivo `.feature` |
-| 3 | [[gherkin-best-practices\|Gherkin — Boas Práticas]] | Regra de ouro, boas práticas essenciais, anti-patterns, estilo declarativo vs imperativo, dicas de revisão, checklist | Revisão e linting de cenários Gherkin pelo agent-qa |
-| 4 | [[gherkin-examples\|Exemplos de Gherkin]] | Exemplos reais: busca de produtos, carrinho de compras, login, saque bancário, validação de senha, controle de acesso; comparações lado a lado | Template e inspiração para escrever novos cenários |
-| 5 | [[cucumber-basics\|Cucumber & BDD — Referência Completa]] | Core concepts, step definitions (JS/TS/Java/Ruby), hooks, World context, Data Tables, Doc Strings, Page Object, boas práticas e anti-patterns | Quando o agent-qa for implementar step definitions para Cucumber |
-| 6 | [[playwright-bdd\|Playwright BDD — Referência Completa]] | Instalação, configuração com `defineBddConfig`, projects, step definitions com `createBdd`, fixtures, POM, Data Tables, tags especiais, execução, troubleshooting | Quando o agent-qa for executar testes E2E com browser via Playwright BDD |
+| 1 | [[bdd-specification-process|Processo de Especificação BDD]] | Metodologia BDD, estrutura Gherkin, palavras-chave, cenários, Background, Scenario Outline, Rules, boas práticas de escrita | Durante a especificação (sdd-brainstorm) e quando o agent-qa for interpretar cenários da spec |
+| 2 | [[gherkin-syntax|Sintaxe Gherkin — Referência Completa]] | Referência completa da sintaxe: keywords, step arguments, Doc Strings, Data Tables, tags, internacionalização, organização de diretórios | Consulta rápida durante a escrita de qualquer arquivo `.feature` |
+| 3 | [[gherkin-best-practices|Gherkin — Boas Práticas]] | Regra de ouro, boas práticas essenciais, anti-patterns, estilo declarativo vs imperativo, dicas de revisão, checklist | Revisão e linting de cenários Gherkin pelo agent-qa |
+| 4 | [[gherkin-examples|Exemplos de Gherkin]] | Exemplos reais: busca de produtos, carrinho de compras, login, saque bancário, validação de senha, controle de acesso; comparações lado a lado | Template e inspiração para escrever novos cenários |
+| 5 | [[cucumber-basics|Cucumber & BDD — Referência Completa]] | Core concepts, step definitions (JS/TS/Java/Ruby), hooks, World context, Data Tables, Doc Strings, Page Object, boas práticas e anti-patterns | Quando o agent-qa for implementar step definitions para Cucumber |
+| 6 | [[playwright-bdd|Playwright BDD — Referência Completa]] | Instalação, configuração com `defineBddConfig`, projects, step definitions com `createBdd`, fixtures, POM, Data Tables, tags especiais, execução, troubleshooting | Quando o agent-qa for executar testes E2E com browser via Playwright BDD |
+| 7 | [[tdd-methodology|TDD Methodology]] | Ciclo Red-Green-Refactor-Commit, princípios FIRST, padrão AAA, naming conventions, organização de testes, 8 anti-patterns com exemplos em Python/pytest | Durante implementação (agent-dev) e validação de qualidade de testes (agent-qa) |
+| 8 | [[recipe-step-executor|Recipe Step Executor]] | Implementação de referência em Python: executor de workflows com condições, DAG, retry/backoff, timeout, templates e sub-recipes. Cobertura de testes com 6 features + 7 cross-feature interactions | Referência para smoke-tests e padrão de executor para testes BDD |
 
 ### Relação entre as referências:
 
@@ -284,7 +286,7 @@ O **agent-qa** ([spec 007](specs/features/007-agent-qa/spec.md)) é um agente He
 
 ## Notas Técnicas
 
-- **Todas as referências** em `wiki/references/` estão no formato [[wikilinks]] do Obsidian e são interligadas.
+- **Todas as referências** em `wiki/references/` estão no formato [[skills/obsidian-markdown|wikilinks]] do Obsidian e são interligadas.
 - O agent-qa **nunca infere** comportamento ambíguo — reporta BLOCKED.
 - Skills são **trilhos, não jaulas**: se a skill não cobre, QA reporta BLOCKED, não improvisa.
 - O agent-qa **não tem acesso web** — apenas terminal + file. As referências do vault são o conhecimento máximo disponível.
@@ -304,3 +306,14 @@ O **agent-qa** ([spec 007](specs/features/007-agent-qa/spec.md)) é um agente He
 - [[projects/42_chat/features/feature-006-agent-dev|Agent Dev (006)]]
 - `specs/features/007-agent-qa/spec.md` — Spec do agente QA
 - `specs/features/007-agent-qa/plan.md` — Plano arquitetural do agente QA
+
+## Ver Também
+
+- [[references/bdd-specification-process|BDD Specification Process]] — Metodologia e fluxo completo
+- [[references/gherkin-syntax|Gherkin Syntax]] — Sintaxe de referência
+- [[references/gherkin-best-practices|Gherkin Best Practices]] — Boas práticas e anti-patterns
+- [[references/gherkin-examples|Gherkin Examples]] — Exemplos reais
+- [[references/cucumber-basics|Cucumber Basics]] — Step definitions e hooks
+- [[references/playwright-bdd|Playwright BDD]] — Testes E2E com browser
+- [[references/tdd-methodology|TDD Methodology]] — Red-Green-Refactor e FIRST
+- [[references/recipe-step-executor|Recipe Step Executor]] — Executor de workflows Python

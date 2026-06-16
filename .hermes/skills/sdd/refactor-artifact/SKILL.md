@@ -14,7 +14,7 @@ platforms: [linux, macos, windows]
 metadata:
   hermes:
     tags: [SDD, Refactor, Format, Normalize]
-    related_skills: [sdd-generate-plan, sdd-generate-tasks, sdd-validate]
+    related_skills: [wiki-query, sdd-generate-plan, sdd-generate-tasks, sdd-validate]
     category: sdd
     resources:
       - SKILL.md

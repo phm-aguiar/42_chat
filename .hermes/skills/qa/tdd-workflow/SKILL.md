@@ -11,7 +11,7 @@ platforms: [linux, macos, windows]
 metadata:
   hermes:
     tags: [TDD, Testing, Workflow, Methodology]
-    related_skills: [go-unit-tests, local-test-runner]
+    related_skills: [wiki-query, go-unit-tests, local-test-runner]
     category: qa
     resources:
       - SKILL.md

@@ -11,7 +11,7 @@ platforms: [linux, macos, windows]
 metadata:
   hermes:
     tags: [BDD, Specification, Discovery, Workshop]
-    related_skills: [gherkin-scenarios, sdd-brainstorm]
+    related_skills: [wiki-query, gherkin-scenarios, sdd-brainstorm]
     category: qa
     resources:
       - SKILL.md

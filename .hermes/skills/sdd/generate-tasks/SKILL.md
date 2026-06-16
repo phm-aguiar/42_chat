@@ -14,7 +14,7 @@ platforms: [linux, macos, windows]
 metadata:
   hermes:
     tags: [SDD, Tasks, DAG, Execution, Planning]
-    related_skills: [sdd-generate-plan, sdd-refactor-artifact, agent-run]
+    related_skills: [wiki-query, sdd-generate-plan, sdd-refactor-artifact, agent-run]
     category: sdd
     resources:
       - SKILL.md

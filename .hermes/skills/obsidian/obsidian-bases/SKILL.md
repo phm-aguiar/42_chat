@@ -9,7 +9,7 @@ platforms: [linux, macos, windows]
 metadata:
   hermes:
     tags: ['obsidian', 'obsidian-bases']
-    related_skills: []
+    related_skills: [wiki-query, ]
     category: obsidian
     resources:
       - SKILL.md

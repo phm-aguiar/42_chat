@@ -12,7 +12,7 @@ platforms: [linux, macos, windows]
 metadata:
   hermes:
     tags: [SDD, Init, Scaffold, Project-Setup]
-    related_skills: [sdd-explore-tech, sdd-validate, sdd-refactor-artifact, sdd-brainstorm]
+    related_skills: [wiki-query, sdd-explore-tech, sdd-validate, sdd-refactor-artifact, sdd-brainstorm]
     category: sdd
     resources:
       - SKILL.md

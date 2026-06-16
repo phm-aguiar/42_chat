@@ -9,17 +9,26 @@ tags:
   - methodology
   - agile
   - testing
+summary: "Processo completo de especificação BDD com Gherkin: fluxo do Gherkin Expert (7 etapas), design de cenários, estruturação de acceptance criteria (happy path → erro → borda), domain modeling, tri-path PromptWriter (English vs Gherkin vs TLA+), evidência empírica (+26% Gherkin sobre English), anti-padrões e templates."
 aliases:
   - BDD
   - Gherkin
   - Processo de Especificação BDD
 created: "2026-06-13"
-updated: "2026-06-14"
-source: /home/zeenyt__/Projetos/42_chat/qafiles/bdd-spec/
+updated: "2026-06-15"
+lifecycle: reviewed
+lifecycle_changed: "2026-06-15"
+lifecycle_reason: "auto-promoted by wiki-lint: well-established reference page"
+sources:
+  - "/home/zeenyt__/Projetos/42_chat/qafiles/bdd-spec/"
+  - "wiki/_raw/qa/bdd-spec/bdd-gherkin-specification.md"
+  - "wiki/_raw/qa/bdd-spec/gherkin-expert-steps.md"
+  - "wiki/_raw/qa/bdd-spec/gherkin-expert.md"
+  - "wiki/_raw/qa/bdd-spec/prompt-writer.md"
+  - "wiki/_raw/qa/bdd-spec/use_gherkin_expert.md"
 ---
 
 # Processo de Especificação BDD com Gherkin
-
 ## O que é BDD?
 
 **Behavior-Driven Development (BDD)** é uma metodologia para capturar requisitos que expressa o comportamento de features usando exemplos do mundo real. Ela preenche a lacuna entre stakeholders de negócio, desenvolvedores e testadores ao usar linguagem compartilhada e cenários concretos.
@@ -436,6 +445,77 @@ Feature: [Descrição curta da funcionalidade]
 
 ---
 
+## Tri-Path Judgment System (PromptWriter)
+
+O agente **prompt-writer** (parte do ecossistema Gherkin Expert) usa um sistema de julgamento de três caminhos para decidir quando formalizar especificações. O default é **sempre English-only** — especificações formais (Gherkin ou TLA+) só entram quando a complexidade justifica.
+
+### Path 1: English-Only (DEFAULT)
+
+Use para a maioria das tarefas. Nenhuma especificação formal necessária.
+
+- CRUD simples ou transformações sequenciais de valores
+- Layout de UI, estilização, mudanças de configuração
+- Requisitos onde a parte difícil é conhecimento de domínio, não espaço de estados
+- Utilitários internos com um único desenvolvedor como audiência
+- Bug fixes diretos com comportamento óbvio
+
+### Path 2: Gherkin/BDD Scenarios
+
+Considere quando a complexidade comportamental é alta. **Evidência:** gherkin_only AVG=0.898 vs english 0.713 (+26%) para requisitos comportamentais (N=3 consenso de agentes).
+
+- Fluxos multi-passo complexos com muitos casos de borda
+- Cenários multi-ator (usuário faz X, sistema responde Y, admin vê Z)
+- Regras de negócio com condições combinatórias
+- Critérios de aceitação que stakeholders precisam validar
+- Features onde "o que é 'pronto'" é ambíguo em inglês
+
+### Path 3: TLA+ Formal Predicates
+
+Considere quando concorrência ou invariantes de segurança são a preocupação. **Evidência:** TLA+ 0.86 vs english 0.57 (+51%) para sistemas concorrentes (experimento #3497).
+
+- Múltiplos atores/agentes modificando estado compartilhado concorrentemente
+- Invariantes "nunca deve" / "sempre deve" / "eventualmente deve" no nível do sistema
+- Correção de protocolos com requisitos de ordenação ou atomicidade
+- State machines com transições válidas não-óbvias
+- Protocolos distribuídos (fan-out/merge, quorum, tratamento de timeout)
+
+### Indicadores de Julgamento (NÃO são regras)
+
+- Se a parte difícil é **"qual é a aparência de 'pronto'?"** → considere Gherkin
+- Se a parte difícil é **"o que deve sempre/nunca ser verdade?"** → considere TLA+
+- Se a parte difícil **não é nenhuma das duas** → English é suficiente
+- Quando em dúvida, comece com English. Atualize se provar insuficiente.
+
+## Ecossistema Gherkin Expert
+
+O Gherkin Expert é um subsistema com múltiplos artefatos que trabalham juntos para integrar especificações formais ao pipeline de desenvolvimento:
+
+| Artefato | Tipo | Propósito |
+|----------|------|-----------|
+| `gherkin-expert` skill | Skill definition | Ativa quando o usuário menciona Gherkin/BDD/Given-When-Then |
+| `gherkin-expert` agent | Agent persona | Especialista em sintaxe Gherkin, design de cenários, domain modeling |
+| `prompt-writer` agent | Agent persona | Classifica requisitos (EXECUTABLE vs DOCUMENTATION) + julga necessidade de especificação formal (tri-path) |
+| `bdd-gherkin-specification` skill | Skill definition | Skill guarda-chuva com recursos de referência (syntax, best-practices, examples, anti-patterns, organization) |
+
+### Gherkin Expert Agent — Competências
+
+O agent persona do Gherkin Expert cobre:
+1. **Escrita de especificações Gherkin** — Feature/Scenario/Given/When/Then, Background, Scenario Outline
+2. **Design de cenários** — um comportamento por cenário, declarativo sobre imperativo, linguagem de domínio
+3. **Estruturação de acceptance criteria** — happy path → error cases → edge cases → boundaries
+4. **Domain modeling através de cenários** — Given revela papéis, When revela comandos, Then revela eventos
+5. **AI Prompt Improvement** — evidência empírica de que especificações Gherkin produzem código melhor
+
+### PromptWriter Agent — Tri-Path na Prática
+
+O prompt-writer segue uma sequência mandatória antes de gerar qualquer prompt:
+
+1. **Task Classification** (MANDATORY) — Classifica como EXECUTABLE, DOCUMENTATION, ou AMBIGUOUS
+2. **Complexity Assessment** (MANDATORY) — TRIVIAL (<10 linhas), SIMPLE (10-50), COMPLEX (50+)
+3. **Specification Language Judgment** — Aplica o tri-path para decidir English vs Gherkin vs TLA+
+4. **Template-based Prompt Generation** — Aplica o template correto (Feature, Bug Fix, Refactoring)
+5. **Quality Validation** — Completeness Check + Clarity Check + Consistency Check (mínimo 80%)
+
 ## Referências
 
 - [Documentação Cucumber](https://cucumber.io/docs/)
@@ -451,3 +531,11 @@ Feature: [Descrição curta da funcionalidade]
 ## Resumo em Uma Linha
 
 > **BDD + Gherkin transformam requisitos ambíguos em especificações executáveis, legíveis por humanos e 26% mais eficazes que linguagem natural para gerar código comportamental de qualidade.**
+
+## Ver Também
+
+- [[references/gherkin-syntax|Gherkin Syntax]] — Referência sintática
+- [[references/gherkin-best-practices|Gherkin Best Practices]] — Anti-padrões e boas práticas
+- [[references/gherkin-examples|Gherkin Examples]] — Exemplos de cenários bem escritos
+- [[references/cucumber-basics|Cucumber Basics]] — Automação dos cenários
+- [[references/tdd-methodology|TDD Methodology]] — Complemento: BDD define o que, TDD define como

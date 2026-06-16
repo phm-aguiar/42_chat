@@ -11,7 +11,7 @@ platforms: [linux, macos, windows]
 metadata:
   hermes:
     tags: [QA, E2E, Playwright, BDD, Browser-Testing]
-    related_skills: [gherkin-scenarios, cucumber-step-definitions]
+    related_skills: [wiki-query, gherkin-scenarios, cucumber-step-definitions]
     category: qa
     resources:
       - SKILL.md

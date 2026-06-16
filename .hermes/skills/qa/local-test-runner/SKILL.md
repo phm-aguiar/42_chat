@@ -11,7 +11,7 @@ platforms: [linux, macos, windows]
 metadata:
   hermes:
     tags: [QA, Go, Test-Runner, Coverage]
-    related_skills: [gherkin-scenarios, go-unit-tests]
+    related_skills: [wiki-query, gherkin-scenarios, go-unit-tests]
     category: qa
     resources:
       - SKILL.md

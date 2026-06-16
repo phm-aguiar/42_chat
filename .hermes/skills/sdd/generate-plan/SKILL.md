@@ -13,7 +13,7 @@ platforms: [linux, macos, windows]
 metadata:
   hermes:
     tags: [SDD, Plan, Architecture, ADR]
-    related_skills: [sdd-generate-tasks, sdd-refactor-artifact, sdd-validate, sdd-brainstorm]
+    related_skills: [wiki-query, sdd-generate-tasks, sdd-refactor-artifact, sdd-validate, sdd-brainstorm]
     category: sdd
     resources:
       - SKILL.md

@@ -8,7 +8,16 @@ tags:
   - bdd
 category: references
 created: "2026-06-13"
-updated: "2026-06-14"
+updated: "2026-06-15"
+lifecycle: reviewed
+lifecycle_changed: "2026-06-15"
+lifecycle_reason: "auto-promoted by wiki-lint: well-established reference page"
+sources:
+  - "wiki/_raw/qa/gherkin-syntax/Gherkin Syntax.md"
+  - "wiki/_raw/qa/gherkin-syntax/Gherkin Syntax Reference.md"
+  - "wiki/_raw/qa/gherkin-syntax/Gherkin File Organization.md"
+  - "wiki/_raw/qa/gherkin-syntax/quick-reference-Gherkin.md"
+  - "wiki/_raw/qa/gherkin-syntax/gherkin.md"
 ---
 
 # Sintaxe Gherkin — Referência Completa
@@ -527,3 +536,9 @@ Feature: [Nome da Feature]
 - [Cucumber Gherkin Documentation](https://cucumber.io/docs/gherkin/)
 - [Gherkin i18n — Lista completa de idiomas](https://cucumber.io/docs/gherkin/languages/)
 - [Cucumber Best Practices](https://cucumber.io/docs/bdd/best-practices/)
+
+## Ver Também
+
+- [[references/gherkin-best-practices|Gherkin Best Practices]] — Como escrever cenários de qualidade
+- [[references/gherkin-examples|Gherkin Examples]] — Exemplos prontos para consulta
+- [[references/bdd-specification-process|BDD Spec Process]] — Fluxo completo do Gherkin Expert

@@ -9,7 +9,7 @@ platforms: [linux, macos, windows]
 metadata:
   hermes:
     tags: ['wiki', 'status']
-    related_skills: []
+    related_skills: [wiki-query]
     category: wiki
     resources:
       - SKILL.md

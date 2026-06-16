@@ -25,7 +25,7 @@ updated: "2026-06-13"
 1. Lê a source (spec.md, plan.md, conversa, URL)
 2. Extrai conceitos, decisões, relações
 3. Cria/atualiza página wiki com frontmatter completo
-4. Adiciona `[[wikilinks]]` para páginas relacionadas
+4. Adiciona `[[skills/obsidian-markdown|wikilinks]]` para páginas relacionadas
 5. Registra no `.manifest.json`
 6. Atualiza `index.md` e `log.md`
 

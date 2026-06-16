@@ -13,7 +13,7 @@ platforms: [linux, macos, windows]
 metadata:
   hermes:
     tags: [SDD, Validate, Audit, Quality]
-    related_skills: [sdd-init-repo, sdd-refactor-artifact, sdd-brainstorm]
+    related_skills: [wiki-query, sdd-init-repo, sdd-refactor-artifact, sdd-brainstorm]
     category: sdd
     resources:
       - SKILL.md

@@ -3,29 +3,33 @@ title: "42_chat — Knowledge Base"
 category: index
 tags: [meta]
 created: "2026-06-13"
-updated: "2026-06-14"
+updated: "2026-06-15"
 ---
 
 # 42_chat Knowledge Base
 
 > Vault do framework SDD autônomo. Agentes: `onboard` + `agent-orchestrator` + `agent-dev`.
-> Estrutura segue taxonomia `llm-wiki`: concepts/ globais + projects/42_chat/ aninhado.
+> Estrutura segue [[concepts/vault-taxonomy|Vault Taxonomy]].
 
 ## Estrutura
 
-- [[concepts/]] — Padrões, arquitetura, decisões de design (cross-project)
-- [[skills/]] — Skills do framework (wiki, obsidian, visual)
-- [[projects/42_chat/42_chat|42_chat]] — Overview do framework SDD
-- [[projects/42_chat/features/]] — Features do framework
-- [[projects/42_chat/agents/]] — Agentes Hermes
-- [[projects/42_chat/skills/]] — Skills SDD
+| Diretório     | Função                            |
+| ------------- | --------------------------------- |
+| `concepts/`   | Padrões, metodologia, arquitetura |
+| `references/` | Docs técnicas destiladas          |
+| `skills/`     | Docs das skills Hermes            |
+| `projects/`   | Conhecimento por projeto          |
+| `_raw/`       | Fontes brutas históricas          |
+| `journal/`    | Sessões capturadas                |
+| `synthesis/`  | Conexões cross-cutting            |
+| `entities/`   | Glossário de termos               |
 
 ## Conceitos (cross-project)
 
 - [[concepts/sdd|SDD]] — Spec-Driven Development: metodologia e pipeline
 - [[concepts/sdd-workflow|SDD Workflow]] — Pipeline completo com exemplo real
 - [[concepts/onboarding|Onboarding]] — Como começar um projeto do zero
-- [[concepts/vault-taxonomy|Taxonomia do Vault]] — Função de cada diretório do vault
+- [[concepts/vault-taxonomy|Vault Taxonomy]] — Taxonomia canônica de diretórios do vault
 
 ## Wiki & Conhecimento
 
@@ -51,6 +55,9 @@ updated: "2026-06-14"
 
 ## Skills SDD (toolkit)
 
+- [[skills/sdd-brainstorm|sdd-brainstorm]] — Entrevista interativa → spec.md
+- [[skills/sdd-generate-plan|sdd-generate-plan]] — Decisões arquiteturais → plan.md
+- [[skills/sdd-generate-tasks|sdd-generate-tasks]] — DAG de tasks → tasks.md (v2.0.0)
 - [[skills/sdd-init-repo|sdd-init-repo]] — Inicializa estrutura SDD
 - [[skills/sdd-explore-tech|sdd-explore-tech]] — Mapeia stack tecnológica
 - [[skills/sdd-validate|sdd-validate]] — Valida conformidade SDD
@@ -126,7 +133,7 @@ updated: "2026-06-14"
 ## Referências de QA (agent-qa — Feature 007)
 
 Base de conhecimento para o agente de QA: BDD, Gherkin, Cucumber, Playwright BDD e TDD.
-Documentos refinados a partir de insumos em `qafiles/`.
+Documentos refinados a partir de insumos em `qafiles/` e `wiki/_raw/qa/`.
 
 - [[references/qa-overview|QA & BDD no Framework SDD]] — Visão geral da estratégia de QA
 - [[references/gherkin-syntax|Gherkin Syntax Reference]] — Sintaxe completa do Gherkin
@@ -134,8 +141,115 @@ Documentos refinados a partir de insumos em `qafiles/`.
 - [[references/gherkin-examples|Gherkin Examples]] — Exemplos reais de feature files
 - [[references/cucumber-basics|Cucumber Basics]] — Framework Cucumber e step definitions
 - [[references/playwright-bdd|Playwright BDD]] — Integração Playwright + BDD
-- [[references/bdd-specification-process|BDD Specification Process]] — Fluxo Gherkin Expert
-- [[references/tdd-methodology|TDD Methodology]] — Ciclo Red-Green-Refactor e anti-patterns
+- [[references/bdd-specification-process|BDD Specification Process]] — Fluxo Gherkin Expert + Tri-Path PromptWriter
+- [[references/tdd-methodology|TDD Methodology]] — Ciclo Red-Green-Refactor, naming, organização
+- [[references/tdd-first-principles|TDD FIRST Principles & AAA]] — Princípios FIRST e padrão Arrange-Act-Assert
+- [[references/tdd-anti-patterns|TDD Anti-Patterns]] — Catálogo dos 8 anti-patterns com exemplos pytest
+- [[references/recipe-step-executor|Recipe Step Executor]] — Executor Python com DAG, retry, timeout, sub-recipes
+
+## Referências de Go (Style Guides)
+
+Guia de boas práticas Go destilado dos style guides oficiais (Google, Uber, Effective Go, CodeReviewComments).
+20 páginas cobrindo todos os aspectos do desenvolvimento Go idiomático.
+
+- [[references/go-style-guide|Go Style Guide]] — Catálogo completo ( #go #style-guide)
+  - [[references/go-style-core|Go Style Core]] — Princípios, formatação, nesting, naked returns
+  - [[references/go-naming|Go Naming]] — Convenções de nomes
+  - [[references/go-error-handling|Go Error Handling]] — Estratégia de erros, wrapping, sentinelas
+  - [[references/go-concurrency|Go Concurrency]] — Goroutines, channels, mutexes
+  - [[references/go-testing|Go Testing]] — Table-driven, subtests, cmp.Diff
+  - [[references/go-functions|Go Functions]] — Assinaturas, Printf/Stringer, organização
+  - [[references/go-interfaces|Go Interfaces]] — Definição, receivers, embedding
+  - [[references/go-packages|Go Packages]] — Organização, imports, tamanho
+  - [[references/go-declarations|Go Declarations]] — var vs :=, escopo, shadowing
+  - [[references/go-control-flow|Go Control Flow]] — If com init, early returns, switch
+  - [[references/go-context|Go Context]] — context.Context, cancelamento, timeouts
+  - [[references/go-data-structures|Go Data Structures]] — Slices, maps, arrays
+  - [[references/go-defensive|Go Defensive]] — Cópia, interface compliance, panics
+  - [[references/go-documentation|Go Documentation]] — Doc comments, exemplos
+  - [[references/go-functional-options|Go Functional Options]] — Padrão de construtores
+  - [[references/go-generics|Go Generics]] — Constraints, type inference
+  - [[references/go-linting|Go Linting]] — golangci-lint, configuração
+  - [[references/go-logging|Go Logging]] — slog, níveis, structured logging
+  - [[references/go-performance|Go Performance]] — Benchmarks, otimização
+  - [[references/go-code-review|Go Code Review]] — Checklist sistemática
+  - [[references/go-modular-architecture|Go Modular Architecture]] — Arquitetura modular: camadas, injeção, ciclo de vida
+  - [[references/go-repository|Go Repository]] — Padrão Repository
+  - [[references/go-service|Go Service]] — Camada de serviço
+  - [[references/go-chi-router|Go Chi Router]] — Roteamento HTTP
+
+### WebSocket (gorilla/websocket)
+
+- [[references/go-websocket-core|Go WebSocket Core]] — Upgrade, mensagens, ping/pong, close, anti-patterns ( #go #websocket)
+- [[references/go-websocket-server|Go WebSocket Server]] — HTTP routers, auth, CORS, graceful shutdown
+- [[references/go-websocket-client|Go WebSocket Client]] — Dial, reconnect, heartbeat, TLS
+- [[references/go-websocket-hub|Go WebSocket Hub]] — Broadcast, rooms, direct messaging
+- [[references/go-websocket-testing|Go WebSocket Testing]] — httptest, race detection, mocks
+
+## Referências de Arquitetura e Processos
+
+Templates e guias para system design, code review, PRs e documentação de arquitetura.
+
+- [[references/system-design|System Design Guide]] — Abordagem estruturada para sistemas distribuídos ( #architecture)
+- [[references/architecture-patterns|Architecture Patterns]] — Catálogo comparativo de padrões
+- [[references/database-selection|Database Selection]] — Tipos, trade-offs, critérios
+- [[references/nfr-checklist|NFR Checklist]] — Non-Functional Requirements
+- [[references/adr-template|ADR Template]] — Architecture Decision Records
+- [[references/techspec-template|Tech Spec Template]] — Especificação técnica
+- [[references/prd-template|PRD Template]] — Product Requirements Document
+- [[references/pr-template|PR Template]] — Pull Request
+- [[references/code-review-template|Code Review Template]] — Revisão de código
+- [[references/task-template|Task Template]] — Task atômica
+- [[references/tasks-template|Tasks Template]] — Lista de tasks
+- [[references/implementation-notes-template|Implementation Notes Template]] — Notas de implementação
+- [[references/style-guide|Documentation Style Guide]] — Guia de estilo para docs
+
+## Referências de Thinking Tools
+
+Ferramentas e frameworks de reasoning: socrático, adversarial, dialético, pre-mortem.
+
+- [[references/cognitive-bias-inventory|Cognitive Bias Inventory]] — Inventário de vieses ( #thinking)
+- [[references/dialectic-synthesis|Dialectic Synthesis]] — Síntese hegeliana com steel manning
+- [[references/evidence-audit|Evidence Audit]] — Auditoria de evidências
+- [[references/mode-selection-guide|Mode Selection Guide]] — Seleção de modo de reasoning
+- [[references/pre-mortem-analysis|Pre-Mortem Analysis]] — Antecipação de falhas
+- [[references/red-team-adversarial|Red Team Adversarial]] — Red teaming
+- [[references/socratic-questioning|Socratic Questioning]] — Questionamento socrático
+
+## Skills de Agente (Novas)
+
+Skills Hermes adicionais para agentes: arquitetura, benchmark, Go patterns, docs, brand discovery.
+
+- [[skills/architecture-designer|Architecture Designer]] — Design de arquitetura de sistemas ( #hermes #skill)
+- [[skills/benchmark|Benchmark]] — Medição de performance
+- [[skills/benchmark-methodology|Benchmark Methodology]] — Metodologia de benchmarks
+- [[skills/benchmark-optimization-loop|Benchmark Optimization Loop]] — Ciclo de otimização
+- [[skills/brand-discovery|Brand Discovery]] — Descoberta de estratégia de marca
+- [[skills/golang-patterns|Golang Patterns]] — Padrões idiomáticos Go
+- [[skills/golang-testing|Golang Testing]] — Testes em Go
+- [[skills/docs-writer|Docs Writer]] — Escrita de documentação
+- [[skills/the-fool|The Fool]] — Challenge e adversarial thinking
+
+## Referências de Brand Strategy
+
+Frameworks de brand strategy: propósito, posicionamento, audiência, personalidade, voz.
+
+- [[references/10_purpose-why|Brand Purpose]] — Propósito e Golden Circle ( #brand)
+- [[references/20_positioning|Brand Positioning]] — Posicionamento de mercado
+- [[references/30_audience-niche|Brand Audience & Niche]] — Audiência e nicho
+- [[references/40_personality-archetype|Brand Personality & Archetype]] — Personalidade e arquétipos
+- [[references/50_voice-tone|Brand Voice & Tone]] — Voz e tom
+- [[references/60_narrative-story|Brand Narrative & Story]] — Narrativa e storytelling
+- [[references/70_founder-tension|Brand Founder vs Organization]] — Founder brand vs org brand
+- [[references/90_SYNTHESIS|Brand Synthesis]] — Síntese master brandbook
+
+## Sínteses Cross-Cutting
+
+Conexões entre domínios que só se revelam quando olhamos através das fronteiras dos clusters.
+
+- [[synthesis/sdd-go|SDD × Go]] — Spec-Driven Development aplicado a projetos Go ( #synthesis)
+- [[synthesis/thinking-architecture|Thinking × Architecture]] — Ferramentas de reasoning em decisões de arquitetura
+- [[synthesis/thinking-go|Thinking × Go]] — Reasoning tools aplicadas a code review e design Go
 
 ## Referências do 42 Chat (Pesquisa e Ideação)
 
@@ -145,6 +259,16 @@ Pesquisa, arquitetura e design do chat P2P para o campus 42 SP. Consolidado de d
 - [[references/42-chat-design-system|42 Chat Design System]] — Paleta brutalista, tipografia, regras CSS/Tailwind
 - [[references/42-chat-engineering-requirements|42 Chat Engineering Requirements]] — Concorrência, graceful shutdown, caching, SO, segurança
 - [[references/42-chat-architecture-diagram|42 Chat Architecture Diagram]] — Diagramas Mermaid (auth flow, hub, deploy, mensagens)
+- [[references/42-chat-research-report|42 Chat Research Report]] — MoC do relatório de arquitetura (9 subpáginas)
+  - [[references/42-chat-sec1-fundamentacao|Sec 1: Fundamentação e Ecossistema 42]]
+  - [[references/42-chat-sec2-backend-concorrencia|Sec 2: Backend e Concorrência]]
+  - [[references/42-chat-sec3-graceful-shutdown|Sec 3: Graceful Shutdown]]
+  - [[references/42-chat-sec4-infra-tuning|Sec 4: Infra e Tuning de SO]]
+  - [[references/42-chat-sec5-api-42-rate-limits|Sec 5: API 42 e Rate Limits]]
+  - [[references/42-chat-sec6-campus-locations|Sec 6: Mapeamento de Campus]]
+  - [[references/42-chat-sec7-microfrontends|Sec 7: Microfrontends]]
+  - [[references/42-chat-sec8-matchmaking-p2p|Sec 8: Matchmaking P2P]]
+  - [[references/42-chat-sec9-observabilidade-bdd|Sec 9: Observabilidade e BDD]]
 
 ## Fontes Canônicas
 

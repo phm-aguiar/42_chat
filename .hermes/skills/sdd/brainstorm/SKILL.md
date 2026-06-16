@@ -15,7 +15,7 @@ platforms: [linux, macos, windows]
 metadata:
   hermes:
     tags: [SDD, Brainstorm, Spec, Discovery, Interactive-Interview, Clarify]
-    related_skills: [sdd-init-repo, sdd-explore-tech, sdd-generate-plan, sdd-generate-tasks, sdd-validate, sdd-refactor-artifact]
+    related_skills: [wiki-query, sdd-init-repo, sdd-explore-tech, sdd-generate-plan, sdd-generate-tasks, sdd-validate, sdd-refactor-artifact]
     category: sdd
     created: "2026-06-12"
     resources:

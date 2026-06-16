@@ -26,7 +26,7 @@ updated: "2026-06-13"
 1. Processa a transcrição da sessão
 2. Extrai decisões, perguntas, respostas
 3. Cria página wiki estruturada
-4. Adiciona `[[wikilinks]]` para contexto
+4. Adiciona `[[skills/obsidian-markdown|wikilinks]]` para contexto
 5. Registra no `log.md`
 
 ## Exemplo

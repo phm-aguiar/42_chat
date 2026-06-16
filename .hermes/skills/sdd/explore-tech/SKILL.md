@@ -13,7 +13,7 @@ platforms: [linux, macos, windows]
 metadata:
   hermes:
     tags: [SDD, Tech-Stack, Discovery, Project-Analysis]
-    related_skills: [sdd-init-repo, sdd-validate]
+    related_skills: [wiki-query, sdd-init-repo, sdd-validate]
     category: sdd
     resources:
       - SKILL.md

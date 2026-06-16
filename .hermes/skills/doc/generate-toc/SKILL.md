@@ -12,7 +12,7 @@ platforms: [linux, macos]
 metadata:
   hermes:
     tags: [Doc, TOC, Markdown, Navigation]
-    related_skills: [doc-extract]
+    related_skills: [wiki-query, doc-extract]
     category: doc
     resources:
       - SKILL.md

@@ -67,3 +67,13 @@ lifecycle_changed: "2026-06-14"
 - [[concepts/vault-taxonomy]] — Taxonomia do vault
 - [[references/42-chat-platform-architecture]] — Arquitetura do 42 Chat
 - [[references/42-chat-design-system]] — Design system do 42 Chat
+## Skills Referenciadas
+
+- [[skills/local-test-runner|local-test-runner]] — Execução de testes e cobertura
+- [[skills/skill-forge|skill-forge]] — Criação de novas skills Hermes
+- [[skills/wiki-ingest|wiki-ingest]] — Destilação de fontes em páginas wiki
+- [[skills/playwright-bdd-e2e|playwright-bdd-e2e]] — Testes E2E com Playwright BDD
+- [[skills/tdd-workflow|tdd-workflow]] — Workflow TDD (Red-Green-Refactor)
+- [[skills/wiki-lint|wiki-lint]] — Auditoria de saúde do vault
+- [[skills/cucumber-step-definitions|cucumber-step-definitions]] — Step definitions para Cucumber/Godog
+- [[skills/bdd-spec-process|bdd-spec-process]] — Processo de especificação BDD

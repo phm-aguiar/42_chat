@@ -7,8 +7,16 @@ tags:
   - bdd
   - testing
   - gherkin
+summary: "Referência completa do Playwright BDD: instalação, defineBddConfig, projetos múltiplos, step definitions com createBdd, parâmetros ({string}/{int}/{float}), regex, custom types, fixtures, Page Object Model, data tables, doc strings, tags especiais, execução e troubleshooting."
 created: "2026-06-13"
-updated: "2026-06-14"
+updated: "2026-06-15"
+lifecycle: reviewed
+lifecycle_changed: "2026-06-15"
+lifecycle_reason: "auto-promoted by wiki-lint: well-established reference page"
+sources:
+  - "wiki/_raw/qa/playwright-bdd/playwright-bdd-gherkin-syntax.md"
+  - "wiki/_raw/qa/playwright-bdd/playwright-bdd-configuration.md"
+  - "wiki/_raw/qa/playwright-bdd/playwright-bdd-step-definitions.md"
 ---
 
 # Playwright BDD — Referência Completa
@@ -955,3 +963,10 @@ Given('I am on a supported browser', async ({ browserName }) => {
 ---
 
 > **Fonte:** Documentação oficial do [playwright-bdd](https://github.com/vitalets/playwright-bdd).
+
+## Ver Também
+
+- [[references/gherkin-syntax|Gherkin Syntax]] — Sintaxe usada nos testes
+- [[references/gherkin-best-practices|Gherkin Best Practices]] — Boas práticas para cenários E2E
+- [[references/cucumber-basics|Cucumber Basics]] — Framework BDD clássico (alternativa)
+- [[references/qa-overview|QA Overview]] — Estratégia de QA no framework SDD

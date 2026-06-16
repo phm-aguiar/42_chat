@@ -13,7 +13,7 @@ platforms: [linux, macos, windows]
 metadata:
   hermes:
     tags: [Doc, LLM, Navigation, llms.txt]
-    related_skills: [doc-extract, doc-generate-toc, sdd-validate]
+    related_skills: [wiki-query, doc-extract, doc-generate-toc, sdd-validate]
     category: doc
     resources:
       - SKILL.md

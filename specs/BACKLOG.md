@@ -61,9 +61,10 @@ agent-run agent-orchestrator → execução paralela (Dev, QA)
 | 014 | cucumber-step-definitions | QA | ✅ Implementado |
 | 015 | bdd-spec-process | QA | ✅ Implementado |
 | 016 | playwright-bdd-e2e | QA | ✅ Implementado |
-| 017 | go-implement | Dev | ❌ Pendente |
+| 017 | go-implement | Dev | ✅ Implementado |
 | 018 | python-implement | Dev | ❌ Pendente |
-| 019 | build-check (smoke-test) | Dev | ❌ Pendente |
+| 019 | build-check (smoke-test) | Dev | ✅ Implementado |
+| 020 | react-implement | Dev | ✅ Implementado |
 
 ## Próximas Features (aplicação)
 
@@ -98,9 +99,11 @@ agent-orchestrator
 ### Dev Skills (feature 006)
 | Skill | O que faz |
 |-------|-----------|
-| `go-implement` | Implementa feature a partir de spec + contratos |
-| `go-refactor` | Refatora código sem quebrar testes |
-| `smoke-check` | `go build`, checagem de sintaxe, imports |
+| `go-implement` | Implementa código Go a partir de spec + contratos (Chi, gorilla/websocket, PostgreSQL) |
+| `react-implement` | Implementa frontend React (Vite, Tailwind 42, Shadcn/ui, Zustand, WebSocket hooks) |
+| `build-check` | Smoke test: `go build ./...`, `go vet`, `npm run build`. Portão DONE obrigatório |
+| `python-implement` | ❌ Pendente — Implementa código Python |
+| `go-refactor` | ❌ Pendente — Refatora código sem quebrar testes |
 
 ### QA Skills (feature 007)
 | Skill | O que faz |

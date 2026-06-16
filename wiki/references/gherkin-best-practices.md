@@ -9,7 +9,15 @@ tags:
   - qualidade
 summary: "Guia completo de boas práticas, anti-patterns, estilo declarativo vs imperativo, e dicas de revisão para escrever cenários Gherkin claros, manteníveis e orientados a comportamento."
 created: "2026-06-13"
-updated: "2026-06-14"
+updated: "2026-06-15"
+lifecycle: reviewed
+lifecycle_changed: "2026-06-15"
+lifecycle_reason: "auto-promoted by wiki-lint: well-established reference page"
+sources:
+  - "wiki/_raw/qa/gherkin-practices/Gherkin Best Practices.md"
+  - "wiki/_raw/qa/gherkin-practices/Gherkin Anti-Patterns.md"
+  - "wiki/_raw/qa/gherkin-practices/anti-patterns.md"
+  - "wiki/_raw/qa/gherkin-practices/Best Practices improving existing scenarios.md"
 ---
 
 # Gherkin — Boas Práticas
@@ -633,3 +641,9 @@ Ao revisar cenários Gherkin — seus ou de outras pessoas — use estas pergunt
 ---
 
 > **Lembre-se:** BDD é uma prática de **colaboração** primeiro. Escreva cenários **com** as partes interessadas do negócio, não **para** elas. Trate seus arquivos `.feature` como **documentação viva** — mantenha-os atualizados conforme o sistema evolui.
+
+## Ver Também
+
+- [[references/gherkin-syntax|Gherkin Syntax]] — Referência completa da sintaxe
+- [[references/gherkin-examples|Gherkin Examples]] — Exemplos que aplicam as boas práticas
+- [[references/bdd-specification-process|BDD Spec Process]] — Anti-padrões e design de cenários

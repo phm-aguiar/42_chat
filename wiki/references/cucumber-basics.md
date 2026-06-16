@@ -8,7 +8,14 @@ tags:
   - reference
 category: references
 created: "2026-06-13"
-updated: "2026-06-14"
+updated: "2026-06-15"
+lifecycle: reviewed
+lifecycle_changed: "2026-06-15"
+lifecycle_reason: "auto-promoted by wiki-lint: well-established reference page"
+sources:
+  - "wiki/_raw/qa/cucumber/cucumber-fundamentals.md"
+  - "wiki/_raw/qa/cucumber/[[skills/cucumber-step-definitions|cucumber-step-definitions]].md"
+  - "wiki/_raw/qa/cucumber/cucumber-best-practices.md"
 ---
 
 # Cucumber & BDD — Referência Completa
@@ -828,3 +835,10 @@ Use Cucumber adequadamente dentro da sua estratégia de testes:
 | Page Objects                  | Encapsule seletores e interações de UI               |
 | Factories para dados          | Evite dados hardcoded e IDs mágicos                  |
 | Assertivas só em Then         | Given = contexto, When = ação, Then = verificação    |
+
+## Ver Também
+
+- [[references/gherkin-syntax|Gherkin Syntax]] — A linguagem que o Cucumber executa
+- [[references/gherkin-best-practices|Gherkin Best Practices]] — Boas práticas para step definitions
+- [[references/playwright-bdd|Playwright BDD]] — Alternativa integrada ao Playwright
+- [[references/bdd-specification-process|BDD Spec Process]] — Onde Cucumber se encaixa no pipeline
