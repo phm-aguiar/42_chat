@@ -2,7 +2,7 @@
 title: "Hot Cache"
 category: meta
 tags: [meta, cache]
-updated: "2026-06-16"
+updated: "2026-06-17"
 ---
 # Hot Cache
 
@@ -10,6 +10,7 @@ updated: "2026-06-16"
 
 ## Recent Activity
 
+- 2026-06-17 CAPTURE Brainstorm Feature 101: Assinatura de Participação definida e aprovada — spec em specs/features/101-assinatura-participacao/
 - 2026-06-16 INGEST React+Vite: 31 raw files → 9 páginas (Vite reference, Env API, Rolldown migration, React+Vite performance MoC + 5 category pages)
 - 2026-06-16 INGEST JWT + 42 API: 4 páginas (go-jwt, go-jwt-api-ref, 42-api-spec, 42-api-endpoints)
 - 2026-06-16 INGEST WebSocket: 5 páginas gorilla/websocket (core, server, client, hub, testing) + 7 templates
@@ -26,6 +27,7 @@ updated: "2026-06-16"
 
 ## Key Takeaways
 
+- **Feature 101 aprovada** — Assinatura de Participação (UserSignature): componente inline com stats + tiers + WebSocket real-time. Pipeline: spec aprovado → aguarda plan.md.
 - **Synthesis pages criadas:** SDD×Go e Thinking×Architecture — primeiras conexões cross-cluster do vault
 - **Taxonomia de tags** estabelecida em `_meta/taxonomy.md`: 15 domínios, 7 tipos, 5 regras
 - **Cross-linker** conectou 37 páginas órfãs em 5 clusters (brand, arch, thinking, templates, agents)

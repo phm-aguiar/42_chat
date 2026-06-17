@@ -18,6 +18,7 @@
 - `specs/features/004-sdd-tasks-dag/` — Tasks com DAG (dependências, paralelismo, isolamento) [spec](specs/features/004-sdd-tasks-dag/spec.md) [plan](specs/features/004-sdd-tasks-dag/plan.md) [tasks](specs/features/004-sdd-tasks-dag/tasks.md)
 - `specs/features/005-runtime-orchestrator/` — Runtime orchestrator (spawna subagentes em paralelo) [spec](specs/features/005-runtime-orchestrator/spec.md) [plan](specs/features/005-runtime-orchestrator/plan.md) [tasks](specs/features/005-runtime-orchestrator/tasks.md)
 - `specs/features/006-agent-dev/` — Agente implementador (persona fixa, skills plugáveis) [spec](specs/features/006-agent-dev/spec.md) [plan](specs/features/006-agent-dev/plan.md) [tasks](specs/features/006-agent-dev/tasks.md)
+- `specs/features/100-42chat-core/` — **Feature 100: 42 Chat Core** — Chat multiplayer com frontend React+Vite, backend Go, WebSocket, autenticação 42 API, matchmaking P2P, BDD (Gherkin + Playwright) ✅ implementado [spec](specs/features/100-42chat-core/spec.md) [plan](specs/features/100-42chat-core/plan.md) [tasks](specs/features/100-42chat-core/tasks.md)
 
 ## Agentes Hermes
 
@@ -94,6 +95,41 @@ Base de conhecimento de QA refinada a partir de documentações em `qafiles/`:
 - [Playwright BDD](wiki/references/playwright-bdd.md) — Integração Playwright + BDD
 - [BDD Specification Process](wiki/references/bdd-specification-process.md) — Fluxo Gherkin Expert
 - [TDD Methodology](wiki/references/tdd-methodology.md) — Ciclo Red-Green-Refactor-Commit
+
+## Referências Wiki (Feature 100 — 42 Chat Core)
+
+Referências técnicas destiladas no vault para a feature 100:
+
+### Arquitetura & Requisitos (42-chat)
+- [Engineering Requirements](wiki/references/42-chat-engineering-requirements.md) — Requisitos de engenharia
+- [Platform Architecture](wiki/references/42-chat-platform-architecture.md) — Arquitetura da plataforma
+- [Architecture Diagram](wiki/references/42-chat-architecture-diagram.md) — Diagrama de arquitetura
+- [Design System](wiki/references/42-chat-design-system.md) — Sistema de design
+- [Research Report](wiki/references/42-chat-research-report.md) — Relatório de pesquisa
+
+### Seções Técnicas (sec1–sec9)
+- [Sec1 — Fundamentação](wiki/references/42-chat-sec1-fundamentacao.md) — Fundamentação técnica
+- [Sec2 — Backend Concorrência](wiki/references/42-chat-sec2-backend-concorrencia.md) — Backend e concorrência
+- [Sec3 — Graceful Shutdown](wiki/references/42-chat-sec3-graceful-shutdown.md) — Graceful shutdown
+- [Sec4 — Infra Tuning](wiki/references/42-chat-sec4-infra-tuning.md) — Tuning de infraestrutura
+- [Sec5 — API 42 Rate Limits](wiki/references/42-chat-sec5-api-42-rate-limits.md) — Rate limits da API 42
+- [Sec6 — Campus Locations](wiki/references/42-chat-sec6-campus-locations.md) — Localizações dos campi
+- [Sec7 — Microfrontends](wiki/references/42-chat-sec7-microfrontends.md) — Arquitetura microfrontend
+- [Sec8 — Matchmaking P2P](wiki/references/42-chat-sec8-matchmaking-p2p.md) — Matchmaking P2P
+- [Sec9 — Observabilidade BDD](wiki/references/42-chat-sec9-observabilidade-bdd.md) — Observabilidade e BDD
+
+### Vite & Build
+- [Vite Reference](wiki/references/vite-reference.md) — Referência Vite
+- [Vite Environment API](wiki/references/vite-environment-api.md) — Environment API
+- [Vite Rolldown Migration](wiki/references/vite-rolldown-migration.md) — Migração para Rolldown
+
+### React + Vite
+- [React+Vite Development](wiki/references/react-vite-development.md) — Desenvolvimento
+- [React+Vite Performance](wiki/references/react-vite-performance.md) — Performance
+- [React+Vite Build Optimization](wiki/references/react-vite-build-optimization.md) — Otimização de build
+- [React+Vite Code Splitting](wiki/references/react-vite-code-splitting.md) — Code splitting
+- [React+Vite Asset Handling](wiki/references/react-vite-asset-handling.md) — Gestão de assets
+- [React+Vite Environment Config](wiki/references/react-vite-environment-config.md) — Configuração de ambiente
 
 ## Links
 

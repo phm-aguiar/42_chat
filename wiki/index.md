@@ -312,3 +312,8 @@ O vault referencia, mas não duplica. Consulte os arquivos diretamente:
 
 - `.github/memory/constitution.md` — Regras, portões de qualidade, anti-padrões
 - `.github/memory/tech.md` — Stack homologada (linguagens, frameworks, CI/CD)
+
+## Journal
+
+- [[journal/2026-06-14-sessao-qa-skills-42chat|2026-06-14 QA + Skills + Feature 100]] — Sessão de QA, 7 skills, feature 100, taxonomia
+- [[journal/2026-06-17-brainstorm-feature-101|2026-06-17 Brainstorm Feature 101]] — Assinatura de Participação definida e aprovada ( #sdd #42chat)

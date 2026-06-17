@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+/* ============================================
+   42 Chat Design System — Tema Brutalista
+   Cores exatas da wiki: references/42-chat-design-system
+   ============================================ */
+
+@theme {
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-lime: #D4ED31;
+  --color-cyan: #00E5FF;
+  --color-magenta: #FF007A;
+  --color-blue: #304FFE;
+
+  --font-sans: 'Poppins', 'Montserrat', 'Gotham', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --radius-none: 0;
+  --radius-DEFAULT: 0;
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+}
+
+/* Global resets — brutalista: zero border-radius, cantos secos */
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+}
+
+/* Base layer */
+@layer base {
+  body {
+    @apply bg-black text-white font-sans antialiased;
+  }
+
+  /* Dot grid background pattern */
+  .dot-grid {
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  /* Links com cor de acento */
+  a {
+    @apply text-cyan hover:text-lime transition-colors;
+  }
+
+  /* Scrollbar minimalista */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #111;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #333;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  /* Títulos em CAIXA ALTA com peso Black/Extra-Bold */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-extrabold uppercase tracking-wider;
+  }
+}
+
+/* Component layer — Shadcn-inspired com tema 42 */
+@layer components {
+  /* Botão primário */
+  .btn-42 {
+    @apply bg-white text-black font-bold uppercase tracking-wider px-6 py-3
+           transition-all duration-200 cursor-pointer
+           hover:bg-lime hover:text-black
+           focus:outline-none focus:ring-2 focus:ring-cyan;
+  }
+
+  /* Input brutalista */
+  .input-42 {
+    @apply bg-black text-white border-2 border-white px-4 py-3 w-full
+           placeholder-gray-500 font-sans
+           focus:outline-none focus:border-cyan
+           transition-colors;
+  }
+
+  /* Card */
+  .card-42 {
+    @apply bg-black border-2 border-white p-0;
+  }
+
+  /* Avatar placeholder com iniciais */
+  .avatar-42 {
+    @apply w-10 h-10 flex items-center justify-center
+           font-bold text-sm uppercase
+           border-2 border-lime
+           grayscale contrast-125;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 10px 10px;
+  }
+
+  /* Mensagem no chat */
+  .message-42 {
+    @apply border-l-4 border-lime pl-4 py-2 my-1;
+  }
+
+  /* Status bar */
+  .status-bar {
+    @apply bg-black border-b-2 border-white px-4 py-2
+           flex items-center justify-between
+           text-sm uppercase tracking-wider;
+  }
+}

@@ -9,6 +9,7 @@ updated: "2026-06-16"
 
 | Data | Ação | Artefatos |
 |---|---|---|
+| 2026-06-17 | **CAPTURE type=journal page="journal/2026-06-17-brainstorm-feature-101.md" title="Brainstorm Feature 101 — Assinatura de Participação"** | [[journal/2026-06-17-brainstorm-feature-101]] |
 | 2026-06-17 | **wiki-status --fix:** 4 tiers promovidos a core (wiki-query, go-error-handling, 42-chat-platform-architecture, 42-chat-engineering-requirements), 15 incoming links adicionados (brand cluster + templates + go-enum) | [[_insights]] |
 | 2026-06-16 | **wiki-lint --fix:** 10 lifecycles normalizados, 2 órfãos linkados, 12 refs Go adicionados ao index | [[skills/wiki-lint]] |
 | 2026-06-16 | **Ingest raw React+Vite:** 31 arquivos de _raw/ promovidos → 9 páginas (Vite reference + Environment API + Rolldown migration + React+Vite performance MoC + 5 category pages com 23 regras) | [[references/react-vite-performance]], [[references/vite-reference]], [[references/vite-environment-api]], [[references/vite-rolldown-migration]], [[references/react-vite-build-optimization]], [[references/react-vite-code-splitting]], [[references/react-vite-development]], [[references/react-vite-asset-handling]], [[references/react-vite-environment-config]] |
