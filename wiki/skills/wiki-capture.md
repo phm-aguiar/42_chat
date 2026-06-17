@@ -38,6 +38,7 @@ Sessão: brainstorm da feature 006 (agent-dev)
 ```
 
 ## Relacionado
-- [[wiki-ingest]] — Para fontes estruturadas (specs, docs)
-- [[wiki-query]] — Recupera sessões passadas
-- [[obsidian-flow|Fluxo Obsidian]] — Quando usar
+- [[skills/wiki-ingest|wiki-ingest]] — Para fontes estruturadas (specs, docs)
+- [[skills/wiki-query|wiki-query]] — Recupera sessões passadas
+- [[skills/wiki-llm-wiki|llm-wiki]] — Fundação teórica (raw/ layer, journal, provenance)
+- [[concepts/obsidian-flow|Fluxo Obsidian]] — Quando usar

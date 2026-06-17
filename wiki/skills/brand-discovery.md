@@ -157,3 +157,11 @@ the module file, flag "productive tensions" for the group alignment workshop.
 
 - [[skills/agent-run|agent-run]] — Runtime de agentes Hermes
 - [[skills/skill-forge|skill-forge]] — Criação de skills
+- [[references/10_purpose-why|Brand Purpose]]
+- [[references/20_positioning|Brand Positioning]]
+- [[references/30_audience-niche|Audience & Niche]]
+- [[references/40_personality-archetype|Personality & Archetype]]
+- [[references/50_voice-tone|Voice & Tone]]
+- [[references/60_narrative-story|Narrative & Story]]
+- [[references/70_founder-tension|Founder vs Org]]
+- [[references/90_SYNTHESIS|Brand Synthesis]]

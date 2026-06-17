@@ -1,10 +1,10 @@
 {
   "version": 1,
   "created": "2026-06-13",
-  "updated": "2026-06-16",
+  "updated": "2026-06-17",
   "stats": {
-    "total_sources_ingested": 116,
-    "total_pages": 136
+    "total_sources_ingested": 148,
+    "total_pages": 145
   },
   "sources": {
     "specs/features/001-start-repo/": {
@@ -1633,6 +1633,390 @@
       "project": "42_chat",
       "pages_created": [
         "references/42-api-endpoints.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/.hermes/skills/research/llm-wiki/SKILL.md": {
+      "ingested_at": "2026-06-17",
+      "size_bytes": 20129,
+      "modified_at": "2026-06-17",
+      "content_hash": "sha256:a37ae04745b04b8e9bbd8de37cdcbc2b2187ccafb68418e436a46ebb1e491ee5",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [],
+      "pages_updated": [
+        "skills/wiki-llm-wiki.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/vite.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 2087,
+      "modified_at": "2026-06-17T01:15:57Z",
+      "content_hash": "sha256:045b4e935f4153fcb7eb07263cba9a49a133e789e29766fbf228d35d5a52c472",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/vite-reference.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/react.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 4546,
+      "modified_at": "2026-06-17T01:18:32Z",
+      "content_hash": "sha256:50a376940273d03e789fd9b66475008a8e03b896b6cb3d4ff8dee9f533b1edcf",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-performance.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/core-config.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 2831,
+      "modified_at": "2026-06-17T01:12:44Z",
+      "content_hash": "sha256:50628fcb3c0be429eb1b0eaba17100f6f2b523024cc3d16bfb49171865daed15",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/vite-reference.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/core-features.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 3930,
+      "modified_at": "2026-06-17T01:13:16Z",
+      "content_hash": "sha256:ba0c8d307e39c4b7316f76344b3a6f24dfae54588ffdd8b4980d998bf6399aa8",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/vite-reference.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/core-plugin-api.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 3841,
+      "modified_at": "2026-06-17T01:14:10Z",
+      "content_hash": "sha256:e972510bef11fa75db3eec86ac853ac23a0806cd3c924978d4ef89f9ecbd6fa8",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/vite-reference.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/build-and-ssr.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 3397,
+      "modified_at": "2026-06-17T01:12:13Z",
+      "content_hash": "sha256:442f956860e2294ae762ef945c84341a4ae50b9ed7a53b8894ff05c6e1d4f851",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/vite-reference.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/environment-api.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 2395,
+      "modified_at": "2026-06-17T01:14:51Z",
+      "content_hash": "sha256:5dee130a826c9870d487d8d8f14a91ec747f8716d9c01607713c2d0afe4d37f8",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/vite-environment-api.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/rolldown-migration.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 2790,
+      "modified_at": "2026-06-17T01:15:24Z",
+      "content_hash": "sha256:92268c8e31d992cec6aa3b46c8c6ad4260b84e4a42edda6a8745e39250dc6af6",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/vite-rolldown-migration.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/build-manual-chunks.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 2955,
+      "modified_at": "2026-06-17T01:17:52Z",
+      "content_hash": "sha256:1c9b0aba530ca99d0d9663a59da891cb68195395dfff8e71494d23b980230de8",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-build-optimization.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/build-minification.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 4213,
+      "modified_at": "2026-06-17T01:17:52Z",
+      "content_hash": "sha256:eaf3898d10d955e75761a8086edf1efa696544e12c28045a3463ad5b40c64017",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-build-optimization.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/build-target-modern.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 2550,
+      "modified_at": "2026-06-17T01:17:53Z",
+      "content_hash": "sha256:3c3c6120868350c8589c3bd9e557961ab32a877524d2386f33821e884d0a2ed0",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-build-optimization.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/build-sourcemaps.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 3386,
+      "modified_at": "2026-06-17T01:17:52Z",
+      "content_hash": "sha256:9189e6f2433679894e278ff8278b71ef6ce2d6035d0078689c86c3663f09b13c",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-build-optimization.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/build-tree-shaking.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 3746,
+      "modified_at": "2026-06-17T01:17:53Z",
+      "content_hash": "sha256:1c9cd28bf51401759267a13e03746539243abdb4a7d791df1c07b4faed32d80c",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-build-optimization.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/build-compression.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 4200,
+      "modified_at": "2026-06-17T01:17:52Z",
+      "content_hash": "sha256:1667b7b64165bc6559b73f2057be66da4609d27c75795dd435fd43b20b703c4d",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-build-optimization.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/build-asset-hashing.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 4170,
+      "modified_at": "2026-06-17T01:17:52Z",
+      "content_hash": "sha256:f1c058f936a3f8c1f66dc98244d2d8a051c2aa32b9fce5bd9bb349975aa1472d",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-build-optimization.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/split-route-lazy.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 3379,
+      "modified_at": "2026-06-17T01:17:53Z",
+      "content_hash": "sha256:89fb93f59baf42b49a19d718c2f89a031271edc66059791026098d01b8ff162b",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-code-splitting.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/split-suspense-boundaries.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 3625,
+      "modified_at": "2026-06-17T01:17:53Z",
+      "content_hash": "sha256:c64607ea364ed36e69a979e2b32e765cede32de7bb9093c3270b650960f8bc97",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-code-splitting.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/split-dynamic-imports.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 4370,
+      "modified_at": "2026-06-17T01:17:53Z",
+      "content_hash": "sha256:0f8957b916170ecc2e311478f0c9985989e7e0df6c7e14ec8c2844ffafe85ce7",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-code-splitting.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/split-component-lazy.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 5934,
+      "modified_at": "2026-06-17T01:17:53Z",
+      "content_hash": "sha256:74890a7b2541dd3bdaf9576ce30f3165888bddbdbcd14ea8ff105e7d7da4cdd6",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-code-splitting.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/split-prefetch-hints.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 5926,
+      "modified_at": "2026-06-17T01:17:53Z",
+      "content_hash": "sha256:08e13f65551d04f498ed5064fb3c66b2584d0dadd5b3135265d8f8f087b8e86f",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-code-splitting.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/dev-dependency-prebundling.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 2398,
+      "modified_at": "2026-06-17T01:17:53Z",
+      "content_hash": "sha256:706c367e2ad0073188a40bdf21b09b38f19d99a931d4095c44a6fd6dbcd7f0a0",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-development.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/dev-fast-refresh.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 4763,
+      "modified_at": "2026-06-17T01:17:53Z",
+      "content_hash": "sha256:09b007b596c7bc10b0889e57531fd8168a3292e16161485c9da01119e686e4e8",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-development.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/dev-hmr-config.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 4585,
+      "modified_at": "2026-06-17T01:17:53Z",
+      "content_hash": "sha256:3f4d70768b184733098f130137af6a05aea282407104aab08aefa39bf681c7e7",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-development.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/asset-image-optimization.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 4206,
+      "modified_at": "2026-06-17T01:17:52Z",
+      "content_hash": "sha256:ceb4933fbc973bc30596c76c73d2e968cb2e94a09976a4c8130df2a36a30d9bc",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-asset-handling.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/asset-svg-components.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 4197,
+      "modified_at": "2026-06-17T01:17:52Z",
+      "content_hash": "sha256:5fab68f4f6a0c2ed9f591368c2e4786ce4dfeeb93847a18eca2932aed7c8c008",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-asset-handling.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/asset-fonts.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 3369,
+      "modified_at": "2026-06-17T01:17:52Z",
+      "content_hash": "sha256:6108aab926ba1f39487773ec881688a3e21808265c4174c2e5e033447826158c",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-asset-handling.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/asset-public-dir.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 3567,
+      "modified_at": "2026-06-17T01:17:52Z",
+      "content_hash": "sha256:f809bf7d6a4e7a7833c91d9afb90e3c430946db96ea11d14480e89e4be3c70b8",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-asset-handling.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/env-vite-prefix.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 3128,
+      "modified_at": "2026-06-17T01:17:53Z",
+      "content_hash": "sha256:fff39a7376e5a7fa77fdea307b4530437bca3cc780c56141806a986cdd5623bf",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-environment-config.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/env-modes.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 3308,
+      "modified_at": "2026-06-17T01:17:53Z",
+      "content_hash": "sha256:a40bb98b43534e4073cdf454eed6627214322253934e61f25bb87e6a8c35db9f",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-environment-config.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/env-sensitive-data.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 3503,
+      "modified_at": "2026-06-17T01:17:53Z",
+      "content_hash": "sha256:e6e72aed8a04f4c3e5e0744bbcdca76b47dfa784a2cccf2a42ba9c3a5848d3a0",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-environment-config.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/bundle-visualizer.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 3884,
+      "modified_at": "2026-06-17T01:17:53Z",
+      "content_hash": "sha256:6a38038d131af68df099b4654e0779cb527b04437f7b2d8e6530218a03f7ad04",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-environment-config.md"
       ],
       "pages_updated": []
     }

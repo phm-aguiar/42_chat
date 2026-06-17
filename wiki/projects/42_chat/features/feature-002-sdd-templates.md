@@ -7,7 +7,7 @@ created: "2026-06-13"
 updated: "2026-06-13"
 sources:
   - repo:specs/features/002-sdd-templates/
-lifecycle: in-progress
+lifecycle: draft
 lifecycle_changed: "2026-06-13"
 base_confidence: 0.85
 provenance:

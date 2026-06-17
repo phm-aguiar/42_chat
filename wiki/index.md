@@ -3,13 +3,13 @@ title: "42_chat — Knowledge Base"
 category: index
 tags: [meta]
 created: "2026-06-13"
-updated: "2026-06-16"
+updated: "2026-06-17"
 ---
 	
 # 42_chat Knowledge Base
 
 > Vault do framework SDD autônomo. Agentes: `onboard` + `agent-orchestrator` + `agent-dev`.
-> Estrutura segue [[concepts/vault-taxonomy|Vault Taxonomy]].
+> Estrutura segue [[concepts/vault-taxonomy|Vault Taxonomy]]. 185 páginas | 7 core | 148 fontes.
 
 ## Estrutura
 
@@ -177,6 +177,16 @@ Guia de boas práticas Go destilado dos style guides oficiais (Google, Uber, Eff
   - [[references/go-repository|Go Repository]] — Padrão Repository
   - [[references/go-service|Go Service]] — Camada de serviço
   - [[references/go-chi-router|Go Chi Router]] — Roteamento HTTP
+  - [[references/go-chi-handler|Go Chi Handler]] — Handlers HTTP idiomáticos
+  - [[references/go-cache|Go Cache]] — Estratégias de caching
+  - [[references/go-enum|Go Enum]] — Padrão de enumeradores type-safe
+  - [[references/go-error|Go Error]] — Tratamento de erros idiomático
+  - [[references/go-gorm-model|Go GORM Model]] — Models com GORM
+  - [[references/go-integration-tests|Go Integration Tests]] — Testes de integração
+  - [[references/go-mapper|Go Mapper]] — Mapeamento entre camadas
+  - [[references/go-unit-tests|Go Unit Tests]] — Padrões de teste unitário
+  - [[references/go-usecase|Go Usecase]] — Camada de casos de uso
+  - [[references/go-validator|Go Validator]] — Validação de dados
 
 ### WebSocket (gorilla/websocket)
 
@@ -190,6 +200,21 @@ Guia de boas práticas Go destilado dos style guides oficiais (Google, Uber, Eff
 
 - [[references/go-jwt|Go JWT]] — Biblioteca golang-jwt v5: overview, setup, exemplos, migration v4→v5 ( #go #jwt #auth)
 - [[references/go-jwt-api-reference|Go JWT API Reference]] — API completa: Token, Claims, Parser, Validator, ParserOptions, signing methods, request sub-package
+
+### Vite (Build Tool)
+
+- [[references/vite-reference|Vite Reference]] — Config, features, Plugin API, build/SSR, JS API consolidado ( #vite #bundler)
+- [[references/vite-environment-api|Vite Environment API]] — Multi-environment runtimes (Vite 6+) ( #vite)
+- [[references/vite-rolldown-migration|Vite Rolldown Migration]] — Migração Vite 7 → 8: Rolldown + Oxc ( #vite #rolldown)
+
+### React + Vite Performance
+
+- [[references/react-vite-performance|React + Vite Performance MoC]] — Hub: 23 regras em 6 categorias ( #react #vite #performance)
+  - [[references/react-vite-build-optimization|Build Optimization]] — 7 regras CRITICAL: chunks, minification, target, sourcemaps, tree shaking, compression, hashing
+  - [[references/react-vite-code-splitting|Code Splitting]] — 5 regras CRITICAL: route lazy, Suspense, dynamic imports, component lazy, prefetch
+  - [[references/react-vite-development|Development]] — 3 regras HIGH: pre-bundling, Fast Refresh, HMR config
+  - [[references/react-vite-asset-handling|Asset Handling]] — 4 regras HIGH: imagens, SVG components, fontes, public dir
+  - [[references/react-vite-environment-config|Environment & Bundle]] — 4 regras MEDIUM: VITE_ prefix, modes, secrets, bundle visualizer
 
 ## Referências de Arquitetura e Processos
 

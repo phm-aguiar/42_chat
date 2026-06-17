@@ -46,11 +46,12 @@
 46|Na feature 006, o `wiki-lint` encontrou 18 broken links (renomeações de
 47|`runtime-orchestrator` → `agent-orchestrator`). Todos corrigidos em 1 commit.
 48|
-49|## Relacionado
-50|
-51|- [[skills/wiki-cross-linker|cross-linker]] — Adiciona wikilinks faltantes
-52|- [[skills/wiki-dedup|wiki-dedup]] — Resolve páginas duplicadas
-53|- [[concepts/obsidian-flow|Fluxo Obsidian]] — Pipeline de manutenção do vault
+## Relacionado
+
+- [[skills/wiki-cross-linker|cross-linker]] — Adiciona wikilinks faltantes
+- [[skills/wiki-dedup|wiki-dedup]] — Resolve páginas duplicadas
+- [[skills/wiki-llm-wiki|llm-wiki]] — Fundação teórica (checks de lint, page thresholds, pitfalls)
+- [[concepts/obsidian-flow|Fluxo Obsidian]] — Pipeline de manutenção do vault
 54|
 ## Buscando conhecimento compilado
 Use [[skills/wiki-query|wiki-query]] para buscar paginas com problemas recorrentes, padroes de broken links, ou auditorias anteriores antes de agir. O vault e a memoria de longo prazo do framework — consultar evita retrabalho e inconsistencias.

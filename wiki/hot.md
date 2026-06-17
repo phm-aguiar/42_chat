@@ -10,6 +10,7 @@ updated: "2026-06-16"
 
 ## Recent Activity
 
+- 2026-06-16 INGEST React+Vite: 31 raw files → 9 páginas (Vite reference, Env API, Rolldown migration, React+Vite performance MoC + 5 category pages)
 - 2026-06-16 INGEST JWT + 42 API: 4 páginas (go-jwt, go-jwt-api-ref, 42-api-spec, 42-api-endpoints)
 - 2026-06-16 INGEST WebSocket: 5 páginas gorilla/websocket (core, server, client, hub, testing) + 7 templates
 - 2026-06-16 VALIDAÇÕES: dedup + lint + cross-linker (37 pages) + tag-taxonomy + synthesize (2 pages)

@@ -5,6 +5,7 @@ tags: [wiki, skill, busca, query, retrieval]
 sources: [.hermes/skills/wiki/query/SKILL.md]
 summary: "Busca híbrida (lexical + vetorial) no vault Obsidian. Modo index-only (barato, lê só frontmatter) ou full-read (profundo, lê corpos). Usado pelo agente principal para recuperar conhecimento compilado."
 lifecycle: draft
+tier: core
 created: "2026-06-13"
 updated: "2026-06-13"
 ---
@@ -42,6 +43,7 @@ Query: "Como o agent-dev lida com spec ambígua?"
 ```
 
 ## Relacionado
-- [[wiki-ingest]] — Alimenta o que a query busca
-- [[wiki-model|Wiki Model]] — Compile, don't retrieve
-- [[obsidian-flow|Fluxo Obsidian]] — Quando usar
+- [[skills/wiki-ingest|wiki-ingest]] — Alimenta o que a query busca
+- [[skills/wiki-llm-wiki|llm-wiki]] — Fundação teórica (query operation, compile-dont-retrieve)
+- [[concepts/wiki-model|Wiki Model]] — Compile, don't retrieve
+- [[concepts/obsidian-flow|Fluxo Obsidian]] — Quando usar

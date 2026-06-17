@@ -194,3 +194,6 @@ if gotErr := err != nil; gotErr != tt.wantErr {
 - [[go-interfaces|Interfaces]]
 - [[go-linting|Linting]]
 - [[go-naming|Naming]]
+
+## See Also
+- [[references/go-unit-tests|Go Unit Tests]] — Unit testing patterns and practices

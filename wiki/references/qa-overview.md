@@ -9,7 +9,7 @@ tags:
   - overview
   - sdd
 base_confidence: 0.90
-lifecycle: evolving
+lifecycle: draft
 tier: overview
 created: "2026-06-13"
 updated: "2026-06-14"

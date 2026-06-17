@@ -146,3 +146,4 @@ As regras são derivadas destes documentos (consulte os originais para detalhes 
 - [[go-style-core]] — Princípios centrais
 - [[go-naming]] — Convenções de nomes
 - [[go-error-handling]] — Tratamento de erros
+- [[references/go-enum|Go Enum]]

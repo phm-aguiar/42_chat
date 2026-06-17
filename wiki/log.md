@@ -9,6 +9,9 @@ updated: "2026-06-16"
 
 | Data | Ação | Artefatos |
 |---|---|---|
+| 2026-06-17 | **wiki-status --fix:** 4 tiers promovidos a core (wiki-query, go-error-handling, 42-chat-platform-architecture, 42-chat-engineering-requirements), 15 incoming links adicionados (brand cluster + templates + go-enum) | [[_insights]] |
+| 2026-06-16 | **wiki-lint --fix:** 10 lifecycles normalizados, 2 órfãos linkados, 12 refs Go adicionados ao index | [[skills/wiki-lint]] |
+| 2026-06-16 | **Ingest raw React+Vite:** 31 arquivos de _raw/ promovidos → 9 páginas (Vite reference + Environment API + Rolldown migration + React+Vite performance MoC + 5 category pages com 23 regras) | [[references/react-vite-performance]], [[references/vite-reference]], [[references/vite-environment-api]], [[references/vite-rolldown-migration]], [[references/react-vite-build-optimization]], [[references/react-vite-code-splitting]], [[references/react-vite-development]], [[references/react-vite-asset-handling]], [[references/react-vite-environment-config]] |
 | 2026-06-16 | **Ingest raw JWT + 42 API:** 6 arquivos de _raw/ promovidos → 4 páginas (go-jwt MoC + API ref, 42 API spec + endpoints catalog) | [[references/go-jwt]], [[references/go-jwt-api-reference]], [[references/42-api-specification]], [[references/42-api-endpoints]] |
 | 2026-06-16 | **Resolução wiki-status:** manifest corrigido (109→171), 3 tiers promovidos a core, 27 tags normalizados (single-quote→unquoted), ai-brag-document linkado, synthesis Thinking×Go criada | [[synthesis/thinking-go]] |
 | 2026-06-16 | **Ingest raw WebSocket:** 5 SKILL.md (core, server, client, hub, testing) + 7 supporting files → 5 páginas de referência gorilla/websocket | [[references/go-websocket-core]], [[references/go-websocket-hub]] |

@@ -7,7 +7,7 @@ created: "2026-06-13"
 updated: "2026-06-13"
 sources:
   - repo:specs/features/007-agent-qa/spec.md
-lifecycle: implemented
+lifecycle: verified
 ---
 
 # Feature 007: Agent QA

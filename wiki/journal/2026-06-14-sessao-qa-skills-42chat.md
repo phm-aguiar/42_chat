@@ -77,3 +77,5 @@ lifecycle_changed: "2026-06-14"
 - [[skills/wiki-lint|wiki-lint]] — Auditoria de saúde do vault
 - [[skills/cucumber-step-definitions|cucumber-step-definitions]] — Step definitions para Cucumber/Godog
 - [[skills/bdd-spec-process|bdd-spec-process]] — Processo de especificação BDD
+
+> Related: [[journal/digest-2026-06-15|Digest 2026-06-15]]

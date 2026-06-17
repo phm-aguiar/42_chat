@@ -20,9 +20,10 @@
 20|- Primeira vez usando o subsistema wiki
 21|- Recriar vault do zero
 22|
-23|## Relacionado
-24|- [[skills/wiki-ingest]] — Primeiro ingest apos setup
-25|- [[concepts/obsidian-flow]] — Fluxo completo
+## Relacionado
+- [[skills/wiki-ingest]] — Primeiro ingest apos setup
+- [[skills/wiki-llm-wiki|llm-wiki]] — Fundação teórica (SCHEMA.md, 3 camadas, convenções)
+- [[concepts/obsidian-flow]] — Fluxo completo
 26|
 ## Buscando conhecimento compilado
 Use [[skills/wiki-query|wiki-query]] para buscar vaults existentes, configuracoes de referencia, ou padroes de inicializacao antes de agir. O vault e a memoria de longo prazo do framework — consultar evita retrabalho e inconsistencias.

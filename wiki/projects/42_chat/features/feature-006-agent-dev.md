@@ -7,7 +7,7 @@ created: "2026-06-13"
 updated: "2026-06-13"
 sources:
   - repo:specs/features/006-agent-dev/spec.md
-lifecycle: implemented
+lifecycle: verified
 ---
 
 # Feature 006: Agent Dev

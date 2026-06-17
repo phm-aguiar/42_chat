@@ -87,3 +87,9 @@ updated: "2026-06-16T00:00:00Z"
 - Provide descriptive alt text for images.
 - Ensure link text makes sense out of context.
 - Use semantic HTML elements correctly (headings, lists, tables).
+- [[references/pr-template|PR Template]]
+- [[references/prd-template|PRD Template]]
+- [[references/task-template|Task Template]]
+- [[references/tasks-template|Tasks Template]]
+- [[references/code-review-template|Code Review Template]]
+- [[references/implementation-notes-template|Implementation Notes Template]]

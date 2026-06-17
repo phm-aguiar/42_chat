@@ -36,6 +36,7 @@ Output: wiki/projects/42_chat/features/feature-006-agent-dev.md
 ```
 
 ## Relacionado
-- [[wiki-lint]] — Audita o que foi ingerido
-- [[wiki-query]] — Busca o que foi ingerido
+- [[skills/wiki-lint|wiki-lint]] — Audita o que foi ingerido
+- [[skills/wiki-query|wiki-query]] — Busca o que foi ingerido
+- [[skills/wiki-llm-wiki|llm-wiki]] — Fundação teórica (arquitetura 3 camadas, schema, pitfalls)
 - [[obsidian-flow|Fluxo Obsidian]] — Onde se encaixa
