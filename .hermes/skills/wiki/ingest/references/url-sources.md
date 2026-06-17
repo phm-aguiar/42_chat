@@ -6,7 +6,7 @@ URL with "add this" / "save this to my wiki".
 
 Where the page lands depends on whether you can detect a current project — if yes, it goes straight
 into that project's folder; if not, it goes to `misc/` and is promoted later based on connection
-affinity. Config resolution, the content trust boundary, and the QMD refresh step are the same as the
+affinity. Config resolution and the content trust boundary are the same as the
 main `wiki-ingest/SKILL.md` — follow those; this file only covers the URL-specific mechanics.
 
 ## Step U0: Detect Current Project
@@ -288,4 +288,3 @@ Misc mode:
 - [ ] In misc mode: `affinity` and `promotion_status` fields present
 - [ ] `.manifest.json`, `index.md`, and `log.md` updated
 - [ ] Stub pages reported to user if fetch failed
-- [ ] QMD refresh per the main SKILL.md (skip if `QMD_WIKI_COLLECTION` unset)

@@ -2,7 +2,7 @@
 name: wiki-ingest
 description: >
   Ingest any source into the Obsidian wiki by distilling its knowledge into interconnected wiki pages. Handles structured documents (PDFs, markdown, articles, papers, notes, folders), raw/unstructured text (chat exports, conversation logs, Slack/Discord threads, meeting transcripts, CSV/JSON data, journal entries, browser bookmarks, email archives, text dumps), AND web URLs. Use whenever the user wants to add new sources to their wiki: "add this to the wiki", "process these docs", "ingest this folder", "ingest this data", "process this export/logs", "import my chat history from X", "/ingest-url <url>", "add this URL", "save this page", or pastes a URL and says "add this" / "save this to my wiki". Also triggers when the user drops a file, or for raw mode: "process my drafts", "promote my raw pages", or any reference to the _raw/ staging directory. This is the general catch-all ingest skill for any document, text, or URL source not covered by a more specific ingest skill (claude-history-ingest, etc.).
-version: 1.0.0
+version: 1.1.0
 author: phm-aguiar
 license: MIT
 platforms: [linux, macos, windows]
@@ -42,7 +42,7 @@ This applies to all ingest modes and all source formats.
 
 ## Ingest Modes
 
-This skill supports three modes. Ask the user or infer from context:
+This skill supports four modes. Ask the user or infer from context:
 
 ### Append Mode (default)
 Only ingest sources that are **new or modified** since last ingest. Check the manifest using both timestamp **and content hash**:
@@ -78,6 +78,31 @@ In raw mode, each file in `OBSIDIAN_VAULT_PATH/_raw/` (or `OBSIDIAN_RAW_DIR`) is
 
 **Deletion safety:** Only delete the specific file that was just promoted. Before deleting, verify the resolved path is inside `$OBSIDIAN_VAULT_PATH/_raw/` — never delete files outside this directory. Never use wildcards or recursive deletion (`rm -rf`, `rm *`). Delete one file at a time by its exact path.
 
+### Summary Mode
+
+For sources too large to fully distill (>500KB or >10,000 lines). Instead of creating detailed concept pages, produce a **single summary page** that captures the high-level content. The summary page is a map, not a distillation — it tells the user what's inside the source so they can decide where to focus later.
+
+**When to use:**
+- File exceeds 500KB or 10,000 lines (auto-detect — check with `stat --format=%s` and `wc -l`)
+- User explicitly asks for a summary: "just summarize this", "give me the overview"
+- Source is a book-length PDF, multi-GB log dump, or enormous JSON export
+
+**What the summary page contains:**
+- **Metadata:** `mode: summary` in frontmatter + `summarized: true` + original file size/line count
+- **Structure overview:** major sections/chapters/topics with brief (1–3 sentence) descriptions of each
+- **Key claims/findings:** the 5–10 most notable claims, each tagged with `^[inferred]`
+- **Notable entities:** people, tools, projects mentioned — with counts so the user sees density
+- **Skip report:** what was NOT processed (e.g., "Skipped 15,000 lines of raw logs in appendices")
+- **Next steps:** suggestions for deeper ingest of specific sections — e.g., "To process Chapter 3 in detail, run `wiki-ingest` on pages 45–67"
+
+**Summary page placement:**
+- Goes to the same category as a normal ingest would
+- Filename: `<slug>-summary.md`
+- Links prominently to the original source
+- Does NOT count toward the 10–15 page target (summary mode always produces exactly 1 page)
+
+**When summary mode is triggered automatically** (file >500KB / >10K lines), tell the user: "This source is large (X KB, Y lines). I'll produce a summary page first. You can then ask me to deep-ingest specific sections."
+
 ## The Ingest Process
 
 ### Step 1: Read the Source
@@ -111,7 +136,7 @@ Common chat export shapes:
 
 **Distill substance, not dialogue.** A 50-message debugging session might yield one `skills/` page about the fix; a long brainstorm might yield three `concepts/` pages. Skip greetings, pleasantries, meta-conversation, repetitive back-and-forth, and raw code dumps (unless they show a reusable pattern). Cluster extracted knowledge by **topic**, not by source file or conversation — a long thread or twenty screenshots of the same bug should produce pages organized by subject, not one page per message. Conversation/log data is high-inference: be liberal with `^[inferred]` for synthesized patterns and `^[ambiguous]` when speakers contradict each other.
 
-**Large files:** read in chunks with offset/limit — don't load a 10 MB JSON at once. **Encoding issues:** if text is garbled, mention it to the user and move on. **Binary files:** skip them (except images, which are first-class via the Read tool).
+**Large files:** see *Large File Handling* in Step 1 for the full chunking and summary protocol. **Encoding issues:** if text is garbled, mention it to the user and move on. **Binary files:** skip them (except images, which are first-class via the Read tool).
 
 ### Web URL sources
 
@@ -145,63 +170,49 @@ Research papers (arXiv/conference PDFs) carry their substance in figures, equati
 
 See the *Paper Extraction Frame* in `references/ingest-prompts.md` for the reading checklist.
 
-### Step 1b: QMD Source Discovery (optional — requires `QMD_PAPERS_COLLECTION` in `.env`)
+### Large File Handling
 
-**GUARD: If `$QMD_PAPERS_COLLECTION` is empty or unset, skip this entire step and proceed to Step 2.**
+When a source exceeds ~500KB or ~10,000 lines, automatic chunking is required before distillation can proceed safely. Large files cannot be loaded in one pass without risking context overflow or token exhaustion.
 
-> **No QMD?** Skip this step entirely. Use `Grep` in Step 4 to check for existing pages on the same topic before creating new ones. See `.env.example` for QMD setup instructions.
-
-When `QMD_PAPERS_COLLECTION` is set:
-
-Before extracting knowledge from a document, check whether related papers are already indexed that could enrich the page you're about to write:
-
-Choose the QMD transport from `$QMD_TRANSPORT`:
-
-- `mcp` (default): use the QMD MCP tool configured in the agent.
-- `cli`: run the local qmd CLI. Use `$QMD_CLI` if set; otherwise use `qmd`.
-
-If the selected transport is unavailable (no MCP tool, `qmd` not on PATH, or the command errors), skip QMD and continue with Step 2.
-
-For MCP transport:
-
-```
-mcp__qmd__query:
-  collection: <QMD_PAPERS_COLLECTION>   # e.g. "papers"
-  intent: <what this document is about>
-  searches:
-    - type: vec    # semantic — finds papers on the same topic even with different vocabulary
-      query: <topic or thesis of the source being ingested>
-    - type: lex    # keyword — finds papers citing the same methods, tools, or authors
-      query: <key terms, author names, method names from the source>
+**Detection (before reading):**
+```bash
+stat --format=%s -- "<source>"    # size in bytes
+wc -l < "<source>"                # line count
 ```
 
-For CLI transport, pick the command from `$QMD_CLI_SEARCH_MODE`:
+**Decision matrix:**
 
-- `quality` (default): best relevance; slower on CPU.
-  ```bash
-  ${QMD_CLI:-qmd} query $'vec: <topic or thesis of the source>\nlex: <key terms, author names, method names>' -c "$QMD_PAPERS_COLLECTION" -n 8 --files
-  ```
-- `balanced`: hybrid search without LLM reranking; use when `quality` is too slow.
-  ```bash
-  ${QMD_CLI:-qmd} query $'vec: <topic or thesis of the source>\nlex: <key terms, author names, method names>' -c "$QMD_PAPERS_COLLECTION" -n 8 --no-rerank --files
-  ```
-- `fast`: semantic-only source discovery.
-  ```bash
-  ${QMD_CLI:-qmd} vsearch "<topic or thesis of the source>" -c "$QMD_PAPERS_COLLECTION" -n 8 --files
-  ```
+| Condition | Action |
+|---|---|
+| < 500KB AND < 10K lines | Read normally, no chunking needed |
+| 500KB–2MB OR 10K–50K lines | Chunked distillation (see below) |
+| > 2MB OR > 50K lines | Auto-switch to **Summary Mode** (see Ingest Modes) |
 
-Use `${QMD_CLI:-qmd} get "#docid"` to retrieve a ranked source by docid when CLI output provides one.
+**Chunked distillation protocol (500KB–2MB / 10K–50K lines):**
 
-Use the returned snippets to:
-1. **Surface related papers** you may not have thought to link — add them as cross-references in the wiki page
-2. **Identify recurring themes** across the corpus — these deserve their own concept pages
-3. **Find contradictions** between this source and indexed papers — flag with `^[ambiguous]`
-4. **Avoid duplicate pages** — if the corpus already covers this concept heavily, merge rather than create
+1. **Slice the source into chunks** of ~2,000–5,000 lines each using offset/limit reads. For structured formats (JSON, CSV), prefer parsing over brute-force slicing — read the schema and first N rows to understand the shape, then sample strategically.
+2. **Process each chunk independently** through Step 2 (Extract Knowledge). Track concepts per chunk so you can see which ideas span multiple chunks.
+3. **Merge across chunks** before Step 4 (Plan Updates):
+   - Concepts that appear in 3+ chunks → likely core, promote to their own page
+   - Concepts that appear in only 1 chunk → contextual, inline on a broader page
+   - Contradictions between chunks → flag with `^[ambiguous]`
+4. **Write pages once** after merging — do not write partial pages per chunk. The merge step is where chunked distillation becomes a coherent ingest.
 
-If the QMD results show that 3+ papers touch the same concept, that concept almost certainly warrants a global `concepts/` page.
+**Chunk merging strategy:**
+- Keep a running list of extracted concepts with chunk origin markers: `concept_name: [chunk1, chunk3]`
+- After all chunks are processed, sort by chunk frequency — multi-chunk concepts are the backbone of the ingest
+- Single-chunk concepts go into "Also mentioned" sections on relevant pages
 
-**Skip this step** if `QMD_PAPERS_COLLECTION` is not set.
+**For structured data (JSON, CSV, TSV):**
+- Do NOT chunk raw — parse the structure first
+- Extract the schema (column names, nested keys)
+- Sample N rows distributed across the file (head, middle, tail)
+- Distill from the sample + schema, not from a raw slice
 
+**Pitfalls:**
+- Don't lose cross-chunk context — if chunk 3 references a concept defined in chunk 1, you need to catch that. Re-scan chunk 1 if a later chunk mentions something unfamiliar.
+- Don't create duplicate pages — the merge step exists to prevent this
+- Don't chunk images or binary files — skip them (except images, handled by the multimodal branch)
 
 ### Step 2: Extract Knowledge
 
@@ -230,7 +241,15 @@ If the source is not project-specific, put everything in global categories.
 
 ### Step 4: Plan Updates
 
-Before writing anything, plan which pages to update or create. Aim for 10-15 pages per ingest. For each:
+Before writing anything, plan which pages to update or create. Target page count depends on mode:
+
+| Mode | Page target |
+|---|---|
+| Normal (append/full/raw) | 10–15 pages |
+| Chunked distillation | 5–15 pages (varies with source density) |
+| Summary | Exactly 1 page (the summary page) |
+
+For each:
 - Does this page already exist? (Check `index.md` and use Glob to search `OBSIDIAN_VAULT_PATH`)
 - If it exists, what new information does this source add?
 - If it's new, which category does it belong in?
@@ -361,7 +380,7 @@ If the manifest doesn't exist yet, create it with `version: 1`.
 
 **`log.md`** — Append an entry:
 ```
-- [TIMESTAMP] INGEST source="path/to/source" pages_updated=N pages_created=M mode=append|full
+- [TIMESTAMP] INGEST source="path/to/source" pages_updated=N pages_created=M mode=append|full|raw|summary
 ```
 
 **`hot.md`** — Read `$OBSIDIAN_VAULT_PATH/hot.md` (create from template below if missing). Rewrite the **Recent Activity** section to reflect what you just ingested — keep it to the last 3 operations max. Update **Key Takeaways** and **Active Threads** if the content materially shifted them. Update the `updated` timestamp.
@@ -380,44 +399,6 @@ updated: TIMESTAMP
 ## Flagged Contradictions
 ```
 
-### Step 8: Refresh QMD Wiki Index (optional — requires `QMD_WIKI_COLLECTION`)
-
-**GUARD: If `$QMD_WIKI_COLLECTION` is empty or unset, skip this step.** The markdown vault is still the source of truth; QMD is a search index.
-
-Run this step only after pages and special files have been written. If the source was skipped because manifest hash matched, do not refresh QMD.
-
-This refresh currently requires the local QMD CLI. Use `$QMD_CLI` if set; otherwise use `qmd`. If the CLI is unavailable or returns an error, do not roll back the wiki ingest; report that the wiki was updated but QMD refresh was skipped or failed.
-
-For CLI refresh:
-
-```bash
-${QMD_CLI:-qmd} update
-```
-
-If the output says new hashes need vectors, or if pages were created/updated and embeddings may be stale, run:
-
-```bash
-${QMD_CLI:-qmd} embed
-```
-
-Verify at least one created or materially updated page is visible in the wiki collection:
-
-```bash
-${QMD_CLI:-qmd} get "qmd://$QMD_WIKI_COLLECTION/projects/<project>/<category>/<page>.md" -l 5
-```
-
-If the exact `qmd://` path is uncertain, use:
-
-```bash
-${QMD_CLI:-qmd} ls "$QMD_WIKI_COLLECTION" | grep "<page-slug>"
-```
-
-Record QMD refresh in the final report as one of:
-- `QMD refreshed: update + embed + verified`
-- `QMD skipped: QMD_WIKI_COLLECTION unset`
-- `QMD skipped: qmd CLI unavailable`
-- `QMD failed: <short error summary>`
-
 ## Handling Multiple Sources
 
 When ingesting a directory, process sources one at a time but maintain a running awareness of the full batch. Later sources may strengthen or contradict earlier ones — that's fine, just update pages as you go.
@@ -434,9 +415,7 @@ After ingesting, verify:
 - [ ] Inferred and ambiguous claims are marked with `^[inferred]` / `^[ambiguous]`; `provenance:` frontmatter block is present on new and updated pages
 - [ ] Every new/updated page has a `summary:` frontmatter field (1–2 sentences, ≤200 chars)
 - [ ] `relationships:` block is present on pages where source text made typed connections clear; all entries use an allowed type from `llm-wiki/SKILL.md`
-- [ ] If `QMD_WIKI_COLLECTION` is set and the QMD CLI is available, `qmd update` has run after writing pages
-- [ ] If QMD reports missing vectors or embeddings may be stale, `qmd embed` has run
-- [ ] QMD refresh status is included in the final report
+- [ ] **Summary mode only:** page has `mode: summary` and `summarized: true` in frontmatter; includes structure overview, key claims, skip report, and next steps; original file size/line count recorded in frontmatter
 
 ## Reference
 
