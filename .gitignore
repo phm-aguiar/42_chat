@@ -45,4 +45,3 @@ test-results/
 frontend/dist/
 frontend/test-results/
 test/e2e/reports/
-.env*
