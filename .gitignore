@@ -14,6 +14,13 @@ build/
 .venv/
 venv/
 
+# Go
+bin/
+*.test
+.coverprofile
+coverage.out
+/server
+
 # Obsidian (workspace-local, não versionar)
 wiki/.obsidian/workspace.json
 wiki/.obsidian/workspace-mobile.json
@@ -29,3 +36,13 @@ Thumbs.db
 # IDE
 .idea/
 .vscode/
+.vite/
+node_modules
+.pnpm-store/
+.playwright/
+playwright-report/
+test-results/
+frontend/dist/
+frontend/test-results/
+test/e2e/reports/
+.env*

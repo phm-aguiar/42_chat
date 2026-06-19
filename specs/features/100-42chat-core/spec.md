@@ -30,7 +30,10 @@ comunicação P2P — essencial para avaliações, pair programming e grupos de 
 - **API REST:** Rotas para histórico de mensagens, status do usuário, métricas
 - **Graceful shutdown:** Interceptação SIGINT/SIGTERM, drenar Hub, flush buffer → PostgreSQL
 - **Observabilidade:** `/metrics` com goroutines, memória, DB.Stats(), conexões WS
-- **Segurança:** JWT no middleware, CORS, rate limit. Credenciais via env vars (Bitwarden CLI no CI/CD)
+- **Segurança:** JWT no middleware, CORS, rate limit. Credenciais via env vars. NUNCA hardcode secrets.
+- **Dev Mode:** `DEV_MODE=true` habilita `/api/auth/dev/login?login=marvin` para testes sem OAuth2 real.
+- **Redirect URI configurável:** `FORTYTWO_REDIRECT_URI` e `VITE_42_REDIRECT_URI` unificam o redirect entre frontend, backend e app 42 Intra.
+- **Docker Compose integrado:** PostgreSQL + server com variáveis do `.env`, healthcheck, migration automática.
 
 ### Fora do escopo (features futuras)
 - **Matchmaking de avaliação** (/eval) — Feature 101 (algoritmo documentado em engineering-requirements)
@@ -122,9 +125,35 @@ comunicação P2P — essencial para avaliações, pair programming e grupos de 
 | Frontend | React + Vite | Build rápido, Module Federation futuro |
 | Estilo | Tailwind + Shadcn/ui | Componentes copy-paste, customizáveis (rounded-none) |
 | Estado | Zustand | Simples, singleton no Module Federation |
-| Container | Docker Compose | Ambiente reproduzível |
+| Container | Docker Compose | Ambiente reproduzível, .env integrado |
 | Infra | AWS EC2 t2.micro | Free tier, suficiente pra 300 alunos |
 | CI/CD | GitHub Actions + Bitwarden CLI | Deploy com injeção segura de credenciais |
+
+## Variáveis de Ambiente
+
+| Variável | Obrigatória | Default | Descrição |
+|---|---|---|---|
+| `PORT` | Não | `8080` | Porta do servidor HTTP |
+| `DATABASE_URL` | Não | `postgres://chat:***@localhost:5432/chat?sslmode=disable` | Conexão PostgreSQL |
+| `JWT_SECRET` | Sim (prod) | `change-me-in-production` | Chave HS256 para JWT |
+| `FORTYTWO_CLIENT_ID` | Sim (prod) | — | Client ID do app 42 Intra |
+| `FORTYTWO_CLIENT_SECRET` |  Sim (prod) | — | Client Secret do app 42 Intra |
+| `FORTYTWO_REDIRECT_URI` | Não | `http://localhost:5173` | Redirect URI (deve bater com app 42) |
+| `FORTYTWO_API_URL` | Não | `https://api.intra.42.fr` | Base URL da API 42 |
+| `DEV_MODE` | Não | `false` | Habilita `/api/auth/dev/login` |
+| `DEV_USER` | Não | `marvin` | Login padrão do dev login |
+| `POSTGRES_USER` | Não | `chat` | Usuário PostgreSQL (Docker) |
+| `POSTGRES_PASSWORD` | Não | `banana42` | Senha PostgreSQL (Docker) |
+| `POSTGRES_DB` | Não | `chat` | Nome do banco (Docker) |
+
+### Frontend (Vite — prefixo `VITE_`)
+
+| Variável | Default | Descrição |
+|---|---|---|
+| `VITE_DEV_MODE` | `false` | Mostra botão "Dev Login" |
+| `VITE_API_URL` | (vazio) | URL base da API (vazio = proxy Vite) |
+| `VITE_42_CLIENT_ID` | `dev-client-id` | Client ID para link OAuth2 |
+| `VITE_42_REDIRECT_URI` | `http://localhost:5173` | Redirect URI (deve bater com `FORTYTWO_REDIRECT_URI`) |
 
 ## Modelagem de Dados (MVP)
 

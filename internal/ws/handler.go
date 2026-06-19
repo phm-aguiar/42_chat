@@ -136,6 +136,9 @@ func (h *Handler) readPump(client *Client, conn *websocket.Conn) {
 			continue
 		}
 
+		// Dispara broadcast de estatísticas do usuário (debounce 2s)
+		h.hub.BroadcastUserStatsChanged(client.UserID)
+
 		// Enriquecer com dados do autor para o broadcast
 		outbound := &model.WSMessage{
 			Type:      "message",

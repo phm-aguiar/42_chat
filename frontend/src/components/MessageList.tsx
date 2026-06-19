@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import type { ChatMessage } from './ChatRoom'
 import Avatar from './Avatar'
+import UserSignature from './UserSignature'
 
 interface MessageListProps {
   messages: ChatMessage[]
@@ -94,6 +95,9 @@ export default function MessageList({ messages, currentUser }: MessageListProps)
               <p className={`text-sm leading-relaxed break-words ${isMine ? 'text-white' : 'text-gray-200'}`}>
                 {msg.content}
               </p>
+              {msg.type === 'message' && msg.user_id != null && (
+                <UserSignature userId={msg.user_id} />
+              )}
             </div>
           </div>
         )

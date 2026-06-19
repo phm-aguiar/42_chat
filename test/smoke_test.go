@@ -40,7 +40,7 @@ func TestSmokeBuild(t *testing.T) {
 func TestSmokeHubInMemory(t *testing.T) {
 	t.Log("=== Smoke Test: Hub In-Memory (2 clientes, broadcast) ===")
 
-	hub := ws.NewHub()
+	hub := ws.NewHub(nil)
 
 	// Criar 2 clientes (simulando conexões WebSocket)
 	client1 := &ws.Client{
@@ -129,7 +129,11 @@ func TestSmokeServerIntegration(t *testing.T) {
 	t.Logf("Porta livre: %s", port)
 
 	// 3. Gerar JWT para autenticação WebSocket
-	jwtManager := auth.NewJWTManager("dev-secret-change-in-production")
+	jwtSecret := os.Getenv("JWT_SECRET")
+	if jwtSecret == "" {
+		jwtSecret = "smoke-test-secret"
+	}
+	jwtManager := auth.NewJWTManager(jwtSecret)
 	token, err := jwtManager.GenerateToken(42, "smoke_tester")
 	if err != nil {
 		t.Fatalf("GenerateToken: %v", err)
@@ -147,10 +151,14 @@ func TestSmokeServerIntegration(t *testing.T) {
 
 	// 4. Iniciar servidor como subprocesso
 	serverCmd := exec.Command(serverBinary)
+	dbURL := os.Getenv("DATABASE_URL")
+	if dbURL == "" {
+		dbURL = "postgres://chat:smoketest@localhost:5432/chat?sslmode=disable"
+	}
 	serverCmd.Env = append(os.Environ(),
 		"PORT="+port,
-		"DATABASE_URL=postgres://chat:***@localhost:5432/chat?sslmode=disable",
-		"JWT_SECRET=dev-secret-change-in-production",
+		"DATABASE_URL="+dbURL,
+		"JWT_SECRET="+jwtSecret,
 	)
 	serverCmd.Stdout = os.Stdout
 	serverCmd.Stderr = os.Stderr

@@ -1,19 +1,25 @@
+# ═══════════════════════════════════════
+#  42 Chat Core — Docker Compose
+# ═══════════════════════════════════════
+# Todas as variáveis vêm do .env na raiz.
+# Copie .env.example → .env e ajuste antes de subir.
+
 services:
   postgres:
     image: postgres:16-alpine
     container_name: 42chat-postgres
     restart: unless-stopped
     ports:
-      - "5432:5432"
+      - "${POSTGRES_PORT:-5432}:5432"
     environment:
-      POSTGRES_USER: chat
-      POSTGRES_PASSWORD: banana42
-      POSTGRES_DB: chat
+      POSTGRES_USER: ${POSTGRES_USER:-chat}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-banana42}
+      POSTGRES_DB: ${POSTGRES_DB:-chat}
     volumes:
       - pgdata:/var/lib/postgresql/data
       - ./internal/db/migrations:/docker-entrypoint-initdb.d:ro,z
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U chat -d chat"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-chat} -d ${POSTGRES_DB:-chat}"]
       interval: 5s
       timeout: 3s
       retries: 5
@@ -27,18 +33,20 @@ services:
     container_name: 42chat-server
     restart: unless-stopped
     ports:
-      - "8080:8080"
+      - "${PORT:-8080}:${PORT:-8080}"
     depends_on:
       postgres:
         condition: service_healthy
     environment:
-      PORT: "8080"
-      DATABASE_URL: postgres://chat:banana42@postgres:5432/chat?sslmode=disable
-      JWT_SECRET: dev-secret-change-in-production
-      DEV_MODE: "true"
-      FORTYTWO_CLIENT_ID: "${FORTYTWO_CLIENT_ID:-}"
-      FORTYTWO_CLIENT_SECRET: "${FORTYTWO_CLIENT_SECRET:-}"
-      FORTYTWO_API_URL: "https://api.intra.42.fr"
+      PORT: ${PORT:-8080}
+      DATABASE_URL: postgres://${POSTGRES_USER:-chat}:${POSTGRES_PASSWORD:-banana42}@postgres:5432/${POSTGRES_DB:-chat}?sslmode=disable
+      JWT_SECRET: ${JWT_SECRET:-change...n}
+      DEV_MODE: ${DEV_MODE:-false}
+      DEV_USER: ${DEV_USER:-marvin}
+      FORTYTWO_CLIENT_ID: ${FORTYTWO_CLIENT_ID:-}
+      FORTYTWO_CLIENT_SECRET: ${FORTYTWO_CLIENT_SECRET:-}
+      FORTYTWO_REDIRECT_URI: ${FORTYTWO_REDIRECT_URI:-http://localhost:5173}
+      FORTYTWO_API_URL: ${FORTYTWO_API_URL:-https://api.intra.42.fr}
     networks:
       - 42chat
 

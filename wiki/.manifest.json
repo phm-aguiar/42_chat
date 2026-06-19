@@ -1,10 +1,10 @@
 {
   "version": 1,
   "created": "2026-06-13",
-  "updated": "2026-06-17",
+  "updated": "2026-06-18",
   "stats": {
-    "total_sources_ingested": 148,
-    "total_pages": 145
+    "total_sources_ingested": 149,
+    "total_pages": 147
   },
   "sources": {
     "specs/features/001-start-repo/": {
@@ -2017,6 +2017,16 @@
       "project": "42_chat",
       "pages_created": [
         "references/react-vite-environment-config.md"
+      ],
+      "pages_updated": []
+    },
+    "conversation:2026-06-18": {
+      "ingested_at": "2026-06-18T03:32:13Z",
+      "source_type": "session_transcript",
+      "project": "42_chat",
+      "pages_created": [
+        "journal/2026-06-18-sessao-feat100-oauth.md",
+        "references/oauth2-42-pitfalls.md"
       ],
       "pages_updated": []
     }

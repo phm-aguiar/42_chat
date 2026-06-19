@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/zeenyt__/42chat/internal/db"
 	"github.com/zeenyt__/42chat/internal/model"
@@ -24,7 +25,11 @@ func NewDevLoginHandler(jwt *JWTManager, queries *db.Queries) *DevLoginHandler {
 func (h *DevLoginHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	login := r.URL.Query().Get("login")
 	if login == "" {
-		login = "marvin"
+		if devUser := os.Getenv("DEV_USER"); devUser != "" {
+			login = devUser
+		} else {
+			login = "marvin"
+		}
 	}
 
 	// Mock user — o mesmo ID toda vez (consistente pra dev)

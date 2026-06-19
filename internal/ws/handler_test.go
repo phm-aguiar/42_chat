@@ -55,7 +55,7 @@ func testToken(t *testing.T, jwt *auth.JWTManager, userID int, login string) str
 func setupWSServer(t *testing.T) (*httptest.Server, *Hub, *auth.JWTManager) {
 	t.Helper()
 
-	hub := NewHub()
+	hub := NewHub(nil)
 	jwt := testJWTManager(t)
 	queries := testQueries(t)
 	handler := NewHandler(hub, jwt, queries)

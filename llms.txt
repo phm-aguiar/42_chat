@@ -19,6 +19,7 @@
 - `specs/features/005-runtime-orchestrator/` — Runtime orchestrator (spawna subagentes em paralelo) [spec](specs/features/005-runtime-orchestrator/spec.md) [plan](specs/features/005-runtime-orchestrator/plan.md) [tasks](specs/features/005-runtime-orchestrator/tasks.md)
 - `specs/features/006-agent-dev/` — Agente implementador (persona fixa, skills plugáveis) [spec](specs/features/006-agent-dev/spec.md) [plan](specs/features/006-agent-dev/plan.md) [tasks](specs/features/006-agent-dev/tasks.md)
 - `specs/features/100-42chat-core/` — **Feature 100: 42 Chat Core** — Chat multiplayer com frontend React+Vite, backend Go, WebSocket, autenticação 42 API, matchmaking P2P, BDD (Gherkin + Playwright) ✅ implementado [spec](specs/features/100-42chat-core/spec.md) [plan](specs/features/100-42chat-core/plan.md) [tasks](specs/features/100-42chat-core/tasks.md)
+- `specs/features/101-assinatura-participacao/` — **Feature 101: Assinatura de Participação** — Componente UserSignature inline com stats de engajamento, tiers (novato→veterano), API on-demand + WebSocket push ✅ implementado [spec](specs/features/101-assinatura-participacao/spec.md) [plan](specs/features/101-assinatura-participacao/plan.md) [tasks](specs/features/101-assinatura-participacao/tasks.md)
 
 ## Agentes Hermes
 

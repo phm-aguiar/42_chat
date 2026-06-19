@@ -15,6 +15,7 @@
 | `GET` | `/api/messages?before=&limit=50` | Histórico recente (autenticado) |
 | `GET` | `/api/users/:id` | Perfil público do aluno |
 | `GET` | `/metrics` | Prometheus: goroutines, memória, DB.Stats(), conexões WS |
+| `GET` | `/api/auth/dev/login?login=` | **(DEV_MODE apenas)** Mock user + JWT para testes locais |
 
 **Contrato WebSocket:**
 | Direção | Tipo | Payload |
@@ -61,6 +62,14 @@ messages (id UUID PK DEFAULT gen_random_uuid(), user_id INT FK—users, content 
 - **Justificativa:** Vite é mais leve e rápido que Next.js. Shadcn/ui dá componentes copy-paste customizáveis (rounded-none, cores exatas 42). Tema documentado em `[[references/42-chat-design-system]]`.
 - **Alternativa rejeitada:** Next.js (overengineering — SSR/SSG desnecessários pra SPA de chat). CSS modules (mais trabalho manual que Tailwind).
 
+**ADR-7: redirect_uri unificado via env vars (`FORTYTWO_REDIRECT_URI` + `VITE_42_REDIRECT_URI`)**
+- **Justificativa:** OAuth2 da 42 exige que o redirect_uri seja idêntico em 3 lugares (frontend authorize URL, backend token exchange, cadastro do app). Centralizar em variáveis de ambiente elimina divergências. Default `http://localhost:5173` cobre o dev loop com Vite.
+- **Alternativa rejeitada:** Hardcoded no código (quebra ao trocar de ambiente — local vs Docker vs produção). Path com `/callback` fixo (não permite customização no app 42).
+
+**ADR-8: Dev Mode (`DEV_MODE=true`) com endpoint `/api/auth/dev/login`**
+- **Justificativa:** Permite testar o chat sem credenciais OAuth2 42 reais. O endpoint faz upsert de mock user e retorna JWT válido. Isolado por feature flag — nunca disponível em produção (`DEV_MODE=false`).
+- **Alternativa rejeitada:** Mock no frontend (não testa o fluxo real de auth, WS, DB). Stub de OAuth2 (complexidade desnecessária — o endpoint dev cobre todo o pipeline).
+
 ## 4. Auditoria de Constituição
 
 - [x] **Validação SDD:** spec.md existe e está aprovado. plan.md sendo gerado. tasks.md virá em seguida.
@@ -69,3 +78,4 @@ messages (id UUID PK DEFAULT gen_random_uuid(), user_id INT FK—users, content 
 - [x] **Vault fiel:** Wiki já contém referências de Go, WebSocket, JWT, React+Vite, design system, arquitetura 42 Chat. Atualizado após implementação.
 - [x] **Framework primeiro:** Feature 100 é o smoke-test do framework SDD. A implementação valida que agent-dev + agent-qa conseguem construir um app real usando o pipeline SDD.
 - [x] **Isolamento:** agent-dev e agent-qa serão spawnados como leaf pelo orchestrator. Sem delegação aninhada.
+- [x] **Credenciais hardcoded (regra #7):** Todas as credenciais vêm de `os.Getenv` / `envOrDefault`. Nenhum secret no código fonte. `JWT_SECRET` tem default sentinela `change-me-in-production` apenas para dev mode detection. Smoke test lê `JWT_SECRET` e `DATABASE_URL` do ambiente.

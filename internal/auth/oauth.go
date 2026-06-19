@@ -85,7 +85,7 @@ func (o *OAuth2) fetchToken(code string) (*tokenResponse, error) {
 		"client_id":     {o.cfg.FortyTwoClientID},
 		"client_secret": {o.cfg.FortyTwoClientSecret},
 		"code":          {code},
-		"redirect_uri":  {fmt.Sprintf("http://localhost:%s/api/auth/42/callback", o.cfg.Port)},
+		"redirect_uri":  {o.cfg.FortyTwoRedirectURI},
 	}
 
 	req, err := http.NewRequest("POST",

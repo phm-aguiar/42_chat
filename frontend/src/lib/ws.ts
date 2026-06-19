@@ -1,15 +1,19 @@
 import { useAuthStore } from '../stores/auth'
 
-type MessageHandler = (msg: MessageFromServer) => void
+export type MessageHandler = (msg: MessageFromServer) => void
 
-interface MessageFromServer {
-  type: 'message' | 'system'
+export interface MessageFromServer {
+  type: 'message' | 'system' | 'user_stats_changed'
   id?: string
   user_id?: number
   login?: string
   image_url?: string
   content?: string
   created_at?: string
+  // user_stats_changed payload
+  total_messages?: number
+  active_rooms?: number
+  tier?: string
 }
 
 interface UseWebSocketReturn {

@@ -24,6 +24,11 @@ updated: "2026-06-17"
 | `synthesis/`  | Conexões cross-cutting            |
 | `entities/`   | Glossário de termos               |
 
+## Journal
+
+- [[journal/2026-06-18-sessao-feat100-oauth|Sessão 18/jun]] — Feature 100 execução, OAuth2 42 debug, constitution anti-hardcoded
+- [[journal/2026-06-14-sessao-qa-skills-42chat|Sessão 14/jun]] — Finalização QA, skills, 42 Chat
+
 ## Conceitos (cross-project)
 
 - [[concepts/sdd|SDD]] — Spec-Driven Development: metodologia e pipeline
@@ -304,6 +309,7 @@ Pesquisa, arquitetura e design do chat P2P para o campus 42 SP. Consolidado de d
 
 - [[references/42-api-specification|42 API Specification]] — Guia de uso: OAuth2, paginação, filtros, rate limits (2 req/s, 1200 req/h) ( #42 #api)
 - [[references/42-api-endpoints|42 API Endpoints]] — Catálogo de endpoints: 96 recursos, 739 endpoints organizados por relevância
+- [[references/oauth2-42-pitfalls|OAuth2 42 Pitfalls]] — 3 pitfalls comuns: redirect_uri, shell env vars vs .env, React StrictMode ( #oauth2 #debug)
 
 ## Fontes Canônicas
 

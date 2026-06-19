@@ -73,8 +73,16 @@ agent-run agent-orchestrator → execução paralela (Dev, QA)
 
 | ID | Feature | O quê | Status |
 |----|---------|-------|--------|
-| 100 | 42_chat core | Aplicação de chat (Go): HTTP, WebSocket, mensagens | ❌ Backlog |
-| 101 | 42_chat deploy | Deploy no homelab (RPi 5, Docker, Tailscale) | ❌ Backlog |
+| 100 | 42_chat core | Aplicação de chat (Go): HTTP, WebSocket, mensagens | ✅ Implementado |
+| 101 | Assinatura de participação | UserSignature inline com stats, tiers, WebSocket push | ✅ Implementado |
+| 102 | Salas e canais | Multi-room: criar/entrar/sair salas, navegação, WS por sala | ❌ Backlog |
+| 103 | Menções e notificações | @username com notificação em tempo real, badge | ❌ Backlog |
+| 104 | Perfil pessoal + tags | Página de perfil com avatar, bio, tags por projeto — estilo chan | ❌ Backlog |
+| 105 | Conquistas da 42 | Badges automáticos via API 42: libft, piscina, nível, streak | ❌ Backlog |
+| 106 | Reply/quote estilo chan | `>>123` referencia mensagem, abre thread visual inline | ❌ Backlog |
+| 107 | Reações em mensagens | Emoji reactions (👍🔥💀👀) com WebSocket | ❌ Backlog |
+| 108 | Fórum de tech | Boards por tecnologia, threads, markdown — UserSignature reutilizado | ❌ Backlog |
+| 109 | Página "ao vivo" da 42 | Feed em tempo real: online, projetos, atividade dos campi | ❌ Backlog |
 
 ## Pipeline Completo (após 006-009)
 
@@ -136,4 +144,4 @@ agent-orchestrator
 ---
 
 ## Atualizado em
-2026-06-13
+2026-06-18

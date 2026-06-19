@@ -14,6 +14,7 @@ type Config struct {
 	FortyTwoClientID     string
 	FortyTwoClientSecret string
 	FortyTwoAPIURL       string
+	FortyTwoRedirectURI  string
 	DevMode              bool
 }
 
@@ -27,6 +28,7 @@ func Load() (*Config, error) {
 		FortyTwoClientID:     os.Getenv("FORTYTWO_CLIENT_ID"),
 		FortyTwoClientSecret: os.Getenv("FORTYTWO_CLIENT_SECRET"),
 		FortyTwoAPIURL:       envOrDefault("FORTYTWO_API_URL", "https://api.intra.42.fr"),
+		FortyTwoRedirectURI:  envOrDefault("FORTYTWO_REDIRECT_URI", fmt.Sprintf("http://localhost:%s/api/auth/42/callback", envOrDefault("PORT", "8080"))),
 		DevMode:              os.Getenv("DEV_MODE") == "true",
 	}
 

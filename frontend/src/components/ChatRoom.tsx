@@ -7,7 +7,7 @@ import MessageInput from './MessageInput'
 
 export interface ChatMessage {
   id?: string
-  type: 'message' | 'system'
+  type: 'message' | 'system' | 'user_stats_changed'
   user_id?: number
   login?: string
   image_url?: string
@@ -24,6 +24,9 @@ export default function ChatRoom() {
   const [onlineCount, setOnlineCount] = useState(0)
 
   const handleMessage = useCallback((msg: ChatMessage) => {
+    // Ignorar eventos de stats — são consumidos pelo UserSignature
+    if (msg.type === 'user_stats_changed') return
+
     setMessages(prev => {
       // Evitar duplicatas por ID
       if (msg.id && prev.some(m => m.id === msg.id)) return prev

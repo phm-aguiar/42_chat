@@ -43,12 +43,13 @@ func main() {
 	jwtManager := auth.NewJWTManager(cfg.JWTSecret)
 
 	// 4. WebSocket Hub
-	hub := ws.NewHub()
+	hub := ws.NewHub(queries)
 
 	// 5. Handlers
 	wsHandler := ws.NewHandler(hub, jwtManager, queries)
 	messagesHandler := api.NewMessagesHandler(queries)
 	usersHandler := api.NewUsersHandler(queries)
+	statsHandler := api.NewStatsHandler(queries)
 	metricsHandler := api.NewMetricsHandler(pg, hub)
 	devLoginHandler := auth.NewDevLoginHandler(jwtManager, queries)
 
@@ -104,6 +105,7 @@ func main() {
 	r.Group(func(r chi.Router) {
 		r.Use(auth.JWTMiddleware(jwtManager))
 		r.Get("/api/messages", messagesHandler.ServeHTTP)
+		r.Get("/api/users/{id}/stats", statsHandler.ServeHTTP)
 		r.Get("/api/users/{id}", usersHandler.ServeHTTP)
 	})
 

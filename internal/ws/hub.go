@@ -4,7 +4,9 @@ import (
 	"encoding/json"
 	"log"
 	"sync"
+	"time"
 
+	"github.com/zeenyt__/42chat/internal/db"
 	"github.com/zeenyt__/42chat/internal/model"
 )
 
@@ -21,12 +23,21 @@ type Client struct {
 type Hub struct {
 	mu      sync.RWMutex
 	clients map[*Client]bool
+
+	// Debounce para evento user_stats_changed (Feature 101).
+	debounceTimers map[int]*time.Timer
+	debounceMu     sync.Mutex
+
+	queries *db.Queries
 }
 
 // NewHub cria um novo Hub vazio.
-func NewHub() *Hub {
+// queries pode ser nil para testes que não dependem de consultas ao banco.
+func NewHub(queries *db.Queries) *Hub {
 	return &Hub{
-		clients: make(map[*Client]bool),
+		clients:        make(map[*Client]bool),
+		debounceTimers: make(map[int]*time.Timer),
+		queries:        queries,
 	}
 }
 
@@ -114,6 +125,64 @@ func (h *Hub) ConnectionCount() int {
 	h.mu.RLock()
 	defer h.mu.RUnlock()
 	return len(h.clients)
+}
+
+// BroadcastUserStatsChanged agenda um broadcast de user_stats_changed com debounce de 2s.
+// Múltiplas chamadas para o mesmo userID dentro de 2s geram um único broadcast.
+func (h *Hub) BroadcastUserStatsChanged(userID int) {
+	h.debounceMu.Lock()
+	defer h.debounceMu.Unlock()
+
+	// Cancela timer anterior se existir (reset do debounce)
+	if old, ok := h.debounceTimers[userID]; ok {
+		old.Stop()
+	}
+
+	h.debounceTimers[userID] = time.AfterFunc(2*time.Second, func() {
+		// Remove o timer do mapa após disparo
+		h.debounceMu.Lock()
+		delete(h.debounceTimers, userID)
+		h.debounceMu.Unlock()
+
+		msg := h.buildStatsPayload(userID)
+		if msg != nil {
+			h.Broadcast(msg)
+		}
+	})
+}
+
+// buildStatsPayload consulta o banco e monta o WSMessage de user_stats_changed.
+// Retorna nil se queries for nil (modo teste) ou se a consulta falhar.
+func (h *Hub) buildStatsPayload(userID int) *model.WSMessage {
+	if h.queries == nil {
+		return nil
+	}
+
+	stats, err := h.queries.SelectUserStats(userID)
+	if err != nil {
+		log.Printf("[ws] erro ao consultar stats do user %d: %v", userID, err)
+		return nil
+	}
+
+	// Serializa as estatísticas como JSON no campo Content
+	payload := map[string]interface{}{
+		"user_id":        stats.UserID,
+		"total_messages": stats.TotalMessages,
+		"active_rooms":   stats.ActiveRooms,
+		"tier":           stats.Tier,
+	}
+	contentBytes, err := json.Marshal(payload)
+	if err != nil {
+		log.Printf("[ws] erro ao serializar stats do user %d: %v", userID, err)
+		return nil
+	}
+
+	return &model.WSMessage{
+		Type:    "user_stats_changed",
+		UserID:  stats.UserID,
+		Login:   stats.Login,
+		Content: string(contentBytes),
+	}
 }
 
 // mustMarshal serializa para JSON. Panic em caso de erro (nunca deve acontecer com WSMessage).

@@ -44,3 +44,4 @@
 4. **Skills fora do padrão:** Toda skill deve seguir o formato Hermes (SKILL.md com frontmatter YAML + corpo markdown).
 5. **Ferramentas inventadas:** Nunca invente APIs, imports, ou ferramentas. Use o que existe no `tech.md`.
 6. **Vault desatualizado:** Implementar features, agentes ou skills sem atualizar o vault Obsidian (`wiki/`) correspondente. O vault é a memória de longo prazo do framework — deixá-lo desatualizado corrompe o conhecimento acumulado.
+7. **Credenciais hardcoded:** Nunca coloque secrets, tokens, senhas ou chaves de API diretamente no código fonte. Toda credencial deve vir de variável de ambiente (`os.Getenv`, `envOrDefault`) com fallback apenas para defaults inofensivos de desenvolvimento (ex: `change-me-in-production`). Strings como `"dev-secret-..."` só são aceitáveis como sentinelas de dev mode, nunca como valores funcionais. Testes que precisam de secrets devem lê-los do ambiente ou usar valores descartáveis gerados em runtime.

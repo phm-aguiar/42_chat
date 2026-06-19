@@ -22,7 +22,7 @@ func drainMessages(ch <-chan []byte) {
 
 // TestHubBroadcast verifica que o broadcast entrega a mensagem para todos os clients.
 func TestHubBroadcast(t *testing.T) {
-	hub := NewHub()
+	hub := NewHub(nil)
 	n := 5
 	clients := make([]*Client, n)
 
@@ -85,7 +85,7 @@ func TestHubBroadcast(t *testing.T) {
 
 // TestHubConnectDisconnect verifica que Connect adiciona e Disconnect remove o client.
 func TestHubConnectDisconnect(t *testing.T) {
-	hub := NewHub()
+	hub := NewHub(nil)
 
 	if count := hub.ConnectionCount(); count != 0 {
 		t.Fatalf("initial count = %d, want 0", count)
@@ -150,7 +150,7 @@ func TestHubConnectDisconnect(t *testing.T) {
 
 // TestHubShutdown verifica que Shutdown envia mensagem de sistema para todos os clients.
 func TestHubShutdown(t *testing.T) {
-	hub := NewHub()
+	hub := NewHub(nil)
 	n := 3
 	clients := make([]*Client, n)
 
@@ -202,7 +202,7 @@ func TestHubShutdown(t *testing.T) {
 
 // TestHubBroadcastConcurrent verifica thread-safety do broadcast concorrente.
 func TestHubBroadcastConcurrent(t *testing.T) {
-	hub := NewHub()
+	hub := NewHub(nil)
 	n := 10
 	broadcasters := 4
 	iterations := 100

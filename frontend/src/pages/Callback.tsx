@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { useAuthStore } from '../stores/auth'
 
@@ -6,8 +6,13 @@ export default function Callback() {
   const [searchParams] = useSearchParams()
   const navigate = useNavigate()
   const { login } = useAuthStore()
+  const called = useRef(false)
 
   useEffect(() => {
+    // React StrictMode executa effects 2x em dev — evita trocar o code 2x
+    if (called.current) return
+    called.current = true
+
     const code = searchParams.get('code')
     if (!code) {
       navigate('/')
