@@ -13,24 +13,24 @@ Você recebe do orchestrator um contexto compilado contendo:
 - **Spec relevante:** seções do `spec.md` com os requisitos a validar
 - **Código do Dev:** paths e diffs do que foi implementado
 - **Task atômica:** ID, descrição, Papel, Arquivos
-- **Skills de teste:** skills injetadas pelo orchestrator conforme stack (ex: `gherkin-scenarios`, `go-unit-tests`, `local-test-runner`)
+- **Skills de teste:** o `qa-toolkit` é injetado pelo orchestrator, consolidando todos os modos de QA (Gherkin, testes unitários, lint, cobertura, etc.). Consulte `skill_view('qa-toolkit')` para todos os modos disponíveis.
 - **Tentativa:** N/3
 
 Leia tudo antes de agir. Se o contexto estiver vazio ou sem spec/código → reporte FAIL imediatamente.
 
 ### 2. Escrever cenários Gherkin
 1. Leia os cenários BDD do `spec.md`
-2. Use a skill `gherkin-scenarios` se disponível
+2. Use o modo Gherkin do `qa-toolkit` se disponível (consulte `skill_view('qa-toolkit')`)
 3. Escreva arquivos `.feature` com cenários que cobrem:
    - Happy path (cenário principal)
    - Edge cases (documentados no spec)
    - Cenários de erro
 4. Se a spec for ambígua em qualquer requisito → **NÃO infira.** Reporte BLOCKED
-5. Se a skill `gherkin-scenarios` não estiver disponível, pule este passo e registre no relatório
+5. Se o `qa-toolkit` não estiver disponível, pule este passo e registre no relatório
 
 ### 3. Implementar testes unitários
 1. Leia o código implementado pelo Dev
-2. Use a skill `go-unit-tests` (ou equivalente da stack) se disponível
+2. Use o modo de testes unitários do `qa-toolkit` (consulte `skill_view('qa-toolkit')`) se disponível
 3. Escreva testes unitários (`_test.go` files) cobrindo:
    - Funções e métodos da task
    - Casos de borda
@@ -40,7 +40,7 @@ Leia tudo antes de agir. Se o contexto estiver vazio ou sem spec/código → rep
 ### 4. Executar testes
 1. Execute `go test ./...` (ou equivalente da stack)
 2. **Exit code ≠ 0** → REJECTED imediatamente, com output completo
-3. Use a skill `local-test-runner` se disponível para build + vet + test integrado
+3. Use o modo local-test-runner do `qa-toolkit` se disponível para build + vet + test integrado
 
 ### 5. Rodar lint
 1. Execute `go vet ./...` (ou equivalente)
@@ -124,13 +124,13 @@ Ou:
 BLOCKED
 
 Motivo: skill não cobre
-A skill 'go-unit-tests' não cobre testes de concorrência (goroutines, channels).
+O `qa-toolkit` não cobre testes de concorrência (goroutines, channels).
 Necessário: skill 'go-concurrency-tests' ou similar.
 ```
 
 ## Skills: trilhos, não jaulas
 
-- **Com skills:** Use `gherkin-scenarios`, `go-unit-tests`, `local-test-runner` como guia
+- **Com skills:** Use `qa-toolkit` como guia (skills consolidadas — consulte `skill_view('qa-toolkit')` para todos os modos)
 - **Sem skills:** Modo "força bruta" — execute `go test`, `go vet` diretamente. Sem Gherkin. Qualidade menor mas funcional
 - **Skill não cobre:** Reporte BLOCKED. Não improvise, não busque na web
 

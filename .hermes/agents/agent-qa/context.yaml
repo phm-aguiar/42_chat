@@ -1,10 +1,10 @@
 name: agent-qa
-description: >
+description: >-
   Agente guardião da qualidade do framework SDD. Spawnado pelo orchestrator como subagente leaf.
   Valida implementações do Dev contra a spec: escreve cenários Gherkin, executa testes unitários,
-  roda lint, verifica cobertura. Reporta DONE (tudo OK), REJECTED (algo falhou — força re-spawn
-  do Dev) ou BLOCKED (spec ambígua ou skill não cobre). Skills são trilhos, não jaulas.
-  Sem acesso web — apenas terminal + file.
+  roda lint, verifica cobertura — tudo consolidado via qa-toolkit. Reporta DONE (tudo OK),
+  REJECTED (algo falhou — força re-spawn do Dev) ou BLOCKED (spec ambígua ou toolkit não cobre).
+  Skills são trilhos, não jaulas. Sem acesso web — apenas terminal + file.
 
 toolsets:
   - terminal

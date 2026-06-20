@@ -1,211 +1,161 @@
-# 42_chat
+# 42_chat — Framework SDD Autônomo
 
-> Squad autônoma de agentes de IA guiada por humanos in loop.
-> Spec-Driven Development com orquestrador, agentes especializados e pipeline fully automated.
+> Squad de agentes de IA com wiki como cérebro, toolkits como ferramentas e
+> humanos no loop de aprovação. Spec-Driven Development do início ao fim.
 
-## Arquitetura
+## Como funciona (pra humanos)
 
-```mermaid
-flowchart TB
-    subgraph HUMAN["👤 Humano in Loop"]
-        IDEA["💡 Ideia"]
-        APPROVE["✅ Aprovação"]
-        ESCALATE["🚨 Escalação"]
-    end
+O sistema tem 3 camadas:
 
-    subgraph SDD["📋 Pipeline SDD"]
-        BRAIN["sdd-brainstorm<br/>Entrevista interativa"]
-        SPEC["spec.md<br/>Especificação funcional"]
-        PLAN["sdd-generate-plan<br/>Plano arquitetural (ADR)"]
-        TASKS["sdd-generate-tasks<br/>DAG de tasks com paralelismo"]
-    end
+```
+🧠 Wiki (cérebro)     →  Memória de longo prazo. Tudo que o sistema sabe
+                         fica aqui. Versionado no repo (wiki/).
 
-    subgraph ORCH["🎯 Runtime Orchestrator"]
-        DAG["Lê DAG do tasks.md"]
-        GATE["Verifica Aprovado: true"]
-        SPAWN["Spawna subagentes<br/>janela deslizante (máx 3)"]
-        MONITOR["Monitora retries<br/>máx 3 tentativas"]
-    end
+🔧 Toolkits (skills)  →  Ferramentas consolidadas. 119 skills viram 11
+                         toolkits com modos internos. Subagentes carregam
+                         1-2 toolkits ao invés de 5-10 skills.
 
-    subgraph SQUAD["🤖 Squad Autônoma"]
-        DEV["🛠️ Agent Dev<br/>Código + smoke-test"]
-        QA["🧪 Agent QA<br/>Testes unitários<br/>Cenários Gherkin<br/>Build/lint/vet<br/>Watchdog"]
-        OPS["🚀 Agent DevOps<br/>CI/CD + Docker<br/>Deploy"]
-        PENTEST["🔒 Agent Pentester<br/>Vuln scan<br/>OWASP + segredos"]
-    end
-
-    IDEA --> BRAIN
-    BRAIN --> SPEC
-    SPEC --> APPROVE
-    APPROVE -->|"Aprovado: true"| PLAN
-    PLAN --> TASKS
-    TASKS -->|tasks.md com DAG| DAG
-    DAG --> GATE
-    GATE -->|Aprovado: true| SPAWN
-    SPAWN --> DEV
-    SPAWN --> QA
-    SPAWN --> OPS
-    SPAWN --> PENTEST
-    DEV --> MONITOR
-    QA --> MONITOR
-    OPS --> MONITOR
-    PENTEST --> MONITOR
-    MONITOR -->|"Falha 3x"| ESCALATE
-    MONITOR -->|"DONE"| DONE["[x] tasks.md"]
-    ESCALATE -->|"Usuário ajusta"| SPAWN
+🤖 Agentes (mão de obra)→ Agente principal (você + IA) orquestra. Subagentes
+                         especializados (Dev, QA) executam tasks em paralelo.
 ```
 
-## Fluxo de Desenvolvimento
+### O cérebro: Wiki
 
-### 1. Brainstorm da Feature
+A wiki é um vault Obsidian versionado no repo (`wiki/`). Toda decisão, feature,
+skill e padrão arquitetural é documentado aqui. O agente consulta a wiki antes
+de agir — não reinventa conhecimento que já foi compilado.
+
+```
+wiki/
+├── concepts/     — Padrões, metodologia (SDD, wiki-model, vault-taxonomy)
+├── skills/       — Documentação dos 11 toolkits
+├── references/   — Templates, formatos, padrões externos
+├── journal/      — Sessões e decisões capturadas
+├── synthesis/    — Conexões cross-cutting entre conceitos
+└── index.md      — Índice mestre do vault
+```
+
+**Entry points pra humanos:**
+- `wiki/index.md` — catálogo completo do que existe
+- `wiki/skills/toolkit-map.md` — mapa de qual skill foi absorvida por qual toolkit
+- `wiki/references/toolkits/` — templates e padrões de referência
+
+### As ferramentas: 11 Toolkits
+
+| Toolkit | Tamanho | Pra quê | Quem usa |
+|---|---|---|---|
+| `brain` | 30 skills | Wiki, Obsidian, Docs — o cérebro | Principal |
+| `sdd` | 9 skills | Pipeline SDD (spec→plan→tasks) | Principal |
+| `qa-toolkit` | 8 skills | Testes, Gherkin, BDD, TDD | agent-qa |
+| `dev-toolkit` | 15 skills | Go, React, debug, code review | agent-dev |
+| `github` | 7 skills | PR, issues, review, commits | Principal |
+| `devops` | 6 skills | Docker, Honcho, Kanban, áudio | Principal |
+| `visual` | 13 skills | Diagramas, design, ASCII art | Principal |
+| `media` | 6 skills | Áudio, vídeo, ComfyUI | Principal |
+| `ml` | 8 skills | HuggingFace, llama.cpp, vLLM | Principal |
+| `research` | 6 skills | arXiv, blogwatch, papers | Principal |
+| `productivity` | 5 skills | PPTX, PDF, OCR, mapas, Hue | Principal |
+
+**Carregar um toolkit:** `skill_view('dev-toolkit')` — 1 chamada, 15 modos.
+Antes eram 15 `skill_view()` separadas.
+
+### Os agentes
+
+| Agente | Toolkits | Função |
+|---|---|---|
+| **Principal** (você + IA) | `brain`, `sdd`, `github`, etc. | Orquestra features, mantém wiki, interage com humano |
+| **agent-dev** | `dev-toolkit` | Implementa código. Leaf (não delega). Reporta DONE/FAIL/BLOCKED |
+| **agent-qa** | `qa-toolkit` | Testa, roda Gherkin, build/lint/vet. Rejeita task do Dev |
+| **agent-orchestrator** | (coordena apenas) | Lê DAG do tasks.md, spawna subagentes em paralelo |
+| **onboard** | `sdd` | Inicializa projetos novos no framework SDD |
+
+## Fluxo SDD (Spec-Driven Development)
+
+Toda feature segue o mesmo pipeline. Nada é implementado sem spec aprovada.
+
+```
+1. brainstorm     →  spec.md    (entrevista interativa com humano)
+2. plan           →  plan.md    (decisões arquiteturais, ADRs)
+3. tasks          →  tasks.md   (DAG de tasks com paralelismo)
+4. APPROVE        →  humano marca "Aprovado: true"
+5. orchestrator   →  spawna subagentes conforme DAG
+6. validate       →  sdd-validate + wiki-lint
+```
+
+**Comandos reais (exemplo feature 008):**
 ```bash
-# O agente conduz entrevista interativa e gera spec.md
-/skill sdd-brainstorm
+# 1. Brainstorm — o agente entrevista você e gera spec.md
+"brainstorm: consolidar skills em toolkits"
+
+# 2-3. O agente gera plan.md e tasks.md
+"gera plan para 008-reavaliacao-skills"
+"gera tasks para 008-reavaliacao-skills"
+
+# 4. Você aprova (edite o spec.md)
+Aprovado: true
+
+# 5-6. Execução fase por fase
+"executa fase 1 do tasks.md"   # 3 tasks em paralelo
+"executa fase 2"                # 11 toolkits em batches de 3
 ```
 
-### 2. Geração de Artefatos SDD
-```bash
-# Gera plan.md (decisões arquiteturais)
-/skill sdd-generate-plan
-
-# Gera tasks.md com DAG (fases, dependências, paralelismo)
-/skill sdd-generate-tasks
-```
-
-### 3. Aprovação Humana
-Edite o `spec.md` da feature e altere:
-```yaml
-Aprovado: true   # ← false → true
-```
-
-### 4. Execução Autônoma
-```bash
-# O orquestrador spawna a squad e gerencia a execução
-agent-run runtime-orchestrator "orquestra a feature <ID>"
-```
-
-### 5. Intervenção (se necessário)
-O orquestrador só escala pro humano quando uma task falha 3 vezes.
-Tasks paralelas continuam rodando — só a sub-árvore dependente é pausada.
-
----
-
-## Setup do Ambiente
-
-### Pré-requisitos
-- [Hermes Agent](https://hermes-agent.nousresearch.com) instalado
-- Go 1.21+ (para o projeto)
-- Git
-
-### 1. Clonar o repositório
-```bash
-git clone <repo-url>
-cd 42_chat
-```
-
-### 2. Configurar skills
-
-As skills do projeto vivem em `.hermes/skills/` versionadas no repositório.
-O Hermes Agent descobre skills via symlinks planos em `~/.hermes/skills/<categoria>/`.
+## Setup
 
 ```bash
-# Script automatizado (recomendado)
+git clone <repo-url> && cd 42_chat
+
+# Skills versionadas no repo, symlinks automáticos
 ./scripts/setup-skills.sh
 
-# Ou manualmente, uma por uma:
-mkdir -p ~/.hermes/skills/sdd
-ln -sf "$(pwd)/.hermes/skills/sdd/brainstorm" ~/.hermes/skills/sdd/brainstorm
-ln -sf "$(pwd)/.hermes/skills/sdd/explore-tech" ~/.hermes/skills/sdd/explore-tech
-ln -sf "$(pwd)/.hermes/skills/sdd/generate-plan" ~/.hermes/skills/sdd/generate-plan
-ln -sf "$(pwd)/.hermes/skills/sdd/generate-tasks" ~/.hermes/skills/sdd/generate-tasks
-ln -sf "$(pwd)/.hermes/skills/sdd/init-repo" ~/.hermes/skills/sdd/init-repo
-ln -sf "$(pwd)/.hermes/skills/sdd/refactor-artifact" ~/.hermes/skills/sdd/refactor-artifact
-ln -sf "$(pwd)/.hermes/skills/sdd/validate" ~/.hermes/skills/sdd/validate
-
-mkdir -p ~/.hermes/skills/general
-ln -sf "$(pwd)/.hermes/skills/general/skill-forge" ~/.hermes/skills/general/skill-forge
-
-mkdir -p ~/.hermes/skills/agent
-ln -sf "$(pwd)/.hermes/skills/agent/agent-run" ~/.hermes/skills/agent/agent-run
-
-mkdir -p ~/.hermes/skills/doc
-ln -sf "$(pwd)/.hermes/skills/doc/extract" ~/.hermes/skills/doc/extract
-ln -sf "$(pwd)/.hermes/skills/doc/generate-toc" ~/.hermes/skills/doc/generate-toc
-ln -sf "$(pwd)/.hermes/skills/doc/generate-llms-txt" ~/.hermes/skills/doc/generate-llms-txt
+# Verificar
+hermes skills list | grep -E "brain|sdd|qa-toolkit|dev-toolkit"
 ```
-
-### 3. Verificar instalação
-```bash
-hermes skills list | grep sdd
-# Deve listar: brainstorm, explore-tech, generate-plan, generate-tasks,
-#              init-repo, refactor-artifact, validate
-```
-
-### 4. Agentes (futuro)
-Quando os agentes da squad forem implementados (features 005-009), o mesmo padrão
-de symlink se aplica em `~/.hermes/agents/`.
-
----
 
 ## Estrutura do Projeto
 
 ```
 42_chat/
-├── .github/
-│   ├── memory/
-│   │   ├── constitution.md    # Regras invioláveis do projeto
-│   │   └── tech.md            # Stack homologado
-│   └── workflows/             # CI/CD (GitHub Actions)
+├── .github/memory/
+│   ├── constitution.md    # Regras invioláveis
+│   └── tech.md            # Stack homologado
 ├── .hermes/
-│   ├── skills/                # Skills versionadas (34 skills)
-│   │   ├── sdd/               #   Pipeline SDD (7)
-│   │   ├── wiki/              #   Knowledge management (15)
-│   │   ├── obsidian/          #   Formato + tooling (5)
-│   │   ├── visual/            #   Diagramas Mermaid (1)
-│   │   ├── agent/             #   Runners de agente (1)
-│   │   ├── doc/               #   Documentação (3)
-│   │   ├── general/           #   Tooling (1)
-│   │   └── github/            #   Git workflow (1)
-│   └── agents/                # Definições de agentes
-├── wiki/                      # 🆕 Vault Obsidian versionado
-│   ├── index.md               #   Índice mestre
-│   ├── log.md                 #   Log de atividades
-│   ├── concepts/              #   Padrões, arquitetura
-│   ├── entities/              #   Ferramentas, agentes
-│   ├── skills/                #   Skills e uso
-│   ├── references/            #   APIs, specs
-│   ├── synthesis/             #   Análises cross-cutting
-│   ├── journal/               #   Sessões e decisões
-│   ├── projects/              #   Features e ciclo de vida
-│   ├── _meta/                 #   Taxonomia, bases
-│   └── _raw/                  #   Capturas brutas
-├── specs/
-│   ├── BACKLOG.md             # Backlog de features + skills
-│   └── features/
-│       ├── 001-start-repo/
-│       ├── 002-sdd-templates/
-│       ├── 003-forge-skill/
-│       ├── 004-sdd-tasks-dag/
-│       └── 005-runtime-orchestrator/
-└── scripts/
-    └── setup-skills.sh        # Script de setup para novos membros
+│   ├── skills/            # 11 toolkits versionados
+│   │   ├── wiki/brain/    #   brain (30 skills → 8 modos)
+│   │   ├── sdd/sdd/       #   sdd (9 → 8)
+│   │   ├── qa/qa-toolkit/ #   qa-toolkit (8 → 8)
+│   │   ├── dev/dev-toolkit/#  dev-toolkit (15 → 15)
+│   │   ├── github/github/ #   github (7 → 7)
+│   │   ├── devops/devops/ #   devops (6 → 6)
+│   │   ├── creative/visual/#  visual (13 → 13)
+│   │   ├── creative/media/ #   media (6 → 6)
+│   │   ├── mlops/ml/      #   ml (8 → 8)
+│   │   ├── research/research/ # research (6 → 6)
+│   │   └── productivity/productivity/ # productivity (5 → 5)
+│   └── agents/            # Definições de subagentes
+│       ├── agent-dev/     #   Dev: AGENT.md + context.yaml
+│       ├── agent-qa/      #   QA: AGENT.md + context.yaml
+│       ├── agent-orchestrator/
+│       └── onboard/
+├── wiki/                  # 🧠 Cérebro — vault Obsidian versionado
+│   ├── index.md           #   Índice mestre
+│   ├── skills/            #   Páginas dos 11 toolkits
+│   ├── references/toolkits/ # Templates, formatos, padrões ingeridos
+│   ├── concepts/          #   SDD, wiki-model, vault-taxonomy
+│   └── journal/           #   Sessões e decisões
+├── specs/features/        # Features SDD (001-008 + 100-101)
+├── llms.txt               # Mapa do repo (entry point pra agentes)
+└── AGENTS.md              # Regras de enforcement (tabela de gatilhos wiki)
 ```
 
----
+## Convenções
 
-## Squad (visão futura)
-
-| Agente | Feature | Responsabilidade | Skills |
-|--------|---------|-----------------|--------|
-| **Dev** | 006 | Código + smoke-test. Nunca loga, nunca testa unitário | `go-implement`, `go-refactor`, `smoke-check` |
-| **QA** | 007 | Multi-função: unit tests, Gherkin, build/lint, watchdog | `go-unit-tests`, `gherkin-scenarios`, `local-test-runner`, `test-watcher` |
-| **DevOps** | 008 | Docker, CI/CD, deploy, monitoramento | `docker-build`, `ci-validate`, `deploy-staging` |
-| **Pentester** | 009 | Segurança: vuln scan, OWASP, segredos | `dependency-scan`, `owasp-check`, `secret-scan` |
-
-Cada agente é spawnado pelo runtime-orchestrator com um **subset de skills**
-selecionado conforme o micro-contexto da task (campo `Papel` + `Arquivos` no tasks.md).
-
----
+- **Versionado no repo:** skills, agentes, wiki, specs — tudo versionado
+- **Symlinks planos:** `~/.hermes/skills/<cat>/<nome>` → `.hermes/skills/<cat>/<nome>`
+- **Wiki fiel:** feature concluída → wiki atualizado. Vault desatualizado bloqueia PR
+- **Aprovação humana:** `Aprovado: true` no spec.md antes de qualquer código
+- **Subagentes leaf:** não delegam. Profundidade máxima = 1
+- **Toolkits, não skills:** carregar 1 toolkit ao invés de 5-10 skills
 
 ## Atualizado em
-2026-06-12
+
+2026-06-19 — Feature 008: Reavaliação e Consolidação de Skills

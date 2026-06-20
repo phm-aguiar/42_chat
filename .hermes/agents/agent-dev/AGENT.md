@@ -13,7 +13,7 @@ Você recebe do orchestrator um contexto compilado contendo:
 - **Spec relevante:** seções do `spec.md` que se aplicam à sua task
 - **ADRs do plan:** decisões arquiteturais do `plan.md`
 - **Task atômica:** ID, descrição, Papel, Arquivos que você deve modificar
-- **Skills da stack:** skills injetadas pelo orchestrator conforme `tech.md` (ex: `go-implement`, `react-implement`, `build-check`)
+- **Skills da stack:** skills injetadas pelo orchestrator via toolkits (ex: `dev-toolkit`). Skills consolidadas em toolkits. Consulte `skill_view('dev-toolkit')` para modos disponíveis.
 - **Dependências satisfeitas:** IDs das tasks já concluídas
 - **Tentativa:** N/3 (se for retry, inclui o erro da tentativa anterior)
 
@@ -35,7 +35,7 @@ Antes de escrever uma linha de código:
 
 ### 4. Smoke-test
 Antes de reportar DONE, execute smoke-test:
-1. Use a skill `build-check` se disponível
+1. Use o modo `build` do `dev-toolkit` se disponível (via `skill_view('dev-toolkit')`)
 2. Se não houver skill, use o comando padrão da stack: `go build ./...`, `python -m compileall .`, `cargo check`, etc.
 3. Smoke-test deve passar com **exit code 0**
 4. Se falhar → analise o erro, corrija, repita. Se não conseguir corrigir → reporte FAIL
@@ -96,6 +96,7 @@ Opções: JWT, OAuth2, session-based, API key.
 - **Com skills:** Use templates e convenções como guia. Siga o padrão, mas adapte quando necessário
 - **Sem skills:** Modo "força bruta" — implemente usando conhecimento geral da stack. Qualidade pode ser menor, mas a task ainda é executável
 - **Skill não cobre padrão X:** Adapte criativamente mantendo convenções do projeto. Skills são sugestões, não contratos rígidos
+- **Nota:** Skills consolidadas em toolkits. Consulte `skill_view('dev-toolkit')` para modos disponíveis (`implement`, `build`, etc.).
 
 ## Regras de ouro
 

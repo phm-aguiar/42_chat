@@ -36,72 +36,21 @@ updated: "2026-06-17"
 - [[concepts/onboarding|Onboarding]] — Como começar um projeto do zero
 - [[concepts/vault-taxonomy|Vault Taxonomy]] — Taxonomia canônica de diretórios do vault
 
-## Wiki & Conhecimento
+## Skills (Toolkits)
 
-- [[concepts/wiki-model|Wiki Model]] — Modelo de 3 camadas (sources → wiki → schema)
-- [[concepts/obsidian-flow|Fluxo Obsidian]] — Ciclo de vida do vault integrado ao pipeline
-- [[skills/wiki-ingest|wiki-ingest]] — Destila sources em páginas wiki
-- [[skills/wiki-lint|wiki-lint]] — Audita saúde do vault (13 checks)
-- [[skills/wiki-query|wiki-query]] — Busca conhecimento compilado
-- [[skills/wiki-capture|wiki-capture]] — Salva sessão atual
-- [[skills/wiki-cross-linker|cross-linker]] — Descobre wikilinks faltantes
+Skills consolidadas em 11 toolkits especializados:
 
-## Skills de Obsidian
-
-- [[skills/obsidian-markdown|obsidian-markdown]] — Sintaxe OFM de referência
-- [[skills/obsidian-cli|obsidian-cli]] — CLI para operações no vault
-- [[skills/obsidian-bases|obsidian-bases]] — Tabelas dinâmicas (.base)
-- [[skills/json-canvas|json-canvas]] — Mapas visuais (.canvas)
-- [[skills/defuddle|defuddle]] — Extrai markdown limpo de páginas web
-
-## Skills Visuais
-
-- [[skills/mermaid-visualizer|mermaid-visualizer]] — Diagramas Mermaid (flowchart, sequence, ERD)
-
-## Skills SDD (toolkit)
-
-- [[skills/sdd-brainstorm|sdd-brainstorm]] — Entrevista interativa → spec.md
-- [[skills/sdd-generate-plan|sdd-generate-plan]] — Decisões arquiteturais → plan.md
-- [[skills/sdd-generate-tasks|sdd-generate-tasks]] — DAG de tasks → tasks.md (v2.0.0)
-- [[skills/sdd-init-repo|sdd-init-repo]] — Inicializa estrutura SDD
-- [[skills/sdd-explore-tech|sdd-explore-tech]] — Mapeia stack tecnológica
-- [[skills/sdd-validate|sdd-validate]] — Valida conformidade SDD
-- [[skills/sdd-refactor-artifact|sdd-refactor-artifact]] — Normaliza artefatos
-
-## Skills de Documentação
-
-- [[skills/doc-extract|doc-extract]] — Extrai seções de markdown
-- [[skills/doc-generate-llms-txt|doc-generate-llms-txt]] — Gera llms.txt
-- [[skills/doc-generate-toc|doc-generate-toc]] — Gera tabela de conteúdo
-
-## Skills Wiki (toolkit)
-
-- [[skills/wiki-setup|wiki-setup]] — Inicializa vault
-- [[skills/wiki-status|wiki-status]] — Estado/delta do vault
-- [[skills/wiki-dashboard|wiki-dashboard]] — Dashboards
-- [[skills/wiki-digest|wiki-digest]] — Resumo periódico
-- [[skills/wiki-export|wiki-export]] — Exporta grafo
-- [[skills/wiki-synthesize|wiki-synthesize]] — Síntese cross-cutting
-- [[skills/wiki-dedup|wiki-dedup]] — Deduplicação
-- [[skills/wiki-tag-taxonomy|wiki-tag-taxonomy]] — Taxonomia de tags
-- [[skills/wiki-hermes-history-ingest|hermes-history-ingest]] — Ingere histórico
-- [[skills/wiki-llm-wiki|llm-wiki]] — Fundação teórica
-
-## Skills de Tooling
-
-- [[skills/agent-run|agent-run]] — Runtime de agentes
-- [[skills/skill-forge|skill-forge]] — Cria novas skills
-- [[skills/git-conventional-commit|git-conventional-commit]] — Commits padronizados
-
-## Skills de QA (agent-qa)
-
-- [[skills/gherkin-scenarios|gherkin-scenarios]] — Escrever cenários Gherkin
-- [[skills/go-unit-tests|go-unit-tests]] — Testes unitários em Go
-- [[skills/local-test-runner|local-test-runner]] — Build + vet + test + cover
-- [[skills/tdd-workflow|tdd-workflow]] — Ciclo RED-GREEN-REFACTOR
-- [[skills/cucumber-step-definitions|cucumber-step-definitions]] — Step definitions com Godog
-- [[skills/bdd-spec-process|bdd-spec-process]] — Processo discovery BDD
-- [[skills/playwright-bdd-e2e|playwright-bdd-e2e]] — E2E com Playwright + BDD
+- [[skills/brain|brain]] — Wiki + Obsidian + Docs consolidados
+- [[skills/sdd|sdd]] — Pipeline SDD
+- [[skills/qa-toolkit|qa-toolkit]] — QA e Testes
+- [[skills/dev-toolkit|dev-toolkit]] — Desenvolvimento e Runtime
+- [[skills/github|github]] — GitHub Workflow
+- [[skills/devops|devops]] — Infraestrutura e Operações
+- [[skills/visual|visual]] — Design e Diagramas
+- [[skills/media|media]] — Áudio, Vídeo e Música
+- [[skills/ml|ml]] — Machine Learning Ops
+- [[skills/research|research]] — Pesquisa e Conhecimento
+- [[skills/productivity|productivity]] — Produtividade Local
 
 ## Projeto: 42_chat (Framework SDD)
 
@@ -250,20 +199,6 @@ Ferramentas e frameworks de reasoning: socrático, adversarial, dialético, pre-
 - [[references/pre-mortem-analysis|Pre-Mortem Analysis]] — Antecipação de falhas
 - [[references/red-team-adversarial|Red Team Adversarial]] — Red teaming
 - [[references/socratic-questioning|Socratic Questioning]] — Questionamento socrático
-
-## Skills de Agente (Novas)
-
-Skills Hermes adicionais para agentes: arquitetura, benchmark, Go patterns, docs, brand discovery.
-
-- [[skills/architecture-designer|Architecture Designer]] — Design de arquitetura de sistemas ( #hermes #skill)
-- [[skills/benchmark|Benchmark]] — Medição de performance
-- [[skills/benchmark-methodology|Benchmark Methodology]] — Metodologia de benchmarks
-- [[skills/benchmark-optimization-loop|Benchmark Optimization Loop]] — Ciclo de otimização
-- [[skills/brand-discovery|Brand Discovery]] — Descoberta de estratégia de marca
-- [[skills/golang-patterns|Golang Patterns]] — Padrões idiomáticos Go
-- [[skills/golang-testing|Golang Testing]] — Testes em Go
-- [[skills/docs-writer|Docs Writer]] — Escrita de documentação
-- [[skills/the-fool|The Fool]] — Challenge e adversarial thinking
 
 ## Referências de Brand Strategy
 
