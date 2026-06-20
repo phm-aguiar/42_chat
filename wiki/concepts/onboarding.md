@@ -173,6 +173,11 @@ sdd-validate
 
 ## Relacionado
 
+- [[skills/sdd|sdd toolkit]] — Pipeline SDD (brainstorm → plan → tasks)
+- [[concepts/sdd|SDD]] — Metodologia Spec-Driven Development
+- [[skills/brain|brain toolkit]] — Wiki como memória de longo prazo
+- [[concepts/sdd-workflow|SDD Workflow]] — Exemplo real de pipeline
+
 - [[concepts/sdd-workflow|SDD Workflow]] — Pipeline completo explicado em detalhes
 - [[concepts/sdd|SDD]] — Regras que governam o framework
 - [[concepts/sdd|SDD]] — Tecnologias homologadas

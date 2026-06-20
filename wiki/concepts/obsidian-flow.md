@@ -155,6 +155,11 @@ As skills vivem em `.hermes/skills/wiki/` e são invocadas via `skill_view()`:
 
 ## Relacionado
 
+- [[skills/brain|brain toolkit]] — Implementa este fluxo
+- [[skills/sdd|sdd toolkit]] — Pipeline que aciona a wiki
+- [[concepts/wiki-model|Wiki Model]] — O modelo de 3 camadas
+- [[concepts/vault-taxonomy|Vault Taxonomy]] — Estrutura do vault
+
 - [[concepts/wiki-model|Wiki Model]] — Por que adotamos esse modelo
 - [[concepts/sdd|SDD]] — Regra do vault fiel (portão #4)
 - [[concepts/sdd-workflow|SDD Workflow]] — Onde o wiki se encaixa

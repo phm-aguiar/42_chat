@@ -13,6 +13,7 @@ lifecycle: draft
 lifecycle_changed: "2026-06-15"
 tier: supporting
 created: "2026-06-15"
+superseded_by: "[[skills/sdd|sdd]]"
 updated: "2026-06-15"
 ---
 

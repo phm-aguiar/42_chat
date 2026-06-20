@@ -6,6 +6,7 @@ sources: [.hermes/skills/wiki/ingest/SKILL.md]
 summary: "Destila raw sources (specs, docs, logs) em páginas wiki interligadas. É o entry point do pipeline wiki — transforma artefatos do framework em conhecimento navegável."
 lifecycle: draft
 created: "2026-06-13"
+superseded_by: "[[skills/brain|brain]]"
 updated: "2026-06-13"
 ---
 

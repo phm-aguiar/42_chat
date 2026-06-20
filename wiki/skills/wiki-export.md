@@ -6,6 +6,7 @@ sources: [.hermes/skills/wiki/export/SKILL.md]
 summary: "Exporta o grafo de conhecimento do vault para formatos estruturados: JSON, CSV, grafo de wikilinks."
 lifecycle: draft
 created: "2026-06-13"
+superseded_by: "[[skills/brain|brain]]"
 updated: "2026-06-13"
 ---
 

@@ -6,6 +6,7 @@ sources: [.hermes/skills/doc/generate-toc/SKILL.md]
 summary: "Gera tabela de conteudo (TOC) para documentos markdown. Extrai headers e monta indice navegavel com links internos."
 lifecycle: draft
 created: "2026-06-13"
+superseded_by: "[[skills/brain|brain]]"
 updated: "2026-06-13"
 ---
 

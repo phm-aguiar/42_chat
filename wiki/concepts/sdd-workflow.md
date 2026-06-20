@@ -160,6 +160,11 @@ Feature 006 implementada — 6/6 tasks concluídas
 
 ## Relacionado
 
+- [[skills/sdd|sdd toolkit]] — Pipeline SDD consolidado
+- [[concepts/sdd|SDD]] — Metodologia Spec-Driven Development
+- [[concepts/obsidian-flow|Fluxo Obsidian]] — Integração wiki ↔ pipeline
+- [[concepts/onboarding|Onboarding]] — Como começar
+
 - [[concepts/onboarding|Onboarding]] — Como começar um projeto do zero
 - [[concepts/sdd|SDD]] — Regras arquiteturais
 - [[concepts/sdd|SDD]] — Stack homologada

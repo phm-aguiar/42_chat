@@ -6,6 +6,7 @@ sources: [.hermes/skills/doc/generate-llms-txt/SKILL.md]
 summary: "Gera llms.txt na raiz do repo seguindo o protocolo llmstxt.org. Guia de navegacao otimizado para LLMs com links para specs, constitution e skills."
 lifecycle: draft
 created: "2026-06-13"
+superseded_by: "[[skills/brain|brain]]"
 updated: "2026-06-13"
 ---
 

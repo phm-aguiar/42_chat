@@ -6,6 +6,7 @@ sources: [.hermes/skills/obsidian/obsidian-markdown/SKILL.md]
 summary: "Referência de sintaxe Obsidian Flavored Markdown (OFM): wikilinks, embeds, callouts, frontmatter, tags, footnotes. Usado por todas as skills que escrevem no vault."
 lifecycle: draft
 created: "2026-06-13"
+superseded_by: "[[skills/brain|brain]]"
 updated: "2026-06-15"
 ---
 

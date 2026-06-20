@@ -6,6 +6,7 @@ sources: [.hermes/skills/obsidian/obsidian-bases/SKILL.md]
 summary: "Cria e edita Obsidian Bases (.base files) — visualizações tabulares com filtros, ordenação e fórmulas. Parte do formato OFM avançado."
 lifecycle: draft
 created: "2026-06-13"
+superseded_by: "[[skills/brain|brain]]"
 updated: "2026-06-13"
 ---
 

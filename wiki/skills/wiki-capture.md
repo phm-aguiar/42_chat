@@ -6,6 +6,7 @@ sources: [.hermes/skills/wiki/capture/SKILL.md]
 summary: "Salva a conversa atual como página wiki. Preserva decisões, contexto e raciocínio para referência futura. Essencial para sessões de brainstorm e decisões arquiteturais."
 lifecycle: draft
 created: "2026-06-13"
+superseded_by: "[[skills/brain|brain]]"
 updated: "2026-06-13"
 ---
 

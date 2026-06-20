@@ -6,6 +6,7 @@ sources: [.hermes/skills/doc/extract/SKILL.md]
 summary: "Extrai uma secao especifica de um arquivo markdown. Util para referenciar trechos de specs sem copiar o arquivo inteiro."
 lifecycle: draft
 created: "2026-06-13"
+superseded_by: "[[skills/brain|brain]]"
 updated: "2026-06-13"
 ---
 

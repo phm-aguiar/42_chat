@@ -8,8 +8,17 @@ updated: "2026-06-17"
 	
 # 42_chat Knowledge Base
 
-> Vault do framework SDD autônomo. Agentes: `onboard` + `agent-orchestrator` + `agent-dev`.
-> Estrutura segue [[concepts/vault-taxonomy|Vault Taxonomy]]. 185 páginas | 7 core | 148 fontes.
+> Vault do framework SDD autônomo. 11 toolkits | 6 conceitos | 226 páginas.
+> Estrutura segue [[concepts/vault-taxonomy|Vault Taxonomy]].
+
+## 🧠 Conceitos
+
+- [[concepts/sdd|SDD]] — Spec-Driven Development: metodologia e pipeline
+- [[concepts/sdd-workflow|SDD Workflow]] — Pipeline completo com exemplo real
+- [[concepts/wiki-model|Wiki Model]] — Modelo de 3 camadas (sources → wiki → schema)
+- [[concepts/vault-taxonomy|Vault Taxonomy]] — Taxonomia canônica de diretórios do vault
+- [[concepts/obsidian-flow|Fluxo Obsidian]] — Ciclo de vida do vault integrado ao pipeline
+- [[concepts/onboarding|Onboarding]] — Como começar um projeto do zero
 
 ## Estrutura
 
@@ -28,13 +37,6 @@ updated: "2026-06-17"
 
 - [[journal/2026-06-18-sessao-feat100-oauth|Sessão 18/jun]] — Feature 100 execução, OAuth2 42 debug, constitution anti-hardcoded
 - [[journal/2026-06-14-sessao-qa-skills-42chat|Sessão 14/jun]] — Finalização QA, skills, 42 Chat
-
-## Conceitos (cross-project)
-
-- [[concepts/sdd|SDD]] — Spec-Driven Development: metodologia e pipeline
-- [[concepts/sdd-workflow|SDD Workflow]] — Pipeline completo com exemplo real
-- [[concepts/onboarding|Onboarding]] — Como começar um projeto do zero
-- [[concepts/vault-taxonomy|Vault Taxonomy]] — Taxonomia canônica de diretórios do vault
 
 ## Skills (Toolkits)
 

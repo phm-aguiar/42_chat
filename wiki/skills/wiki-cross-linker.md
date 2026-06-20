@@ -6,6 +6,7 @@ sources: [.hermes/skills/wiki/cross-linker/SKILL.md]
 summary: "Descobre wikilinks faltantes no vault. Escaneia menções não-linkadas e adiciona [[skills/obsidian-markdown|wikilinks]] onde faz sentido. Essencial após múltiplos ingests para manter o grafo de conhecimento conectado."
 lifecycle: draft
 created: "2026-06-13"
+superseded_by: "[[skills/brain|brain]]"
 updated: "2026-06-13"
 ---
 

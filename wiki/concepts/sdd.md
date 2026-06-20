@@ -43,6 +43,11 @@ As regras arquiteturais e a stack tecnológica vivem em `.github/memory/` (versi
 
 ## Relacionado
 
+- [[skills/sdd|sdd toolkit]] — Pipeline SDD consolidado
+- [[concepts/sdd-workflow|SDD Workflow]] — Pipeline completo com exemplo real
+- [[concepts/onboarding|Onboarding]] — Como começar um projeto do zero
+- [[skills/brain|brain toolkit]] — Wiki e conhecimento
+
 - [[concepts/sdd-workflow|SDD Workflow]] — Pipeline completo com exemplo real
 - [[concepts/onboarding|Onboarding]] — Como começar
 - [[concepts/wiki-model|Wiki Model]] — Knowledge management

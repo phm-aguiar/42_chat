@@ -6,6 +6,7 @@ sources: [.hermes/skills/wiki/hermes-history-ingest/SKILL.md]
 summary: "Ingere historico de sessoes do Hermes Agent no vault. Converte conversas em paginas wiki estruturadas."
 lifecycle: draft
 created: "2026-06-13"
+superseded_by: "[[skills/brain|brain]]"
 updated: "2026-06-13"
 ---
 

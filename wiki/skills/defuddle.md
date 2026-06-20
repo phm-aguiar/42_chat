@@ -6,6 +6,7 @@ sources: [.hermes/skills/obsidian/defuddle/SKILL.md]
 summary: "Extrai conteúdo limpo em markdown de páginas web, removendo ruído (ads, nav, sidebars). Usado como pré-processamento antes do wiki-ingest."
 lifecycle: draft
 created: "2026-06-13"
+superseded_by: "[[skills/brain|brain]]"
 updated: "2026-06-13"
 ---
 
