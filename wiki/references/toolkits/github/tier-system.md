@@ -1,3 +1,8 @@
+---
+title: "Tier System"
+tags: [github, reference]
+created: 2026-06-20
+---
 # Tier System para Commits
 
 Referência para o `git-conventional-commit`. Absorvido de `dev-git-commit-message` (AI-Agents-public).

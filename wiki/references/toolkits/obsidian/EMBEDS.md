@@ -1,3 +1,8 @@
+---
+title: "Embeds"
+tags: [obsidian, reference]
+created: 2026-06-20
+---
 # Embeds Reference
 
 ## Embed Notes

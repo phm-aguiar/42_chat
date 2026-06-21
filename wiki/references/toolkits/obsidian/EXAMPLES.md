@@ -1,3 +1,8 @@
+---
+title: "Examples"
+tags: [obsidian, reference]
+created: 2026-06-20
+---
 # JSON Canvas Complete Examples
 
 ## Simple Canvas with Text and Connections

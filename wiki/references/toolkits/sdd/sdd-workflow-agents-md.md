@@ -1,3 +1,8 @@
+---
+title: "Sdd Workflow Agents Md"
+tags: [sdd, reference]
+created: 2026-06-20
+---
 # Seção SDD Workflow para AGENTS.md
 
 Conteúdo a ser inserido ou merged no `AGENTS.md` do repositório durante `sdd-init-repo`.

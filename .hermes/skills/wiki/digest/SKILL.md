@@ -20,7 +20,7 @@ You are generating a human-readable digest of recent wiki activity: what was lea
 
 ## Before You Start
 
-1. **Resolve config** — follow the Config Resolution Protocol in `llm-wiki/SKILL.md` (walk up CWD for `.env` → `~/.obsidian-wiki/config` → prompt setup). This gives `OBSIDIAN_VAULT_PATH` and `OBSIDIAN_LINK_FORMAT`.
+1. **Resolve config** — follow the Config Resolution Protocol in `llm_wiki/SKILL.md` (walk up CWD for `.env` → `~/.obsidian-wiki/config` → prompt setup). This gives `OBSIDIAN_VAULT_PATH` and `OBSIDIAN_LINK_FORMAT`.
 2. **Parse the period** from the user's request:
    - "daily" / "today" / "yesterday" → last 24 hours
    - "weekly" / "this week" / no argument (default) → last 7 days
@@ -102,7 +102,7 @@ Write each recommendation with a concrete reason: *"[[concepts/attention-mechani
 
 Produce a structured, scannable markdown report. The Headlines section is the most important — it should feel like the opening of a good newsletter, synthesizing actual insight rather than listing page names.
 
-Apply the link format from `llm-wiki/SKILL.md` (Link Format section) using `OBSIDIAN_LINK_FORMAT`. Default is `[[wikilink]]`.
+Apply the link format from `llm_wiki/SKILL.md` (Link Format section) using `OBSIDIAN_LINK_FORMAT`. Default is `[[wikilink]]`.
 
 ```markdown
 # Wiki Digest — [Period Label]
@@ -148,7 +148,7 @@ Most active category: **[category/]** ([N pages added or updated])
 - **Drafts to compile** ([count]): [[concepts/foo]], [[concepts/bar]] — still in draft lifecycle
 - **Ambiguous claims**: [N] `^[ambiguous]` markers across [M] pages — run `/wiki-synthesize` to resolve
 - **Unstaged notes**: [N] files in `_raw/` — run `/wiki-ingest _raw/` to promote them
-- **Taxonomy gaps**: Tags `#newtag1`, `#newtag2` used but not in taxonomy — run `/tag-taxonomy`
+- **Taxonomy gaps**: Tags `#newtag1`, `#newtag2` used but not in taxonomy — run `/tag_taxonomy`
 
 *(Omit any subsection where count is 0.)*
 

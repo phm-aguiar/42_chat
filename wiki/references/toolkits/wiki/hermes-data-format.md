@@ -1,3 +1,8 @@
+---
+title: "Hermes Data Format"
+tags: [wiki, reference]
+created: 2026-06-20
+---
 # Hermes Agent — Data Format Reference
 
 Field-level notes for parsing `~/.hermes/` artifacts during wiki ingest.

@@ -1,3 +1,8 @@
+---
+title: "Properties"
+tags: [obsidian, reference]
+created: 2026-06-20
+---
 # Properties (Frontmatter) Reference
 
 Properties use YAML frontmatter at the start of a note:

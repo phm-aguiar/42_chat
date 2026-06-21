@@ -139,6 +139,50 @@ As regras são derivadas destes documentos (consulte os originais para detalhes 
 - [Effective Go](https://go.dev/doc/effective_go) — Documento canônico da linguagem
 - [Go Wiki: CodeReviewComments](https://go.dev/wiki/CodeReviewComments) — Checklist da comunidade Go
 
+### Google Go Style — Estrutura de Documentos
+
+O [Google Go Style Guide](https://google.github.io/styleguide/go/) é composto por três documentos complementares:
+
+| Documento | Link | Audiência Primária | Normativo | Canônico |
+|-----------|------|-------------------|-----------|----------|
+| **Style Guide** | [guide](https://google.github.io/styleguide/go/guide) | Todos | Sim | Sim |
+| **Style Decisions** | [decisions](https://google.github.io/styleguide/go/decisions) | Readability Mentors | Sim | Não |
+| **Best Practices** | [best-practices](https://google.github.io/styleguide/go/best-practices) | Qualquer interessado | Não | Não |
+
+1. O **Style Guide** delineia a fundação do estilo Go no Google. Documento definitivo, usado como base para recomendações nos outros dois.
+2. **Style Decisions** resume decisões sobre pontos específicos de estilo e discute o raciocínio por trás delas. Pode mudar ocasionalmente baseado em novos dados, features da linguagem ou bibliotecas.
+3. **Best Practices** documenta padrões que evoluíram ao longo do tempo para resolver problemas comuns, com boa leitura e robustos para manutenção.
+
+**Definições importantes:**
+- **Canônico**: Estabelece regras prescritivas e duradouras. Todo código (antigo e novo) deve seguir.
+- **Normativo**: Destinado a estabelecer consistência. Elementos acordados de estilo para uso por revisores de código Go.
+- **Idiomático**: Comum e familiar. Padrão prevalente em código Go, fácil de reconhecer.
+
+### Uber Go Style Guide — Traduções
+
+O [Uber Go Style Guide](https://github.com/uber-go/guide) está disponível em múltiplas traduções pela comunidade:
+
+| Idioma | Repositório |
+|--------|-------------|
+| 中文 (Chinês) | [xxjwxc/uber_go_guide_cn](https://github.com/xxjwxc/uber_go_guide_cn) |
+| 繁體中文 (Chinês Trad.) | [ianchen0119/uber_go_guide_tw](https://github.com/ianchen0119/uber_go_guide_tw) |
+| 한국어 (Coreano) | [TangoEnSkai/uber-go-style-guide-kr](https://github.com/TangoEnSkai/uber-go-style-guide-kr) |
+| 日本語 (Japonês) | [knsh14/uber-style-guide-ja](https://github.com/knsh14/uber-style-guide-ja) |
+| Español (Espanhol) | [friendsofgo/uber-go-guide-es](https://github.com/friendsofgo/uber-go-guide-es) |
+| Português | [lucassscaravelli/uber-go-guide-pt](https://github.com/lucassscaravelli/uber-go-guide-pt) |
+| Português BR | [alcir-junior-caju/uber-go-style-guide-pt-br](https://github.com/alcir-junior-caju/uber-go-style-guide-pt-br) |
+| Polski (Polonês) | [DamianSkrzypczak/uber-go-guide-pl](https://github.com/DamianSkrzypczak/uber-go-guide-pl) |
+| Русский (Russo) | [alekarah/uber-go-guide-ru](https://github.com/alekarah/uber-go-guide-ru) |
+| Français (Francês) | [rm3l/uber-go-style-guide-fr](https://github.com/rm3l/uber-go-style-guide-fr) |
+| Türkçe (Turco) | [ksckaan1/uber-go-style-guide-tr](https://github.com/ksckaan1/uber-go-style-guide-tr) |
+| Українська (Ucraniano) | [vorobeyme/uber-go-style-guide-uk](https://github.com/vorobeyme/uber-go-style-guide-uk) |
+| فارسی (Persa) | [jamalkaksouri/uber-go-guide-ir](https://github.com/jamalkaksouri/uber-go-guide-ir) |
+| Tiếng việt (Vietnamita) | [nc-minh/uber-go-guide-vi](https://github.com/nc-minh/uber-go-guide-vi) |
+| العربية (Árabe) | [anqorithm/uber-go-guide-ar](https://github.com/anqorithm/uber-go-guide-ar) |
+| Bahasa Indonesia | [stanleydv12/uber-go-guide-id](https://github.com/stanleydv12/uber-go-guide-id) |
+
+> **Consulte também**: [[references/go/go-code-review-rules|Code Review Rules]] — Consolidação completa das 59 regras do Uber Go Style Guide com exemplos Ruim/Bom traduzidos para PT-BR.
+
 ## Ver Também
 
 - [[synthesis/sdd-go|SDD × Go]] — Spec-Driven Development aplicado a Go

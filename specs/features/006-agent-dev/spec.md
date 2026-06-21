@@ -6,8 +6,8 @@
 - **Aprovado:** true
 - **Autor:** phm-aguiar
 - **Data:** 2026-06-13
-- **Feature Anterior:** 005-runtime-orchestrator
-- **Dependência:** 005-runtime-orchestrator (orchestrator spawna o agent-dev como subagente leaf)
+- **Feature Anterior:** 013-runtime-orchestrator
+- **Dependência:** 013-runtime-orchestrator (orchestrator spawna o agent-dev como subagente leaf)
 
 ## Propósito
 > O agent-dev é o braço executor do framework SDD autônomo. Spawnado pelo orchestrator

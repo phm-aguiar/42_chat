@@ -1,3 +1,8 @@
+---
+title: "Vault Taxonomy"
+tags: [concept]
+created: 2026-06-20
+---
 1|---
 2|title: "Vault Taxonomy"
 3|category: concepts

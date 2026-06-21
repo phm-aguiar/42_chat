@@ -1,3 +1,8 @@
+---
+title: "Table Driven"
+tags: [qa, reference]
+created: 2026-06-20
+---
 # Table-Driven Tests em Go
 
 ## Por que table-driven?

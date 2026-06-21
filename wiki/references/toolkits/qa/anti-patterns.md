@@ -1,3 +1,8 @@
+---
+title: "Anti Patterns"
+tags: [qa, reference]
+created: 2026-06-20
+---
 # Gherkin Anti-Patterns
 
 ## 1. Cenario com multiplos When/Then

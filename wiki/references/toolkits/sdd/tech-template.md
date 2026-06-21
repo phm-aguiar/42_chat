@@ -1,3 +1,8 @@
+---
+title: "Tech Template"
+tags: [sdd, reference]
+created: 2026-06-20
+---
 # Stack Tecnológica
 
 > Preenchido automaticamente pela skill `sdd-explore-tech` em {{date}}.

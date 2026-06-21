@@ -1,3 +1,8 @@
+---
+title: "Ingest Prompts"
+tags: [wiki, reference]
+created: 2026-06-20
+---
 # Ingest Prompt Templates
 
 These are the mental frameworks to use when distilling a source into wiki pages.

@@ -1,3 +1,8 @@
+---
+title: "Raw Format"
+tags: [wiki, reference]
+created: 2026-06-20
+---
 # Raw File Format Reference
 
 Full specification for `_raw/` files written by `wiki-capture` (quick mode).

@@ -248,8 +248,3 @@ Estratégia de cache:
 
 ← Back to [[references/react-vite-performance|React + Vite Performance MoC]]
 
-## Sources
-
-- [Vite Build Options](https://vitejs.dev/config/build-options.html)
-- [Rollup Tree Shaking](https://rollupjs.org/configuration-options/#treeshake)
-- [vite-plugin-compression](https://github.com/vbenjs/vite-plugin-compression)

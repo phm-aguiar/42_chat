@@ -215,10 +215,3 @@ function usePrefetchAfterIdle(preloadFns: Array<() => Promise<any>>, delay = 200
 
 ← Back to [[references/react-vite-performance|React + Vite Performance MoC]]
 
-## Sources
-
-- [React lazy](https://react.dev/reference/react/lazy)
-- [React Suspense](https://react.dev/reference/react/Suspense)
-- [Vite Code Splitting](https://vitejs.dev/guide/build.html#chunking-strategy)
-- [react-error-boundary](https://github.com/bvaughn/react-error-boundary)
-- [react-intersection-observer](https://github.com/thebuilder/react-intersection-observer)

@@ -1,3 +1,8 @@
+---
+title: "Architecture Patterns"
+tags: [sdd, reference]
+created: 2026-06-20
+---
 # Padrões de Arquitetura para ADR
 
 Referência para o `sdd-generate-plan`. Absorvido de `software-architecture-design` (AI-Agents-public).

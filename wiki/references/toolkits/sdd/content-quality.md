@@ -1,3 +1,8 @@
+---
+title: "Content Quality"
+tags: [sdd, reference]
+created: 2026-06-20
+---
 # Métricas de Qualidade de Conteúdo
 
 Referência para o `sdd-validate`. Absorvido de `documentation-metrics.md` + `qa-docs-coverage` (AI-Agents-public).

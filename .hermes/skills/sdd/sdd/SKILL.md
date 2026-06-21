@@ -2,7 +2,7 @@
 name: sdd
 description: >
   Toolkit consolidado do pipeline SDD (Spec-Driven Development). 8 modos cobrindo
-  o ciclo completo: brainstorm → explore-tech → init-repo → plan → tasks → validate →
+  o ciclo completo: brainstorm → explore_tech → init_repo → plan → tasks → validate →
   refactor → wiki-enforce. Carregue SEMPRE antes de qualquer operação SDD.
   Trigger keywords: SDD, spec, feature, pipeline, brainstorm, explore tech, init repo,
   gerar plano, gerar tasks, validar SDD, refatorar artefato, wiki enforcement.
@@ -16,8 +16,8 @@ metadata:
     category: sdd
     modes:
       - brainstorm
-      - explore-tech
-      - init-repo
+      - explore_tech
+      - init_repo
       - plan
       - tasks
       - validate
@@ -25,19 +25,19 @@ metadata:
       - wiki-enforce
     umbrella_for:
       - sdd-brainstorm
-      - sdd-explore-tech
-      - sdd-init-repo
-      - sdd-generate-plan
-      - sdd-generate-tasks
+      - sdd-explore_tech
+      - sdd-init_repo
+      - sdd-generate_plan
+      - sdd-generate_tasks
       - sdd-validate
-      - sdd-refactor-artifact
+      - sdd-refactor_artifact
       - sdd-wiki-enforcement
     resources:
       - SKILL.md
     absorbed_skills_resources:
       brainstorm: [references/interview-dimensions.md, assets/spec-template.md]
-      explore-tech: [assets/tech-template.md]
-      init-repo: [assets/templates/constitution-template.md, assets/templates/spec-template.md, assets/templates/plan-template.md, assets/templates/tasks-template.md, references/sdd-workflow-agents-md.md, references/agents-md-sdd-section.md, scripts/scaffold-sdd.sh]
+      explore_tech: [assets/tech-template.md]
+      init_repo: [assets/templates/constitution-template.md, assets/templates/spec-template.md, assets/templates/plan-template.md, assets/templates/tasks-template.md, references/sdd-workflow-agents-md.md, references/agents-md-sdd-section.md, scripts/scaffold-sdd.sh]
       plan: [references/architecture-patterns.md]
       tasks: [references/task-rules.md]
       validate: [references/content-quality.md, scripts/check-sdd.sh]
@@ -57,7 +57,7 @@ metadata:
 brainstorm → spec.md ──→ plan → plan.md ──→ tasks → tasks.md
      ↑                    ↑                    ↑
      │                    │                    │
-  explore-tech        init-repo            validate
+  explore_tech        init_repo            validate
   (tech.md)         (estrutura)         (auditoria)
                                              │
                     wiki-enforce ←───────────┘
@@ -67,8 +67,8 @@ brainstorm → spec.md ──→ plan → plan.md ──→ tasks → tasks.md
 | Modo | Gatilho | Entrada | Saída |
 |---|---|---|---|
 | `brainstorm` | Discutir feature, nova ideia | Ideia do usuário | `spec.md` |
-| `explore-tech` | Mapear stack, preencher tech.md | Repo | `tech.md` |
-| `init-repo` | Inicializar SDD, criar estrutura | Repo vazio/existente | `.github/memory/` + `specs/` |
+| `explore_tech` | Mapear stack, preencher tech.md | Repo | `tech.md` |
+| `init_repo` | Inicializar SDD, criar estrutura | Repo vazio/existente | `.github/memory/` + `specs/` |
 | `plan` | Gerar plano arquitetural | `spec.md` | `plan.md` |
 | `tasks` | Gerar matriz de tasks DAG | `spec.md` + `plan.md` | `tasks.md` |
 | `validate` | Auditar estrutura SDD | Repo | Relatório PASS/FAIL/WARN |
@@ -104,7 +104,7 @@ brainstorm → spec.md ──→ plan → plan.md ──→ tasks → tasks.md
 
 ---
 
-## Modo: explore-tech
+## Modo: explore_tech
 
 **Gatilhos:** mapear tech stack, explorar tecnologia, preencher tech.md, detectar stack, what tech does this repo use.
 
@@ -113,7 +113,7 @@ brainstorm → spec.md ──→ plan → plan.md ──→ tasks → tasks.md
 1. **Detectar manifestos:** busque `go.mod`, `package.json`, `Cargo.toml`, `pom.xml`, `pyproject.toml`, `Gemfile`, `mix.exs`, `CMakeLists.txt`, `*.csproj`.
 2. **Extrair versões e dependências:** leia cada manifesto, extraia versão da linguagem e frameworks principais.
 3. **Detectar CI e ferramentas:** `.github/workflows/`, linters (`.golangci.yml`, `.eslintrc*`), Docker, task runners (`Makefile`, `justfile`), padrões de teste.
-4. **Consolidar em tech.md:** preencha template (`~/.hermes/skills/sdd/explore-tech/assets/tech-template.md`). Use `—` para entradas não encontradas.
+4. **Consolidar em tech.md:** preencha template (`~/.hermes/skills/sdd/explore_tech/assets/tech-template.md`). Use `—` para entradas não encontradas.
 5. **Reportar:** resuma achados, pergunte se usuário quer ajustar.
 
 ### Pitfalls
@@ -125,7 +125,7 @@ brainstorm → spec.md ──→ plan → plan.md ──→ tasks → tasks.md
 
 ---
 
-## Modo: init-repo
+## Modo: init_repo
 
 **Gatilhos:** iniciar SDD, init sdd, estrutura sdd, setup sdd, inicializar repo SDD, criar estrutura SDD.
 
@@ -133,12 +133,12 @@ brainstorm → spec.md ──→ plan → plan.md ──→ tasks → tasks.md
 
 1. **Verificar estado:** liste raiz. Se `.github/memory/` ou `specs/` existirem, pergunte preservar ou recriar.
 2. **Criar memória de contexto:**
-   - `.github/memory/constitution.md` — template em `~/.hermes/skills/sdd/init-repo/assets/templates/constitution-template.md`
-   - `.github/memory/tech.md` — placeholder; preencher depois via `explore-tech`
+   - `.github/memory/constitution.md` — template em `~/.hermes/skills/sdd/init_repo/assets/templates/constitution-template.md`
+   - `.github/memory/tech.md` — placeholder; preencher depois via `explore_tech`
    - Automação opcional: `bash scripts/scaffold-sdd.sh`
 3. **Criar specs/:** `mkdir -p specs/domain-events specs/features specs/infra`
 4. **Atualizar AGENTS.md:** merge da seção SDD Workflow (template em `references/sdd-workflow-agents-md.md`). Idempotente — se já existe, pule.
-5. **Sugerir próximos passos:** `explore-tech` → preencher `constitution.md` → `brainstorm`.
+5. **Sugerir próximos passos:** `explore_tech` → preencher `constitution.md` → `brainstorm`.
 
 ### Pitfalls
 
@@ -164,7 +164,7 @@ brainstorm → spec.md ──→ plan → plan.md ──→ tasks → tasks.md
    - **Auditoria de Constituição:** checklist contra cada regra do `constitution.md`.
 4. **Apresentar e salvar:** mostre stack, número de ADRs, auditoria. **Pergunte antes de salvar.** Escreva `plan.md`.
 
-Referência de padrões em `~/.hermes/skills/sdd/generate-plan/references/architecture-patterns.md`.
+Referência de padrões em `~/.hermes/skills/sdd/generate_plan/references/architecture-patterns.md`.
 
 ### Pitfalls
 
@@ -186,7 +186,7 @@ Referência de padrões em `~/.hermes/skills/sdd/generate-plan/references/archit
 1. **Approval gate:** leia spec.md, verifique `**Aprovado:** true`. Se false, aborte.
 2. **Identificar feature:** usuário informa diretório.
 3. **Ler fontes:** spec.md + plan.md → funcionalidade, cenários BDD, stack, contratos, ADRs.
-4. **Carregar regras:** `~/.hermes/skills/sdd/generate-tasks/references/task-rules.md`.
+4. **Carregar regras:** `~/.hermes/skills/sdd/generate_tasks/references/task-rules.md`.
 5. **Derivar tasks atômicas** com metadados DAG — **interação fase por fase via `clarify()`:**
    - Cada task: `Tnnn`, Papel (Dev|QA), Dependências, Paralelizável (true|false), Arquivos (paths exaustivos).
    - **Regra de paralelismo:** tasks da mesma fase são paralelizáveis se e somente se (a) sem dependência entre elas E (b) conjuntos de Arquivos disjuntos. Se compartilham paths → force sequencial.
@@ -238,7 +238,7 @@ Qualidade de conteúdo: `~/.hermes/skills/sdd/validate/references/content-qualit
 
 1. **Identificar tipo:** especificação (`spec.md`), plano (`plan.md`), tasks (`tasks.md`), agentes (`AGENTS.md`), navegação (`llms.txt`).
 2. **Ler conteúdo atual:** extraia semanticamente títulos, parágrafos, listas, placeholders.
-3. **Mapear para seções canônicas:** templates em `~/.hermes/skills/sdd/refactor-artifact/references/canonical-templates.md`.
+3. **Mapear para seções canônicas:** templates em `~/.hermes/skills/sdd/refactor_artifact/references/canonical-templates.md`.
 4. **Apresentar diff:** resumo das mudanças. **Pergunte antes de aplicar.**
 5. **Aplicar e reportar:** seções adicionadas, renomeadas, conteúdo preservado.
 
@@ -274,7 +274,7 @@ Qualidade de conteúdo: `~/.hermes/skills/sdd/validate/references/content-qualit
 | Antes de commit | Validar estrutura SDD + vault | `sdd-validate` + `wiki-lint` |
 | Nova sessão (primeiro contato) | Carregar contexto do vault | `llms.txt` + `wiki/index.md` |
 | Mudança no constitution.md ou tech.md | Atualizar concepts/sdd.md | `wiki-ingest` |
-| Após criar/modificar múltiplas páginas | Descobrir wikilinks faltantes | `wiki/cross-linker` |
+| Após criar/modificar múltiplas páginas | Descobrir wikilinks faltantes | `wiki/cross_linker` |
 | Sessão importante (decisões, debug) | Salvar conversa no vault | `wiki-capture` |
 
 > **Regra de enforcement:** Se executou uma ação da coluna "Gatilho" e NÃO

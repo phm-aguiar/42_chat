@@ -1,0 +1,1 @@
+# LATTE Coordination Engine package

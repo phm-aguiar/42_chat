@@ -1,3 +1,8 @@
+---
+title: "Callouts"
+tags: [obsidian, reference]
+created: 2026-06-20
+---
 # Callouts Reference
 
 ## Basic Callout

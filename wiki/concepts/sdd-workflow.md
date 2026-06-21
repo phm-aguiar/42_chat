@@ -7,13 +7,16 @@ sources: []
 summary: "Pipeline completo do Spec-Driven Development: brainstorm → spec → plan → tasks (DAG) → orchestrator → agentes. Cada etapa explicada com o exemplo real da feature 006 (agent-dev)."
 lifecycle: draft
 created: "2026-06-13"
-updated: "2026-06-13"
+updated: "2026-06-19"
 ---
 
 # SDD Workflow — Pipeline Completo
 
 > O framework SDD autônomo transforma ideias em código funcional através de um pipeline
 > de 5 etapas. Humanos aprovam specs. Agentes implementam. O orchestrator coordena.
+> O **modo LATTE** (habilitado via `graph-operators: enabled` no `tasks.md`) ativa um
+> coordination graph dinâmico com 7 operadores para execução descentralizada e resiliência
+> a falhas via rounds, heartbeat e frontier dispatch (Algorithm A4.5).
 
 ## Visão Geral
 
@@ -126,6 +129,94 @@ O orchestrator:
 
 > **Nota:** Apenas `agent-dev` (006) está implementado. QA, DevOps e Pentester são features 007-009.
 
+## Modo LATTE — Coordenação Dinâmica
+
+> **Feature 001: LATTE Coordination.** O modo LATTE é uma extensão do orchestrator
+> que substitui a janela deslizante centralizada por um **coordination graph dinâmico**
+> com execução descentralizada. Habilitado via `graph-operators: enabled` no `tasks.md`.
+
+### Ativação
+
+```yaml
+# tasks.md — configuração LATTE
+graph-operators: enabled   # ativa coordination graph dinâmico
+max-rounds: 20             # limite de rounds (opcional, default 20)
+heartbeat-sec: 30          # heartbeat entre operadores (opcional, default 30)
+```
+
+Quando `graph-operators` está `disabled` ou ausente, o orchestrator usa o modo
+padrão de janela deslizante (Etapa 5).
+
+### Pipeline Estendido
+
+```
+1. sdd-brainstorm → spec.md
+2. sdd-generate-plan → plan.md
+3. sdd-generate-tasks → tasks.md (DAG + graph-operators: enabled)
+4. Aprovação humana
+5. agent-orchestrator → LATTE Coordination Engine
+   ├── Algorithm A4.5 (rounds, heartbeat, frontier, dispatch)
+   ├── 7 operadores (Discover, Assign, Claim, Complete, Release, Close, Verify)
+   └── G_final salvo como coordination-graph.md no wiki/
+```
+
+### Algorithm A4.5 — Execução por Rounds
+
+O orchestrator segue o **Algorithm A4.5** com execução baseada em rounds:
+
+| Mecanismo | Descrição |
+|---|---|
+| **Rounds** | Cada round avalia o estado do grafo, despacha tasks prontas e coleta resultados. O processo termina quando `G_final` tem todas as tasks `Closed` + `Verified` ou `max-rounds` é atingido. |
+| **Heartbeat** | A cada `heartbeat-sec` segundos, o orchestrator faz ping nos operadores ativos. Se um operador não responde, sua task volta para `Ready` e entra na frontier do próximo round. |
+| **Frontier** | Conjunto de tasks prontas para dispatch no round atual — tasks cujas dependências estão todas `Closed` e que ainda não estão atribuídas. |
+| **Dispatch** | O orchestrator seleciona tasks da frontier e as despacha para subagentes. O dispatch respeita `max-parallel` e isolamento de arquivos (tasks paralelas nunca compartilham paths). |
+
+### Os 7 Operadores do Coordination Graph
+
+Cada task no DAG transita por estados gerenciados por **7 operadores**:
+
+| Operador | Estado | Gatilho | Ação |
+|---|---|---|---|
+| **Discover** | `Ready` | Dependências satisfeitas | Task entra na frontier do round |
+| **Assign** | `Assigned` | Dispatch pelo orchestrator | Task atribuída a um subagente (Dev/QA/DevOps) |
+| **Claim** | `Claimed` | Subagente aceita a task | Agente confirma que iniciará a execução |
+| **Complete** | `Completed` | Subagente finaliza implementação | Evidências registradas (arquivos, smoke-test) |
+| **Release** | `Released` | Subagente entrega para verificação | Task disponível para validação cruzada |
+| **Close** | `Closed` | Verificação interna ok | Task marcada como concluída no grafo |
+| **Verify** | `Verified` | Validação externa (outro agente/QA) | Verificação cruzada aprovada — task imutável |
+
+**Transições de estado no grafo:**
+
+```
+Ready → Assigned → Claimed → Completed → Released → Closed → Verified
+  ↑        │          │          │                                   
+  └────────┴──────────┴──────────┘ (heartbeat timeout → retry)
+```
+
+Se um heartbeat timeout ocorre em qualquer estado após `Assigned`, a task
+volta para `Ready` e é re-despachada no próximo round (máx 3 tentativas;
+após 3 falhas, escala para o humano).
+
+### G_final: coordination-graph.md
+
+Ao final da execução (todas as tasks `Verified` ou `max-rounds` atingido),
+o grafo completo é salvo como:
+
+```
+wiki/concepts/coordination-graph.md
+```
+
+O arquivo contém:
+
+- **Snapshot do grafo:** tasks, estados finais, dependências resolvidas
+- **Métricas de execução:** rounds utilizados, timeouts, retries, tempo total
+- **Rastreabilidade:** qual agente executou cada task, com timestamps
+- **Template de referência:** [[references/toolkits/sdd/coordination-graph-template]] (T023)
+
+> **Nota:** O template `coordination-graph-template.md` será criado na T023 e
+> define o schema exato do `coordination-graph.md`. Consulte-o para o formato
+> canônico de saída.
+
 ## Exemplo Completo: Feature 006 (Agent Dev)
 
 ```
@@ -168,4 +259,7 @@ Feature 006 implementada — 6/6 tasks concluídas
 - [[concepts/onboarding|Onboarding]] — Como começar um projeto do zero
 - [[concepts/sdd|SDD]] — Regras arquiteturais
 - [[concepts/sdd|SDD]] — Stack homologada
+- [[concepts/coordination-graph|Coordination Graph]] — G_final gerado pelo modo LATTE
+- [[references/toolkits/sdd/coordination-graph-template|Template Coordination Graph]] — Schema do coordination-graph.md (T023)
+- [[projects/42_chat/features/feature-001-latte-coordination|Feature 001 — LATTE Coordination]] — Feature que implementa o modo LATTE
 - [[projects/42_chat/features/feature-006-agent-dev|Feature 006]] — Exemplo real usado neste documento

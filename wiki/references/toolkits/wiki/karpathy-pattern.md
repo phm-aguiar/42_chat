@@ -1,3 +1,8 @@
+---
+title: "Karpathy Pattern"
+tags: [wiki, reference]
+created: 2026-06-20
+---
 # Karpathy's LLM Wiki Pattern — Original Reference
 
 Source: https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f

@@ -180,9 +180,3 @@ const src = flags[`./assets/flags/${code}.svg`]
 
 ← Back to [[references/react-vite-performance|React + Vite Performance MoC]]
 
-## Sources
-
-- [Vite Static Asset Handling](https://vitejs.dev/guide/assets.html)
-- [vite-plugin-svgr](https://github.com/pd4d10/vite-plugin-svgr)
-- [SVGR](https://react-svgr.com/)
-- [web.dev Image Optimization](https://web.dev/fast/#optimize-your-images)

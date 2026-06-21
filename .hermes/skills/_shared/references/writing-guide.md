@@ -7,9 +7,9 @@ Referência compartilhada para skills que produzem documentação. Absorvido de 
 | Tipo | Propósito | Exemplo no 42_chat |
 |---|---|---|
 | **Tutorial** | Ensinar uma skill (learning-oriented) | `wiki-ingest` — passo a passo |
-| **How-to** | Resolver um problema (task-oriented) | `git-conventional-commit` — fluxo de commit |
+| **How-to** | Resolver um problema (task-oriented) | `git_conventional_commit` — fluxo de commit |
 | **Reference** | Informação detalhada (information-oriented) | `architecture-patterns.md` — decision tree |
-| **Explanation** | Esclarecer conceitos (understanding-oriented) | `wiki/llm-wiki/SKILL.md` — teoria da wiki |
+| **Explanation** | Esclarecer conceitos (understanding-oriented) | `wiki/llm_wiki/SKILL.md` — teoria da wiki |
 
 **Regra:** Um documento = um propósito. Não misture tutorial com referência.
 

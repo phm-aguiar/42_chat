@@ -1,3 +1,8 @@
+---
+title: "Spec Template"
+tags: [sdd, reference]
+created: 2026-06-20
+---
 # Spec: {{FEATURE_NAME}}
 
 ## Metadados

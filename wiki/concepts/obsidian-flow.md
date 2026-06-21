@@ -153,6 +153,95 @@ As skills vivem em `.hermes/skills/wiki/` e são invocadas via `skill_view()`:
 
 > **Ver skills completas:** `concepts/tech.md` lista todas as 21 skills.
 
+## Indexação Semântica e Retrieval Contextual (Feature 002)
+
+> A Feature 002 (Wiki Experiential Memory) introduz indexação semântica no vault
+> wiki, permitindo que o pipeline SDD consuma memória compilada de forma
+> inteligente durante a geração de tarefas e sessões de brainstorm.
+
+### 1. Fluxo de Indexação Semântica
+
+O comando `hermes wiki index --full` dispara o pipeline completo de indexação:
+
+```
+hermes wiki index --full
+  ├── 1. Coleta: lê todas as páginas do vault (wiki/**/*.md)
+  ├── 2. Chunking: divide páginas em chunks semânticos (~512 tokens)
+  ├── 3. Embedding: gera vetores para cada chunk (modelo configurado)
+  ├── 4. Armazenamento: persiste no vector store (ChromaDB / FAISS)
+  └── 5. Metadados: associa cada chunk à sua página fonte, tags e aliases
+```
+
+**Quando disparar:**
+- Após `wiki-ingest` de novas features (automático ou manual)
+- Após mudanças estruturais no vault (renomeações, reorganizações)
+- Periodicamente (cron diário) para manter o índice sincronizado
+
+**Custo:** Alto (lê todo o vault + gera embeddings), mas executado offline.
+
+### 2. Retrieval Contextual
+
+O comando `hermes wiki query --semantic` realiza busca semântica no índice:
+
+```
+hermes wiki query --semantic "padrão observer em agents"
+  ├── 1. Embedding da query: converte a pergunta em vetor
+  ├── 2. Similaridade: busca os top-K chunks mais próximos no vector store
+  ├── 3. Re-ranking: reordena por relevância contextual (lexical + semântico)
+  └── 4. Síntese: retorna chunks relevantes com links para páginas fonte
+```
+
+**Modos de operação:**
+
+| Modo | Comando | Uso |
+|---|---|---|
+| Index-only (barato) | `hermes wiki query --semantic` | Retorna apenas referências e snippets |
+| Full-read (profundo) | `hermes wiki query --semantic --full` | Lê páginas completas e sintetiza resposta |
+| Híbrido (default) | `hermes wiki query` | Combina busca lexical + semântica |
+
+### 3. Como o Pipeline SDD Consome o Índice
+
+O índice semântico é consumido em dois pontos críticos do pipeline:
+
+#### a) `generate-tasks --with-memory`
+
+```
+generate-tasks --with-memory
+  ├── Lê spec.md e plan.md da feature atual
+  ├── Consulta wiki (query --semantic): "features similares já implementadas"
+  ├── Recupera padrões, decisões e pitfalls de features passadas
+  └── Gera tasks.md com contexto histórico compilado
+```
+
+**Benefício:** Tasks geradas já incorporam lições aprendidas, evitando repetir
+erros e acelerando a implementação com padrões conhecidos.
+
+#### b) `brainstorm`
+
+```
+brainstorm (sessão interativa)
+  ├── Agente recebe prompt do humano
+  ├── Consulta wiki (query --semantic): busca conhecimento relevante
+  ├── Recupera decisões arquiteturais passadas, features relacionadas
+  └── Gera spec.md informada pelo histórico do projeto
+```
+
+**Benefício:** Brainstorms são fundamentados no que já foi decidido, evitando
+rediscussão de tópicos resolvidos e mantendo coerência arquitetural.
+
+### 4. Referência Cruzada — Feature 002
+
+Esta seção implementa os requisitos da **Feature 002: Wiki Experiential Memory**
+(`wiki/projects/42_chat/features/feature-002-sdd-templates.md`), que estabelece
+o vault wiki como memória experiencial do framework:
+
+- **Memória semântica:** Indexação vetorial para retrieval contextual
+- **Memória procedural:** Templates SDD que guiam o pipeline
+- **Memória episódica:** Log de sessões e decisões (`wiki-capture`)
+
+> Consulte a [Feature 002](../projects/42_chat/features/feature-002-sdd-templates.md)
+> para os requisitos completos e critérios de aceitação.
+
 ## Relacionado
 
 - [[skills/brain|brain toolkit]] — Implementa este fluxo

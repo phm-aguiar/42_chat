@@ -7,7 +7,7 @@
 - **Autor:** phm-aguiar
 - **Data:** 2026-06-13
 - **Feature Anterior:** 006-agent-dev
-- **Dependência:** 005-runtime-orchestrator (orchestrator spawna o agent-qa como subagente leaf)
+- **Dependência:** 013-runtime-orchestrator (orchestrator spawna o agent-qa como subagente leaf)
 
 ## Propósito
 > O agent-qa é o guardião da qualidade do framework SDD. Spawnado pelo orchestrator como

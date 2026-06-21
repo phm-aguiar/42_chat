@@ -12,7 +12,7 @@ metadata:
       - wiki-query
       - wiki-lint
       - wiki-capture
-      - cross-linker
+      - cross_linker
       - wiki-dedup
       - wiki-synthesize
       - wiki-dashboard
@@ -20,23 +20,23 @@ metadata:
       - wiki-digest
       - wiki-export
       - wiki-setup
-      - hermes-history-ingest
-      - tag-taxonomy
+      - hermes_history_ingest
+      - tag_taxonomy
       - hermes-wiki-setup
       - document-consolidation
       - vault-health
-      - wiki/llm-wiki
-      - research/llm-wiki
+      - wiki/llm_wiki
+      - research/llm_wiki
       - vault-first-aid
-      - obsidian-markdown
-      - obsidian-cli
-      - obsidian-bases
-      - json-canvas
+      - obsidian_markdown
+      - obsidian_cli
+      - obsidian_bases
+      - json_canvas
       - obsidian
       - defuddle
       - doc-extract
-      - doc-generate-toc
-      - doc-generate-llms-txt
+      - doc-generate_toc
+      - doc-generate_llms_txt
 ---
 
 # Brain Toolkit — Wiki + Obsidian + Docs
@@ -71,7 +71,7 @@ Após escrita no vault, se `$QMD_WIKI_COLLECTION` configurado: `qmd update` → 
 
 ## Modo 1: ingest — Entrada de conhecimento
 
-**Absorve:** wiki-ingest, wiki-capture, hermes-history-ingest, document-consolidation
+**Absorve:** wiki-ingest, wiki-capture, hermes_history_ingest, document-consolidation
 
 **Gatilhos:** "adicionar ao wiki", "/wiki-ingest", "/wiki-capture", "consolidar docs"
 
@@ -183,7 +183,7 @@ Script `quick-lint.py`: 3 checks em <3s. Exit code 0 = clean.
 
 ## Modo 4: weave — Tecelagem do grafo
 
-**Absorve:** cross-linker, wiki-dedup, wiki-synthesize, tag-taxonomy
+**Absorve:** cross_linker, wiki-dedup, wiki-synthesize, tag_taxonomy
 
 **Gatilhos:** "link my pages", "dedup my wiki", "synthesize my wiki", "fix my tags"
 
@@ -295,13 +295,13 @@ Script `quick-lint.py`: 3 checks em <3s. Exit code 0 = clean.
 
 ## Modo 7: extract — Extração cirúrgica
 
-**Absorve:** doc-extract, doc-generate-toc (sub-modo `--toc`)
+**Absorve:** doc-extract, doc-generate_toc (sub-modo `--toc`)
 
 **Gatilhos:** "extrair seção", "extract section", "gerar TOC"
 
 Usa `grep` + `awk` (POSIX). Não carrega arquivo inteiro no contexto.
 
-- **`--toc`**: `grep -E '^#{1,6} ' <arquivo>` → lista hierárquica. Script `generate-toc.sh` para indentação.
+- **`--toc`**: `grep -E '^#{1,6} ' <arquivo>` → lista hierárquica. Script `generate_toc.sh` para indentação.
 - **padrão**: `bash extract-section.sh "<Nome da Seção>" <arquivo.md>`. Match exato do heading (sem `#`), captura nível, para no próximo heading de nível igual/superior. Read-only.
 
 **Pitfalls:** match exato (sem `#`); headings em code blocks são falsos positivos; setext headings não detectados.

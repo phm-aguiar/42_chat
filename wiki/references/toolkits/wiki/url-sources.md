@@ -1,3 +1,8 @@
+---
+title: "Url Sources"
+tags: [wiki, reference]
+created: 2026-06-20
+---
 # Ingesting URL Sources
 
 Reference for the `wiki-ingest` skill when the source is a **web URL** rather than a local file.

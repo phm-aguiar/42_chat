@@ -223,7 +223,7 @@ Write the result to the `affinity` frontmatter block. Leave `affinity: {}` if no
 
 If any project's score ≥ 3, surface it:
 
-> ⚡ Strong affinity detected: this page has **3+ connections** to `<project-name>`. Run the `cross-linker` skill to recompute affinity and then consider promoting this page to `projects/<project-name>/references/`.
+> ⚡ Strong affinity detected: this page has **3+ connections** to `<project-name>`. Run the `cross_linker` skill to recompute affinity and then consider promoting this page to `projects/<project-name>/references/`.
 
 ## Step U6: Update Project Overview (project mode only)
 

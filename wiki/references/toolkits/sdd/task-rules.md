@@ -1,3 +1,8 @@
+---
+title: "Task Rules"
+tags: [sdd, reference]
+created: 2026-06-20
+---
 # Regras de Geração de Tarefas com DAG (tasks.md)
 
 Referência para `sdd-generate-tasks` v2.0.0. Contém regras de atomicidade, formato DAG,

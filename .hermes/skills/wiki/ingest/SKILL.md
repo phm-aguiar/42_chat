@@ -20,13 +20,13 @@ You are ingesting source documents into an Obsidian wiki. Your job is not to sum
 
 ## Before You Start
 
-1. **Resolve config** — follow the Config Resolution Protocol in `llm-wiki/SKILL.md` (walk up CWD for `.env` → `~/.obsidian-wiki/config` → prompt setup). This gives `OBSIDIAN_VAULT_PATH`, `OBSIDIAN_SOURCES_DIR`, `OBSIDIAN_LINK_FORMAT` (default: `wikilink`), and `WIKI_STAGED_WRITES`. Only read the specific variables you need — do not log, echo, or reference any other values from these files.
+1. **Resolve config** — follow the Config Resolution Protocol in `llm_wiki/SKILL.md` (walk up CWD for `.env` → `~/.obsidian-wiki/config` → prompt setup). This gives `OBSIDIAN_VAULT_PATH`, `OBSIDIAN_SOURCES_DIR`, `OBSIDIAN_LINK_FORMAT` (default: `wikilink`), and `WIKI_STAGED_WRITES`. Only read the specific variables you need — do not log, echo, or reference any other values from these files.
 2. **Check `WIKI_STAGED_WRITES`** — if set to `true`, all new and updated category pages go to `_staging/<category>/` instead of their final location. Tell the user at the start of the ingest: "Staged writes mode is enabled — pages will land in `_staging/` for your review. Run `/wiki-stage-commit` when ready to promote."
 3. Read `.manifest.json` at the vault root to check what's already been ingested
 4. Read `index.md` to understand current wiki content
 5. Read `log.md` to understand recent activity
 
-When writing internal links in Step 5, apply the link format described in `llm-wiki/SKILL.md` (Link Format section) according to the `OBSIDIAN_LINK_FORMAT` value you read.
+When writing internal links in Step 5, apply the link format described in `llm_wiki/SKILL.md` (Link Format section) according to the `OBSIDIAN_LINK_FORMAT` value you read.
 
 ## Content Trust Boundary
 
@@ -166,7 +166,7 @@ Research papers (arXiv/conference PDFs) carry their substance in figures, equati
    - **Mermaid is the dependency-free fallback.** If PyMuPDF/poppler isn't available or a figure can't be extracted, draw the architecture as a Mermaid diagram instead — Obsidian renders Mermaid fenced code blocks natively with no dependencies. `![[<source>.pdf#page=N]]` (the whole source page) is another no-extract option.
 3. **Keep the math as math.** Set the 1–3 core equations as `$$…$$` display LaTeX, not backtick code.
 4. **Tabulate results.** Render headline benchmark numbers as a markdown table, not a comma-separated blob.
-5. **Write the page with the Paper Deep-Dive Template** (`llm-wiki/SKILL.md`) into `references/`, in addition to the distilled concept/entity cross-links. This is the deliberate exception to "aim for 10–15 small pages" (Step 4) — a paper earns one rich, self-contained page.
+5. **Write the page with the Paper Deep-Dive Template** (`llm_wiki/SKILL.md`) into `references/`, in addition to the distilled concept/entity cross-links. This is the deliberate exception to "aim for 10–15 small pages" (Step 4) — a paper earns one rich, self-contained page.
 
 See the *Paper Extraction Frame* in `references/ingest-prompts.md` for the reading checklist.
 
@@ -220,7 +220,7 @@ From the source, identify:
 - **Key concepts** that deserve their own page or belong on an existing one
 - **Entities** (people, tools, projects, organizations) mentioned
 - **Claims** that can be attributed to the source
-- **Relationships** between concepts — note the *type* when the source text makes it clear. Use the allowed types from `llm-wiki/SKILL.md` (Typed Relationships section): `extends`, `implements`, `contradicts`, `derived_from`, `uses`, `replaces`, `related_to`. Record: source page, target page, inferred type.
+- **Relationships** between concepts — note the *type* when the source text makes it clear. Use the allowed types from `llm_wiki/SKILL.md` (Typed Relationships section): `extends`, `implements`, `contradicts`, `derived_from`, `uses`, `replaces`, `related_to`. Record: source page, target page, inferred type.
 - **Open questions** the source raises but doesn't answer
 
 **Track provenance per claim as you go.** For each claim you extract, mentally tag it as:
@@ -255,7 +255,7 @@ For each:
 - If it's new, which category does it belong in?
 - What `[[wikilinks]]` should connect it to existing pages?
 
-**Apply tier-aware filtering to existing pages** (see `llm-wiki/SKILL.md`, Importance Tiering section):
+**Apply tier-aware filtering to existing pages** (see `llm_wiki/SKILL.md`, Importance Tiering section):
 
 | Tier | Update decision |
 |---|---|
@@ -298,7 +298,7 @@ For each page in your plan:
 **If `WIKI_STAGED_WRITES` is not set or is `false` (default):**
 
 **If creating a new page:**
-- Use the page template from the llm-wiki skill (frontmatter + sections). **For academic papers landing in `references/`, use the Paper Deep-Dive Template** from `llm-wiki/SKILL.md` instead of the generic one (see *Academic papers* in Step 1).
+- Use the page template from the llm_wiki skill (frontmatter + sections). **For academic papers landing in `references/`, use the Paper Deep-Dive Template** from `llm_wiki/SKILL.md` instead of the generic one (see *Academic papers* in Step 1).
 - Place in the correct category directory
 - Add `[[wikilinks]]` to at least 2-3 existing pages
 - Include the source in the `sources` frontmatter field. In raw mode: derive from `capture_source` + `sources` frontmatter of the `_raw/` file — never use the `_raw/` path itself (see Raw Mode section)
@@ -310,7 +310,7 @@ For each page in your plan:
 - Add the new source to the `sources` list
 - Resolve any contradictions between old and new information (note them if unresolvable)
 
-**Populate `relationships:` when context is clear** — if Step 2 identified typed relationships between this page and another, add a `relationships:` block to the frontmatter (defined in `llm-wiki/SKILL.md`, Typed Relationships section). Only add entries where the source text makes the direction and type unambiguous. When in doubt, use `related_to` or omit the block. Example:
+**Populate `relationships:` when context is clear** — if Step 2 identified typed relationships between this page and another, add a `relationships:` block to the frontmatter (defined in `llm_wiki/SKILL.md`, Typed Relationships section). Only add entries where the source text makes the direction and type unambiguous. When in doubt, use `related_to` or omit the block. Example:
 
 ```yaml
 relationships:
@@ -325,13 +325,13 @@ relationships:
 **Add confidence and lifecycle fields** to every new page's frontmatter:
 
 ```yaml
-base_confidence: <computed>   # [0.0, 1.0] — see llm-wiki/SKILL.md Confidence formula
+base_confidence: <computed>   # [0.0, 1.0] — see llm_wiki/SKILL.md Confidence formula
 lifecycle: draft
 lifecycle_changed: "<ISO date today>"
 tier: supporting              # default for new pages; promote to core when ≥5 incoming links
 ```
 
-Compute `base_confidence` using the formula from `llm-wiki/SKILL.md` (Confidence and Lifecycle section):
+Compute `base_confidence` using the formula from `llm_wiki/SKILL.md` (Confidence and Lifecycle section):
 - Count distinct source_ids for this page
 - Classify each source's quality bucket
 - `base_confidence = min(N/3, 1.0) × 0.5 + avg_quality × 0.5`
@@ -345,7 +345,7 @@ When **updating** an existing page, recompute `base_confidence` only if sources 
 
 `visibility/` tags are system tags and do **not** count toward the 5-tag limit. When in doubt, omit — untagged pages are treated as public. Never add a visibility tag just because a topic sounds technical.
 
-**Apply provenance markers** per the convention in `llm-wiki` (Provenance Markers section):
+**Apply provenance markers** per the convention in `llm_wiki` (Provenance Markers section):
 - Inferred claims get a trailing `^[inferred]`
 - Ambiguous/contested claims get a trailing `^[ambiguous]`
 - Extracted claims need no marker
@@ -414,7 +414,7 @@ After ingesting, verify:
 - [ ] Source attribution is present for every new claim
 - [ ] Inferred and ambiguous claims are marked with `^[inferred]` / `^[ambiguous]`; `provenance:` frontmatter block is present on new and updated pages
 - [ ] Every new/updated page has a `summary:` frontmatter field (1–2 sentences, ≤200 chars)
-- [ ] `relationships:` block is present on pages where source text made typed connections clear; all entries use an allowed type from `llm-wiki/SKILL.md`
+- [ ] `relationships:` block is present on pages where source text made typed connections clear; all entries use an allowed type from `llm_wiki/SKILL.md`
 - [ ] **Summary mode only:** page has `mode: summary` and `summarized: true` in frontmatter; includes structure overview, key claims, skip report, and next steps; original file size/line count recorded in frontmatter
 
 ## Reference

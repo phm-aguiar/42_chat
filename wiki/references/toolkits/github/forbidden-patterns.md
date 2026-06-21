@@ -1,3 +1,8 @@
+---
+title: "Forbidden Patterns"
+tags: [github, reference]
+created: 2026-06-20
+---
 # Padrões Proibidos em Commits
 
 Referência para o `git-conventional-commit`. Absorvido de `dev-git-commit-message` (AI-Agents-public).

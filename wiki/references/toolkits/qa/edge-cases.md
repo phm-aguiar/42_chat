@@ -1,3 +1,8 @@
+---
+title: "Edge Cases"
+tags: [qa, reference]
+created: 2026-06-20
+---
 # Edge Cases — Checklist
 
 ## Checklist por tipo de entrada

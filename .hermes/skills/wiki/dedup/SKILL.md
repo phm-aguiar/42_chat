@@ -1,7 +1,7 @@
 ---
 name: wiki-dedup
 description: >
-  Scan the Obsidian wiki for page-level identity collisions — different pages covering the same concept under different names (e.g. "RSC" vs "React Server Components") — and merge them. Use this skill when the user says "dedup my wiki", "find duplicate pages", "merge duplicates", "identity resolution", "consolidate my wiki", "I have duplicate pages", or "my wiki has two pages for the same thing". Distinct from wiki-lint (which checks structure) and cross-linker (which adds links) — this skill makes destructive page-level merges and requires careful confirmation.
+  Scan the Obsidian wiki for page-level identity collisions — different pages covering the same concept under different names (e.g. "RSC" vs "React Server Components") — and merge them. Use this skill when the user says "dedup my wiki", "find duplicate pages", "merge duplicates", "identity resolution", "consolidate my wiki", "I have duplicate pages", or "my wiki has two pages for the same thing". Distinct from wiki-lint (which checks structure) and cross_linker (which adds links) — this skill makes destructive page-level merges and requires careful confirmation.
 version: 1.0.0
 author: phm-aguiar
 license: MIT
@@ -18,11 +18,11 @@ metadata:
 
 You are finding and merging wiki pages that cover the same concept under different names. This is a write-heavy, potentially destructive skill — page merges cannot be automatically undone. Work carefully and confirm before acting in merge mode.
 
-**Follow the Retrieval Primitives table in `llm-wiki/SKILL.md`.** The candidate-detection pass uses only frontmatter and titles (cheap). Only open full page bodies for confirmed candidate pairs.
+**Follow the Retrieval Primitives table in `llm_wiki/SKILL.md`.** The candidate-detection pass uses only frontmatter and titles (cheap). Only open full page bodies for confirmed candidate pairs.
 
 ## Before You Start
 
-1. **Resolve config** — follow the Config Resolution Protocol in `llm-wiki/SKILL.md` (walk up CWD for `.env` → `~/.obsidian-wiki/config` → prompt setup). This gives `OBSIDIAN_VAULT_PATH` and `OBSIDIAN_LINK_FORMAT`.
+1. **Resolve config** — follow the Config Resolution Protocol in `llm_wiki/SKILL.md` (walk up CWD for `.env` → `~/.obsidian-wiki/config` → prompt setup). This gives `OBSIDIAN_VAULT_PATH` and `OBSIDIAN_LINK_FORMAT`.
 2. Read `index.md` to get the full page inventory with one-line descriptions and tags.
 3. Read `log.md` briefly — if a dedup run just happened, note what was already merged.
 
@@ -176,7 +176,7 @@ Read both pages. Update the canonical page:
 - **`tags:`** — merge both tag lists (deduplicate, cap at 5 domain tags + system tags)
 - **`sources:`** — merge both source lists (deduplicate)
 - **`relationships:`** — merge both relationship lists (deduplicate by target, prefer typed entries over untyped)
-- **`base_confidence`** — recompute using the union of sources and the formula from `llm-wiki/SKILL.md`
+- **`base_confidence`** — recompute using the union of sources and the formula from `llm_wiki/SKILL.md`
 - **`updated`** — set to now
 - **`summary:`** — rewrite to cover the merged scope if the secondary page added new ground
 - **Body content** — merge unique sections and bullets from the secondary page. Do not blindly append — integrate the content. Avoid duplicating claims already present in the canonical page. Use `^[inferred]` markers where synthesis is needed.
@@ -241,7 +241,7 @@ Other skills should handle redirect stubs as follows:
 - **`wiki-export`** — skip pages with `redirects_to:` in frontmatter; they are not content nodes
 - **`wiki-query`** — if a search hits a redirect stub, follow `redirects_to:` and read the canonical page instead
 - **`wiki-lint`** — validate that every `redirects_to:` wikilink resolves to an existing, non-stub page (a redirect chain — stub pointing to stub — is an error)
-- **`cross-linker`** — treat redirect stubs as non-targets; never add a new `[[wikilink]]` pointing at a stub page
+- **`cross_linker`** — treat redirect stubs as non-targets; never add a new `[[wikilink]]` pointing at a stub page
 
 ## Tips
 
@@ -249,7 +249,7 @@ Other skills should handle redirect stubs as follows:
 - **Check `needs-review` last.** These are the hard cases — don't batch them with obvious merges.
 - **Abbreviations are the most common case.** "GPT" / "GPT-4" / "GPT4", "RSC" / "React Server Components", "LLM" / "Large Language Models" — these score high on substring containment and are almost always safe to merge.
 - **Different versions are not duplicates.** "GPT-3" and "GPT-4" are related but distinct. "fine-tuning" and "fine-tuning-llms" may be distinct (technique vs. specific application).
-- **Run `cross-linker` after dedup.** The redirect stubs leave the graph in a slightly inconsistent state. Cross-linker will tighten it up.
+- **Run `cross_linker` after dedup.** The redirect stubs leave the graph in a slightly inconsistent state. Cross-linker will tighten it up.
 
 ## QMD Refresh After Vault Writes
 

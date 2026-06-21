@@ -1,0 +1,375 @@
+---
+title: "State Management"
+category: references
+tags:
+  - cucumber
+  - bdd
+source: "wiki/_raw/State  Cucumber.md"
+created: "2026-06-21"
+updated: "2026-06-21"
+lifecycle: raw
+lifecycle_reason: "ingested from _raw/ Cucumber/BDD clippings"
+---
+## Sharing state between scenarios
+
+Don't do it.
+
+Scenarios must be independent of one other so it is important that state is not shared between scenarios. Accidentally leaking state from one scenario into others makes your scenarios brittle and also difficult to run in isolation.
+
+To prevent accidentally leaking state between scenarios:
+
+- Avoid using global or static variables.
+- Make sure you clean your database in a `Before` hook.
+- If you share a browser between scenarios, delete cookies in a `Before` hook.
+
+## Sharing state between steps
+
+Within your scenarios, you might want to share state between steps.
+
+It's possible to store state in variables inside your step definitions.
+
+> [!-warning] -warning
+> Be careful with state
+> 
+> State can make your steps more tightly coupled and harder to reuse.
+
+- Java
+- Kotlin
+- Scala
+- JavaScript
+- Ruby
+
+Cucumber will create a new instance of each of your glue code classes before each scenario so your steps will not leak state.
+
+When using Spring there is [an annotation `ScenarioScope`](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-spring#sharing-state) that may be used on any spring beans that have been employed to share step state; this annotation ensures that these beans do not persist across scenarios and so do not leak state.
+
+Similarly, when using Guice there is [a scope `ScenarioScoped`](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-guice#using-scope-annotations) that should always be used on step definition classes.
+
+## Dependency injection
+
+> [!-info] -info
+> JVM only
+> 
+> This section is only applicable to JVM-based implementations of Cucumber.
+
+If your programming language is a JVM language, you will be writing glue code ([step definitions](https://cucumber.io/docs/cucumber/step-definitions) and [hooks](https://cucumber.io/docs/cucumber/api/#hooks)) in classes.
+
+Cucumber will create a new instance of each of your glue code classes before each scenario.
+
+If all of your glue code classes have an empty constructor, you don’t need anything else. However, most projects will benefit from a dependency injection (DI) module to organize your code better and to share state between step definitions.
+
+The available dependency injection modules are:
+
+### PicoContainer
+
+To use PicoContainer, add the following dependency to your `pom.xml`:
+
+```xml
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-picocontainer</artifactId>
+    <version>7.34.3</version>
+    <scope>test</scope>
+</dependency>
+```
+
+Or, if you are using Gradle, add:
+
+```kotlin
+testImplementation("io.cucumber:cucumber-picocontainer:7.34.3")
+```
+
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-picocontainer). For more information, please see [sharing state using PicoContainer](http://www.thinkcode.se/blog/2017/04/01/sharing-state-between-steps-in-cucumberjvm-using-picocontainer).
+
+### Spring
+
+To use Spring, add the following dependency to your `pom.xml`:
+
+```xml
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-spring</artifactId>
+    <version>7.34.3</version>
+    <scope>test</scope>
+</dependency>
+```
+
+Or, if you are using Gradle, add:
+
+```kotlin
+testImplementation("io.cucumber:cucumber-spring:7.34.3")
+```
+
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-spring).
+
+### Guice
+
+To use Guice, add the following dependency to your `pom.xml`:
+
+```xml
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-guice</artifactId>
+    <version>7.34.3</version>
+    <scope>test</scope>
+</dependency>
+```
+
+Or, if you are using Gradle, add:
+
+```kotlin
+testImplementation("io.cucumber:cucumber-guice:7.34.3")
+```
+
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-guice). For more information, please see [sharing state using Guice](http://www.thinkcode.se/blog/2017/08/16/sharing-state-between-steps-in-cucumberjvm-using-guice).
+
+### OpenEJB
+
+To use OpenEJB, add the following dependency to your `pom.xml`:
+
+```xml
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-jakarta-openejb</artifactId>
+    <version>7.34.3</version>
+    <scope>test</scope>
+</dependency>
+```
+
+Or, if you are using Gradle, add:
+
+```kotlin
+testImplementation("io.cucumber:cucumber-jakarta-openejb:7.34.3")
+```
+
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-jakarta-openejb).
+
+### CDI
+
+To use CDI, add the following dependency to your `pom.xml`:
+
+```xml
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-jakarta-cdi</artifactId>
+    <version>7.34.3</version>
+    <scope>test</scope>
+</dependency>
+```
+
+Or, if you are using Gradle, add:
+
+```kotlin
+testImplementation("io.cucumber:cucumber-jakarta-cdi:7.34.3")
+```
+
+There is no documentation yet, but the code is on [GitHub](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-jakarta-cdi).
+
+### Quarkus
+
+To use Quarkus, add the following dependency to your `pom.xml`:
+
+```xml
+<dependency>
+    <groupId>io.quarkiverse.cucumber</groupId>
+    <artifactId>quarkus-cucumber</artifactId>
+    <version>{quarkus-cucumber.version}</version>
+    <scope>test</scope>
+</dependency>
+```
+
+The documentation can be found on [Quarkiverse - Cucumber](https://docs.quarkiverse.io/quarkus-cucumber/dev/index.html).
+
+### How to use DI
+
+When using a DI framework all your step definitions, hooks, transformers, etc. will be created by the frameworks instance injector.
+
+#### Using a custom injector
+
+Cucumber example tests are typically small and have no dependencies. In real life, though, tests often need access to application specific object instances which also need to be supplied by the injector. These instances need to be made available to your step definitions so that actions can be applied on them and delivered results can be tested.
+
+The reason using Cucumber with a DI framework typically originates from the fact that the tested application also uses the same framework. So we need to configure a custom injector to be used with Cucumber. This injector ties tests and application instances together.
+
+Here is an example of a typical step definition using [Google Guice](https://cucumber.io/docs/cucumber/state/#guice). Using the Cucumber provided Guice injector will fail to instantiate the required `appService` member.
+
+```java
+package com.example.app;
+
+import static org.junit.Assert.assertTrue;
+
+import io.cucumber.java.en.When;
+import io.cucumber.java.en.Then;
+import io.cucumber.guice.ScenarioScoped;
+import com.example.app.service.AppService;
+import java.util.Objects;
+import javax.inject.Inject;
+
+@ScenarioScoped
+public final class StepDefinition {
+
+    private final AppService appService;
+
+    @Inject
+    public StepDefinition( AppService appService ) {
+        this.appService = Objects.requireNonNull( appService, "appService must not be null" );
+    }
+
+    @When("the application services are started")
+    public void startServices() {
+        this.appService.startServices();
+    }
+
+    @Then("all application services should be running")
+    public void checkThatApplicationServicesAreRunning() {
+        assertTrue( this.appService.servicesAreRunning() );
+    }
+}
+```
+
+The implementation of the AppService may need further arguments and configuration that typically has to be provided by a Guice module. Guice modules are used to configure an injector and might look like this:
+
+```java
+package com.example.app.service.impl;
+
+import com.example.app.service.AppService;
+import com.google.inject.AbstractModule;
+
+public final class ServiceModule extends AbstractModule {
+    @Override
+    protected void configure() {
+        bind( AppService.class ).to( AppServiceImpl.class );
+        // ... (further bindings)
+    }
+}
+```
+
+The actual injector is then created like this: `injector = Guice.createInjector( new ServiceModule() );`
+
+This means we need to create our own injector and tell Cucumber to use it.
+
+#### The Cucumber object factory
+
+Whenever Cucumber needs a specific object, it uses an object factory. Cucumber has a default object factory that (in case of Guice) creates a default injector and delegates object creation to that injector. If you want to customize the injector we need to provide our own object factory and tell Cucumber to use it instead.
+
+```java
+package com.example.app;
+
+import io.cucumber.core.backend.ObjectFactory;
+import io.cucumber.guice.CucumberModules;
+import io.cucumber.guice.ScenarioScope;
+import com.example.app.service.impl.ServiceModule;
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+import com.google.inject.Stage;
+
+public final class CustomObjectFactory implements ObjectFactory {
+
+    private Injector injector;
+
+    public CustomObjectFactory() {
+        // Create an injector with our service module
+        this.injector =
+          Guice.createInjector( Stage.PRODUCTION, CucumberModules.createScenarioModule(), new ServiceModule());
+    }
+
+    @Override
+    public boolean addClass( Class< ? > clazz ) {
+        return true;
+    }
+
+    @Override
+    public void start() {
+        this.injector.getInstance( ScenarioScope.class ).enterScope();
+    }
+
+    @Override
+    public void stop() {
+        this.injector.getInstance( ScenarioScope.class ).exitScope();
+    }
+
+    @Override
+    public < T > T getInstance( Class< T > clazz ) {
+        return this.injector.getInstance( clazz );
+    }
+}
+```
+
+This is the default object factory for Guice except that we have added our own bindings to the injector. Cucumber loads the object factory through the `java.util.ServiceLoader`. In order for the ServiceLoader to be able to pick up our custom implementation we need to provide the file `META-INF/services/io.cucumber.core.backend.ObjectFactory`.
+
+```markdown
+com.example.app.CustomObjectFactory
+#
+# ... additional custom object factories could be added here
+#
+```
+
+Now we have to tell Cucumber to use our custom object factory. There are several ways how this could be accomplished.
+
+##### Using the Cucumber object factory from the command line
+
+When Cucumber is run from the command line, the custom object factory can be specified as argument.
+
+```shell
+java io.cucumber.core.cli.Main --object-factory com.example.app.CustomObjectFactory
+```
+
+##### Using the Cucumber object factory a property file
+
+Cucumber makes use of a properties file (`cucumber.properties`) if it exists. The custom object factory can be specified in this file and will be picked up when Cucumber is running. The following entry needs to be available in the `cucumber.properties` file:
+
+```markdown
+cucumber.object-factory=com.example.app.CustomObjectFactory
+```
+
+##### Using the Cucumber object factory with a test runner (JUnit 5/JUnit 4/TestNG)
+
+The Cucumber modules for [JUnit 4](https://cucumber.io/docs/cucumber/api/#junit) and [TestNG](https://cucumber.io/docs/cucumber/checking-assertions/#testng) allow to run Cucumber through a JUnit/TestNG test. The custom object factory can be configured using the `@CucumberOptions` annotation. For JUnit 5 see the [cucumber-junit-platform-engine](https://github.com/cucumber/cucumber-jvm/tree/main/cucumber-junit-platform-engine) documentation.
+
+## The event bus
+
+> [!-info] -info
+> JVM only
+> 
+> This section is only applicable to JVM-based implementations of Cucumber.
+
+Cucumber emits events on an event bus in many cases, e.g.:
+
+- during the feature file parsing
+- when the test scenarios are executed
+
+### Configuring the UUID generator
+
+Each event has a UUID as unique identifier. The UUID generator can be configured using the `cucumber.uuid-generator` property:
+
+| UUID generator | Features | Performance \[Millions UUID/second\] | Typical usage example |
+| --- | --- | --- | --- |
+| `io.cucumber.core.eventbus.RandomUuidGenerator` | - Thread-safe - Collision-free in single-jvm/multi-jvm | ~1 | Reports may be generated on different JVMs at the same time. A typical example would be one suite that tests against Firefox and another against Safari. The exact browser is configured through a property. These are then executed concurrently on different Gitlab runners. |
+| `io.cucumber.core.eventbus.IncrementingUuidGenerator` | - Thread-safe - Collision-free in the same classloader - Almost collision-free in different classloaders / JVMs - UUIDs generated using the instances from the same classloader are sortable | ~130 | For developers wanting high performance and accepting potential UUID collisions when running in different classloaders / JVMs setups. |
+
+The performance gain on real project depend on the feature size.
+
+When the generator is not specified, the `RandomUuidGenerator` is used.
+
+### Defining your own UUID generator
+
+When neither the `RandomUuidGenerator` nor the `IncrementingUuidGenerator` suits the project needs, a custom UUID generator can be defined. This is done using the following method:
+
+1. Creates a UUID class generator, e.g.:
+```java
+package mypackage.mysubpackage;
+import io.cucumber.core.eventbus.UuidGenerator;
+public class MyUuidGenerator implements UuidGenerator {
+  @Override
+  public UUID generateId() {
+      return ...
+  }
+}
+```
+2. Define the UUID generator as SPI using a file `META-INF/services/io.cucumber.code.eventbus.UuidGenerator` on the classpath (e.g. Maven `resources` directory) containing the generator class name:
+```java
+mypackage.mysubpackage.MyUuidGenerator
+```
+
+This UUID generator will override the default `RandomUuidGenerator`.
+
+When the `META-INF/services/...` file contains more than one UUID generator or when there are multiple `META-INF/services/...` on the classpath, the `cucumber.uuid-generator` property must be configured to select the desired generator.

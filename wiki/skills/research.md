@@ -1,3 +1,8 @@
+---
+title: "Research"
+tags: [skill]
+created: 2026-06-20
+---
 1|---
 2|title: "research"
 3|category: skills

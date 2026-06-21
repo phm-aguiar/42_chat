@@ -129,8 +129,4 @@ export default defineConfig({
 - [[references/vite-environment-api|Vite Environment API]] — Multi-environment (Vite 6+)
 - [[references/vite-rolldown-migration|Vite Rolldown Migration]] — Migração Vite 7 → 8
 
-## Sources
 
-- [Vite Documentation](https://vite.dev)
-- [React Documentation](https://react.dev)
-- [Rollup Documentation](https://rollupjs.org)

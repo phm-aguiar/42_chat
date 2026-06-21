@@ -109,7 +109,4 @@ Exemplo: o plugin Vite da Cloudflare roda código no runtime `workerd` durante d
 }
 ```
 
-## Sources
 
-- [Vite Environment API](https://vite.dev/guide/api-environment)
-- [Announcing Vite 6](https://vite.dev/blog/announcing-vite6)

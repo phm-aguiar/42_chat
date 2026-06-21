@@ -1,3 +1,8 @@
+---
+title: "Productivity"
+tags: [skill]
+created: 2026-06-20
+---
 1|---
 2|title: "productivity"
 3|category: skills

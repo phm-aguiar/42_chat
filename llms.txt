@@ -1,141 +1,63 @@
-# 42_chat — Framework SDD Autônomo
+# 42 Chat
 
-> Framework SDD autônomo com agentes IA e humanos in loop. Pipeline: brainstorm → spec → plan → tasks (DAG) → orchestrator → subagentes.
+> Chat em tempo real para a 42 São Paulo (~300 alunos). Go + React + Postgres.
 
-## Navegação do Repositório
+## Stack
 
-- `.github/memory/constitution.md`: Princípios invioláveis do framework (portões de qualidade, restrições, anti-padrões).
-- `.github/memory/tech.md`: Stack tecnológica homologada (Hermes Agent, Python, YAML, Markdown, Obsidian).
-- `AGENTS.md`: Instruções para agentes de IA que interagem com o repo.
-- `TUTORIAL.md`: Guia rápido de 6 passos para começar com o framework.
-- `specs/BACKLOG.md`: Backlog de features com status (concluídas, pendentes, pipeline).
+- [AGENTS.md](AGENTS.md): Guia completo do projeto — stack, pipeline SDD, constraints, gatilhos
 
-## Especificações (Spec-Driven Development)
+## Features
 
-- `specs/features/001-start-repo/` — Estrutura base do repositório [spec](specs/features/001-start-repo/spec.md) [plan](specs/features/001-start-repo/plan.md) [tasks](specs/features/001-start-repo/tasks.md)
-- `specs/features/002-sdd-templates/` — Templates canônicos SDD (spec/plan/tasks) [spec](specs/features/002-sdd-templates/spec.md) [plan](specs/features/002-sdd-templates/plan.md) [tasks](specs/features/002-sdd-templates/tasks.md)
-- `specs/features/003-forge-skill/` — Scaffold de skills Hermes [spec](specs/features/003-forge-skill/spec.md) [plan](specs/features/003-forge-skill/plan.md) [tasks](specs/features/003-forge-skill/tasks.md)
-- `specs/features/004-sdd-tasks-dag/` — Tasks com DAG (dependências, paralelismo, isolamento) [spec](specs/features/004-sdd-tasks-dag/spec.md) [plan](specs/features/004-sdd-tasks-dag/plan.md) [tasks](specs/features/004-sdd-tasks-dag/tasks.md)
-- `specs/features/005-runtime-orchestrator/` — Runtime orchestrator (spawna subagentes em paralelo) [spec](specs/features/005-runtime-orchestrator/spec.md) [plan](specs/features/005-runtime-orchestrator/plan.md) [tasks](specs/features/005-runtime-orchestrator/tasks.md)
-- `specs/features/006-agent-dev/` — Agente implementador (persona fixa, skills plugáveis) [spec](specs/features/006-agent-dev/spec.md) [plan](specs/features/006-agent-dev/plan.md) [tasks](specs/features/006-agent-dev/tasks.md)
-- `specs/features/100-42chat-core/` — **Feature 100: 42 Chat Core** — Chat multiplayer com frontend React+Vite, backend Go, WebSocket, autenticação 42 API, matchmaking P2P, BDD (Gherkin + Playwright) ✅ implementado [spec](specs/features/100-42chat-core/spec.md) [plan](specs/features/100-42chat-core/plan.md) [tasks](specs/features/100-42chat-core/tasks.md)
-- `specs/features/101-assinatura-participacao/` — **Feature 101: Assinatura de Participação** — Componente UserSignature inline com stats de engajamento, tiers (novato→veterano), API on-demand + WebSocket push ✅ implementado [spec](specs/features/101-assinatura-participacao/spec.md) [plan](specs/features/101-assinatura-participacao/plan.md) [tasks](specs/features/101-assinatura-participacao/tasks.md)
+### Domínio
 
-## Agentes Hermes
-
-Agentes definidos em `.hermes/agents/`, versionados no repo:
-
-- `onboard` — Inicializa projeto no framework SDD (init repo, explore tech, brainstorm features).
-- `agent-orchestrator` — Executor runtime. Lê `tasks.md` com DAG e spawna subagentes em paralelo via `delegate_task`.
-- `agent-dev` — Persona implementadora. Ciclo: lê contexto → planeja → implementa → smoke-test → reporta (DONE/FAIL/BLOCKED).
-
-## Skills do Framework (34 skills)
+- [100 — 42 Chat Core](specs/features/100-42chat-core/spec.md): MVP do chat — OAuth2 42, WebSocket, sala "general", tema brutalista, Docker Compose
+- [100 — 42 Chat Core — Plan](specs/features/100-42chat-core/plan.md): ADRs de autenticação, WebSocket hub, schema PostgreSQL
+- [101 — Assinatura de Participação](specs/features/101-assinatura-participacao/spec.md): UserSignature inline com tiers (Lurker → Sage), stats em tempo real via WebSocket
 
 ### Pipeline SDD
-- [sdd-brainstorm](wiki/projects/42_chat/skills/sdd-brainstorm.md) — Entrevista interativa → spec.md
-- [sdd-generate-plan](wiki/projects/42_chat/skills/sdd-generate-plan.md) — Decisões arquiteturais → plan.md
-- [sdd-generate-tasks](wiki/projects/42_chat/skills/sdd-generate-tasks.md) — DAG de tasks → tasks.md (v2.0.0)
-- [sdd-init-repo](wiki/skills/sdd-init-repo.md) — Inicializa estrutura SDD
-- [sdd-explore-tech](wiki/skills/sdd-explore-tech.md) — Mapeia stack tecnológica
-- [sdd-validate](wiki/skills/sdd-validate.md) — Valida conformidade SDD (PASS/FAIL/WARN)
-- [sdd-refactor-artifact](wiki/skills/sdd-refactor-artifact.md) — Normaliza artefatos SDD
 
-### Documentação
-- [doc-extract](wiki/skills/doc-extract.md) — Extrai seções de markdown
-- [doc-generate-llms-txt](wiki/skills/doc-generate-llms-txt.md) — Gera llms.txt
-- [doc-generate-toc](wiki/skills/doc-generate-toc.md) — Gera tabela de conteúdo
+- [006 — Agent Dev](specs/features/006-agent-dev/spec.md): Subagente implementador — recebe task atômica, gera código funcional com smoke test
+- [007 — Agent QA](specs/features/007-agent-qa/spec.md): Subagente QA — valida implementações contra spec, escreve Gherkin, pode rejeitar tasks
+- [008 — Reavaliação Skills](specs/features/008-reavaliacao-skills/spec.md): Consolidação de ~130 skills em toolkits unificados (brain, sdd, devops)
+- [009 — Start Repo](specs/features/009-start-repo/spec.md): Estrutura de diretórios SDD — constitution, tech, specs, agents
+- [010 — SDD Templates](specs/features/010-sdd-templates/spec.md): Templates canônicos (spec, plan, tasks, AGENTS.md, llms.txt) + refactor artifact
+- [011 — Forge Skill](specs/features/011-forge-skill/spec.md): Skill Hermes para criar novas skills com estrutura padronizada e validação
+- [012 — Tasks DAG](specs/features/012-sdd-tasks-dag/spec.md): Upgrade do sdd-generate-tasks para formato DAG com paralelismo e isolamento
+- [013 — Runtime Orchestrator](specs/features/013-runtime-orchestrator/spec.md): Execução automática do DAG com agent-dev + agent-qa em paralelo
 
-### Wiki & Knowledge Management
-- [wiki-ingest](wiki/skills/wiki-ingest.md) — Destila sources em páginas wiki
-- [wiki-lint](wiki/skills/wiki-lint.md) — Audita saúde do vault (13 checks)
-- [wiki-query](wiki/skills/wiki-query.md) — Busca híbrida no vault
-- [wiki-capture](wiki/skills/wiki-capture.md) — Salva sessão atual
-- [wiki-cross-linker](wiki/skills/wiki-cross-linker.md) — Descobre wikilinks faltantes
-- [wiki-setup](wiki/skills/wiki-setup.md) — Inicializa vault Obsidian
-- [wiki-status](wiki/skills/wiki-status.md) — Estado atual do vault
-- [wiki-dashboard](wiki/skills/wiki-dashboard.md) — Dashboards no vault
-- [wiki-digest](wiki/skills/wiki-digest.md) — Resumo periódico
-- [wiki-export](wiki/skills/wiki-export.md) — Exporta grafo de conhecimento
-- [wiki-synthesize](wiki/skills/wiki-synthesize.md) — Síntese cross-cutting
-- [wiki-dedup](wiki/skills/wiki-dedup.md) — Detecta duplicatas
-- [wiki-tag-taxonomy](wiki/skills/wiki-tag-taxonomy.md) — Gerencia taxonomia de tags
-- [wiki-hermes-history-ingest](wiki/skills/wiki-hermes-history-ingest.md) — Ingere histórico do Hermes
-- [llm-wiki](wiki/skills/wiki-llm-wiki.md) — Fundação teórica do modelo wiki
+### Framework (42_Framework)
 
-### Obsidian
-- [obsidian-markdown](wiki/skills/obsidian-markdown.md) — Sintaxe OFM
-- [obsidian-cli](wiki/skills/obsidian-cli.md) — CLI do Obsidian
-- [obsidian-bases](wiki/skills/obsidian-bases.md) — Tabelas .base
-- [json-canvas](wiki/skills/json-canvas.md) — Mapas .canvas
-- [defuddle](wiki/skills/defuddle.md) — Extração limpa de markdown
+- [001 — LATTE Coordination](specs/features/001-latte-coordination/spec.md): Coordination graph dinâmico com 7 operadores e heartbeat monitoring
+- [002 — Wiki Experiential Memory](specs/features/002-experiential-memory/spec.md): Índice SQLite + embeddings com chunker, store, search, scoring, feedback
+- [003 — Hybrid Retrieval](specs/features/003-hybrid-retrieval/spec.md): Busca híbrida BM25 + cosine similarity (α=0.7)
+- [004 — jschan Forum Manager](specs/features/004-jschan-forum-manager/spec.md): Skill CRUD de boards jschan via mongosh + wiki documentation
+- [005 — LATTE Hardening](specs/features/005-latte-hardening/spec.md): Budget tracking, timeout, failure propagation, verify deterministic (7 ADRs)
 
-### Visual
-- [mermaid-visualizer](wiki/skills/mermaid-visualizer.md) — Diagramas Mermaid
+## Wiki
 
-### Tooling
-- [agent-run](wiki/skills/agent-run.md) — Runtime genérico de agentes
-- [skill-forge](wiki/skills/skill-forge.md) — Cria novas skills
-- [git-conventional-commit](wiki/skills/git-conventional-commit.md) — Commits padronizados
+### Concepts
 
-## Wiki Vault
+- [SDD Workflow](wiki/concepts/sdd-workflow.md): Pipeline Spec-Driven Development com fases, gates e modo LATTE
+- [SDD](wiki/concepts/sdd.md): Metodologia base — artefatos, ciclos, approval gates
 
-Vault Obsidian versionado em `wiki/`. Estrutura segue taxonomia `llm-wiki`:
-- `concepts/` — Conceitos cross-project (SDD, workflow, wiki-model)
-- `skills/` — Documentação das 34 skills
-- `projects/42_chat/` — Features, agentes e skills do framework
+### Projects
 
-## QA & BDD (Referências para Feature 007 — agent-qa)
+- [42 Chat](wiki/projects/42_chat/42_chat.md): Documentação central do projeto
+- [42 Framework](wiki/projects/42_Framework/42_Framework.md): Meta-framework — LATTE, wiki, hybrid retrieval
 
-Base de conhecimento de QA refinada a partir de documentações em `qafiles/`:
+### References — Papers
 
-- [QA & BDD Overview](wiki/references/qa-overview.md) — Estratégia de QA no framework SDD
-- [Gherkin Syntax](wiki/references/gherkin-syntax.md) — Sintaxe completa do Gherkin
-- [Gherkin Best Practices](wiki/references/gherkin-best-practices.md) — Boas práticas e anti-patterns
-- [Gherkin Examples](wiki/references/gherkin-examples.md) — Feature files de exemplo
-- [Cucumber Basics](wiki/references/cucumber-basics.md) — Framework Cucumber e step definitions
-- [Playwright BDD](wiki/references/playwright-bdd.md) — Integração Playwright + BDD
-- [BDD Specification Process](wiki/references/bdd-specification-process.md) — Fluxo Gherkin Expert
-- [TDD Methodology](wiki/references/tdd-methodology.md) — Ciclo Red-Green-Refactor-Commit
+- [LATTE](wiki/references/papers/LATTE.md): Language Agent Teams for Task Evolution — coordination graph dinâmico
+- [Multi-Agent in Production](wiki/references/papers/Multi-Agent-Systems-in-Production.md): 8 projetos, 3 padrões de orquestração, failure propagation
+- [LangGraph in Production](wiki/references/papers/LangGraph-in-Production.md): StateGraph, checkpointing, state pruning, human-in-the-loop
+- [LangGraph vs LangChain](wiki/references/papers/LangGraph-vs-LangChain.md): Decision matrix + validação do LATTE como custom loop
 
-## Referências Wiki (Feature 100 — 42 Chat Core)
+### References — Toolkits
 
-Referências técnicas destiladas no vault para a feature 100:
-
-### Arquitetura & Requisitos (42-chat)
-- [Engineering Requirements](wiki/references/42-chat-engineering-requirements.md) — Requisitos de engenharia
-- [Platform Architecture](wiki/references/42-chat-platform-architecture.md) — Arquitetura da plataforma
-- [Architecture Diagram](wiki/references/42-chat-architecture-diagram.md) — Diagrama de arquitetura
-- [Design System](wiki/references/42-chat-design-system.md) — Sistema de design
-- [Research Report](wiki/references/42-chat-research-report.md) — Relatório de pesquisa
-
-### Seções Técnicas (sec1–sec9)
-- [Sec1 — Fundamentação](wiki/references/42-chat-sec1-fundamentacao.md) — Fundamentação técnica
-- [Sec2 — Backend Concorrência](wiki/references/42-chat-sec2-backend-concorrencia.md) — Backend e concorrência
-- [Sec3 — Graceful Shutdown](wiki/references/42-chat-sec3-graceful-shutdown.md) — Graceful shutdown
-- [Sec4 — Infra Tuning](wiki/references/42-chat-sec4-infra-tuning.md) — Tuning de infraestrutura
-- [Sec5 — API 42 Rate Limits](wiki/references/42-chat-sec5-api-42-rate-limits.md) — Rate limits da API 42
-- [Sec6 — Campus Locations](wiki/references/42-chat-sec6-campus-locations.md) — Localizações dos campi
-- [Sec7 — Microfrontends](wiki/references/42-chat-sec7-microfrontends.md) — Arquitetura microfrontend
-- [Sec8 — Matchmaking P2P](wiki/references/42-chat-sec8-matchmaking-p2p.md) — Matchmaking P2P
-- [Sec9 — Observabilidade BDD](wiki/references/42-chat-sec9-observabilidade-bdd.md) — Observabilidade e BDD
-
-### Vite & Build
-- [Vite Reference](wiki/references/vite-reference.md) — Referência Vite
-- [Vite Environment API](wiki/references/vite-environment-api.md) — Environment API
-- [Vite Rolldown Migration](wiki/references/vite-rolldown-migration.md) — Migração para Rolldown
-
-### React + Vite
-- [React+Vite Development](wiki/references/react-vite-development.md) — Desenvolvimento
-- [React+Vite Performance](wiki/references/react-vite-performance.md) — Performance
-- [React+Vite Build Optimization](wiki/references/react-vite-build-optimization.md) — Otimização de build
-- [React+Vite Code Splitting](wiki/references/react-vite-code-splitting.md) — Code splitting
-- [React+Vite Asset Handling](wiki/references/react-vite-asset-handling.md) — Gestão de assets
-- [React+Vite Environment Config](wiki/references/react-vite-environment-config.md) — Configuração de ambiente
+- [Go Usecase](wiki/references/go-usecase.md): Padrão de usecase em Go (interface + struct + New)
+- [Go Chi Handler](wiki/references/go-chi-handler.md): Convenções de handler HTTP com Chi router
+- [Go Concurrency](wiki/references/go-concurrency.md): Patterns de concorrência — goroutines, channels, errgroup
 
 ## Links
 
-- [Constituição](.github/memory/constitution.md)
-- [Stack Tecnológica](.github/memory/tech.md)
-- [Guia do Agente](AGENTS.md)
-- [Tutorial](TUTORIAL.md)
-- [Vault Wiki](wiki/index.md)
+- [42_Framework](/home/zeenyt__/Projetos/42_Framework): Meta-framework fonte (LATTE, Wiki, Hybrid Retrieval)

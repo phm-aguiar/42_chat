@@ -201,8 +201,4 @@ plugins: [
 
 ← Back to [[references/react-vite-performance|React + Vite Performance MoC]]
 
-## Sources
 
-- [Vite Env Variables and Modes](https://vitejs.dev/guide/env-and-mode.html)
-- [Vite Env Files](https://vite.dev/guide/env-and-mode.html#env-files)
-- [rollup-plugin-visualizer](https://github.com/btd/rollup-plugin-visualizer)

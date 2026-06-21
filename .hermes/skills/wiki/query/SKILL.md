@@ -11,6 +11,8 @@ metadata:
     tags: ['wiki', 'query']
     related_skills: [wiki-query]
     category: wiki
+    capabilities:
+      semantic_search: true
     resources:
       - SKILL.md
 ---
@@ -33,7 +35,7 @@ If the user's message contains a new finding, an action request ("save this", "b
 
 ## Before You Start
 
-1. **Resolve config** — follow the Config Resolution Protocol in `llm-wiki/SKILL.md` (walk up CWD for `.env` → `~/.obsidian-wiki/config` → prompt setup). Prefer `~/.obsidian-wiki/config` for cross-project queries when present, even if it is a symlink to the vault `.env`. This gives `OBSIDIAN_VAULT_PATH` and any QMD variables. Works from any project directory.
+1. **Resolve config** — follow the Config Resolution Protocol in `llm_wiki/SKILL.md` (walk up CWD for `.env` → `~/.obsidian-wiki/config` → prompt setup). Prefer `~/.obsidian-wiki/config` for cross-project queries when present, even if it is a symlink to the vault `.env`. This gives `OBSIDIAN_VAULT_PATH` and any QMD variables. Works from any project directory.
 2. **Load QMD settings from the resolved config** before deciding retrieval strategy. If `QMD_WIKI_COLLECTION` is set, treat QMD as available subject only to transport/tool checks below. If it is empty or unset, say briefly why QMD is being skipped before using grep/page reads.
 3. If `$OBSIDIAN_VAULT_PATH/hot.md` exists, read it first — it gives you instant context on recent activity. If the user's question is about something ingested recently, hot.md may answer it before you even open `index.md`.
 4. Read `$OBSIDIAN_VAULT_PATH/index.md` to understand the wiki's scope and structure
@@ -53,9 +55,107 @@ Pages with no `visibility/` tag, or tagged `visibility/public`, are always inclu
 
 In filtered mode, note the filter in the Step 6 log entry: `mode=filtered`.
 
+## Modo Semântico (--semantic)
+
+Além do modo textual padrão (grep em frontmatter e corpos de páginas), `wiki-query` oferece busca semântica via `--semantic`. Este modo é ativado **apenas** quando o usuário passa explicitamente a flag `--semantic` — sem a flag, o comportamento padrão (modo textual) é mantido.
+
+### Como usar
+
+```bash
+hermes wiki query --semantic "texto da consulta" --top-k N
+```
+
+- `--semantic`: texto da consulta em linguagem natural (obrigatório no modo semântico)
+- `--top-k N`: número máximo de resultados (padrão: 5)
+
+### O que faz
+
+1. **Embedda a query** com o modelo `all-MiniLM-L6-v2` (SentenceTransformer)
+2. **Busca por similaridade de cosseno** no índice SQLite (`~/.hermes/wiki_index.db`), comparando o embedding da query com embeddings de todos os chunks indexados
+3. **Retorna os top-k chunks** mais similares, ordenados por similaridade decrescente, exibindo source, heading, conteúdo truncado e score combinado
+
+### Fallback: índice não existe
+
+Se o banco de índice (`~/.hermes/wiki_index.db`) não existir ou estiver vazio (sem embeddings), o comando exibe:
+
+> Índice não encontrado. Execute 'hermes wiki index --full' primeiro.
+
+…e termina com código de saída 1. O agente deve então **sugerir ao usuário** que execute `hermes wiki index --full` para construir o índice antes de usar o modo semântico.
+
+## Modo Híbrido (--hybrid)
+
+O modo híbrido estende a busca semântica combinando **cosine similarity** (embedding) com **BM25** (lexical). Ele é ativado adicionando a flag `--hybrid` junto com `--semantic`.
+
+### Como usar
+
+```bash
+hermes wiki query --semantic "texto da consulta" --hybrid --top-k N
+```
+
+- `--semantic`: texto da consulta em linguagem natural (obrigatório)
+- `--hybrid`: ativa o modo híbrido (cosine + BM25)
+- `--top-k N`: número máximo de resultados (padrão: 5)
+
+### O que faz
+
+1. **Embedda a query** e calcula cosine similarity contra os chunks indexados (igual ao modo `--semantic`)
+2. **Calcula BM25** para cada chunk usando o conteúdo textual como corpus
+3. **Normaliza ambos os scores** para [0, 1] via min-max normalization
+4. **Combina os scores**: `hybrid_score = 0.7 * cosine_norm + 0.3 * bm25_norm` (α=0.7, peso maior para semântica)
+5. **Ordena por hybrid_score** decrescente e retorna os top-k chunks
+
+### Formato de saída
+
+Cada resultado exibe os três scores no formato:
+
+```
+[0.423 cos + 0.312 bm25 = 0.390 hybrid] source > heading
+    conteúdo truncado...
+```
+
+- `cos`: cosine similarity bruta (query embedding × chunk embedding)
+- `bm25`: score BM25 bruto (relevância lexical)
+- `hybrid`: score combinado normalizado (usado para ordenação)
+
+### Comparativo entre modos
+
+| Modo | Flag | Algoritmo | Ideal para |
+|---|---|---|---|
+| **Textual** (padrão) | *(sem flag)* | grep em frontmatter/corpos | Buscas exatas: "nome exato de arquivo", "erro X", "classe Y" |
+| **Semântico** | `--semantic` | Cosine similarity (embedding) | Buscas conceituais: "como fazer X", "padrão de Y", "estratégia para Z" |
+| **Híbrido** | `--semantic --hybrid` | Cosine + BM25 | Consultas que se beneficiam de ambos os sinais: termos técnicos específicos em contexto conceitual amplo, ou quando cosine-only retorna resultados pouco relevantes |
+
+### Quando usar --hybrid vs --semantic
+
+| Cenário | Recomendação |
+|---|---|
+| Consulta puramente conceitual ("design pattern para cache") | `--semantic` |
+| Consulta com termos técnicos exatos ("Redis TTL expiração pub/sub") | `--hybrid` |
+| Cosine-only trouxe resultados ruins/irrelevantes | Reexecute com `--hybrid` |
+| Vocabulário da consulta é muito diferente do vocabulário dos chunks | `--semantic` (BM25 não ajuda) |
+| Consulta contém siglas, códigos ou símbolos (`O(n)`, `SQL`, `k8s`) | `--hybrid` (BM25 captura tokens exatos) |
+
+**Regra prática:** comece com `--semantic`. Se os resultados forem insatisfatórios ou a consulta contiver termos técnicos específicos que devem aparecer literalmente nos chunks, reexecute com `--hybrid`.
+
+### Quando usar — buscas conceituais vs textuais
+
+| Modo | Ativar com | Ideal para |
+|---|---|---|
+| **Textual** (padrão) | *(sem flag)* | Buscas exatas: "nome exato de arquivo", "erro X", "classe Y", "função Z" |
+| **Semântico** | `--semantic` | Buscas conceituais: "como fazer X", "padrão de Y", "estratégia para Z", "qual a abordagem para W" |
+
+**Regra prática:** se a consulta contém verbos de ação ("como fazer", "implementar", "resolver") ou conceitos abstratos ("design pattern", "arquitetura", "estratégia"), prefira `--semantic`. Se a consulta contém nomes exatos de arquivos, classes, funções ou mensagens de erro, use o modo textual padrão.
+
+### Scripts relacionados
+
+A implementação dos modos semântico e híbrido está em:
+- `.hermes/skills/wiki/experiential_memory/cli_query.py` — CLI e orquestração da busca
+- `.hermes/skills/wiki/experiential_memory/search.py` — busca por similaridade de cosseno (modo `--semantic`) e modo híbrido cosine+BM25 (modo `--hybrid`)
+- `.hermes/skills/wiki/experiential_memory/bm25.py` — implementação do BM25Retriever para scoring lexical
+
 ## Retrieval Protocol
 
-**Follow the Retrieval Primitives table in `llm-wiki/SKILL.md`.** Reading is the dominant cost of this skill — use the cheapest primitive that answers the question and escalate only when it can't. Never jump straight to full-page reads.
+**Follow the Retrieval Primitives table in `llm_wiki/SKILL.md`.** Reading is the dominant cost of this skill — use the cheapest primitive that answers the question and escalate only when it can't. Never jump straight to full-page reads.
 
 ### Step 1: Understand the Question
 
@@ -69,6 +169,8 @@ Classify the query type:
 Also decide the **mode**:
 - **Index-only mode** — triggered by "quick answer", "just scan", "don't read the pages", "fast lookup". Stops at Step 3. Answers from frontmatter + `index.md` only.
 - **Normal mode** — the full tiered pipeline below.
+- **Semantic mode** — triggered by `--semantic` flag (see [Modo Semântico](#modo-semântico---semantic) above). Embeds the query, searches by cosine similarity in the SQLite index. Use `--top-k N` to control result count (default: 5). Falls back with a suggestion to run `hermes wiki index --full` if the index doesn't exist. Best for conceptual queries ("how to X", "pattern for Y") rather than exact-name lookups.
+- **Hybrid mode** — triggered by `--semantic --hybrid` flags (see [Modo Híbrido](#modo-híbrido---hybrid) above). Combines cosine similarity with BM25 lexical scoring. Best when queries mix conceptual language with specific technical terms, or when semantic-only returns poor results.
 
 ### Step 2: Index Pass (cheap)
 
@@ -183,7 +285,7 @@ Run this step **only** for path/multi-hop queries (or when a relationship query 
 
    State the hop count and whether any hop is a `(reverse)` traversal or an untyped `related_to` fallback (those chains are weaker — flag them). If no path exists within the depth limit, say so explicitly: "No typed-edge path from X to Y within 3 hops — they are in disconnected regions of the graph." That is itself a useful finding (a graph gap).
 
-**Cost guard:** this step reads only frontmatter via grep. If the adjacency grep returns nothing (no page uses `relationships:` yet), report that the graph has no typed edges to traverse and suggest running `cross-linker` to populate them, then fall back to ordinary one-hop retrieval.
+**Cost guard:** this step reads only frontmatter via grep. If the adjacency grep returns nothing (no page uses `relationships:` yet), report that the graph has no typed edges to traverse and suggest running `cross_linker` to populate them, then fall back to ordinary one-hop retrieval.
 
 ### Step 5: Synthesize an Answer
 

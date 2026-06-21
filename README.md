@@ -1,161 +1,124 @@
-# 42_chat — Framework SDD Autônomo
+# 42 Framework
 
-> Squad de agentes de IA com wiki como cérebro, toolkits como ferramentas e
-> humanos no loop de aprovação. Spec-Driven Development do início ao fim.
+Meta-framework para Spec-Driven Development (SDD) com orquestração multi-agente,
+wiki semântica e retrieval híbrido.
 
-## Como funciona (pra humanos)
-
-O sistema tem 3 camadas:
+## Pipeline SDD
 
 ```
-🧠 Wiki (cérebro)     →  Memória de longo prazo. Tudo que o sistema sabe
-                         fica aqui. Versionado no repo (wiki/).
-
-🔧 Toolkits (skills)  →  Ferramentas consolidadas. 119 skills viram 11
-                         toolkits com modos internos. Subagentes carregam
-                         1-2 toolkits ao invés de 5-10 skills.
-
-🤖 Agentes (mão de obra)→ Agente principal (você + IA) orquestra. Subagentes
-                         especializados (Dev, QA) executam tasks em paralelo.
+brainstorm → spec → plan → tasks (G₀ + hints)
+                 ↑              │
+            [wiki-query]   ┌────↓─────────┐
+            busca hints    │ orchestrator  │
+            cross-feature  │ LATTE rounds  │
+                 ↑         │ com heartbeat │
+            ┌────┴──────┐  └──────┬────────┘
+            │ experiential│       │
+            │ memory      │←──────┘
+            │ (wiki +     │  G_final + métricas
+            │  SQLite)    │  overwrites, idle rounds
+            └─────────────┘
 ```
 
-### O cérebro: Wiki
+## Features
 
-A wiki é um vault Obsidian versionado no repo (`wiki/`). Toda decisão, feature,
-skill e padrão arquitetural é documentado aqui. O agente consulta a wiki antes
-de agir — não reinventa conhecimento que já foi compilado.
+| ID | Nome | Status | Tasks | Descrição |
+|----|------|--------|-------|-----------|
+| 001 | LATTE Coordination | ✅ | 23 | Coordination graph dinâmico com heartbeat, 7 operadores, context scoping |
+| 002 | Wiki Experiential Memory | ✅ | 30 | Indexação semântica (embeddings), retrieval, hint scoring, feedback loop, distillation |
+| 003 | Hybrid Retrieval & Normalization | ✅ | 15 | Pesquisa híbrida BM25+cosine, normalização de frontmatter (34 docs), thresholds adaptativos |
 
-```
-wiki/
-├── concepts/     — Padrões, metodologia (SDD, wiki-model, vault-taxonomy)
-├── skills/       — Documentação dos 11 toolkits
-├── references/   — Templates, formatos, padrões externos
-├── journal/      — Sessões e decisões capturadas
-├── synthesis/    — Conexões cross-cutting entre conceitos
-└── index.md      — Índice mestre do vault
-```
+**Total: 68 tasks implementadas.**
 
-**Entry points pra humanos:**
-- `wiki/index.md` — catálogo completo do que existe
-- `wiki/skills/toolkit-map.md` — mapa de qual skill foi absorvida por qual toolkit
-- `wiki/references/toolkits/` — templates e padrões de referência
-
-### As ferramentas: 11 Toolkits
-
-| Toolkit | Tamanho | Pra quê | Quem usa |
-|---|---|---|---|
-| `brain` | 30 skills | Wiki, Obsidian, Docs — o cérebro | Principal |
-| `sdd` | 9 skills | Pipeline SDD (spec→plan→tasks) | Principal |
-| `qa-toolkit` | 8 skills | Testes, Gherkin, BDD, TDD | agent-qa |
-| `dev-toolkit` | 15 skills | Go, React, debug, code review | agent-dev |
-| `github` | 7 skills | PR, issues, review, commits | Principal |
-| `devops` | 6 skills | Docker, Honcho, Kanban, áudio | Principal |
-| `visual` | 13 skills | Diagramas, design, ASCII art | Principal |
-| `media` | 6 skills | Áudio, vídeo, ComfyUI | Principal |
-| `ml` | 8 skills | HuggingFace, llama.cpp, vLLM | Principal |
-| `research` | 6 skills | arXiv, blogwatch, papers | Principal |
-| `productivity` | 5 skills | PPTX, PDF, OCR, mapas, Hue | Principal |
-
-**Carregar um toolkit:** `skill_view('dev-toolkit')` — 1 chamada, 15 modos.
-Antes eram 15 `skill_view()` separadas.
-
-### Os agentes
-
-| Agente | Toolkits | Função |
-|---|---|---|
-| **Principal** (você + IA) | `brain`, `sdd`, `github`, etc. | Orquestra features, mantém wiki, interage com humano |
-| **agent-dev** | `dev-toolkit` | Implementa código. Leaf (não delega). Reporta DONE/FAIL/BLOCKED |
-| **agent-qa** | `qa-toolkit` | Testa, roda Gherkin, build/lint/vet. Rejeita task do Dev |
-| **agent-orchestrator** | (coordena apenas) | Lê DAG do tasks.md, spawna subagentes em paralelo |
-| **onboard** | `sdd` | Inicializa projetos novos no framework SDD |
-
-## Fluxo SDD (Spec-Driven Development)
-
-Toda feature segue o mesmo pipeline. Nada é implementado sem spec aprovada.
+### Progressão
 
 ```
-1. brainstorm     →  spec.md    (entrevista interativa com humano)
-2. plan           →  plan.md    (decisões arquiteturais, ADRs)
-3. tasks          →  tasks.md   (DAG de tasks com paralelismo)
-4. APPROVE        →  humano marca "Aprovado: true"
-5. orchestrator   →  spawna subagentes conforme DAG
-6. validate       →  sdd-validate + wiki-lint
+001 ──→ 002 ──→ 003
+ │       │       │
+ │       │       └── depende da 002 (search.py, índice SQLite)
+ │       └── depende da 001 (métricas LATTE → utility signal)
+ └── independente (orquestração pura)
 ```
 
-**Comandos reais (exemplo feature 008):**
-```bash
-# 1. Brainstorm — o agente entrevista você e gera spec.md
-"brainstorm: consolidar skills em toolkits"
+| # | Feature | Dependência | Stack adicionada | Por que |
+|---|---------|-------------|------------------|---------|
+| 001 | LATTE Coordination | — | `delegate_task`, CoordinationGraph, heartbeat H=4, 7 operadores (Discover/Assign/Claim/Complete/Release/Close/Verify) | Orquestração dinâmica substitui DAG estático. Rounds discretos, straggler detection, context scoping |
+| 002 | Wiki Experiential Memory | 001 (métricas) | `sentence-transformers` + `all-MiniLM-L6-v2` (384d, 23MB), SQLite com embeddings BLOB, `search_similar()` cosine, `scoring.py` (update_score), `feedback.py` (utility signal → delta), `decay.py`, `cluster.py` (KMeans), `distill.py` (chunks canônicos), `summarizer.py` | Wiki vira memória experiencial indexada. Hints cross-feature, retrieval semântico, scoring com feedback loop |
+| 003 | Hybrid Retrieval | 002 (search.py, índice) | `rank_bm25` (BM25Okapi, Python puro), fusão α=0.7, `--hybrid` mode, `normalize_frontmatter.py` (34 docs), thresholds adaptativos (0.50 query, 0.70 cross-link) | BM25 cobre termos exatos que cosine perde (+99% ganho lexical). Frontmatter 100% coverage. Pesquisa híbrida = "arquitetura suprema para vaults densos" |
 
-# 2-3. O agente gera plan.md e tasks.md
-"gera plan para 008-reavaliacao-skills"
-"gera tasks para 008-reavaliacao-skills"
+### Papers ingeridos
 
-# 4. Você aprova (edite o spec.md)
-Aprovado: true
+| Paper | Status | Feature relacionada |
+|-------|--------|---------------------|
+| LATTE (Mieczkowski et al., 2026) | ✅ implemented | 001 |
+| A-MapReduce (Chen et al., 2026) | ✅ implemented | 002 |
+| LangGraph in Production (Gulecha, 2026) | ✅ analyzed | Candidato 004 |
+| Otimização de Obsidian para IA (2026) | ✅ implemented | 003 |
 
-# 5-6. Execução fase por fase
-"executa fase 1 do tasks.md"   # 3 tasks em paralelo
-"executa fase 2"                # 11 toolkits em batches de 3
+## Wiki
+
+- **244 documentos** (5.5 MB)
+- **2.053 chunks** indexados no SQLite (7.8 MB)
+- **100% cobertura** de frontmatter
+- **4 papers** ingeridos e cross-linkados
+
+### Retrieval
+
+| Modo | Algoritmo | Tempo | Uso |
+|------|-----------|-------|-----|
+| `--semantic` | Cosine similarity (all-MiniLM-L6-v2, 384d) | 283ms | Consultas conceituais |
+| `--hybrid` | BM25 + Cosine fusion (α=0.7) | 313ms | Termos exatos + conceituais |
+
+### Benchmark Hybrid vs Cosine-only (15 queries)
+
+| Tipo | Cosine | Hybrid | Ganho |
+|------|--------|--------|-------|
+| Lexical (termos exatos) | 0.412 | 0.801 | **+99%** |
+| Conceitual (semântico) | 0.541 | 0.928 | **+73%** |
+| Misto | 0.614 | 0.966 | **+59%** |
+| **Total** | **0.522** | **0.898** | **+77%** |
+
+## Estrutura
+
+```
+42_Framework/
+├── specs/features/           # Pipeline SDD (spec + plan + tasks)
+│   ├── 001-latte-coordination/
+│   ├── 002-experiential-memory/
+│   └── 003-hybrid-retrieval/
+├── .hermes/skills/           # Implementação (Python + SKILL.md)
+│   ├── sdd/latte_coordination/   # Feature 001
+│   ├── wiki/experiential_memory/ # Features 002+003
+│   └── wiki/brain/               # Brain toolkit
+├── wiki/                     # Vault Obsidian (source of truth)
+│   ├── concepts/             # SDD, Obsidian flow
+│   ├── references/papers/    # LATTE, A-MapReduce, LangGraph, Obsidian IA
+│   ├── references/toolkits/  # sdd, wiki, go, obsidian, qa, github
+│   ├── projects/42_Framework/features/
+│   ├── projects/42_chat/
+│   └── _raw/                 # Papers originais
+└── ~/.hermes/wiki_index.db   # Índice SQLite (derivado da wiki)
 ```
 
-## Setup
+## Stack
 
-```bash
-git clone <repo-url> && cd 42_chat
+| Camada | Tecnologia | Feature | Detalhe |
+|--------|-----------|---------|---------|
+| **Runtime** | Hermes Agent | — | Python, subagentes via `delegate_task` |
+| **Orquestração** | LATTE Algorithm A4.5 | 001 | CoordinationGraph, rounds discretos, heartbeat H=4 |
+| **Operadores** | Discover, Assign, Claim, Complete, Release, Close, Verify | 001 | 7 operadores com pre/post conditions formais |
+| **Embeddings** | `all-MiniLM-L6-v2` | 002 | 384 dimensões, 23 MB, CPU-only, sentence-transformers |
+| **Store** | SQLite (WAL mode) | 002 | `~/.hermes/wiki_index.db`, 2053 chunks, 7.8 MB |
+| **Retrieval** | Cosine similarity + rank_bm25 | 002+003 | α=0.7 fusion, thresholds adaptativos, 313ms |
+| **Scoring** | `scoring.py` + `feedback.py` | 002 | update_score, utility signal → delta, decay |
+| **Distillation** | `cluster.py` (KMeans) + `distill.py` | 002 | Agrupamento por similaridade, chunks canônicos via LLM |
+| **Frontmatter** | `normalize_frontmatter.py` | 003 | 34 docs normalizados, 100% coverage |
+| **Wiki** | Obsidian-compatible Markdown vault | — | 244 docs, 5.5 MB, YAML frontmatter |
+| **Papers** | 4 papers ingeridos e cross-linkados | — | `wiki/references/papers/` |
 
-# Skills versionadas no repo, symlinks automáticos
-./scripts/setup-skills.sh
+## Princípios
 
-# Verificar
-hermes skills list | grep -E "brain|sdd|qa-toolkit|dev-toolkit"
-```
-
-## Estrutura do Projeto
-
-```
-42_chat/
-├── .github/memory/
-│   ├── constitution.md    # Regras invioláveis
-│   └── tech.md            # Stack homologado
-├── .hermes/
-│   ├── skills/            # 11 toolkits versionados
-│   │   ├── wiki/brain/    #   brain (30 skills → 8 modos)
-│   │   ├── sdd/sdd/       #   sdd (9 → 8)
-│   │   ├── qa/qa-toolkit/ #   qa-toolkit (8 → 8)
-│   │   ├── dev/dev-toolkit/#  dev-toolkit (15 → 15)
-│   │   ├── github/github/ #   github (7 → 7)
-│   │   ├── devops/devops/ #   devops (6 → 6)
-│   │   ├── creative/visual/#  visual (13 → 13)
-│   │   ├── creative/media/ #   media (6 → 6)
-│   │   ├── mlops/ml/      #   ml (8 → 8)
-│   │   ├── research/research/ # research (6 → 6)
-│   │   └── productivity/productivity/ # productivity (5 → 5)
-│   └── agents/            # Definições de subagentes
-│       ├── agent-dev/     #   Dev: AGENT.md + context.yaml
-│       ├── agent-qa/      #   QA: AGENT.md + context.yaml
-│       ├── agent-orchestrator/
-│       └── onboard/
-├── wiki/                  # 🧠 Cérebro — vault Obsidian versionado
-│   ├── index.md           #   Índice mestre
-│   ├── skills/            #   Páginas dos 11 toolkits
-│   ├── references/toolkits/ # Templates, formatos, padrões ingeridos
-│   ├── concepts/          #   SDD, wiki-model, vault-taxonomy
-│   └── journal/           #   Sessões e decisões
-├── specs/features/        # Features SDD (001-008 + 100-101)
-├── llms.txt               # Mapa do repo (entry point pra agentes)
-└── AGENTS.md              # Regras de enforcement (tabela de gatilhos wiki)
-```
-
-## Convenções
-
-- **Versionado no repo:** skills, agentes, wiki, specs — tudo versionado
-- **Symlinks planos:** `~/.hermes/skills/<cat>/<nome>` → `.hermes/skills/<cat>/<nome>`
-- **Wiki fiel:** feature concluída → wiki atualizado. Vault desatualizado bloqueia PR
-- **Aprovação humana:** `Aprovado: true` no spec.md antes de qualquer código
-- **Subagentes leaf:** não delegam. Profundidade máxima = 1
-- **Toolkits, não skills:** carregar 1 toolkit ao invés de 5-10 skills
-
-## Atualizado em
-
-2026-06-19 — Feature 008: Reavaliação e Consolidação de Skills
+1. **Wiki como source of truth** — índice é derivado, nunca modifica `.md` originais
+2. **Hermes nativo** — zero dependências externas (sem APIs, sem cloud)
+3. **Context scoping** — Workers recebem só task + outputs de dependências
+4. **Compatibilidade reversa** — novos parâmetros têm defaults que preservam comportamento anterior

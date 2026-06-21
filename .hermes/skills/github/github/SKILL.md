@@ -14,7 +14,7 @@ metadata:
       - github-code-review
       - github-issues
       - github-repo-management
-      - git-conventional-commit
+      - git_conventional_commit
       - codebase-inspection
 ---
 

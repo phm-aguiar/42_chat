@@ -1,3 +1,8 @@
+---
+title: "Media"
+tags: [skill]
+created: 2026-06-20
+---
 1|---
 2|title: "media"
 3|category: skills

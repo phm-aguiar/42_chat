@@ -18,11 +18,11 @@ metadata:
 
 You are performing a health check on an Obsidian wiki. Your goal is to find and fix structural issues that degrade the wiki's value over time.
 
-**Before scanning anything:** follow the Retrieval Primitives table in `llm-wiki/SKILL.md`. Prefer frontmatter-scoped greps and section-anchored reads over full-page reads. On a large vault, blindly reading every page to lint it is exactly what this framework is built to avoid.
+**Before scanning anything:** follow the Retrieval Primitives table in `llm_wiki/SKILL.md`. Prefer frontmatter-scoped greps and section-anchored reads over full-page reads. On a large vault, blindly reading every page to lint it is exactly what this framework is built to avoid.
 
 ## Before You Start
 
-1. **Resolve config** — follow the Config Resolution Protocol in `llm-wiki/SKILL.md` (walk up CWD for `.env` → `~/.obsidian-wiki/config` → prompt setup). This gives `OBSIDIAN_VAULT_PATH`
+1. **Resolve config** — follow the Config Resolution Protocol in `llm_wiki/SKILL.md` (walk up CWD for `.env` → `~/.obsidian-wiki/config` → prompt setup). This gives `OBSIDIAN_VAULT_PATH`
 2. Read `index.md` for the full page inventory
 3. Read `log.md` for recent activity context
 
@@ -111,7 +111,7 @@ Verify `index.md` matches the actual page inventory.
 
 ### 7. Provenance Drift
 
-Check whether pages are being honest about how much of their content is inferred vs extracted. See the Provenance Markers section in `llm-wiki` for the convention.
+Check whether pages are being honest about how much of their content is inferred vs extracted. See the Provenance Markers section in `llm_wiki` for the convention.
 
 **How to check:**
 - For each page with a `provenance:` block or any `^[inferred]`/`^[ambiguous]` markers, count sentences/bullets and how many end with each marker
@@ -141,7 +141,7 @@ Checks whether pages that share a tag are actually linked to each other. Tags im
 - Flag any tag group where cohesion < 0.15 and n ≥ 5
 
 **How to fix:**
-- Run the `cross-linker` skill targeted at the fragmented tag — it will surface and insert the missing links
+- Run the `cross_linker` skill targeted at the fragmented tag — it will surface and insert the missing links
 - If a tag group is large (n > 15) and still fragmented, consider splitting it into more specific sub-tags
 
 ### 9. Visibility Tag Consistency
@@ -169,12 +169,12 @@ Find pages in `misc/` that have accumulated enough project affinity to be promot
 - Flag pages where any single project's score ≥ 3
 
 **How to fix:**
-- Run the `cross-linker` skill first if affinity scores look stale (e.g., `affinity: {}` on a page with many wikilinks)
+- Run the `cross_linker` skill first if affinity scores look stale (e.g., `affinity: {}` on a page with many wikilinks)
 - To promote: move the page to `projects/<project-name>/references/` (or another appropriate category), update its `category` frontmatter, remove `promotion_status`, and grep the vault for backlinks to update them
 
 ### 12. Confidence and Lifecycle Schema
 
-Enforces the confidence + lifecycle frontmatter schema (see `llm-wiki/SKILL.md`, Confidence and Lifecycle section).
+Enforces the confidence + lifecycle frontmatter schema (see `llm_wiki/SKILL.md`, Confidence and Lifecycle section).
 
 Two modes:
 - **`--check`** (default, read-only) — reports errors and warnings
@@ -214,7 +214,7 @@ Staleness is never stored — it is computed at read time: `is_stale = (today �
 
 #### Rule 12e — Confidence drift
 
-**How to check:** For pages that have both `base_confidence:` and `sources:` in frontmatter, recompute `base_confidence` using the formula in `llm-wiki/SKILL.md`. If the stored value differs from the recomputed value by more than 0.05, flag it as drift.
+**How to check:** For pages that have both `base_confidence:` and `sources:` in frontmatter, recompute `base_confidence` using the formula in `llm_wiki/SKILL.md`. If the stored value differs from the recomputed value by more than 0.05, flag it as drift.
 
 **How to fix (`--fix` only):** Rewrite the `base_confidence` field to the recomputed value. This is the **only rule** that mutates frontmatter automatically.
 
@@ -333,7 +333,7 @@ Report findings as a structured list:
 - `synthesis/speculation.md` — unsourced synthesis: no `sources:` field, 55% inferred
 
 ### Fragmented Tag Clusters (N found)
-- **#systems** — 7 pages, cohesion=0.06 ⚠️ — run cross-linker on this tag
+- **#systems** — 7 pages, cohesion=0.06 ⚠️ — run cross_linker on this tag
 - **#databases** — 5 pages, cohesion=0.10 ⚠️
 
 ### Visibility Issues (N found)
@@ -402,7 +402,7 @@ For each orphan page found in Check 1 (zero incoming links):
 - Grep the vault body text for mentions of the page's title or aliases (case-insensitive).
 - For each mention found in another page, add a `[[wikilink]]` replacing the plain-text mention.
 - Limit to 3 insertions per orphan — don't flood pages with links.
-- This is scoped to orphans only (different from `cross-linker` which runs broadly).
+- This is scoped to orphans only (different from `cross_linker` which runs broadly).
 
 #### Action 3: Correct lifecycle states
 
@@ -420,7 +420,7 @@ For pages with `tier: supporting` (or unset) that have 0 incoming links AND have
 
 #### Action 5: Tag normalization
 
-Read `_meta/taxonomy.md` for the alias mapping (e.g., `ml → machine-learning`). For each page, replace known alias tags with their canonical form in the `tags:` frontmatter field. This is a subset of `tag-taxonomy`'s work — only alias fixes, no full audit.
+Read `_meta/taxonomy.md` for the alias mapping (e.g., `ml → machine-learning`). For each page, replace known alias tags with their canonical form in the `tags:` frontmatter field. This is a subset of `tag_taxonomy`'s work — only alias fixes, no full audit.
 
 #### Action 6: Contradiction callouts
 

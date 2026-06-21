@@ -31,7 +31,7 @@ For academic papers (ML/AI/LLM/VLM and similar), the generic frame above misses 
 4. **What's the experimental setup and the headline numbers?** Datasets, baselines, and the metric table the paper is judged on.
 5. **What are the ablations and limitations?** What did they vary, and what does the method *not* do?
 
-These map onto the Paper Deep-Dive Template in `llm-wiki/SKILL.md`. The goal is a page a reader could study instead of the PDF — figures, equations, and results included.
+These map onto the Paper Deep-Dive Template in `llm_wiki/SKILL.md`. The goal is a page a reader could study instead of the PDF — figures, equations, and results included.
 
 ## Synthesis Frame
 

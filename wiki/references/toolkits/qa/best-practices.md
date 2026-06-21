@@ -1,3 +1,8 @@
+---
+title: "Best Practices"
+tags: [qa, reference]
+created: 2026-06-20
+---
 # Gherkin Best Practices
 
 ## 1. Cenarios focados

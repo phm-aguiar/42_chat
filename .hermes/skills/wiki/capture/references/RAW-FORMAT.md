@@ -72,7 +72,7 @@ related edge cases, or follow-up questions.
 
 ## Provenance + Confidence Calibration
 
-Apply provenance markers inline per the `llm-wiki` convention:
+Apply provenance markers inline per the `llm_wiki` convention:
 
 | Marker | When to use |
 |---|---|

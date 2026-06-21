@@ -150,10 +150,3 @@ if (import.meta.hot) {
 
 ← Back to [[references/react-vite-performance|React + Vite Performance MoC]]
 
-## Sources
-
-- [Vite Dep Pre-Bundling](https://vitejs.dev/guide/dep-pre-bundling.html)
-- [React Fast Refresh](https://react.dev/learn/editor-setup)
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react)
-- [Vite HMR API](https://vitejs.dev/guide/api-hmr.html)
-- [Vite Server Options](https://vitejs.dev/config/server-options.html)

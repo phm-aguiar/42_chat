@@ -103,9 +103,3 @@ pnpm add -D vite@8
 ```json
 { "pnpm": { "overrides": { "vite": "8.0.0" } } }
 ```
-
-## Sources
-
-- [Announcing Vite 8 Beta](https://vite.dev/blog/announcing-vite8-beta)
-- [Announcing Vite 7](https://vite.dev/blog/announcing-vite7)
-- [Vite oxc config](https://vite.dev/config/shared-options#oxc)

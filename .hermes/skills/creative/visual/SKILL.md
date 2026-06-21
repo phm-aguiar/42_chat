@@ -9,7 +9,7 @@ metadata:
   hermes:
     tags: [visual, design, diagramas, animação, arte, toolkit, consolidado]
     category: creative
-    absorbed_from: [mermaid-visualizer, architecture-diagram, excalidraw, claude-design, sketch, p5js, manim-video, ascii-art, baoyu-infographic, popular-web-designs, pretext, touchdesigner-mcp, humanizer]
+    absorbed_from: [mermaid_visualizer, architecture-diagram, excalidraw, claude-design, sketch, p5js, manim-video, ascii-art, baoyu-infographic, popular-web-designs, pretext, touchdesigner-mcp, humanizer]
 ---
 
 # Visual Toolkit — 13 Modos de Design e Diagramas
@@ -314,4 +314,4 @@ Toolkit consolidado. Cada modo é independente. Identifique o modo pelo gatilho 
 ## Skills Originais
 
 `~/.hermes/skills/creative/`: architecture-diagram, ascii-art, baoyu-infographic, claude-design, excalidraw, humanizer, manim-video, p5js, popular-web-designs, pretext, sketch, touchdesigner-mcp
-`~/.hermes/skills/visual/`: mermaid-visualizer
+`~/.hermes/skills/visual/`: mermaid_visualizer

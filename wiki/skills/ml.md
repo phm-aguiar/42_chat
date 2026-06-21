@@ -1,3 +1,8 @@
+---
+title: "Ml"
+tags: [skill]
+created: 2026-06-20
+---
 1|---
 2|title: "ml"
 3|category: skills

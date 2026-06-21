@@ -1,3 +1,8 @@
+---
+title: "Functions Reference"
+tags: [obsidian, reference]
+created: 2026-06-20
+---
 # Functions Reference
 
 ## Global Functions

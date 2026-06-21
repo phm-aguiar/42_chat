@@ -327,10 +327,3 @@ const env = loadEnv('development', process.cwd(), '')
 - `@vitejs/plugin-react-swc` — React com SWC
 - `@vitejs/plugin-legacy` — Legacy browser support
 
-## Sources
-
-- [Vite Config](https://vite.dev/config/)
-- [Vite Features](https://vite.dev/guide/features)
-- [Vite Plugin API](https://vite.dev/guide/api-plugin)
-- [Vite Build Guide](https://vite.dev/guide/build)
-- [Vite JavaScript API](https://vite.dev/guide/api-javascript)

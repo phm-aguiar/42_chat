@@ -1,3 +1,8 @@
+---
+title: "Interview Dimensions"
+tags: [sdd, reference]
+created: 2026-06-20
+---
 # Dimensões da Entrevista Interativa
 
 Este documento define as dimensões que a skill `sdd-brainstorm` deve cobrir durante

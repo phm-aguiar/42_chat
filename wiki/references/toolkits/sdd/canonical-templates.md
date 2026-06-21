@@ -1,3 +1,8 @@
+---
+title: "Canonical Templates"
+tags: [sdd, reference]
+created: 2026-06-20
+---
 # Estrutura Canônica dos Artefatos SDD
 
 > Extraído de `specs/features/002-sdd-templates/spec.md`. Atualizado com regras de atomicidade.
