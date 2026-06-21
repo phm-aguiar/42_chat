@@ -1,0 +1,34 @@
+# Receita de contexto para o agente onboard
+# O agent-run lê este arquivo e compila o contexto antes de spawnar
+
+include:
+  # Arquivos fixos — sempre incluídos
+  files:
+    - .github/memory/constitution.md
+    - .github/memory/tech.md
+    - AGENTS.md
+
+  # Quantas mensagens recentes da sessão puxar (via session_search)
+  session_last_n: 15
+
+  # Termos pra buscar no histórico da sessão
+  session_searches:
+    - SDD
+    - onboard
+    - init
+    - feature
+    - spec
+
+  # Se a demanda mencionar um ID de feature, inclui os artefatos
+  feature_artifacts:
+    - spec.md
+    - plan.md
+    - tasks.md
+
+# Toolsets que o subagente recebe
+toolsets:
+  - terminal
+  - file
+  - web
+  - skills
+  - todo

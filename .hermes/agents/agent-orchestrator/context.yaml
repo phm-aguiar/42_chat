@@ -1,0 +1,34 @@
+# Receita de contexto para o agent-orchestrator
+# O agent-run lê este arquivo e compila o contexto antes de spawnar
+
+include:
+  # Arquivos fixos
+  files:
+    - .github/memory/constitution.md
+    - AGENTS.md
+
+  # Histórico da sessão
+  session_last_n: 20
+
+  session_searches:
+    - orchestrator
+    - delegate_task
+    - feature
+    - task
+    - DONE
+    - FAIL
+    - retry
+
+  # Artefatos da feature sendo orquestrada
+  feature_artifacts:
+    - spec.md
+    - plan.md
+    - tasks.md
+
+# Toolsets que o orchestrator recebe
+# Precisa de delegation pra spawnar subagentes
+toolsets:
+  - terminal
+  - file
+  - delegation
+  - todo

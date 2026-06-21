@@ -1,0 +1,36 @@
+# name: Auto PR Develop to Main
+
+# on:
+#   push:
+#     branches:
+#       - develop
+
+# concurrency:
+#   group: auto-pr-develop-to-main
+#   cancel-in-progress: false
+# jobs:
+#   create-pr:
+#     runs-on: ubuntu-latest
+#     permissions:
+#       pull-requests: write
+#       contents: read
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v4
+
+#       - name: Create Pull Request to main
+#         env:
+#           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         run: |
+#           PR_EXISTS=$(gh pr list --head develop --base main --state open --json id --jq 'length')
+
+#           if [ "$PR_EXISTS" -eq "0" ]; then
+#             echo "Creating automatic PR from develop to main..."
+#             gh pr create \
+#               --base main \
+#               --head develop \
+#               --title "chore: develop -> main" \
+#               --body "Automatic PR created by GitHub Actions for branch flow develop -> main."
+#           else
+#             echo "An open PR from develop to main already exists."
+#           fi

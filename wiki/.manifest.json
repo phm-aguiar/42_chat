@@ -1,0 +1,2040 @@
+{
+  "version": 1,
+  "created": "2026-06-13",
+  "updated": "2026-06-18",
+  "stats": {
+    "total_sources_ingested": 149,
+    "total_pages": 147
+  },
+  "sources": {
+    "specs/features/001-start-repo/": {
+      "ingested_at": "2026-06-13",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "projects/feature-001-start-repo.md"
+      ]
+    },
+    "specs/features/002-sdd-templates/": {
+      "ingested_at": "2026-06-13",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "projects/feature-002-sdd-templates.md"
+      ]
+    },
+    "specs/features/003-forge-skill/": {
+      "ingested_at": "2026-06-13",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "projects/feature-003-forge-skill.md"
+      ]
+    },
+    "specs/features/004-sdd-tasks-dag/": {
+      "ingested_at": "2026-06-13",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "projects/feature-004-sdd-tasks-dag.md"
+      ]
+    },
+    "specs/features/005-runtime-orchestrator/": {
+      "ingested_at": "2026-06-13",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "projects/feature-005-runtime-orchestrator.md"
+      ]
+    },
+    ".github/memory/constitution.md": {
+      "ingested_at": "2026-06-13",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "concepts/constitution.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/ideia/pesquisa.md": {
+      "ingested_at": "2026-06-14T03:44:23+00:00",
+      "size_bytes": 56790,
+      "modified_at": "2026-06-14T03:44:23+00:00",
+      "content_hash": "sha256:537d976aaf4366e500b71fa5ef105cf05d204def446468e123159153de93c6c8",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/42-chat-platform-architecture.md",
+        "references/42-chat-design-system.md",
+        "references/42-chat-engineering-requirements.md",
+        "references/42-chat-architecture-diagram.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/ideia/resumo-ideias.md": {
+      "ingested_at": "2026-06-14T03:32:20+00:00",
+      "size_bytes": 3422,
+      "modified_at": "2026-06-14T03:32:20+00:00",
+      "content_hash": "sha256:c33199847974a6fd318da17a977047b7494fd59a31804e29684c6793a2ec6126",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/42-chat-platform-architecture.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/ideia/ideias.md": {
+      "ingested_at": "2026-06-14T03:29:33+00:00",
+      "size_bytes": 21955,
+      "modified_at": "2026-06-14T03:29:33+00:00",
+      "content_hash": "sha256:3a1b6c5bb68006b1c8e266d913731df61721b802f6fb9f0df9012f667c999fa0",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/42-chat-platform-architecture.md",
+        "references/42-chat-design-system.md",
+        "references/42-chat-engineering-requirements.md",
+        "references/42-chat-architecture-diagram.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/ideia/descricao-imagens.md": {
+      "ingested_at": "2026-06-14T04:28:14+00:00",
+      "size_bytes": 3673,
+      "modified_at": "2026-06-14T04:28:14+00:00",
+      "content_hash": "sha256:3d9766ee109721ccf84f95746674cf24a800d011374cfffefe37c9f1c533c7a5",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_updated": [
+        "references/42-chat-design-system.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/qa/bdd-spec/bdd-gherkin-specification.md": {
+      "ingested_at": "2026-06-15",
+      "size_bytes": 5291,
+      "modified_at": "2026-06-15",
+      "content_hash": "sha256:b20ddfc2f7f4c2f73f8550e41b2cbb59c7c70cce7e7af178781b78e6db6c723a",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [],
+      "pages_updated": [
+        "references/tdd-methodology.md",
+        "references/playwright-bdd.md",
+        "references/gherkin-syntax.md",
+        "references/gherkin-best-practices.md",
+        "references/gherkin-examples.md",
+        "references/cucumber-basics.md",
+        "references/bdd-specification-process.md",
+        "references/qa-overview.md",
+        "references/recipe-step-executor.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/qa/bdd-spec/gherkin-expert-steps.md": {
+      "ingested_at": "2026-06-15",
+      "size_bytes": 3391,
+      "modified_at": "2026-06-15",
+      "content_hash": "sha256:bccf5bf54de2a06968602a6ed80b720a8d052e452b8fe0449cb43e1858d9cfce",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [],
+      "pages_updated": [
+        "references/tdd-methodology.md",
+        "references/playwright-bdd.md",
+        "references/gherkin-syntax.md",
+        "references/gherkin-best-practices.md",
+        "references/gherkin-examples.md",
+        "references/cucumber-basics.md",
+        "references/bdd-specification-process.md",
+        "references/qa-overview.md",
+        "references/recipe-step-executor.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/qa/bdd-spec/gherkin-expert.md": {
+      "ingested_at": "2026-06-15",
+      "size_bytes": 6138,
+      "modified_at": "2026-06-15",
+      "content_hash": "sha256:0eb7b2fd3e5c1fd13e379095eb8f37563ca23f9f25b178bb6172df747ec7155d",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [],
+      "pages_updated": [
+        "references/tdd-methodology.md",
+        "references/playwright-bdd.md",
+        "references/gherkin-syntax.md",
+        "references/gherkin-best-practices.md",
+        "references/gherkin-examples.md",
+        "references/cucumber-basics.md",
+        "references/bdd-specification-process.md",
+        "references/qa-overview.md",
+        "references/recipe-step-executor.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/qa/bdd-spec/prompt-writer.md": {
+      "ingested_at": "2026-06-15",
+      "size_bytes": 16667,
+      "modified_at": "2026-06-15",
+      "content_hash": "sha256:5c78f27c20191b64262ebafffd40f0e6fb818122ae9b3eaa976766623185e3da",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [],
+      "pages_updated": [
+        "references/tdd-methodology.md",
+        "references/playwright-bdd.md",
+        "references/gherkin-syntax.md",
+        "references/gherkin-best-practices.md",
+        "references/gherkin-examples.md",
+        "references/cucumber-basics.md",
+        "references/bdd-specification-process.md",
+        "references/qa-overview.md",
+        "references/recipe-step-executor.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/qa/bdd-spec/use_gherkin_expert.md": {
+      "ingested_at": "2026-06-15",
+      "size_bytes": 2736,
+      "modified_at": "2026-06-15",
+      "content_hash": "sha256:69f7471b8f9f7825ccf4f0234d5ad95d60bfa4f00d25b8bba5ff8200102790a7",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [],
+      "pages_updated": [
+        "references/tdd-methodology.md",
+        "references/playwright-bdd.md",
+        "references/gherkin-syntax.md",
+        "references/gherkin-best-practices.md",
+        "references/gherkin-examples.md",
+        "references/cucumber-basics.md",
+        "references/bdd-specification-process.md",
+        "references/qa-overview.md",
+        "references/recipe-step-executor.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/qa/tdd/Test-Driven Development (TDD).md": {
+      "ingested_at": "2026-06-15",
+      "size_bytes": 7195,
+      "modified_at": "2026-06-15",
+      "content_hash": "sha256:026ba9d0823b65be407bd267a07c9246f8c2ff8e04c2ab366364560ff746f6d7",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [],
+      "pages_updated": [
+        "references/tdd-methodology.md",
+        "references/playwright-bdd.md",
+        "references/gherkin-syntax.md",
+        "references/gherkin-best-practices.md",
+        "references/gherkin-examples.md",
+        "references/cucumber-basics.md",
+        "references/bdd-specification-process.md",
+        "references/qa-overview.md",
+        "references/recipe-step-executor.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/qa/tdd/TDD Anti-Patterns Reference.md": {
+      "ingested_at": "2026-06-15",
+      "size_bytes": 17024,
+      "modified_at": "2026-06-15",
+      "content_hash": "sha256:e6656875616d27118a4e63a72dddc75dffd2849d11b3a7c3c21a8dfa6e4c82a0",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [],
+      "pages_updated": [
+        "references/tdd-methodology.md",
+        "references/playwright-bdd.md",
+        "references/gherkin-syntax.md",
+        "references/gherkin-best-practices.md",
+        "references/gherkin-examples.md",
+        "references/cucumber-basics.md",
+        "references/bdd-specification-process.md",
+        "references/qa-overview.md",
+        "references/recipe-step-executor.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/qa/tdd/TDD Workflow Guide.md": {
+      "ingested_at": "2026-06-15",
+      "size_bytes": 26130,
+      "modified_at": "2026-06-15",
+      "content_hash": "sha256:9b7caae8ca8f34fc1a8421c8bbfe3b9fe04e8fd133747711de2b3c6d8e77170e",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [],
+      "pages_updated": [
+        "references/tdd-methodology.md",
+        "references/playwright-bdd.md",
+        "references/gherkin-syntax.md",
+        "references/gherkin-best-practices.md",
+        "references/gherkin-examples.md",
+        "references/cucumber-basics.md",
+        "references/bdd-specification-process.md",
+        "references/qa-overview.md",
+        "references/recipe-step-executor.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/qa/gherkin-practices/Gherkin Best Practices.md": {
+      "ingested_at": "2026-06-15",
+      "size_bytes": 6480,
+      "modified_at": "2026-06-15",
+      "content_hash": "sha256:5f98318c6dfca15514a8bd22027be256af1627ae09ddb1ed59139bf52ef49897",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [],
+      "pages_updated": [
+        "references/tdd-methodology.md",
+        "references/playwright-bdd.md",
+        "references/gherkin-syntax.md",
+        "references/gherkin-best-practices.md",
+        "references/gherkin-examples.md",
+        "references/cucumber-basics.md",
+        "references/bdd-specification-process.md",
+        "references/qa-overview.md",
+        "references/recipe-step-executor.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/qa/gherkin-practices/Gherkin Anti-Patterns.md": {
+      "ingested_at": "2026-06-15",
+      "size_bytes": 6614,
+      "modified_at": "2026-06-15",
+      "content_hash": "sha256:09504afa3847ca24b9ed1a33dec4de610fd9c448cc8ec241657a55f7281fd82b",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [],
+      "pages_updated": [
+        "references/tdd-methodology.md",
+        "references/playwright-bdd.md",
+        "references/gherkin-syntax.md",
+        "references/gherkin-best-practices.md",
+        "references/gherkin-examples.md",
+        "references/cucumber-basics.md",
+        "references/bdd-specification-process.md",
+        "references/qa-overview.md",
+        "references/recipe-step-executor.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/qa/gherkin-practices/anti-patterns.md": {
+      "ingested_at": "2026-06-15",
+      "size_bytes": 6706,
+      "modified_at": "2026-06-15",
+      "content_hash": "sha256:41a1af1c80646d20e0bec662b7376588697ba46d265538df0f8a6869f2b024c8",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [],
+      "pages_updated": [
+        "references/tdd-methodology.md",
+        "references/playwright-bdd.md",
+        "references/gherkin-syntax.md",
+        "references/gherkin-best-practices.md",
+        "references/gherkin-examples.md",
+        "references/cucumber-basics.md",
+        "references/bdd-specification-process.md",
+        "references/qa-overview.md",
+        "references/recipe-step-executor.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/qa/gherkin-practices/Best Practices improving existing scenarios.md": {
+      "ingested_at": "2026-06-15",
+      "size_bytes": 8993,
+      "modified_at": "2026-06-15",
+      "content_hash": "sha256:cb34499fdfe5302b604224fd0b9c1a764aca32babb7fd273ed9b0c6f8ce5cdf1",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [],
+      "pages_updated": [
+        "references/tdd-methodology.md",
+        "references/playwright-bdd.md",
+        "references/gherkin-syntax.md",
+        "references/gherkin-best-practices.md",
+        "references/gherkin-examples.md",
+        "references/cucumber-basics.md",
+        "references/bdd-specification-process.md",
+        "references/qa-overview.md",
+        "references/recipe-step-executor.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/qa/gherkin-examples/Examples real-world examples gherkin.md": {
+      "ingested_at": "2026-06-15",
+      "size_bytes": 7864,
+      "modified_at": "2026-06-15",
+      "content_hash": "sha256:5dee801a6b2ec533e588afbaae2b916c86d44d46949b071404a7c2da06eb9838",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [],
+      "pages_updated": [
+        "references/tdd-methodology.md",
+        "references/playwright-bdd.md",
+        "references/gherkin-syntax.md",
+        "references/gherkin-best-practices.md",
+        "references/gherkin-examples.md",
+        "references/cucumber-basics.md",
+        "references/bdd-specification-process.md",
+        "references/qa-overview.md",
+        "references/recipe-step-executor.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/qa/cucumber/cucumber-best-practices.md": {
+      "ingested_at": "2026-06-15",
+      "size_bytes": 10158,
+      "modified_at": "2026-06-15",
+      "content_hash": "sha256:d9ef6cdf2164f67aaa9e5abc3d7fa5a868b90ab810b2d4c26977f5150ac0b270",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [],
+      "pages_updated": [
+        "references/tdd-methodology.md",
+        "references/playwright-bdd.md",
+        "references/gherkin-syntax.md",
+        "references/gherkin-best-practices.md",
+        "references/gherkin-examples.md",
+        "references/cucumber-basics.md",
+        "references/bdd-specification-process.md",
+        "references/qa-overview.md",
+        "references/recipe-step-executor.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/qa/cucumber/cucumber-fundamentals.md": {
+      "ingested_at": "2026-06-15",
+      "size_bytes": 4808,
+      "modified_at": "2026-06-15",
+      "content_hash": "sha256:00b514d9239854ee81f066b8c9da249cc1104794132d3109e2408d3360dfec39",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [],
+      "pages_updated": [
+        "references/tdd-methodology.md",
+        "references/playwright-bdd.md",
+        "references/gherkin-syntax.md",
+        "references/gherkin-best-practices.md",
+        "references/gherkin-examples.md",
+        "references/cucumber-basics.md",
+        "references/bdd-specification-process.md",
+        "references/qa-overview.md",
+        "references/recipe-step-executor.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/qa/cucumber/cucumber-step-definitions.md": {
+      "ingested_at": "2026-06-15",
+      "size_bytes": 8574,
+      "modified_at": "2026-06-15",
+      "content_hash": "sha256:75e66425388a56be2ad2af2574b29ae946efdc9081cd551bd6239271bc3498f6",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [],
+      "pages_updated": [
+        "references/tdd-methodology.md",
+        "references/playwright-bdd.md",
+        "references/gherkin-syntax.md",
+        "references/gherkin-best-practices.md",
+        "references/gherkin-examples.md",
+        "references/cucumber-basics.md",
+        "references/bdd-specification-process.md",
+        "references/qa-overview.md",
+        "references/recipe-step-executor.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/qa/gherkin-syntax/gherkin.md": {
+      "ingested_at": "2026-06-15",
+      "size_bytes": 10150,
+      "modified_at": "2026-06-15",
+      "content_hash": "sha256:ae022245d68c157fe655338c9f9cf7797bbebccc17aa1caa3bab2b7285bc04fd",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [],
+      "pages_updated": [
+        "references/tdd-methodology.md",
+        "references/playwright-bdd.md",
+        "references/gherkin-syntax.md",
+        "references/gherkin-best-practices.md",
+        "references/gherkin-examples.md",
+        "references/cucumber-basics.md",
+        "references/bdd-specification-process.md",
+        "references/qa-overview.md",
+        "references/recipe-step-executor.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/qa/gherkin-syntax/Gherkin File Organization.md": {
+      "ingested_at": "2026-06-15",
+      "size_bytes": 5161,
+      "modified_at": "2026-06-15",
+      "content_hash": "sha256:cd2bbe335868ec9e22976a2b73337b72454003f187bf32260bb870c948f4ffd9",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [],
+      "pages_updated": [
+        "references/tdd-methodology.md",
+        "references/playwright-bdd.md",
+        "references/gherkin-syntax.md",
+        "references/gherkin-best-practices.md",
+        "references/gherkin-examples.md",
+        "references/cucumber-basics.md",
+        "references/bdd-specification-process.md",
+        "references/qa-overview.md",
+        "references/recipe-step-executor.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/qa/gherkin-syntax/quick-reference-Gherkin.md": {
+      "ingested_at": "2026-06-15",
+      "size_bytes": 6588,
+      "modified_at": "2026-06-15",
+      "content_hash": "sha256:a9a392a5d81ba6115d5db333457721ef3f14a799de47cf77c722c62fe047c2a4",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [],
+      "pages_updated": [
+        "references/tdd-methodology.md",
+        "references/playwright-bdd.md",
+        "references/gherkin-syntax.md",
+        "references/gherkin-best-practices.md",
+        "references/gherkin-examples.md",
+        "references/cucumber-basics.md",
+        "references/bdd-specification-process.md",
+        "references/qa-overview.md",
+        "references/recipe-step-executor.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/qa/gherkin-syntax/Gherkin Syntax.md": {
+      "ingested_at": "2026-06-15",
+      "size_bytes": 8328,
+      "modified_at": "2026-06-15",
+      "content_hash": "sha256:eebf83ada33f25b2ff168713a2161fa9cc88fc21f5cfa2b13c6bba6f94b17b67",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [],
+      "pages_updated": [
+        "references/tdd-methodology.md",
+        "references/playwright-bdd.md",
+        "references/gherkin-syntax.md",
+        "references/gherkin-best-practices.md",
+        "references/gherkin-examples.md",
+        "references/cucumber-basics.md",
+        "references/bdd-specification-process.md",
+        "references/qa-overview.md",
+        "references/recipe-step-executor.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/qa/gherkin-syntax/Gherkin Syntax Reference.md": {
+      "ingested_at": "2026-06-15",
+      "size_bytes": 3491,
+      "modified_at": "2026-06-15",
+      "content_hash": "sha256:acf4b4f2c03543d8f54af6a9d26ac1dafce9fb1503e9bae85be7480010ead6d5",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [],
+      "pages_updated": [
+        "references/tdd-methodology.md",
+        "references/playwright-bdd.md",
+        "references/gherkin-syntax.md",
+        "references/gherkin-best-practices.md",
+        "references/gherkin-examples.md",
+        "references/cucumber-basics.md",
+        "references/bdd-specification-process.md",
+        "references/qa-overview.md",
+        "references/recipe-step-executor.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/qa/code/test_gherkin_expert_deliverables.py": {
+      "ingested_at": "2026-06-15",
+      "size_bytes": 13724,
+      "modified_at": "2026-06-15",
+      "content_hash": "sha256:dd40ea9ef5ecb615c23c97cbbf2ac3eee11f8d246c2744922107107036ad5f85",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [],
+      "pages_updated": [
+        "references/tdd-methodology.md",
+        "references/playwright-bdd.md",
+        "references/gherkin-syntax.md",
+        "references/gherkin-best-practices.md",
+        "references/gherkin-examples.md",
+        "references/cucumber-basics.md",
+        "references/bdd-specification-process.md",
+        "references/qa-overview.md",
+        "references/recipe-step-executor.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/qa/code/recipe_step_executor.py": {
+      "ingested_at": "2026-06-15",
+      "size_bytes": 13961,
+      "modified_at": "2026-06-15",
+      "content_hash": "sha256:d1679819fcd4fdb58332c1e2b226a100b09f154f96be81640adc9422af39581e",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [],
+      "pages_updated": [
+        "references/tdd-methodology.md",
+        "references/playwright-bdd.md",
+        "references/gherkin-syntax.md",
+        "references/gherkin-best-practices.md",
+        "references/gherkin-examples.md",
+        "references/cucumber-basics.md",
+        "references/bdd-specification-process.md",
+        "references/qa-overview.md",
+        "references/recipe-step-executor.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/qa/code/test_recipe_step_executor.py": {
+      "ingested_at": "2026-06-15",
+      "size_bytes": 22813,
+      "modified_at": "2026-06-15",
+      "content_hash": "sha256:108afa9b98de8dd0de3468db4271f5f9ade02eab043a83475568b469dd6e6934",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [],
+      "pages_updated": [
+        "references/tdd-methodology.md",
+        "references/playwright-bdd.md",
+        "references/gherkin-syntax.md",
+        "references/gherkin-best-practices.md",
+        "references/gherkin-examples.md",
+        "references/cucumber-basics.md",
+        "references/bdd-specification-process.md",
+        "references/qa-overview.md",
+        "references/recipe-step-executor.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/qa/playwright-bdd/playwright-bdd-step-definitions.md": {
+      "ingested_at": "2026-06-15",
+      "size_bytes": 15382,
+      "modified_at": "2026-06-15",
+      "content_hash": "sha256:5cc35df2bf6cb78f3348e9bd06ccc881a4235a746912c4a562b6ef9ffb6328f1",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [],
+      "pages_updated": [
+        "references/tdd-methodology.md",
+        "references/playwright-bdd.md",
+        "references/gherkin-syntax.md",
+        "references/gherkin-best-practices.md",
+        "references/gherkin-examples.md",
+        "references/cucumber-basics.md",
+        "references/bdd-specification-process.md",
+        "references/qa-overview.md",
+        "references/recipe-step-executor.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/qa/playwright-bdd/playwright-bdd-gherkin-syntax.md": {
+      "ingested_at": "2026-06-15",
+      "size_bytes": 13514,
+      "modified_at": "2026-06-15",
+      "content_hash": "sha256:3a43a416d7528cea17ebd25c531658af268aa60132450f67241cab79688e6f01",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [],
+      "pages_updated": [
+        "references/tdd-methodology.md",
+        "references/playwright-bdd.md",
+        "references/gherkin-syntax.md",
+        "references/gherkin-best-practices.md",
+        "references/gherkin-examples.md",
+        "references/cucumber-basics.md",
+        "references/bdd-specification-process.md",
+        "references/qa-overview.md",
+        "references/recipe-step-executor.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/qa/playwright-bdd/playwright-bdd-configuration.md": {
+      "ingested_at": "2026-06-15",
+      "size_bytes": 10366,
+      "modified_at": "2026-06-15",
+      "content_hash": "sha256:c9d45bc591e3d5113ad7700000cd656c74b762ff0b49853c21e8a07fdabfb252",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [],
+      "pages_updated": [
+        "references/tdd-methodology.md",
+        "references/playwright-bdd.md",
+        "references/gherkin-syntax.md",
+        "references/gherkin-best-practices.md",
+        "references/gherkin-examples.md",
+        "references/cucumber-basics.md",
+        "references/bdd-specification-process.md",
+        "references/qa-overview.md",
+        "references/recipe-step-executor.md"
+      ]
+    },
+    ".hermes/skills/": {
+      "ingested_at": "2026-06-15",
+      "size_bytes": 355301,
+      "modified_at": "2026-06-15",
+      "content_hash": "sha256:0de5a86f746cd4453463801de9077340dec0a1d10af7e7502999396869cd6b1f",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "skills/sdd-brainstorm.md",
+        "skills/sdd-generate-plan.md",
+        "skills/sdd-generate-tasks.md"
+      ],
+      "pages_updated": [
+        "skills/obsidian-markdown.md",
+        "skills/wiki-export.md",
+        "skills/agent-run.md",
+        "skills/local-test-runner.md",
+        "skills/doc-generate-toc.md",
+        "skills/sdd-refactor-artifact.md",
+        "skills/wiki-tag-taxonomy.md",
+        "skills/mermaid-visualizer.md",
+        "skills/gherkin-scenarios.md",
+        "skills/skill-forge.md",
+        "skills/defuddle.md",
+        "skills/wiki-ingest.md",
+        "skills/doc-generate-llms-txt.md",
+        "skills/wiki-digest.md",
+        "skills/playwright-bdd-e2e.md",
+        "skills/tdd-workflow.md",
+        "skills/wiki-cross-linker.md",
+        "skills/json-canvas.md",
+        "skills/doc-extract.md",
+        "skills/wiki-capture.md",
+        "skills/wiki-llm-wiki.md",
+        "skills/sdd-explore-tech.md",
+        "skills/wiki-lint.md",
+        "skills/wiki-dedup.md",
+        "skills/wiki-setup.md",
+        "skills/wiki-status.md",
+        "skills/go-unit-tests.md",
+        "skills/sdd-validate.md",
+        "skills/wiki-query.md",
+        "skills/obsidian-bases.md",
+        "skills/cucumber-step-definitions.md",
+        "skills/wiki-dashboard.md",
+        "skills/wiki-synthesize.md",
+        "skills/wiki-hermes-history-ingest.md",
+        "skills/sdd-init-repo.md",
+        "skills/bdd-spec-process.md",
+        "skills/git-conventional-commit.md",
+        "skills/obsidian-cli.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-code-review/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 10964,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:a612d742abeea5c01985e35aee70c62a9f24a0758062b0c6417311df5ee1bf8d",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-code-review.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-concurrency/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 7940,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:60adf3746574974c6eed3fc170e771685f86b13c5ea420d8248323b4241a0091",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-concurrency.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-context/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 3910,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:4e0644cf1e33c8b81db703e92da4602119d37f22fb36895025177935dce5fae9",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-context.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-control-flow/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 5669,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:19779bbaf78f132fc223698eb2cb2aeabfcb99dbe3e49abbab5198467e70bc7c",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-control-flow.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-data-structures/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 4423,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:171f0f2756bc4745bb9a5d84aa705f05596247597d6aa3cbb3be7540f8d5e9d6",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-data-structures.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-declarations/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 5054,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:55cb7969d30b9804430b61ce2b3d19dc3374cc912f002e2df8871f4b91e4e5e4",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-declarations.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-defensive/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 7253,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:84d03875f916fc648f0694bc22e469abb3b5ba967b032a9534978b7abcaf705a",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-defensive.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-documentation/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 5913,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:e1d43d76482860b955f6ce23e870cefc495b84c7ee7dc0bfcaedcb79bf2e1f74",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-documentation.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-error-handling/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 6339,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:5721ba9b40c1447e29734fb9050acec7caa8194ecd2f1ae35c25649f94b300a0",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-error-handling.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-functional-options/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 6449,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:d97e6ff8d4eb6a1a230b6cbce4280d3c323361cfad19af758240e501c5c0186a",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-functional-options.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-functions/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 4175,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:f28fcc116b6d0af57129e22f242abdb7cfe22f392b194a2fe9e51bb54115f527",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-functions.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-generics/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 5071,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:60748842f72a1745401fd1cef1a95eebb2ece05f9240a3c162167808a0a37719",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-generics.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-interfaces/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 5982,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:3ea5177433b2a49c991e7ed0fab55c84e4f7d82de207fae5493c937163bb306e",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-interfaces.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-linting/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 6754,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:bf5e90d30680c2e6506ea91e88ca64dc7b22f2fb6d5543ac9ca1f4ab671097b1",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-linting.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-logging/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 6825,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:95b199ba5089e193df57393249ce16b6f6c81b2a17b84bb0d682982c477be28f",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-logging.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-naming/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 7698,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:5814da7cb1f655c7fa91d50b0cf429ec3a28d7edefcbac3cfbca00fe78a9331e",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-naming.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-packages/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 5378,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:0f3365422d1f3f0a0dc586bf0bbfd2b6a72b215df57355739020e7ecc1d25b60",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-packages.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-performance/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 5751,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:fe9bd2cec1dd8b46d0f14aa0f0686639c7df3f800932524c9fc64443fbc60bfb",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-performance.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-style-core/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 5650,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:ec18ddbda602af3ffa47db25177def8dc799042af317b79bab9a6fb09748e409",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-style-core.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-testing/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 6197,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:aea1b561640555c1e8aee6d4c4db16ca4c53a8e96491f91ead204fffbb1df1c1",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-testing.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/90_SYNTHESIS.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 3063,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:04d0215bb054685ab8f6956f8369a7eb9d39e16acd1f7ae5ffe46725f2c00c61",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/90_SYNTHESIS.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-mapper/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 5295,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:082b9bbf7207186298e34a8e99a7962fc018db83763a21770e311b5f4b64bcd8",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-mapper.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/prd-template.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 1808,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:0c58f6a796c9c1455bf27d20ceefe0162b47d71bab6bc4f0647cf21a254a9bf8",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/prd-template.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/SKILL4.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 7514,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:0c6ef1b72b0fe635d1681abf3857ec34214fd6580fad7708a96a8f4abc096ef5",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "skills/brand-discovery.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-unit-tests/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 9585,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:119efbcbc458345bb426599efff2d212ace7358566d7bcdf4c5fef93dcc991b6",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-unit-tests.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-modular-architecture.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 6430,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:14b20a47e11c909dc07d1bf81cea47b74b8d5344e4702ec85ddc9977632b8ecb",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-modular-architecture.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/30_audience-niche.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 1496,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:189e8d41d08df421fa5bad5d15e814334dc8fe706255701b277e258100b6007d",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/30_audience-niche.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/style-guide.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 3861,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:1b55350f52aa1b3bf0abc469f54b24b27556c1d32719a6d4d917c14304ea6248",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/style-guide.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-error/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 5944,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:2853778e2f7bafbcf811bf3a83a9b53faa4f998cd13df3de2d6d3799602cc965",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-error.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-integration-tests/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 14424,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:2be728d87d1bbb95c41dd3696ed37cb2dbe6e07fc762f59b2978d7d3996a1bdf",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-integration-tests.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/SKILL7.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 3350,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:2d7b01308e5076b4a56488643d05873d5017fa360ae78fb7baa7343d2f83fc7e",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "skills/docs-writer.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/SKILL3.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 2420,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:33d1b47c19cdf5e9e890e5771701d78f75d2dff5aaf39951a1c2758e03136576",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "skills/benchmark-optimization-loop.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/implementation-notes-template.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 384,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:3665b31868e2442fc9ca9487eef1f6cbd918fbbef8afb12a1b8bd02926ecad65",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/implementation-notes-template.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/nfr-checklist.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 3046,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:37b9b0f083bd224acccb04eec86edc09a494c693a4ad0ec32ea24f472c122d70",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/nfr-checklist.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/SKILL1.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 2343,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:39a375523e5965a1dfd60132db813180e5660e9f2a9b9432219df5ade46c7176",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "skills/benchmark.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-chi-router/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 6058,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:42033e7b673d083a14911b788543ee1ed530554783b2e39f82c49c2211e67fb9",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-chi-router.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/60_narrative-story.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 1560,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:46a6184f00ffa8d6900d59d58164f5e767012bc12dd67dc2b2ba53976d6811b9",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/60_narrative-story.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/SKILL5.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 14041,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:4733a52f63d51d46a4db4b6caa572711137b7f6a3441c01af4bf6c335b18f505",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "skills/golang-patterns.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/socratic-questioning.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 7339,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:4f5a98478fe6248d58bc1e2afdff9b1559ddb1cc1d35714139cc25e276bcc536",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/socratic-questioning.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/20_positioning.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 1481,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:50e2c71b8b4d6a44d59b45609c06aa258f6c16871a4d2a184f68983433e954c4",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/20_positioning.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 4750,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:5235b031e8fadacf01f39ad9db7b8d5ec9d6f83460ebcef78da95d31c9f36276",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "skills/architecture-designer.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/red-team-adversarial.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 9789,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:54952fe411ba235653d560d2f1850ee74e7d8cbf89f01cab2ccba39fa0011541",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/red-team-adversarial.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/40_personality-archetype.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 1925,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:58b04b09cf1e206d1240fc01d8c77c22fcc9b9c0d8ef326ad418476589072182",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/40_personality-archetype.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/tasks-template.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 133,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:5bda1f0ebf0bc94e45d49539837e4afd678408d3af5056c214b1d7bf7744fd82",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/tasks-template.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/SKILL6.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 16650,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:6056559e12e933a3a2aecb6754e8d938fcc840a46ebeaaae47218c7e6f0da75b",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "skills/golang-testing.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/database-selection.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 2569,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:6439a36138654947acb808eeff1fff5862894ef94a7210e8fd540bb2641c5a80",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/database-selection.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-gorm-model/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 8603,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:7019f7c44ba66ddbfaa7430f7b9a9cb3cd05a2fe3089e3ee39607e612282a33b",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-gorm-model.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/pre-mortem-analysis.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 9014,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:7da21071929912267ea6ba4039358d5e3a4cbf6abacfbfe002ee38a5bc03ff0e",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/pre-mortem-analysis.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-usecase/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 9284,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:7ee0c4c304006c95e7e357845263083f3a45910cd43f017a2c044b416c26b94f",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-usecase.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/70_founder-tension.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 1517,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:88e7149f2ace5d3f726d33e5fb7ca2caddb7e3301574e849517e16277590ab39",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/70_founder-tension.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/mode-selection-guide.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 5917,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:94880b12613d031b81bf9db4eb8593ef9a26ae676c2a0caa344801f301edf7bf",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/mode-selection-guide.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/architecture-patterns.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 4605,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:954bde741cffe6dec00acb63840bbb79654d2647ca8f7c9a8f99f5888b94c5f9",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/architecture-patterns.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-chi-handler/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 18698,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:9587996f5e73e01e564b2627215ef832d084bb63103150ff9c340017dcc298bf",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-chi-handler.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/ai-brag-document/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 13644,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:a4972e808f7334d1dc8b9eec279f12874ece005625dbc5e4d01bac66dc7afd19",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/ai-brag-document.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/SKILL2.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 9798,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:a4ac232387a4dec4df2e28dae9578ea7f73f848925096f0c335753ca257934ec",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "skills/benchmark-methodology.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/cognitive-bias-inventory.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 7727,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:a705b79bba64cff5dd1a79048579b0c37dfb2165358694b1f44cbf9a0d8e4430",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/cognitive-bias-inventory.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/system-design.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 3009,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:b33ff621c6461eb321d18fc9923c4bba689776e1cd0f0c00945584c2698319a1",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/system-design.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/evidence-audit.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 9415,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:b7145a41f965fcb9528c1430fc5705e407ccd9bf8ddc79d531f235b7e9554caf",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/evidence-audit.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-validator/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 10675,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:b9f1fb8cb6bb1e350c360d6e0dc718374d25e2f1612d179fd02c7aed07186d71",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-validator.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-enum/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 5249,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:c3a1b9b8641ab19b3a3ea213f82ec31ba2765fba4bd23d969410d763680f7f4e",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-enum.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/pr-template.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 4098,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:c9cf68d40b14723436820eeb57297cd622756f1d8b81c723deda5e731d4fb62f",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/pr-template.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/adr-template.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 2752,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:cada2aa2f8fa039ba63ab95499cbe653a28110f9f406040a06966552026fea4b",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/adr-template.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/dialectic-synthesis.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 7396,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:cb5a41ad6a2feb3f65a48b5fa04b9f82b7d295a52b26f6f4a7a4977d4dc10a78",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/dialectic-synthesis.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/50_voice-tone.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 1767,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:cf69dc9573ed00561cfb8e7e489450ae644b90703a2d9315b77d8629af69bde3",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/50_voice-tone.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/10_purpose-why.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 1179,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:d70beb1dcf73512e235a377c59ca43f544de084dd555701f99a65574b17939ea",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/10_purpose-why.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/SKILL8.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 8618,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:db7d40b13a4aa6a78d75b7bbe42babf0b47c0aa365db02404cfe57cc92e09dcb",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "skills/the-fool.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/task-template.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 640,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:ddcb44f0d36eeb13a1b16e1fd40dc3d91082a4e41a564f748e8d12628100cc2e",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/task-template.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/code-review-template.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 1585,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:df11e1a89f451e5314913ce1eb731f1fef966b7003a73b599a891fb26307f3b9",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/code-review-template.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-service/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 9213,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:eb4fd0eaa6c056b3ac1bf430075eb8c89ab3cc0ce279a49859e7022da3ce617d",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-service.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-repository/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 15246,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:f34e83b9de77054802f12f85cdbd3fdb5b138053946059bc96e0c7f3adbf2f3a",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-repository.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/techspec-template.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 2640,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:f9a8998ec24f3cb55b6c056c0ba6819bdc754b867e46b77f8ef4aac4ce601194",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/techspec-template.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/go-cache/SKILL.md": {
+      "ingested_at": "2026-06-16",
+      "size_bytes": 9207,
+      "modified_at": "2026-06-16",
+      "content_hash": "sha256:fcf011453fa5860bc438d77dd6b8b5639a50700947f6db6175e6c80c8176ab02",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-cache.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/golang-jwt-v5.3.1-README.md": {
+      "ingested_at": "2026-06-16T23:00:00+00:00",
+      "size_bytes": 4607,
+      "modified_at": "1781584103",
+      "content_hash": "sha256:de9fbde3b041f15b5e60fd22aadb31a9e70c29e4f7a22cd61ac9f335f6885da2",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-jwt.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/golang-jwt-v5.3.1-Migration.md": {
+      "ingested_at": "2026-06-16T23:00:00+00:00",
+      "size_bytes": 5997,
+      "modified_at": "1781584103",
+      "content_hash": "sha256:59c9747fd9f020f00eb88baf2d56d909db4ac267a511ac2c3b48d3fbb966b6ec",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [],
+      "pages_updated": [
+        "references/go-jwt.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/golang-jwt-v5.3.1-Examples.md": {
+      "ingested_at": "2026-06-16T23:00:00+00:00",
+      "size_bytes": 9858,
+      "modified_at": "1781584103",
+      "content_hash": "sha256:cd35abdd7bfd594aece7e2d9ca4e94dbb974b04e5c9fcf0c046eb0e4f97197df",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [],
+      "pages_updated": [
+        "references/go-jwt.md",
+        "references/go-jwt-api-reference.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/golang-jwt-v5.3.1-API-Reference.md": {
+      "ingested_at": "2026-06-16T23:00:00+00:00",
+      "size_bytes": 19021,
+      "modified_at": "1781584103",
+      "content_hash": "sha256:853e69461ca9444cda9f33d0d5c084a6350c58f0b05105dcf1c0c405ad05a069",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/go-jwt-api-reference.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/42_api_raw": {
+      "ingested_at": "2026-06-16T23:00:00+00:00",
+      "size_bytes": 15061,
+      "modified_at": "1781583516",
+      "content_hash": "sha256:895b329b60d3b52d7ab884ac82817bebc3c6938fe2f085e470d76d78a2081f7f",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/42-api-specification.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/42_api_docs.md": {
+      "ingested_at": "2026-06-16T23:00:00+00:00",
+      "size_bytes": 44048,
+      "modified_at": "1781583351",
+      "content_hash": "sha256:d2d726231d0317c3c6ee06fbdf395824fa6dcce8cb03c2b745241fc82db04044",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/42-api-endpoints.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/.hermes/skills/research/llm-wiki/SKILL.md": {
+      "ingested_at": "2026-06-17",
+      "size_bytes": 20129,
+      "modified_at": "2026-06-17",
+      "content_hash": "sha256:a37ae04745b04b8e9bbd8de37cdcbc2b2187ccafb68418e436a46ebb1e491ee5",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [],
+      "pages_updated": [
+        "skills/wiki-llm-wiki.md"
+      ]
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/vite.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 2087,
+      "modified_at": "2026-06-17T01:15:57Z",
+      "content_hash": "sha256:045b4e935f4153fcb7eb07263cba9a49a133e789e29766fbf228d35d5a52c472",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/vite-reference.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/react.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 4546,
+      "modified_at": "2026-06-17T01:18:32Z",
+      "content_hash": "sha256:50a376940273d03e789fd9b66475008a8e03b896b6cb3d4ff8dee9f533b1edcf",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-performance.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/core-config.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 2831,
+      "modified_at": "2026-06-17T01:12:44Z",
+      "content_hash": "sha256:50628fcb3c0be429eb1b0eaba17100f6f2b523024cc3d16bfb49171865daed15",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/vite-reference.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/core-features.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 3930,
+      "modified_at": "2026-06-17T01:13:16Z",
+      "content_hash": "sha256:ba0c8d307e39c4b7316f76344b3a6f24dfae54588ffdd8b4980d998bf6399aa8",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/vite-reference.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/core-plugin-api.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 3841,
+      "modified_at": "2026-06-17T01:14:10Z",
+      "content_hash": "sha256:e972510bef11fa75db3eec86ac853ac23a0806cd3c924978d4ef89f9ecbd6fa8",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/vite-reference.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/build-and-ssr.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 3397,
+      "modified_at": "2026-06-17T01:12:13Z",
+      "content_hash": "sha256:442f956860e2294ae762ef945c84341a4ae50b9ed7a53b8894ff05c6e1d4f851",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/vite-reference.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/environment-api.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 2395,
+      "modified_at": "2026-06-17T01:14:51Z",
+      "content_hash": "sha256:5dee130a826c9870d487d8d8f14a91ec747f8716d9c01607713c2d0afe4d37f8",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/vite-environment-api.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/rolldown-migration.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 2790,
+      "modified_at": "2026-06-17T01:15:24Z",
+      "content_hash": "sha256:92268c8e31d992cec6aa3b46c8c6ad4260b84e4a42edda6a8745e39250dc6af6",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/vite-rolldown-migration.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/build-manual-chunks.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 2955,
+      "modified_at": "2026-06-17T01:17:52Z",
+      "content_hash": "sha256:1c9b0aba530ca99d0d9663a59da891cb68195395dfff8e71494d23b980230de8",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-build-optimization.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/build-minification.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 4213,
+      "modified_at": "2026-06-17T01:17:52Z",
+      "content_hash": "sha256:eaf3898d10d955e75761a8086edf1efa696544e12c28045a3463ad5b40c64017",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-build-optimization.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/build-target-modern.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 2550,
+      "modified_at": "2026-06-17T01:17:53Z",
+      "content_hash": "sha256:3c3c6120868350c8589c3bd9e557961ab32a877524d2386f33821e884d0a2ed0",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-build-optimization.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/build-sourcemaps.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 3386,
+      "modified_at": "2026-06-17T01:17:52Z",
+      "content_hash": "sha256:9189e6f2433679894e278ff8278b71ef6ce2d6035d0078689c86c3663f09b13c",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-build-optimization.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/build-tree-shaking.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 3746,
+      "modified_at": "2026-06-17T01:17:53Z",
+      "content_hash": "sha256:1c9cd28bf51401759267a13e03746539243abdb4a7d791df1c07b4faed32d80c",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-build-optimization.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/build-compression.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 4200,
+      "modified_at": "2026-06-17T01:17:52Z",
+      "content_hash": "sha256:1667b7b64165bc6559b73f2057be66da4609d27c75795dd435fd43b20b703c4d",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-build-optimization.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/build-asset-hashing.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 4170,
+      "modified_at": "2026-06-17T01:17:52Z",
+      "content_hash": "sha256:f1c058f936a3f8c1f66dc98244d2d8a051c2aa32b9fce5bd9bb349975aa1472d",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-build-optimization.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/split-route-lazy.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 3379,
+      "modified_at": "2026-06-17T01:17:53Z",
+      "content_hash": "sha256:89fb93f59baf42b49a19d718c2f89a031271edc66059791026098d01b8ff162b",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-code-splitting.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/split-suspense-boundaries.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 3625,
+      "modified_at": "2026-06-17T01:17:53Z",
+      "content_hash": "sha256:c64607ea364ed36e69a979e2b32e765cede32de7bb9093c3270b650960f8bc97",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-code-splitting.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/split-dynamic-imports.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 4370,
+      "modified_at": "2026-06-17T01:17:53Z",
+      "content_hash": "sha256:0f8957b916170ecc2e311478f0c9985989e7e0df6c7e14ec8c2844ffafe85ce7",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-code-splitting.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/split-component-lazy.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 5934,
+      "modified_at": "2026-06-17T01:17:53Z",
+      "content_hash": "sha256:74890a7b2541dd3bdaf9576ce30f3165888bddbdbcd14ea8ff105e7d7da4cdd6",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-code-splitting.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/split-prefetch-hints.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 5926,
+      "modified_at": "2026-06-17T01:17:53Z",
+      "content_hash": "sha256:08e13f65551d04f498ed5064fb3c66b2584d0dadd5b3135265d8f8f087b8e86f",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-code-splitting.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/dev-dependency-prebundling.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 2398,
+      "modified_at": "2026-06-17T01:17:53Z",
+      "content_hash": "sha256:706c367e2ad0073188a40bdf21b09b38f19d99a931d4095c44a6fd6dbcd7f0a0",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-development.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/dev-fast-refresh.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 4763,
+      "modified_at": "2026-06-17T01:17:53Z",
+      "content_hash": "sha256:09b007b596c7bc10b0889e57531fd8168a3292e16161485c9da01119e686e4e8",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-development.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/dev-hmr-config.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 4585,
+      "modified_at": "2026-06-17T01:17:53Z",
+      "content_hash": "sha256:3f4d70768b184733098f130137af6a05aea282407104aab08aefa39bf681c7e7",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-development.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/asset-image-optimization.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 4206,
+      "modified_at": "2026-06-17T01:17:52Z",
+      "content_hash": "sha256:ceb4933fbc973bc30596c76c73d2e968cb2e94a09976a4c8130df2a36a30d9bc",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-asset-handling.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/asset-svg-components.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 4197,
+      "modified_at": "2026-06-17T01:17:52Z",
+      "content_hash": "sha256:5fab68f4f6a0c2ed9f591368c2e4786ce4dfeeb93847a18eca2932aed7c8c008",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-asset-handling.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/asset-fonts.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 3369,
+      "modified_at": "2026-06-17T01:17:52Z",
+      "content_hash": "sha256:6108aab926ba1f39487773ec881688a3e21808265c4174c2e5e033447826158c",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-asset-handling.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/asset-public-dir.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 3567,
+      "modified_at": "2026-06-17T01:17:52Z",
+      "content_hash": "sha256:f809bf7d6a4e7a7833c91d9afb90e3c430946db96ea11d14480e89e4be3c70b8",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-asset-handling.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/env-vite-prefix.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 3128,
+      "modified_at": "2026-06-17T01:17:53Z",
+      "content_hash": "sha256:fff39a7376e5a7fa77fdea307b4530437bca3cc780c56141806a986cdd5623bf",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-environment-config.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/env-modes.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 3308,
+      "modified_at": "2026-06-17T01:17:53Z",
+      "content_hash": "sha256:a40bb98b43534e4073cdf454eed6627214322253934e61f25bb87e6a8c35db9f",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-environment-config.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/env-sensitive-data.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 3503,
+      "modified_at": "2026-06-17T01:17:53Z",
+      "content_hash": "sha256:e6e72aed8a04f4c3e5e0744bbcdca76b47dfa784a2cccf2a42ba9c3a5848d3a0",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-environment-config.md"
+      ],
+      "pages_updated": []
+    },
+    "/home/zeenyt__/Projetos/42_chat/wiki/_raw/bundle-visualizer.md": {
+      "ingested_at": "2026-06-17T01:30:28Z",
+      "size_bytes": 3884,
+      "modified_at": "2026-06-17T01:17:53Z",
+      "content_hash": "sha256:6a38038d131af68df099b4654e0779cb527b04437f7b2d8e6530218a03f7ad04",
+      "source_type": "document",
+      "project": "42_chat",
+      "pages_created": [
+        "references/react-vite-environment-config.md"
+      ],
+      "pages_updated": []
+    },
+    "conversation:2026-06-18": {
+      "ingested_at": "2026-06-18T03:32:13Z",
+      "source_type": "session_transcript",
+      "project": "42_chat",
+      "pages_created": [
+        "journal/2026-06-18-sessao-feat100-oauth.md",
+        "references/oauth2-42-pitfalls.md"
+      ],
+      "pages_updated": []
+    }
+  },
+  "projects": {
+    "42_chat": {
+      "source_cwd": "/home/zeenyt__/Projetos/42_chat",
+      "vault_path": "wiki/"
+    }
+  }
+}

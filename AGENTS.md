@@ -1,0 +1,151 @@
+# AGENTS.md — Framework SDD Autônomo
+
+> **Produto:** Framework SDD autônomo com agentes IA.
+> **Não é um projeto Go.** O app 42_chat é um smoke-test futuro.
+
+**⚠️ PRIMEIRO PASSO OBRIGATÓRIO:** Antes de qualquer ação neste repositório,
+leia `llms.txt` na raiz. Ele é o mapa do repositório — lista specs, agentes,
+skills e a estrutura completa. Não varra o repo às cegas. Use `llms.txt` como
+entry point, depois consulte `wiki/index.md` ou `wiki-query` para detalhes.
+
+## Linguagens do Framework
+- **Python** — Skills (runtime das tools), scripts de validação
+- **YAML** — Config de agentes (`context.yaml`), frontmatter de skills
+- **Markdown** — Specs, docs, wiki vault (`wiki/`)
+- **Shell (bash)** — Scripts auxiliares, CI/CD
+
+## Comandos
+- Validar estrutura SDD: `sdd-validate`
+- Validar vault Obsidian: `wiki-lint`
+- Rodar smoke tests (quando existirem): verificar que agentes carregam sem erro
+- Não há `go test` — o framework não é Go
+
+## Knowledge Base — Consulte antes de agir
+
+Este repositório mantém uma **base de conhecimento compilada** no vault Obsidian (`wiki/`) e
+um índice navegável para LLMs (`llms.txt`). Antes de implementar, decidir ou sugerir qualquer
+coisa, **consulte a base**. Não reinvente conhecimento que já foi compilado.
+
+### Entry points
+| Prioridade | Recurso | Caminho | Quando usar |
+|---|---|---|---|
+| **1º** | `llms.txt` | Raiz do repo | **Sempre.** Primeiro arquivo a ser lido. Mapa completo do repositório |
+| 2º | `wiki/index.md` | `wiki/index.md` | Catálogo detalhado do vault com seções por categoria |
+| 3º | `wiki-query` | Skill | Busca conhecimento compilado (ex: "o que já decidimos sobre X?") |
+| 4º | `wiki-lint` | Skill | Audita saúde do vault (broken links, órfãos, frontmatter) |
+
+### Gatilhos — Quando usar cada skill da base
+
+**Tabela de decisão. Siga exatamente.** Antes de qualquer ação, verifique se o gatilho se aplica.
+
+| Gatilho (o que você vai fazer) | Ação obrigatória | Skill |
+|---|---|---|
+| Implementar feature, agente, ou skill | Buscar decisões prévias sobre o tema | `wiki-query` (grep no vault) |
+| Sugerir arquitetura ou ADR | Verificar se já existe ADR similar | `wiki-query` |
+| Adicionar dependência ao `tech.md` | Verificar stack atual e constitution | Ler `.github/memory/tech.md` + `wiki-query` |
+| Feature/agente/skill concluída | Criar/atualizar página wiki | `wiki-ingest` |
+| Mover, renomear ou criar páginas wiki | Validar integridade do vault | `wiki-lint` |
+| Antes de commit | Validar estrutura SDD + vault | `sdd-validate` + `wiki-lint` |
+| Nova sessão (primeiro contato) | Carregar contexto do vault | Ler `llms.txt` + `wiki/index.md` |
+| Mudança no `constitution.md` ou `tech.md` | Atualizar `concepts/sdd.md` no vault | `wiki-ingest` |
+| Após criar/modificar múltiplas páginas | Descobrir wikilinks faltantes | `wiki/cross-linker` |
+| Sessão importante (decisões, debug) | Salvar conversa no vault | `wiki-capture` |
+
+> **Regra de enforcement:** Se você executou uma ação da coluna "Gatilho" e NÃO executou a
+> "Ação obrigatória" correspondente, **pare e execute a ação obrigatória antes de continuar.**
+> O vault é a memória de longo prazo do framework. Vault desatualizado bloqueia PR.
+
+## Branch Strategy
+- `main` — produção. PRs devem vir de `develop`.
+- `develop` — integração. PRs devem vir de `feature/*` branches.
+- `feature/*` — feature work. PR para `develop` é auto-criado no push.
+- Branch flow é enforced automaticamente (`feature/*` → `develop` → `main`).
+
+## CI (GitHub Actions)
+- Branch flow enforcement em todos os PRs.
+- Auto-PR workflows: push em `feature/*` → PR para `develop`; push em `develop` → PR para `main`.
+- Validação SDD (`sdd-validate`) será adicionada ao pipeline quando houver smoke tests.
+
+## SDD Workflow
+
+Este projeto segue **Spec-Driven Development (SDD)**. Toda feature segue o fluxo:
+
+1. `specs/features/<id>-<nome>/spec.md` — Especificação funcional (o QUE, não o COMO)
+2. `specs/features/<id>-<nome>/plan.md` — Plano arquitetural (decisões técnicas, ADR)
+3. `specs/features/<id>-<nome>/tasks.md` — Tarefas atômicas em formato DAG (Papel, Dependências, Paralelizável, Arquivos)
+4. Aprovação: `Aprovado: true` no spec.md → `agent-run agent-orchestrator` executa
+5. Implementação — Subagentes (Dev, QA, DevOps, Pentester) spawnados em paralelo pelo orchestrator
+
+### Regras
+- **Nunca implemente sem spec.md e plan.md aprovados** pelo usuário.
+- **Consulte a base antes de decidir:** use `llms.txt` ou `wiki-query` antes de implementar, sugerir arquitetura, ou adicionar dependências. Não reinvente conhecimento já compilado no vault.
+- Leia `constitution.md` antes de qualquer alteração de código.
+- Consulte `tech.md` antes de adicionar dependências.
+- Valide a estrutura com `sdd-validate` periodicamente.
+- Valide o vault com `wiki-lint` após mudanças estruturais.
+- Pergunte ao usuário ANTES de modificar `constitution.md`.
+- **Vault fiel:** após implementar feature, agente, ou skill, atualize o vault (`wiki-ingest` + `wiki-lint`).
+
+### Skills SDD (Hermes Agent — `.hermes/skills/` no repo)
+- Inicializar estrutura: `sdd-init-repo`
+- Mapear stack: `sdd-explore-tech`
+- Validar conformidade: `sdd-validate`
+- Refatorar artefatos: `sdd-refactor-artifact`
+- Brainstorm de features: `sdd-brainstorm`
+- Gerar plano (plan.md): `sdd-generate-plan`
+- Gerar tarefas (tasks.md com DAG): `sdd-generate-tasks`
+
+### Skills de documentação
+- Extrair seção de markdown: `doc-extract`
+- Gerar tabela de conteúdo: `doc-generate-toc`
+- Gerar llms.txt: `doc-generate-llms-txt`
+
+### Skills de Wiki (knowledge management)
+- Pipeline de destilação: `wiki-ingest`
+- Busca híbrida: `wiki-query`
+- Auditoria de saúde: `wiki-lint`
+- Salvar conversa: `wiki-capture`
+- Auto-wikilinks: `wiki/cross-linker`
+- Setup do vault: `wiki-setup`
+- Status/delta: `wiki-status`
+- Dashboards: `wiki-dashboard`
+- Resumo periódico: `wiki-digest`
+- Exportar grafo: `wiki-export`
+- Síntese cross-cutting: `wiki-synthesize`
+- Deduplicação: `wiki-dedup`
+- Taxonomia de tags: `wiki/tag-taxonomy`
+- Histórico Hermes: `wiki/hermes-history-ingest`
+- Fundação teórica: `wiki/llm-wiki`
+
+### Skills de Obsidian (formato + tooling)
+- Sintaxe OFM: `obsidian/obsidian-markdown`
+- CLI do Obsidian: `obsidian/obsidian-cli`
+- Bases (.base): `obsidian/obsidian-bases`
+- Canvas (.canvas): `obsidian/json-canvas`
+- Extrair markdown limpo: `obsidian/defuddle`
+
+### Skills visuais
+- Diagramas Mermaid: `visual/mermaid-visualizer`
+
+### Skills de tooling
+- Criar nova skill Hermes: `skill-forge`
+- Executar agente com contexto limpo: `agent-run`
+- Commit convencional: `git-conventional-commit`
+
+### Agentes (`.hermes/agents/` — invocados via `agent-run`)
+- `onboard` — Inicializa projeto no framework SDD (init repo, explore tech, brainstorm features).
+- `agent-orchestrator` — Executor runtime. Lê `tasks.md` com DAG e spawna subagentes em paralelo via `delegate_task`.
+- `agent-dev` — ✅ Implementado. Persona fixa com skills plugáveis por stack. Spawnado pelo orchestrator como subagente leaf. Ciclo: lê contexto → planeja → implementa → smoke-test → reporta (DONE/FAIL/BLOCKED). Skills são trilhos, não jaulas.
+- `agent-qa` — ✅ Implementado. Guardião da qualidade. Ciclo: lê spec → Gherkin → testes → lint → cobertura → reporta (DONE/REJECTED/BLOCKED). Rejeita tasks do Dev, forçando re-spawn. Skills de teste são trilhos. Sem acesso web.
+- `agent-devops` (008) — Standby. CI/CD, Docker, deploy, integração, performance.
+- `agent-pentester` (009) — Standby. Segurança, OWASP, secrets.
+
+> **Nota:** Agentes e skills vivem em `.hermes/agents/` e `.hermes/skills/`, versionados no repo,
+> com symlinks em `~/.hermes/`. O `agent-run` compila contexto limpo (sem corrosão de sessão)
+> e spawna subagentes isolados via `delegate_task`.
+
+## Environment
+- `.env` files são gitignored.
+- Homelab: RPi 5 (zeenyt-1), Docker, Tailscale.
+- Memory: Honcho self-hosted.
+- Wiki vault: `wiki/` versionado como parte do framework.

@@ -1,0 +1,30 @@
+---
+title: "wiki-tag-taxonomy"
+category: skills
+tags: [wiki, skill, tags, taxonomia, vocabulario]
+sources: [.hermes/skills/wiki/tag-taxonomy/SKILL.md]
+summary: "Gerencia taxonomia de tags do vault: normaliza aliases, detecta tags sem pagina, sugere consolidacao."
+lifecycle: draft
+created: "2026-06-13"
+superseded_by: "[[skills/brain|brain]]"
+updated: "2026-06-13"
+---
+
+# wiki-tag-taxonomy
+
+> Mantem a taxonomia de tags consistente.
+
+## Localizacao
+`.hermes/skills/wiki/tag-taxonomy/SKILL.md`
+
+## Quando usar
+- Tags inconsistentes (ex: `ml` vs `machine-learning`)
+- Apos muitos ingests (tags proliferam)
+- Periodicamente
+
+## Relacionado
+- [[skills/wiki-lint]] — Lint verifica consistencia, taxonomy gerencia
+- [[skills/wiki-cross-linker]] — Links e tags sao complementares
+
+## Buscando conhecimento compilado
+Use [[skills/wiki-query|wiki-query]] para buscar tags em uso, distribuicao de tags por categoria, ou violacoes de taxonomia antes de agir. O vault e a memoria de longo prazo do framework — consultar evita retrabalho e inconsistencias.
