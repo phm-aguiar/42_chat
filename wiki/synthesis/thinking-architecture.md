@@ -9,6 +9,7 @@ sources:
   - "references/adr-template.md"
   - "references/system-design.md"
 created: "2026-06-16T00:00:00Z"
+rag_score: 0.48
 updated: "2026-06-16T00:00:00Z"
 summary: "Como aplicar ferramentas de reasoning (socrático, adversarial, pre-mortem) nas decisões de arquitetura: ADRs mais robustos e designs que sobrevivem ao escrutínio."
 provenance:

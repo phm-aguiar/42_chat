@@ -6,8 +6,9 @@ sources:
   - specs/features/101-assinatura-participacao/spec.md
   - specs/features/101-assinatura-participacao/plan.md
   - specs/features/101-assinatura-participacao/tasks.md
-created: 2026-06-18T04:00:00Z
-updated: 2026-06-18T04:00:00Z
+created: "2026-06-18T04:00:00Z"
+rag_score: 0.482
+updated: "2026-06-18T04:00:00Z"
 summary: >-
   Componente UserSignature inline abaixo de mensagens exibindo stats de engajamento
   (total de mensagens, salas ativas, tier de participação), alimentado por API on-demand

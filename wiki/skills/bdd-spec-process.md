@@ -5,6 +5,7 @@ tags: [qa, skill, bdd, specification, discovery]
 summary: "Processo de descoberta BDD: example mapping, formulacao de cenarios, validacao com stakeholders."
 lifecycle: draft
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-13"
 sources: [.hermes/skills/qa/bdd-spec-process/SKILL.md]
 ---

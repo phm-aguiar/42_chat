@@ -2,6 +2,7 @@
 title: "Task Rules"
 tags: [sdd, reference]
 created: 2026-06-20
+rag_score: 0.4817
 ---
 # Regras de Geração de Tarefas com DAG (tasks.md)
 

@@ -6,6 +6,7 @@ sources: [.hermes/skills/github/git-conventional-commit/SKILL.md]
 summary: "Gera mensagens de commit no formato conventional commits com secoes semanticas (feat, fix, docs, chore, refactor, test)."
 lifecycle: draft
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-13"
 ---
 

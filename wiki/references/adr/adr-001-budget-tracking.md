@@ -3,6 +3,7 @@ title: "ADR-001: Budget Tracking"
 tags: [adr, latte, hardening]
 status: accepted
 created: "2026-06-20"
+rag_score: 0.5
 ---
 
 # ADR-001: Budget Tracking — Limites de custo por sessão multi-agente

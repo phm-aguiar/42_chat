@@ -9,6 +9,7 @@ tags:
   - gherkin
 summary: "Referência completa do Playwright BDD: instalação, defineBddConfig, projetos múltiplos, step definitions com createBdd, parâmetros ({string}/{int}/{float}), regex, custom types, fixtures, Page Object Model, data tables, doc strings, tags especiais, execução e troubleshooting."
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-15"
 lifecycle: reviewed
 lifecycle_changed: "2026-06-15"

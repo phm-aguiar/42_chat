@@ -1,142 +1,110 @@
-# AGENTS.md — 42 Chat
+# AGENTS.md — 42_chat
 
-Plataforma de chat em tempo real para a 42 São Paulo (~300 alunos simultâneos).
-Substitui Slack/Discord com integração OAuth2 nativa à API da 42.
+## Onboarding (primeira ação ao entrar no repo)
 
-## Stack
+1. Leia `.github/memory/constitution.md` — portões de qualidade, restrições, anti-padrões
+2. Leia `.github/memory/tech.md` — stack homologada (Hermes Agent, DeepSeek V4 Pro, Honcho, Obsidian, Go, Python)
+3. Leia `llms.txt` — entry point com paths de todos os specs, wiki, papers e referências
+4. Leia `wiki/index.md` — inventário completo do vault (365+ páginas, 3.221 chunks)
 
-- **Backend:** Go 1.21+ (Chi router, gorilla/websocket)
-- **Frontend:** React 18 + Vite + Tailwind + Shadcn/ui (tema brutalista 42)
-- **Database:** PostgreSQL 15
-- **Infra:** Docker Compose, alvo AWS EC2 t2.micro
-- **Auth:** OAuth2 42 + JWT interno (12h)
+## Fluxo SDD
 
-## Estrutura
+Toda feature segue: brainstorm → spec → plan → tasks → orchestrator.
+Artefatos em `specs/features/<NNN>-<slug>/`. Pipeline imutável — pular etapas é proibido.
 
-```
-backend/
-  cmd/server/main.go       # Entry point
-  internal/
-    auth/                   # OAuth2 42, JWT
-    ws/                     # WebSocket hub + client
-    handler/                # HTTP handlers (Chi)
-    middleware/              # Auth, rate-limit
-    db/                     # PostgreSQL queries
-  migrations/               # SQL migrations
+- `spec.md`: **HARD-GATE:** `Aprovado: true` antes de implementar
+- `plan.md`: ADRs, contratos, auditoria de constituição
+- `tasks.md`: DAG atômico. Se `graph-operators: enabled` → LATTE (coordination graph dinâmico, 7 operadores)
+- Subagentes são leaf (profundidade máxima = 1)
+- Skill mestre: `skill_view(name='sdd')`
 
-frontend/
-  src/
-    components/             # React components
-    pages/                  # Routes
-    hooks/                  # useWebSocket, useAuth
-    lib/                    # API client, utils
+## Manutenção da Wiki
 
-specs/features/             # Pipeline SDD do domínio
-wiki/                       # Wiki específica do projeto
-.hermes/                    # Skills + LATTE (herdados do 42_Framework)
+A wiki é o cérebro do framework. Mantenha-a saudável com este fluxo:
+
+### Antes de trabalhar (setup único ou após grandes mudanças)
+```bash
+# 1. Indexar a wiki (SQLite + embeddings)
+python3 .hermes/skills/wiki/experiential_memory/cli_index.py --full
+
+# 2. Sincronizar scores do índice → frontmatter (campo rag_score)
+python3 .hermes/skills/wiki/lint/sync_scores.py
 ```
 
-## Features
+### Durante o trabalho (a cada sessão ou pré-commit)
+```bash
+# Validar frontmatter contra template canônico
+python3 .hermes/skills/wiki/lint/validate_template.py
 
-### Domínio — Aplicativo
+# Corrigir YAML quebrado e campos ausentes
+python3 .hermes/skills/wiki/lint/fix_frontmatter.py --dry-run  # preview
+python3 .hermes/skills/wiki/lint/fix_frontmatter.py             # aplicar
 
-| ID | Nome | Status | Stack |
-|----|------|--------|-------|
-| 100 | 42 Chat Core | ✅ | Go, React, PostgreSQL, Docker, OAuth2 |
-| 101 | Assinatura de Participação | ✅ | Go, React, WebSocket |
+# Verificar candidatos a chunking (>500 linhas ou >25KB)
+python3 .hermes/skills/wiki/lint/validate_template.py --strict
+```
 
-### Pipeline SDD — Infraestrutura
+### Quando a wiki crescer (manutenção periódica)
+```bash
+# Destilar chunks redundantes (>30 acumulados)
+python3 .hermes/skills/wiki/experiential_memory/cli_distill.py
 
-| ID | Nome | Status | Descrição |
-|----|------|--------|-----------|
-| 009 | Start Repo | draft | Inicialização de repositório SDD (constitution, tech, templates) |
-| 010 | SDD Templates | draft | Templates canônicos (spec, plan, tasks) + refactor artifact |
-| 011 | Forge Skill | draft | Skill para criar skills Hermes com template e validação |
-| 012 | Tasks DAG | draft | sdd-generate-tasks com formato DAG, paralelismo, isolamento |
-| 013 | Runtime Orchestrator | draft | Execução automática do DAG com agent-dev + agent-qa em paralelo |
-| 006 | Agent Dev | draft | Subagente implementador: recebe task → gera código + smoke test |
-| 007 | Agent QA | draft | Subagente QA: valida implementações contra spec, Gherkin, rejeição |
-| 008 | Reavaliação Skills | approved | Consolidação de ~130 skills em toolkits unificados |
+# Splitar arquivos grandes (>500 linhas) em sub-páginas
+python3 .hermes/skills/wiki/lint/chunk_split.py --dry-run       # preview
+python3 .hermes/skills/wiki/lint/chunk_split.py                  # aplicar
 
-### Framework — 42_Framework (dependências)
+# Reindexar pós-split
+python3 .hermes/skills/wiki/experiential_memory/cli_index.py --full
+python3 .hermes/skills/wiki/lint/sync_scores.py
+```
 
-| ID | Nome | Status | Módulos |
-|----|------|--------|---------|
-| 001 | LATTE Coordination | ✅ | orchestrator, heartbeat, frontier, dispatcher, lead/worker operators, graph_persistence, metrics (39 tests) |
-| 002 | Wiki Experiential Memory | ✅ | chunker, store, search, scoring, feedback, decay, cluster, distill, summarizer, cli_index, cli_query |
-| 003 | Hybrid Retrieval | ✅ | bm25, normalize_frontmatter, cli_query --hybrid |
-| 004 | jschan Forum Manager | ✅ | wiki (3 págs) + skill scripts (5 bash) + docker-compose + smoke tests |
-| 005 | LATTE Hardening | ✅ | budget, timeout, failure-propagation, verify-deterministic, summarization, merge, tool-ceiling (7 ADRs) |
+### Templates e configuração
+- `wiki/_meta/template.md` — template canônico de frontmatter (3 tiers: obrigatório/diretório/opcional)
+- `wiki/_meta/chunking.yaml` — thresholds de chunking (500 linhas / 25KB) e overrides por diretório
 
-## Dependências — 42_Framework
+## Git
 
-O 42_chat depende do meta-framework `42_Framework` (`/home/zeenyt__/Projetos/42_Framework`) para:
+### Antes de todo commit
+```bash
+# Validação estrutural SDD
+# (sdd-validate é skill LLM-driven, não script)
 
-| Dependência | Feature | Uso |
-|-------------|---------|-----|
-| LATTE Coordination | 001 | Orquestração multi-agente (coordination graph, heartbeat, 7 operadores) |
-| Wiki Experiential Memory | 002 | Índice SQLite + embeddings (all-MiniLM-L6-v2, 384d) |
-| Hybrid Retrieval | 003 | Busca BM25 + cosine (α=0.7, ~500ms) |
-| LATTE Hardening | 005 | Budget tracking, timeout, failure propagation, verify deterministic |
+# Validação da wiki
+python3 .hermes/skills/wiki/lint/validate_template.py
 
-**IMPORTANTE:** As features 001-003 e 005 do 42_Framework NÃO estão duplicadas no 42_chat.
-O 42_chat referencia os módulos diretamente de `/home/zeenyt__/Projetos/42_Framework/.hermes/skills/`.
+# Testes do framework (84 testes)
+PYTHONPATH=.hermes/skills/sdd python3 -m pytest .hermes/skills/sdd/latte_coordination/tests/ -q
+```
 
-## Modo de Trabalho
+### O que NUNCA commitar
+- `.env`, credenciais, tokens, secrets
+- `~/.hermes/wiki_index.db` (cache local, reconstruível)
+- Arquivos `.bak` de chunking (adicione `*.bak` ao `.gitignore`)
 
-### Pipeline SDD (para features do 42_chat)
-1. `brainstorm` → interativo com `clarify()`
-2. `spec` → spec.md com `Aprovado: false`. Gate humano
-3. `plan` → plan.md com ADRs
-4. `tasks` → tasks.md com DAG (formato feature 004)
-5. `implement` → Runtime Orchestrator (feature 005) com agent-dev + agent-qa
-6. `validate` → smoke tests com infra real (Docker, Postgres, WebSocket)
-7. `wiki` → atualizar wiki + reindexar
+### O que SEMPRE commitar
+- `specs/features/*/` (spec, plan, tasks)
+- `wiki/` (todo o vault — é código, não documentação)
+- `.hermes/skills/` (skills versionadas)
+- `.github/memory/` (constitution, tech)
+- `AGENTS.md`, `llms.txt`
 
-### Padrões
-- **Batch de 3:** paralelizáveis → sequenciais → [x] → avançar
-- **Subagentes:** paths absolutos + snippets + constraints
-- **Nunca inferir:** ambiguidade = clarify(). Decisões irreversíveis = confirmar
-- **Verificar sempre:** exit code, smoke test real, Docker health check
-- **Stack Go:** Chi routes específicas antes de parametrizadas; SQL verificar schema com `\d`
-- **Docker:** `env -u KEY docker compose up -d --build` (rebuild obrigatório)
-- **DEV_MODE:** `DEV_MODE=true` + login dev em `/api/auth/dev/login`
+### Convenção de commits
+- `feat:` nova feature ou capacidade
+- `fix:` correção de bug
+- `chore:` manutenção (wiki, skills, config)
+- `docs:` documentação pura (spec, plan, ADRs)
 
-### Wiki
-- `wiki/` é source of truth. Nunca modificar sem confirmação
-- Índice SQLite via 42_Framework:
-  `python3 /home/zeenyt__/Projetos/42_Framework/.hermes/skills/wiki/experiential_memory/cli_index.py --full --wiki-dir wiki/`
-- Consultar:
-  `python3 /home/zeenyt__/Projetos/42_Framework/.hermes/skills/wiki/experiential_memory/cli_query.py --semantic "termos" --hybrid --top-k 5`
-- Papers em `wiki/_raw/` → ingerir com brain ingest
+## Skills locais
 
-## Constraints
+```bash
+# Pipeline SDD
+skill_view(name='sdd')
 
-1. **Hermes nativo:** sem APIs externas, sem cloud. Tudo local
-2. **PYTHONPATH:** usar path absoluto pro 42_Framework: `/home/zeenyt__/Projetos/42_Framework/.hermes/skills/`
-3. **Git:** author = phm-aguiar
-4. **Go imports:** Chi router, gorilla/websocket, lib/pq
-5. **Dev login:** `DEV_MODE=true` ativa rota `/api/auth/dev/login` sem OAuth2
-6. **Docker rebuild:** `env -u KEY` pra evitar env vars vazando
-7. **SDD obrigatório:** PROIBIDO implementar código sem spec aprovado. Todo código novo deve passar pelo pipeline SDD: brainstorm → spec (Aprovado: true) → plan → tasks → implement. Sem rastreabilidade de feature, zero código.
+# Wiki
+python3 .hermes/skills/wiki/lint/validate_template.py
+python3 .hermes/skills/wiki/lint/fix_frontmatter.py --dry-run
+python3 .hermes/skills/wiki/lint/sync_scores.py
 
-## Gatilhos
-
-| Gatilho | Ação |
-|---------|------|
-| "brainstorm" / "nova feature" | sdd-brainstorm → spec → plan → tasks |
-| "implementar feature X" | Runtime Orchestrator (feature 005) |
-| "rodar 42chat" / "subir chat" | `docker compose up -d --build` |
-| "testar 42chat" | `curl localhost:8080/api/health` → WebSocket test |
-| "wiki status" / "como está a wiki" | brain report status |
-| "indexar" / "reindexar" | python3 ...cli_index.py --full --wiki-dir wiki/ |
-| "pesquisar X" | python3 ...cli_query.py --semantic "X" --hybrid |
-| "orquestrar" / "LATTE" | PYTHONPATH=... pytest ...latte_coordination/tests/ -q |
-| "lint" / "auditar wiki" | brain lint |
-
-## Backlog
-
-| ID | Nome | Prioridade |
-|----|------|-----------|
-| 102 | 42 Forum | alta |
-| 018 | (próxima feature SDD) | — |
+# Testes
+PYTHONPATH=.hermes/skills/sdd python3 -m pytest .hermes/skills/sdd/latte_coordination/tests/ -q
+```

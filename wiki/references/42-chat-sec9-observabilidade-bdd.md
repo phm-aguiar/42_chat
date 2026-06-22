@@ -1,4 +1,5 @@
 ---
+title: "42 Chat — Observabilidade Estrutural e Engenharia de Software BDD"
 category: references
 tags:
   - 42_chat
@@ -12,6 +13,7 @@ lifecycle: draft
 lifecycle_changed: "2026-06-15"
 tier: supporting
 created: "2026-06-15"
+rag_score: 0.4829
 updated: "2026-06-15"
 ---
 title: "42 Chat — Observabilidade Estrutural e Engenharia de Software BDD"

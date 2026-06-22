@@ -3,6 +3,7 @@ title: "jschan — Guia de Instalação"
 category: tools
 tags: [jschan, installation, mongodb, redis, nginx, nodejs, pm2]
 created: "2026-06-20"
+rag_score: 0.5
 author: phm-aguiar
 aliases: ["instalar jschan", "jschan setup"]
 ---

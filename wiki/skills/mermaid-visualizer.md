@@ -6,6 +6,7 @@ sources: [.hermes/skills/visual/mermaid-visualizer/SKILL.md]
 summary: "Transforma texto em diagramas Mermaid profissionais: flowchart, sequence, class, ERD, Gantt. Usado para documentar arquitetura, fluxos e pipelines."
 lifecycle: draft
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-13"
 ---
 

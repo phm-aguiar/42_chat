@@ -6,6 +6,7 @@ sources: [.hermes/skills/sdd/init-repo/SKILL.md]
 summary: "Inicializa a estrutura SDD em um repositorio: .github/memory/, specs/, AGENTS.md. Entry point obrigatorio para novos projetos."
 lifecycle: draft
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-13"
 ---
 

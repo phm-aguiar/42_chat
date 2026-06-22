@@ -3,6 +3,7 @@ title: "Building AI Agents — Architecture, Trade-offs, and What We've Learned"
 tags: [paper, ai-agents, architecture, langchain, tool-design, model-selection, evaluation, production-patterns]
 status: analyzed
 created: 2026-06-21
+rag_score: 0.5
 source: "https://www.kalviumlabs.ai/blog/building-ai-agents-architecture-tradeoffs/"
 authors: "Anil Gulecha (Kalvium Labs)"
 base_confidence: 0.95

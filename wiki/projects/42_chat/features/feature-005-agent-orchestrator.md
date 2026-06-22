@@ -4,6 +4,7 @@ category: projects
 tags: [sdd, orchestrator, delegate-task, paralelismo]
 summary: "Agente supervisor que lê DAG de tasks e spawna subagentes Dev/QA/Test em paralelo com retry e escalação."
 created: "2026-06-13"
+rag_score: 0.4904
 updated: "2026-06-13"
 sources:
   - repo:specs/features/005-runtime-orchestrator/

@@ -3,6 +3,7 @@ title: "Hub (WebSocket Hub)"
 tags: [entity, glossary]
 aliases: [WebSocket Hub, Connection Hub, ws.Hub]
 created: 2026-06-21
+rag_score: 0.5
 category: entities
 summary: Hub é o gerenciador central de conexões WebSocket do 42 Chat — registra, desconecta e faz broadcast de mensagens para todos os clients conectados.
 provenance:

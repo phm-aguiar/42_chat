@@ -4,7 +4,7 @@ category: references
 tags: [vite, bundler, frontend, rolldown, oxc]
 aliases: [Vite Core Reference]
 sources: ["_raw/vite.md", "_raw/core-config.md", "_raw/core-features.md", "_raw/core-plugin-api.md", "_raw/build-and-ssr.md"]
-summary: Referência consolidada do Vite: configuração (vite.config.ts), features (glob import, HMR API, asset queries), plugin API (hooks, virtual modules) e build/SSR (library mode, JS API, multi-page).
+summary: "Referência consolidada do Vite: configuração (vite.config.ts), features (glob import, HMR API, asset queries), plugin API (hooks, virtual modules) e build/SSR (library mode, JS API, multi-page)."
 provenance:
   extracted: 0.90
   inferred: 0.05
@@ -14,6 +14,7 @@ lifecycle: draft
 lifecycle_changed: "2026-06-16"
 tier: supporting
 created: 2026-06-16
+rag_score: 0.48
 updated: 2026-06-16
 ---
 # Vite Reference

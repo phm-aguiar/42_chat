@@ -4,6 +4,7 @@ summary: "Referência completa sobre a metodologia TDD: ciclo Red-Green-Refactor
 tags: [tdd, testing, pytest, reference]
 category: references
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-15"
 lifecycle: reviewed
 lifecycle_changed: "2026-06-15"

@@ -13,6 +13,7 @@ lifecycle: draft
 lifecycle_changed: "2026-06-16"
 tier: core
 created: 2026-06-16
+rag_score: 0.48
 updated: 2026-06-16
 ---
 # React + Vite Performance Rules

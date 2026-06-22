@@ -3,6 +3,7 @@ title: "42_chat — Knowledge Base"
 category: index
 tags: [meta]
 created: "2026-06-13"
+rag_score: 0.4906
 updated: "2026-06-21"
 ---
 

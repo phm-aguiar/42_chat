@@ -4,6 +4,7 @@ category: projects
 tags: [sdd, agent, onboard, init]
 summary: "Agente que inicializa projetos no framework SDD: estrutura, stack, brainstorm."
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-13"
 sources:
   - repo:.hermes/agents/onboard/

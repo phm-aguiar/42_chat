@@ -9,6 +9,7 @@ tags:
   - referência
 summary: "Exemplos reais de feature files Gherkin: busca de produtos, carrinho de compras, login, saque bancário, validação de senha, controle de acesso. Inclui comparações lado a lado: declarativo vs imperativo, behavior-focused vs UI-specific, focused vs multiple behaviors, meaningful vs generic data."
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-15"
 lifecycle: reviewed
 lifecycle_changed: "2026-06-15"

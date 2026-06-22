@@ -17,6 +17,7 @@ summary: >-
 status: approved
 lifecycle: reviewed
 created: 2026-06-21
+rag_score: 0.5
 sources:
   - https://blog.dsacademy.com.br/spec-driven-development-a-nova-arquitetura-de-engenharia-de-software-na-era-dos-agentes-de-ia-parte-1/
   - https://blog.dsacademy.com.br/spec-driven-development-a-nova-arquitetura-de-engenharia-de-software-na-era-dos-agentes-de-ia-parte-2/

@@ -2,6 +2,7 @@
 title: "Forbidden Patterns"
 tags: [github, reference]
 created: 2026-06-20
+rag_score: 0.4822
 ---
 # Padrões Proibidos em Commits
 

@@ -4,6 +4,7 @@ category: projects
 tags: [sdd, agent, orchestrator, delegate-task]
 summary: "Agente que lê DAG de tasks e spawna subagentes Dev/QA/Test em paralelo."
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-13"
 sources:
   - repo:.hermes/agents/agent-orchestrator/

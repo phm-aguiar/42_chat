@@ -3,6 +3,7 @@ title: "WebSocket (Protocolo)"
 tags: [entity, glossary]
 aliases: [WS, gorilla/websocket, real-time, Protocolo WebSocket, RFC 6455]
 created: 2026-06-21
+rag_score: 0.5
 category: entities
 summary: WebSocket é o protocolo de comunicação full-duplex em tempo real do 42 Chat — upgrade HTTP → WS, mensagens JSON, ping/pong keepalive, implementado com a biblioteca gorilla/websocket.
 provenance:

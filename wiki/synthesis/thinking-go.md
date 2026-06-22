@@ -8,6 +8,7 @@ sources:
   - "references/go-code-review.md"
   - "references/go-style-guide.md"
 created: "2026-06-16T00:00:00Z"
+rag_score: 0.48
 updated: "2026-06-16T00:00:00Z"
 summary: "Como aplicar ferramentas de reasoning (socrático, bias inventory, pre-mortem) no ciclo de desenvolvimento Go: code review, design decisions, debugging."
 provenance:

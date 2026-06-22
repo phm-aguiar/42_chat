@@ -6,6 +6,7 @@ source_path: /home/zeenyt__/Projetos/42_Framework
 summary: "Meta-framework SDD com pipeline de especificação, wiki como memória semântica e orquestração multi-agente baseada em LATTE coordination graphs."
 lifecycle: active
 created: "2026-06-19"
+rag_score: 0.4822
 updated: "2026-06-19"
 ---
 

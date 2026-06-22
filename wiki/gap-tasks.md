@@ -5,6 +5,7 @@ tags: [wiki, gap-analysis, tasks]
 summary: "Tasks para preencher gaps identificados na wiki do 42_chat. 336 páginas, 10 gaps mapeados."
 lifecycle: draft
 created: "2026-06-21"
+rag_score: 0.5
 ---
 
 # Wiki Gap Fill — Tasks

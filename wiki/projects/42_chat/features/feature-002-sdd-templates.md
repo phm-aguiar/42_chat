@@ -4,6 +4,7 @@ category: projects
 tags: [sdd, templates, spec, plan, tasks]
 summary: "Define os 4 templates canônicos SDD: spec.md, plan.md, tasks.md, AGENTS.md + llms.txt."
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-13"
 sources:
   - repo:specs/features/002-sdd-templates/

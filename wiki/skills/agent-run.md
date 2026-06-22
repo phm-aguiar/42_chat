@@ -6,6 +6,7 @@ sources: [.hermes/skills/agent/agent-run/SKILL.md]
 summary: "Runtime generico de agentes Hermes. Compila contexto limpo (sem corrosao) e spawna subagente isolado via delegate_task. Suporta modo LATTE com coordination graph dinamico via graph-operators."
 lifecycle: partial
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-19"
 ---
 

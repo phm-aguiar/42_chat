@@ -5,6 +5,7 @@ tags: [qa, skill, tdd, testing, methodology]
 summary: "Ensina o ciclo RED-GREEN-REFACTOR do TDD. Referencia a pagina de metodologia TDD no vault."
 lifecycle: draft
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-13"
 sources: [.hermes/skills/qa/tdd-workflow/SKILL.md]
 ---

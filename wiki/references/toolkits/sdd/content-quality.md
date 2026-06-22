@@ -2,6 +2,7 @@
 title: "Content Quality"
 tags: [sdd, reference]
 created: 2026-06-20
+rag_score: 0.5273
 ---
 # Métricas de Qualidade de Conteúdo
 

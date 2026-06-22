@@ -1,20 +1,16 @@
 ---
-title: "Troubleshooting MDX"
+title: Troubleshooting MDX
 category: references
 tags:
   - mdx
   - troubleshooting
   - errors
   - esm
-summary: >-
-  Documentação oficial de troubleshooting MDX — problemas comuns de
-  integração, uso e escrita: ESM, erros de parsing JSX, expressões,
-  interleaving e migração v1→v2.
+summary: "Documentação oficial de troubleshooting MDX — problemas comuns de integração, uso e escrita: ESM, erros de parsing JSX, expressões, interleaving e migração v1→v2."
 status: approved
 lifecycle: reviewed
 created: 2026-06-21
-sources:
-  - https://mdxjs.com/docs/troubleshooting-mdx/
+rag_score: 0.5
 ---
 
 # Troubleshooting MDX

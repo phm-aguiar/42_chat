@@ -6,6 +6,7 @@ sources: [.hermes/skills/obsidian/json-canvas/SKILL.md]
 summary: "Cria e edita JSON Canvas (.canvas files) — mapas visuais com nós, arestas e conexões. Formato nativo do Obsidian para pensamento visual."
 lifecycle: draft
 created: "2026-06-13"
+rag_score: 0.48
 superseded_by: "[[skills/brain|brain]]"
 updated: "2026-06-13"
 ---

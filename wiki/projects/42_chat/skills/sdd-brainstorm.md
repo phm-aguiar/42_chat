@@ -6,6 +6,7 @@ sources: []
 summary: Skill SDD que conduz entrevista interativa via clarify() para gerar spec.md
 lifecycle: draft
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-13"
 ---
 

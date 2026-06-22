@@ -2,6 +2,7 @@
 title: "Integração de Auth — JWT + Chi + WebSocket"
 tags: [auth, jwt, chi, websocket, integration]
 created: 2026-06-21
+rag_score: 0.5
 category: references
 summary: Arquitetura de autenticação do 42 Chat em 3 camadas — OAuth2 42 → JWT interno → WebSocket upgrade. Middleware Chi, claims, contexto e fluxo ponta a ponta.
 provenance:

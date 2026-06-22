@@ -1,4 +1,5 @@
 ---
+title: "42 Chat — Arquitetura de Microfrontends e Gerenciamento Global de Estado"
 category: references
 tags:
   - 42_chat
@@ -12,6 +13,7 @@ lifecycle: draft
 lifecycle_changed: "2026-06-15"
 tier: supporting
 created: "2026-06-15"
+rag_score: 0.4867
 updated: "2026-06-15"
 ---
 title: "42 Chat — Arquitetura de Microfrontends e Gerenciamento Global de Estado"

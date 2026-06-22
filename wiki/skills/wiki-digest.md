@@ -6,6 +6,7 @@ sources: [.hermes/skills/wiki/digest/SKILL.md]
 summary: "Gera digest periodico do vault: o que entrou, o que mudou, topicos quentes. Resumo humano-legivel das mudancas recentes."
 lifecycle: draft
 created: "2026-06-13"
+rag_score: 0.48
 superseded_by: "[[skills/brain|brain]]"
 updated: "2026-06-13"
 ---

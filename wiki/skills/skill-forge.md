@@ -6,6 +6,7 @@ sources: [.hermes/skills/general/skill-forge/SKILL.md]
 summary: "Cria novas skills Hermes com scaffold padronizado: SKILL.md com frontmatter YAML, diretorios references/ scripts/ assets/."
 lifecycle: draft
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-13"
 ---
 

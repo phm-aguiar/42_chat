@@ -3,6 +3,7 @@ title: "jschan — Guia de Operações"
 category: tools
 tags: [jschan, operations, boards, crud, mongosh, mongodb]
 created: "2026-06-20"
+rag_score: 0.5
 author: phm-aguiar
 aliases: ["operar jschan", "gerenciar boards jschan", "jschan CRUD"]
 ---

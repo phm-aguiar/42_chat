@@ -6,6 +6,7 @@ sources: [.hermes/skills/sdd/validate/SKILL.md]
 summary: "Valida a conformidade SDD do repositorio: diretorios obrigatorios, artefatos por feature, AGENTS.md. Reporta PASS/FAIL/WARN."
 lifecycle: draft
 created: "2026-06-13"
+rag_score: 0.484
 updated: "2026-06-19"
 ---
 

@@ -5,6 +5,7 @@ tags: [qa, skill, go, test-runner, coverage]
 summary: "Executa a suite de testes do QA: build, vet, test, cover. Formata o relatorio DONE/REJECTED para o ciclo QA."
 lifecycle: draft
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-13"
 sources: [.hermes/skills/qa/local-test-runner/SKILL.md]
 ---

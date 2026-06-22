@@ -2,6 +2,7 @@
 title: "WebSocket Production — Ping/Pong, Reconnect, Scaling & Rate Limiting"
 tags: [websocket, production, scaling, pingpong, reconnect, rate-limiting, security]
 created: 2026-06-21
+rag_score: 0.5
 category: references
 summary: Padrões de produção para WebSocket no 42 Chat — keepalive com ping/pong, estratégias de reconexão client-side, scaling multi-instância via Redis pub/sub, persistência de mensagens com soft delete e cursor pagination, rate limiting e hardening de segurança.
 provenance:

@@ -6,6 +6,7 @@ sources: [.hermes/skills/wiki/tag-taxonomy/SKILL.md]
 summary: "Gerencia taxonomia de tags do vault: normaliza aliases, detecta tags sem pagina, sugere consolidacao."
 lifecycle: draft
 created: "2026-06-13"
+rag_score: 0.48
 superseded_by: "[[skills/brain|brain]]"
 updated: "2026-06-13"
 ---

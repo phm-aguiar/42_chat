@@ -6,6 +6,7 @@ sources: [.hermes/skills/wiki/synthesize/SKILL.md]
 summary: "Descobre oportunidades de sintese cross-cutting no vault: pares de conceitos que co-ocorrem em muitas paginas mas nao tem pagina synthesis conectando-os."
 lifecycle: draft
 created: "2026-06-13"
+rag_score: 0.48
 superseded_by: "[[skills/brain|brain]]"
 updated: "2026-06-13"
 ---

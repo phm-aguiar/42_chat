@@ -3,6 +3,7 @@ title: "LangGraph in Production — StateGraph, Checkpointing e Human-in-the-Loo
 tags: [paper, langgraph, stateful-agents, checkpointing, human-in-the-loop, production-patterns]
 status: analyzed
 created: 2026-06-19
+rag_score: 0.5
 source: "https://www.kalviumlabs.ai/blog/langgraph-in-production-stateful-multi-step-agents/"
 authors: "Anil Gulecha (Kalvium Labs, ex-HackerRank, ex-Google)"
 feature: "nenhuma ainda — candidato a Feature 003"

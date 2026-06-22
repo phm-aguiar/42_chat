@@ -2,6 +2,7 @@
 title: "Integration Testing with Docker"
 tags: [testing, docker, integration]
 created: 2026-06-21
+rag_score: 0.5
 category: references
 summary: Smoke tests, Docker test lifecycle, WebSocket testing with gorilla/websocket, table-driven patterns, and CI/CD integration — based on real 42_chat patterns.
 ---

@@ -4,8 +4,9 @@ feature_id: 100
 category: feature
 status: implemented
 tags: [42chat, core, backend, websocket, oauth2, api, go, chi]
-created: 2026-06-21T00:00:00Z
-updated: 2026-06-21T00:00:00Z
+created: "2026-06-21T00:00:00Z"
+rag_score: 0.5
+updated: "2026-06-21T00:00:00Z"
 summary: >-
   Núcleo do 42 Chat: servidor HTTP Go com Chi router, autenticação OAuth2 42 +
   JWT, WebSocket com modelo Hub/Client (gorilla/websocket), API REST de mensagens

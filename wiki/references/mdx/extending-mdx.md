@@ -1,5 +1,5 @@
 ---
-title: "Estendendo MDX"
+title: Estendendo MDX
 category: references
 tags:
   - mdx
@@ -7,15 +7,11 @@ tags:
   - remark
   - rehype
   - recma
-summary: >-
-  Documentação oficial sobre como estender MDX com plugins — remark, rehype
-  e recma plugins para transformar conteúdo em diferentes estágios da
-  compilação.
+summary: Documentação oficial sobre como estender MDX com plugins — remark, rehype e recma plugins para transformar conteúdo em diferentes estágios da compilação.
 status: approved
 lifecycle: reviewed
 created: 2026-06-21
-sources:
-  - https://mdxjs.com/docs/extending-mdx/
+rag_score: 0.5
 ---
 
 # Estendendo MDX

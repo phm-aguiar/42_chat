@@ -3,6 +3,7 @@ title: "ADR-007: Tool Ceiling"
 tags: [adr, latte, hardening]
 status: accepted
 created: "2026-06-20"
+rag_score: 0.5
 ---
 
 # ADR-007: Tool Ceiling — Limite de ferramentas por agente (5-8 ideal)

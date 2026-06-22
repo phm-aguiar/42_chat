@@ -3,6 +3,7 @@ title: "Activity Log"
 category: journal
 tags: [meta, log]
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-16"
 ---
 # Activity Log

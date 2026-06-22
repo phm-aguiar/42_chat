@@ -1,7 +1,12 @@
 ---
 title: "OAuth2 42 — Fluxo Completo"
-tags: [oauth2, 42, auth, security]
+tags: 
+- oauth2 
+- 42_school 
+- auth 
+- security
 created: 2026-06-21
+rag_score: 0.5
 category: references
 summary: Implementação do Authorization Code Flow da API 42 no 42 Chat — token exchange, upsert de usuário, DEV_MODE bypass e pitfalls de rate limit / expiração.
 provenance:

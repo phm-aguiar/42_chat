@@ -5,6 +5,7 @@ tags: [qa, skill, go, unit-tests, tdd]
 summary: "Ensina o agent-qa a escrever testes unitarios em Go no padrao table-driven. Cobre casos de borda, subtests e verificacao contra spec."
 lifecycle: draft
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-13"
 sources: [.hermes/skills/qa/go-unit-tests/SKILL.md]
 ---

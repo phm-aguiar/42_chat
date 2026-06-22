@@ -4,6 +4,7 @@ source: "https://pkg.go.dev/go.uber.org/goleak"
 author:
 published:
 created: 2026-06-21
+rag_score: 0.5
 description: "Package goleak is a Goroutine leak detector."
 tags: [golangci-lint, testing, goroutines]
 ---

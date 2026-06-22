@@ -3,6 +3,7 @@ title: "OAuth2 (Autenticação 42)"
 tags: [entity, glossary]
 aliases: [auth.OAuth2, OAuth 2.0, 42 OAuth, authorization code flow]
 created: 2026-06-21
+rag_score: 0.5
 category: entities
 summary: OAuth2 implementa o fluxo authorization code da API 42 — troca o código de autorização por access_token, busca dados do usuário em /v2/me e faz upsert no PostgreSQL.
 provenance:

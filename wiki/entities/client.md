@@ -3,6 +3,7 @@ title: "Client (WebSocket Client)"
 tags: [entity, glossary]
 aliases: [WebSocket Client, ws.Client, readPump, writePump]
 created: 2026-06-21
+rag_score: 0.5
 category: entities
 summary: Client representa uma conexão WebSocket ativa — identifica o usuário autenticado, mantém um canal de saída e executa goroutines de leitura (readPump) e escrita (writePump).
 provenance:

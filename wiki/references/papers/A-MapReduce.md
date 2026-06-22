@@ -3,6 +3,7 @@ title: "A-MapReduce — Executing Wide Search via Agentic MapReduce"
 tags: [paper, multi-agent, mapreduce, memory, retrieval, cross-task, sdd]
 status: analyzed
 created: 2026-06-19
+rag_score: 0.5091
 source: "https://arxiv.org/html/2602.01331v1"
 authors: "Chen et al., 2026"
 feature: "[[projects/42_Framework/features/002-experiential-memory|Feature 002: Wiki Experiential Memory]]"

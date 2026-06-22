@@ -6,6 +6,7 @@ source_path: /home/zeenyt__/Projetos/42_chat
 summary: "Framework SDD autônomo com agentes IA e humanos in loop. Pipeline: brainstorm → spec → plan → tasks (DAG) → orchestrator → subagentes."
 lifecycle: draft
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-13"
 ---
 

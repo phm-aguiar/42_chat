@@ -2,6 +2,7 @@
 title: "Anti Patterns"
 tags: [qa, reference]
 created: 2026-06-20
+rag_score: 0.4825
 ---
 # Gherkin Anti-Patterns
 

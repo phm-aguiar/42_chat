@@ -5,6 +5,7 @@ tags:
   - writing-steps
   - serial-mode
 created: 2026-06-21
+rag_score: 0.5
 source: "https://vitalets.github.io/playwright-bdd/#/writing-steps/passing-data-between-scenarios"
 ---
 

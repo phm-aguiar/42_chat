@@ -9,6 +9,7 @@ sources:
   - "references/42-oauth2-flow.md"
   - "references/oauth2-42-pitfalls.md"
 created: "2026-06-21T00:00:00Z"
+rag_score: 0.5
 updated: "2026-06-21T00:00:00Z"
 summary: "A dupla de autenticação do 42 Chat: OAuth2 externo (API 42) para identidade e JWT interno para sessão. Duas camadas com responsabilidades distintas que, juntas, formam a espinha dorsal de segurança do sistema."
 provenance:

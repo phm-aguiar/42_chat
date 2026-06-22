@@ -14,6 +14,7 @@ summary: >-
 status: approved
 lifecycle: reviewed
 created: 2026-06-21
+rag_score: 0.5
 sources:
   - /home/zeenyt__/.hermes/hermes-agent/agent/usage_pricing.py
   - /home/zeenyt__/.hermes/hermes-agent/hermes_state.py

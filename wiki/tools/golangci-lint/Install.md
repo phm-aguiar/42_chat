@@ -4,6 +4,7 @@ source: "https://golangci.github.io/legacy-v1-doc/welcome/install/"
 author:
 published:
 created: 2026-06-21
+rag_score: 0.5
 description: "Fast Go linters runner golangci-lint."
 tags: [golangci-lint, installation]
 ---

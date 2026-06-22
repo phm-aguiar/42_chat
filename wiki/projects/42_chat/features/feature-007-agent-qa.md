@@ -4,6 +4,7 @@ category: projects
 tags: [sdd, agent, qa, qualidade, teste]
 summary: "Guardiao da qualidade do framework SDD. Spawnado pelo orchestrator como subagente leaf. Ciclo: le spec, escreve Gherkin, executa testes, lint, cobertura, reporta DONE/REJECTED/BLOCKED."
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-13"
 sources:
   - repo:specs/features/007-agent-qa/spec.md

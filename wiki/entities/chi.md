@@ -3,6 +3,7 @@ title: "Chi (HTTP Router)"
 tags: [entity, glossary]
 aliases: [go-chi, chi/v5, router, HTTP router]
 created: 2026-06-21
+rag_score: 0.5
 category: entities
 summary: Chi é o roteador HTTP Go usado no 42 Chat — roteamento idiomático com middleware stacking, grupos de rotas autenticadas, e compatibilidade total com net/http.
 provenance:

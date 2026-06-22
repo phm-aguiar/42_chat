@@ -8,6 +8,7 @@ tags:
   - sdd
 summary: "Orquestração dinâmica com coordination graph, operadores LATTE, heartbeat monitoring e métricas de coordenação."
 created: "2026-06-19"
+rag_score: 0.4736
 updated: "2026-06-19"
 status: implemented
 sources:

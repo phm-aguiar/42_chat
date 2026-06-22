@@ -4,6 +4,7 @@ category: projects
 tags: [sdd, agent, dev, implementacao]
 summary: "Persona implementadora do framework SDD. Braço executor spawnado pelo orchestrator como subagente leaf. Skills plugáveis por stack."
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-13"
 sources:
   - repo:specs/features/006-agent-dev/spec.md

@@ -5,6 +5,7 @@ tags: [sessao, journal, feature-007, feature-100, skills, qa]
 sources:
   - conversation:2026-06-14
 created: "2026-06-14"
+rag_score: 0.48
 updated: "2026-06-14"
 summary: "Sessão de 14/jun: finalização do agent-qa, criação de 7 skills QA, normalização de 41 skills, skill-forge atualizado, spec/plan/tasks da feature 100 (42 Chat Core) refinados com dados da wiki, taxonomia do vault documentada."
 provenance:

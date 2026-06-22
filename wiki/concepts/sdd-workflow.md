@@ -7,6 +7,7 @@ sources: []
 summary: "Pipeline completo do Spec-Driven Development: brainstorm → spec → plan → tasks (DAG) → orchestrator → agentes. Cada etapa explicada com o exemplo real da feature 006 (agent-dev)."
 lifecycle: draft
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-19"
 ---
 

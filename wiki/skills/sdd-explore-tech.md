@@ -6,6 +6,7 @@ sources: [.hermes/skills/sdd/explore-tech/SKILL.md]
 summary: "Mapeia a stack tecnologica do projeto: linguagens, frameworks, banco de dados, CI/CD. Preenche .github/memory/tech.md."
 lifecycle: draft
 created: "2026-06-13"
+rag_score: 0.48
 superseded_by: "[[skills/sdd|sdd]]"
 updated: "2026-06-13"
 ---

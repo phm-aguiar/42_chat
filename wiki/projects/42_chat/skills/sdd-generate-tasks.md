@@ -6,6 +6,7 @@ sources: []
 summary: Skill SDD v2.0.0 que gera tasks.md com DAG (dependências, paralelismo, isolamento de arquivos)
 lifecycle: draft
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-13"
 ---
 

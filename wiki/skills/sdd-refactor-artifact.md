@@ -6,6 +6,7 @@ sources: [.hermes/skills/sdd/refactor-artifact/SKILL.md]
 summary: "Refatora artefatos SDD (spec.md, plan.md, tasks.md) para conformidade com templates canonicos. Normaliza headers, ajusta frontmatter."
 lifecycle: draft
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-13"
 ---
 

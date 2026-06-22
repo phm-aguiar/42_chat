@@ -1,22 +1,17 @@
 ---
-title: "What is MDX?"
+title: What is MDX?
 category: references
 tags:
   - mdx
   - markdown
   - jsx
   - react
-tags:
-  - "clippings"
-summary: >-
-  Documentação oficial do MDX — formato que combina Markdown com JSX,
-  permitindo usar componentes, expressões JavaScript e import/export ESM
-  dentro de conteúdo markdown.
+  - clippings
+summary: Documentação oficial do MDX — formato que combina Markdown com JSX, permitindo usar componentes, expressões JavaScript e import/export ESM dentro de conteúdo markdown.
 status: approved
 lifecycle: reviewed
 created: 2026-06-21
-sources:
-  - https://mdxjs.com/docs/what-is-mdx/
+rag_score: 0.5
 ---
 
 # What is MDX?

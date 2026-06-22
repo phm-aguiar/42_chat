@@ -6,6 +6,7 @@ sources: [.hermes/skills/obsidian/obsidian-cli/SKILL.md]
 summary: "CLI do Obsidian para operações no vault: abrir arquivos, buscar, navegar. Usado por skills que precisam interagir com o Obsidian como aplicação."
 lifecycle: draft
 created: "2026-06-13"
+rag_score: 0.48
 superseded_by: "[[skills/brain|brain]]"
 updated: "2026-06-13"
 ---

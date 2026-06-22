@@ -21,6 +21,7 @@ provenance:
   inferred: 0.85
   ambiguous: 0.0
 created: "2026-06-15"
+rag_score: 0.48
 updated: "2026-06-15"
 ---
 

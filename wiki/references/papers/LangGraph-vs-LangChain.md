@@ -3,6 +3,7 @@ title: "LangGraph vs LangChain: Which We Deploy in Production (2026)"
 tags: [paper, langgraph, langchain, framework-comparison, production, decision-matrix]
 status: analyzed
 created: 2026-06-20
+rag_score: 0.5
 source: "https://www.kalviumlabs.ai/blog/langgraph-vs-langchain-production/"
 authors: "Anil Gulecha (Kalvium Labs, ex-HackerRank, ex-Google)"
 feature: "[[projects/42_Framework/features/005-latte-hardening|Feature 005: LATTE Hardening]]"

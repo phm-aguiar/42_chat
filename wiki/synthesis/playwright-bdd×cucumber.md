@@ -9,6 +9,7 @@ sources:
   - "references/playwright-bdd/cucumber-reporters.md"
   - "references/playwright-bdd/writing-steps.md"
 created: "2026-06-21T00:00:00Z"
+rag_score: 0.5
 updated: "2026-06-21T00:00:00Z"
 summary: "O que emerge da interseção entre Playwright-BDD e Cucumber tradicional: duas filosofias de BDD que se complementam em camadas — Cucumber para discovery e especificação, Playwright-BDD para execução em browser real."
 provenance:

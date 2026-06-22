@@ -10,6 +10,7 @@ tags:
   - sdd
 summary: "Pesquisa híbrida (BM25 + cosine), normalização de frontmatter (34 docs) e thresholds adaptativos. Baseado no relatório Otimização de Obsidian para IA."
 created: "2026-06-20"
+rag_score: 0.5
 updated: "2026-06-20"
 status: implemented
 sources:

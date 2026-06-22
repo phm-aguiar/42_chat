@@ -5,6 +5,7 @@ tags:
   - getting-started
   - fixtures
 created: 2026-06-21
+rag_score: 0.5
 source: "https://vitalets.github.io/playwright-bdd/#/getting-started/add-fixtures"
 ---
 

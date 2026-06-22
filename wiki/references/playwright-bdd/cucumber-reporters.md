@@ -8,6 +8,7 @@ tags:
   - json
   - junit
 created: 2026-06-21
+rag_score: 0.5
 source: "https://vitalets.github.io/playwright-bdd/#/reporters/cucumber"
 ---
 

@@ -9,6 +9,7 @@ tags:
   - qualidade
 summary: "Guia completo de boas práticas, anti-patterns, estilo declarativo vs imperativo, e dicas de revisão para escrever cenários Gherkin claros, manteníveis e orientados a comportamento."
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-15"
 lifecycle: reviewed
 lifecycle_changed: "2026-06-15"

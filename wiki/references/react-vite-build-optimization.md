@@ -3,7 +3,7 @@ title: React + Vite Build Optimization
 category: references
 tags: [react, vite, build, bundling, optimization]
 sources: ["_raw/build-manual-chunks.md", "_raw/build-minification.md", "_raw/build-target-modern.md", "_raw/build-sourcemaps.md", "_raw/build-tree-shaking.md", "_raw/build-compression.md", "_raw/build-asset-hashing.md"]
-summary: 7 regras CRITICAL de build do React+Vite: manual chunks, minification (OXC/Terser), modern target, sourcemaps, tree shaking, compression (gzip+Brotli) e asset hashing.
+summary: "7 regras CRITICAL de build do React+Vite: manual chunks, minification (OXC/Terser), modern target, sourcemaps, tree shaking, compression (gzip+Brotli) e asset hashing."
 provenance:
   extracted: 0.85
   inferred: 0.10
@@ -13,6 +13,7 @@ lifecycle: draft
 lifecycle_changed: "2026-06-16"
 tier: supporting
 created: 2026-06-16
+rag_score: 0.482
 updated: 2026-06-16
 ---
 # React + Vite Build Optimization

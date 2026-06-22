@@ -4,7 +4,7 @@ category: references
 tags: [vite, rolldown, oxc, migration, bundler]
 aliases: [Vite 8 Rolldown]
 sources: ["_raw/rolldown-migration.md"]
-summary: Guia de migração Vite 7 → 8: Rolldown substitui esbuild+Rollup, Oxc substitui esbuild transformer, `rollupOptions` → `rolldownOptions`, `esbuild` → `oxc`.
+summary: "Guia de migração Vite 7 → 8: Rolldown substitui esbuild+Rollup, Oxc substitui esbuild transformer, `rollupOptions` → `rolldownOptions`, `esbuild` → `oxc`."
 provenance:
   extracted: 0.85
   inferred: 0.10
@@ -14,6 +14,7 @@ lifecycle: draft
 lifecycle_changed: "2026-06-16"
 tier: supporting
 created: 2026-06-16
+rag_score: 0.48
 updated: 2026-06-16
 ---
 # Rolldown Migration (Vite 8)

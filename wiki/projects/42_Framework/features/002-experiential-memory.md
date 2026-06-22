@@ -2,6 +2,7 @@
 title: "002: Wiki Experiential Memory"
 status: specified
 created: "2026-06-19"
+rag_score: 0.4817
 tags:
   - memory
   - embeddings

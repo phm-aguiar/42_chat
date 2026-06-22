@@ -6,6 +6,7 @@ sources: []
 summary: Skill SDD que gera plan.md com decisões arquiteturais (ADR) a partir do spec.md
 lifecycle: draft
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-13"
 ---
 

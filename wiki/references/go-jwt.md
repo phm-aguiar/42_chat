@@ -12,8 +12,9 @@ base_confidence: 0.59
 lifecycle: draft
 lifecycle_changed: 2026-06-16
 tier: supporting
-created: 2026-06-16T00:00:00Z
-updated: 2026-06-16T00:00:00Z
+created: "2026-06-16T00:00:00Z"
+rag_score: 0.4822
+updated: "2026-06-16T00:00:00Z"
 ---
 
 # Go JWT (golang-jwt v5)

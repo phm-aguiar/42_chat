@@ -5,6 +5,7 @@ tags:
   - index
   - reference
 created: 2026-06-21
+rag_score: 0.5
 ---
 
 # Playwright-BDD Reference Index

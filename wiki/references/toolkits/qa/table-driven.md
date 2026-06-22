@@ -2,6 +2,7 @@
 title: "Table Driven"
 tags: [qa, reference]
 created: 2026-06-20
+rag_score: 0.484
 ---
 # Table-Driven Tests em Go
 

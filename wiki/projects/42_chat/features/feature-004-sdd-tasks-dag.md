@@ -4,6 +4,7 @@ category: projects
 tags: [sdd, tasks, dag, paralelismo]
 summary: "Upgrade do sdd-generate-tasks: formato DAG com dependências, paralelismo e isolamento de arquivos."
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-13"
 sources:
   - repo:specs/features/004-sdd-tasks-dag/spec.md

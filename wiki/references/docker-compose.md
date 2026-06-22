@@ -2,6 +2,7 @@
 title: "Docker & Compose no 42 Chat"
 tags: [docker, devops, go]
 created: 2026-06-21
+rag_score: 0.5
 category: references
 summary: Estrutura Docker do 42 Chat Core — multistage build, docker-compose, health checks, variáveis de ambiente e padrões dev vs prod.
 provenance:

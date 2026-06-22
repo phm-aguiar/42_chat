@@ -3,6 +3,7 @@ title: "User (Modelo de Usuário)"
 tags: [entity, glossary]
 aliases: [model.User, usuário, 42 user, aluno 42]
 created: 2026-06-21
+rag_score: 0.5
 category: entities
 summary: User é o modelo de dados de um aluno da 42 autenticado no chat — ID fixo da API 42, login único, dados de perfil (image_url, host, level) sincronizados via OAuth2 e upserted no PostgreSQL.
 provenance:

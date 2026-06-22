@@ -5,6 +5,7 @@ tags: [qa, skill, cucumber, godog, step-definitions]
 summary: "Ensina a implementar step definitions em Go com Godog que conectam .feature files a codigo executavel."
 lifecycle: draft
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-13"
 sources: [.hermes/skills/qa/cucumber-step-definitions/SKILL.md]
 ---

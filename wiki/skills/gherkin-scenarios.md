@@ -5,6 +5,7 @@ tags: [qa, skill, gherkin, bdd, feature-files]
 summary: "Ensina o agent-qa a escrever cenarios Gherkin (.feature) a partir de specs BDD. Cobre sintaxe, boas praticas e anti-patterns."
 lifecycle: draft
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-13"
 sources: [.hermes/skills/qa/gherkin-scenarios/SKILL.md]
 ---

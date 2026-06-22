@@ -10,6 +10,7 @@ sources:
   - "entities/client.md"
   - "references/auth-integration.md"
 created: "2026-06-21T00:00:00Z"
+rag_score: 0.5
 updated: "2026-06-21T00:00:00Z"
 summary: "A interseção entre o protocolo WebSocket (full-duplex, stateful) e o roteador Chi (HTTP, stateless): como o 42 Chat resolve o impedance mismatch entre dois paradigmas de rede que coexistem no mesmo servidor."
 provenance:

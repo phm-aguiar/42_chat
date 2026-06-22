@@ -2,6 +2,7 @@
 title: "Raw Format"
 tags: [wiki, reference]
 created: 2026-06-20
+rag_score: 0.482
 ---
 # Raw File Format Reference
 

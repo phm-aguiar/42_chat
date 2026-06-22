@@ -2,6 +2,7 @@
 title: Observabilidade em Produção — Go + Chi + Datadog
 tags: [observability, monitoring, devops, go, datadog, health-check, logging, metrics]
 created: 2026-06-21
+rag_score: 0.5
 ---
 
 # Observabilidade em Produção

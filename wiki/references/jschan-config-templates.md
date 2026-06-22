@@ -3,6 +3,7 @@ title: "jschan Configuration Templates"
 category: references
 tags: [jschan, config, secrets, template, mongodb, redis]
 created: "2026-06-20"
+rag_score: 0.5
 author: phm-aguiar
 source: "jschan/configs/secrets.js.example + template.js.example"
 aliases: ["jschan config", "jschan template"]

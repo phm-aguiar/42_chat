@@ -2,6 +2,7 @@
 title: "Vault Taxonomy"
 tags: [concept]
 created: 2026-06-20
+rag_score: 0.4867
 ---
 1|---
 2|title: "Vault Taxonomy"

@@ -8,6 +8,7 @@ lifecycle: reviewed
 base_confidence: 0.9
 tier: core
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-16"
 provenance:
   extracted: 0.8

@@ -3,6 +3,7 @@ title: "Message (Modelo de Mensagem)"
 tags: [entity, glossary]
 aliases: [model.Message, WSMessage, mensagem, chat message]
 created: 2026-06-21
+rag_score: 0.5
 category: entities
 summary: Message é o modelo de dados de uma mensagem no chat — ID UUID v4, conteúdo com limite de 5000 caracteres, soft delete via DeletedAt, e o payload WSMessage usado na comunicação WebSocket.
 provenance:

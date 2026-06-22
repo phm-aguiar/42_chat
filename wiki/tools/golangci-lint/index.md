@@ -2,6 +2,7 @@
 title: "golangci-lint"
 description: "Documentação do golangci-lint — fast Go linters runner"
 created: 2026-06-21
+rag_score: 0.5
 tags: [golangci-lint, go, linting, index]
 ---
 

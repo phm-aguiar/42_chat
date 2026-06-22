@@ -6,6 +6,8 @@ tags:
   - ingest
   - pitfall
   - tools
+created: "2026-06-14"
+rag_score: 0.48
 summary: "Arquivos >50K chars são truncados pelo read_file sem aviso explícito, causando consolidação incompleta. Verificar total_lines vs file_size antes de processar."
 tier: supporting
 capture_source: hermes-session

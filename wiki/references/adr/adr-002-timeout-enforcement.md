@@ -3,6 +3,7 @@ title: "ADR-002: Timeout Enforcement"
 tags: [adr, latte, hardening]
 status: accepted
 created: "2026-06-20"
+rag_score: 0.5
 ---
 
 # ADR-002: Timeout Enforcement — Timeouts por agente, fallback, graceful degradation

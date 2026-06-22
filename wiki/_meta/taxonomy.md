@@ -5,6 +5,7 @@ tags: [meta, taxonomy]
 summary: "Taxonomia canônica de tags do vault. Use estas tags ao criar/editar páginas."
 lifecycle: reviewed
 created: "2026-06-19"
+rag_score: 0.4917
 updated: "2026-06-20"
 ---
 

@@ -7,6 +7,7 @@ tags:
   - gherkin
   - index
 created: "2026-06-21"
+rag_score: 0.5
 updated: "2026-06-21"
 lifecycle: raw
 lifecycle_reason: "generated index for ingested Cucumber/BDD reference files"

@@ -3,6 +3,7 @@ title: "Otimização de Obsidian para IA"
 tags: [paper, obsidian, rag, chunking, embeddings, hybrid-search, frontmatter, mcp]
 status: implemented
 created: 2026-06-19
+rag_score: 0.5
 source: "Relatório compilado (DataScienceDojo, Medium, Pablo Oliva, Blake Crosley, LangChain, LlamaIndex)"
 ---
 

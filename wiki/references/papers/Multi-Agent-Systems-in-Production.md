@@ -3,6 +3,7 @@ title: "Multi-Agent AI Systems in Production (2026)"
 tags: [paper, multi-agent, orchestration, failure-propagation, budget, timeout, production-patterns]
 status: analyzed
 created: 2026-06-20
+rag_score: 0.5
 source: "https://www.kalviumlabs.ai/blog/multi-agent-ai-systems-when-one-agent-isnt-enough/"
 authors: "Anil Gulecha (Kalvium Labs, ex-HackerRank, ex-Google)"
 feature: "[[projects/42_Framework/features/005-latte-hardening|Feature 005: LATTE Hardening]]"

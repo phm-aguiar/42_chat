@@ -4,8 +4,9 @@ category: journal
 tags: [sdd, 42chat, brainstorm, feature]
 sources:
   - conversation:2026-06-17
-created: 2026-06-17T03:30:00Z
-updated: 2026-06-17T03:30:00Z
+created: "2026-06-17T03:30:00Z"
+rag_score: 0.5273
+updated: "2026-06-17T03:30:00Z"
 summary: >-
   Sessão de brainstorm SDD que definiu e aprovou a feature 101 (Assinatura de Participação)
   — componente UserSignature inline com stats de engajamento e tiers de comunidade.

@@ -3,6 +3,7 @@ title: "JWT (JSON Web Token)"
 tags: [entity, glossary]
 aliases: [auth.JWTManager, token JWT, JSON Web Token, HS256]
 created: 2026-06-21
+rag_score: 0.5
 category: entities
 summary: JWTManager gerencia a geração e validação de tokens JWT internos do 42 Chat — algoritmo HS256, expiração de 12 horas, claims com UserID e Login do usuário autenticado.
 provenance:

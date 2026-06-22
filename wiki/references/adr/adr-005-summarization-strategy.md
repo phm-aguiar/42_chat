@@ -3,6 +3,7 @@ title: "ADR-005: Summarization Strategy"
 tags: [adr, latte, hardening]
 status: accepted
 created: "2026-06-20"
+rag_score: 0.5
 ---
 
 # ADR-005: Summarization Strategy — Compressão de contexto em sessões longas

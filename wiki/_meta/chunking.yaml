@@ -1,0 +1,41 @@
+# Wiki Chunking Configuration
+# Thresholds e regras para split de arquivos grandes em sub-páginas
+
+# Thresholds: arquivos que excedem QUALQUER um destes limites são candidatos a split
+thresholds:
+  max_lines: 500        # split se > 500 linhas
+  max_bytes: 25600      # split se > 25 KB
+
+# Como splitar
+split:
+  level: "##"            # heading nível 2 (## Título) — default
+  min_subpage_lines: 50
+
+  # Override por diretório: split level diferente para casos especiais
+  per_dir:
+    tools/golangci-lint: "###"   # Linters.md usa ### por linter
+
+# Nomeação das sub-páginas
+naming:
+  pattern: "{original_stem}/{section_slug}.md"  # ex: Linters.md → linters/bodyclose.md
+  index_file: "_index.md"                        # índice gerado no diretório das sub-páginas
+
+# Diretórios excluídos do chunking (nunca splitar)
+exclude_dirs:
+  - _raw        # conteúdo bruto, não processado
+  - _staging    # páginas em transição
+  - _archives   # arquivo morto
+  - _meta       # meta-documentação do próprio vault
+  - journal     # notas cronológicas
+
+# Frontmatter herdado pelas sub-páginas
+# Cada sub-página recebe o frontmatter original + estes campos adicionais
+subpage_frontmatter:
+  add:
+    part_of: "{original_path}"   # path relativo ao arquivo original
+  preserve: [title, tags, created, category]  # campos copiados do original
+
+# Pós-split: o que fazer com o arquivo original
+post_split:
+  action: "archive"     # "archive" (renomeia para .md.bak), "delete", "keep"
+  archive_suffix: ".bak"

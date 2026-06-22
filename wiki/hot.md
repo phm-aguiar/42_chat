@@ -2,6 +2,8 @@
 title: "Hot Cache"
 category: meta
 tags: [meta, cache]
+created: "2026-06-17"
+rag_score: 0.48
 updated: "2026-06-17"
 ---
 # Hot Cache

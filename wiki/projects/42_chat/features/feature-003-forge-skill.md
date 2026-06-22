@@ -4,6 +4,7 @@ category: projects
 tags: [sdd, skills, hermes-agent, tooling]
 summary: "Skill forge-new-skill para criar skills Hermes Agent com scaffold, template e validação."
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-13"
 sources:
   - repo:specs/features/003-forge-skill/

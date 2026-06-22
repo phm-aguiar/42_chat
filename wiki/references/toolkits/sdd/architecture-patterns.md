@@ -2,6 +2,7 @@
 title: "Architecture Patterns"
 tags: [sdd, reference]
 created: 2026-06-20
+rag_score: 0.4833
 ---
 # Padrões de Arquitetura para ADR
 

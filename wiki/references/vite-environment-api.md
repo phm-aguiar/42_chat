@@ -4,7 +4,7 @@ category: references
 tags: [vite, environment, ssr, multi-runtime]
 aliases: [Vite 6 Environment API]
 sources: ["_raw/environment-api.md"]
-summary: API de múltiplos ambientes do Vite 6+: configuração de runtimes client/server/edge com herança de config e custom environment providers.
+summary: "API de múltiplos ambientes do Vite 6+: configuração de runtimes client/server/edge com herança de config e custom environment providers."
 provenance:
   extracted: 0.90
   inferred: 0.05
@@ -14,6 +14,7 @@ lifecycle: draft
 lifecycle_changed: "2026-06-16"
 tier: supporting
 created: 2026-06-16
+rag_score: 0.48
 updated: 2026-06-16
 ---
 # Vite Environment API (Vite 6+)

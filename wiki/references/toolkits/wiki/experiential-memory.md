@@ -1,6 +1,7 @@
 ---
 title: "Wiki Experiential Memory — Features 002 & 003"
 created: "2026-06-19"
+rag_score: 0.5
 updated: "2026-06-20"
 author: phm-aguiar
 tags:

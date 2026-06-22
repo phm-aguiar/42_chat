@@ -12,6 +12,7 @@ base_confidence: 0.90
 lifecycle: draft
 tier: overview
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-14"
 aliases:
   - Estratégia de QA

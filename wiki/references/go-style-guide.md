@@ -33,6 +33,7 @@ lifecycle: draft
 lifecycle_changed: "2026-06-16"
 tier: core
 created: "2026-06-16T00:00:00Z"
+rag_score: 0.4867
 updated: "2026-06-16T00:00:00Z"
 ---
 

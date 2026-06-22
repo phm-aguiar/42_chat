@@ -3,7 +3,7 @@ title: 42 Intra API v2 — Specification
 category: references
 tags: [42, api, oauth2, reference]
 sources: [_raw/42_api_raw]
-summary: Guia de uso da API Intra 42 v2: OAuth2, escopos, paginação, filtros, ordenação, rate limiting (2 req/s, 1200 req/h) e token info.
+summary: "Guia de uso da API Intra 42 v2: OAuth2, escopos, paginação, filtros, ordenação, rate limiting (2 req/s, 1200 req/h) e token info."
 provenance:
   extracted: 0.88
   inferred: 0.10
@@ -12,8 +12,9 @@ base_confidence: 0.68
 lifecycle: draft
 lifecycle_changed: 2026-06-16
 tier: supporting
-created: 2026-06-16T00:00:00Z
-updated: 2026-06-16T00:00:00Z
+created: "2026-06-16T00:00:00Z"
+rag_score: 0.4818
+updated: "2026-06-16T00:00:00Z"
 ---
 
 # 42 Intra API v2 — Specification

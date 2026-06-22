@@ -15,6 +15,7 @@ summary: >-
 status: approved
 lifecycle: reviewed
 created: 2026-06-21
+rag_score: 0.5
 sources:
   - https://mdxjs.com/docs/getting-started/
 ---

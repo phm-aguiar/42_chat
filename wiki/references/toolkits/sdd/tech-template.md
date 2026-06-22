@@ -2,6 +2,7 @@
 title: "Tech Template"
 tags: [sdd, reference]
 created: 2026-06-20
+rag_score: 0.4825
 ---
 # Stack Tecnológica
 

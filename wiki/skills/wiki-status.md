@@ -6,6 +6,7 @@ sources: [.hermes/skills/wiki/status/SKILL.md]
 summary: "Mostra o estado atual do vault: paginas, delta desde ultimo ingest, fontes pendentes, recomendacao append vs rebuild."
 lifecycle: draft
 created: "2026-06-13"
+rag_score: 0.48
 superseded_by: "[[skills/brain|brain]]"
 updated: "2026-06-13"
 ---

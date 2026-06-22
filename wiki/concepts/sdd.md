@@ -4,6 +4,7 @@ category: concepts
 tags: [sdd, metodologia, pipeline]
 summary: "Metodologia onde specs são a fonte primária; código deriva delas."
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-13"
 lifecycle: reviewed
 lifecycle_changed: "2026-06-15"

@@ -6,6 +6,7 @@ sources: [.hermes/skills/wiki/dedup/SKILL.md]
 summary: "Detecta paginas duplicadas ou com sobreposicao significativa no vault. Sugere merge ou arquivamento."
 lifecycle: draft
 created: "2026-06-13"
+rag_score: 0.48
 superseded_by: "[[skills/brain|brain]]"
 updated: "2026-06-13"
 ---

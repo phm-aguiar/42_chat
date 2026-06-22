@@ -6,6 +6,7 @@ tags:
   - bdd
 source: "wiki/_raw/cucumbercucumber-expressions Human friendly alternative to Regular Expressions.md"
 created: "2026-06-21"
+rag_score: 0.5
 updated: "2026-06-21"
 lifecycle: raw
 lifecycle_reason: "ingested from _raw/ Cucumber/BDD clippings"

@@ -3,6 +3,7 @@ title: "ADR-003: Failure Propagation"
 tags: [adr, latte, hardening]
 status: accepted
 created: "2026-06-20"
+rag_score: 0.5
 ---
 
 # ADR-003: Failure Propagation — Como falhas em subagentes propagam para o orchestrator

@@ -39,6 +39,8 @@
 
 - [SDD Workflow](wiki/concepts/sdd-workflow.md): Pipeline Spec-Driven Development com fases, gates e modo LATTE
 - [SDD](wiki/concepts/sdd.md): Metodologia base — artefatos, ciclos, approval gates
+- [Wiki Frontmatter Template](wiki/_meta/template.md): Template canônico de frontmatter — 3 tiers (obrigatório/diretório/opcional)
+- [Wiki Chunking Config](wiki/_meta/chunking.yaml): Thresholds e regras de split para arquivos grandes
 
 ### Projects
 
@@ -57,6 +59,7 @@
 - [Go Usecase](wiki/references/go-usecase.md): Padrão de usecase em Go (interface + struct + New)
 - [Go Chi Handler](wiki/references/go-chi-handler.md): Convenções de handler HTTP com Chi router
 - [Go Concurrency](wiki/references/go-concurrency.md): Patterns de concorrência — goroutines, channels, errgroup
+- [GolangCI-Lint Linters](wiki/tools/golangci-lint/linters/_index.md): Catálogo de linters splitado (14 sub-páginas)
 
 ## Links
 

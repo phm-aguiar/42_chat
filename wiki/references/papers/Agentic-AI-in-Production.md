@@ -3,6 +3,7 @@ title: "Agentic AI in Production — Tool-Calling, Planning, Recovery"
 tags: [paper, agentic-ai, tool-calling, planning, error-recovery, observability, production-patterns]
 status: analyzed
 created: 2026-06-21
+rag_score: 0.5
 source: "https://www.kalviumlabs.ai/blog/agentic-ai-in-production-tool-calling-planning-recovery/"
 authors: "Anil Gulecha (Kalvium Labs)"
 base_confidence: 0.95

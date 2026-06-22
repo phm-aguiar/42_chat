@@ -3,6 +3,7 @@ title: "jschan — Anonymous Imageboard Engine"
 category: tools
 tags: [jschan, imageboard, forum, mongodb, redis, nginx, nodejs]
 created: "2026-06-20"
+rag_score: 0.5
 author: phm-aguiar
 aliases: ["jschan engine", "imageboard software"]
 ---

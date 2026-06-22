@@ -7,6 +7,7 @@ sources: []
 summary: "Guia passo a passo para iniciar um projeto do zero com o framework SDD autônomo. Cobre init repo, brainstorm, spec, plan, tasks e execução com orchestrator."
 lifecycle: draft
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-13"
 ---
 

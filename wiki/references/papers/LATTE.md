@@ -3,6 +3,7 @@ title: "LATTE — Language Agent Teams for Task Evolution"
 tags: [paper, multi-agent, coordination, task-graph, heartbeat, sdd]
 status: implemented
 created: 2026-06-19
+rag_score: 0.5181
 source: "https://arxiv.org/html/2605.06320v1"
 authors: "Mieczkowski, Ku, Eisape, Arumugam, Matters, Collins, Sucholutsky, Griffiths (Princeton, Cambridge, MIT, NYU)"
 feature: "[[projects/42_Framework/features/001-latte-coordination|Feature 001: LATTE Coordination]]"

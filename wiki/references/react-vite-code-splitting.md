@@ -3,7 +3,7 @@ title: React + Vite Code Splitting
 category: references
 tags: [react, vite, code-splitting, lazy-loading, suspense]
 sources: ["_raw/split-route-lazy.md", "_raw/split-suspense-boundaries.md", "_raw/split-dynamic-imports.md", "_raw/split-component-lazy.md", "_raw/split-prefetch-hints.md"]
-summary: 5 regras CRITICAL de code splitting React+Vite: route-based lazy loading (50-80% menor), Suspense boundaries estratégicos, dynamic imports para libs pesadas, lazy de componentes não-críticos e prefetch hints.
+summary: "5 regras CRITICAL de code splitting React+Vite: route-based lazy loading (50-80% menor), Suspense boundaries estratégicos, dynamic imports para libs pesadas, lazy de componentes não-críticos e prefetch hints."
 provenance:
   extracted: 0.85
   inferred: 0.10
@@ -13,6 +13,7 @@ lifecycle: draft
 lifecycle_changed: "2026-06-16"
 tier: supporting
 created: 2026-06-16
+rag_score: 0.4825
 updated: 2026-06-16
 ---
 # React + Vite Code Splitting

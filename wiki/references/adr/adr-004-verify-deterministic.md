@@ -3,6 +3,7 @@ title: "ADR-004: Verify Deterministic"
 tags: [adr, latte, hardening]
 status: accepted
 created: "2026-06-20"
+rag_score: 0.5
 ---
 
 # ADR-004: Verify Deterministic — Validação determinística de outputs de agentes

@@ -2,6 +2,7 @@
 title: "Entities — Glossário do 42 Chat"
 tags: [entity, glossary, index]
 created: 2026-06-21
+rag_score: 0.5
 category: entities
 summary: Índice do glossário de entidades e conceitos do 42 Chat Core — Hub, Client, Message, User, JWT, OAuth2, WebSocket e Chi.
 ---

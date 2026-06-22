@@ -5,6 +5,7 @@ tags: [qa, skill, e2e, playwright, bdd, browser]
 summary: "Testes end-to-end com Playwright e BDD/Gherkin. Automacao de browser com cenarios declarativos."
 lifecycle: draft
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-13"
 sources: [.hermes/skills/qa/playwright-bdd-e2e/SKILL.md]
 ---

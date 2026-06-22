@@ -13,6 +13,7 @@ base_confidence: 0.70
 lifecycle: draft
 lifecycle_changed: "2026-06-18"
 created: 2026-06-18
+rag_score: 0.48
 updated: 2026-06-18
 ---
 # OAuth2 42 Debugging Pitfalls

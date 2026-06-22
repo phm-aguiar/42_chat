@@ -6,6 +6,7 @@ sources: [.hermes/skills/wiki/setup/SKILL.md]
 summary: "Inicializa um vault Obsidian vazio com estrutura de diretorios, index.md, log.md e .manifest.json."
 lifecycle: draft
 created: "2026-06-13"
+rag_score: 0.48
 superseded_by: "[[skills/brain|brain]]"
 updated: "2026-06-13"
 ---

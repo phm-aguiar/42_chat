@@ -7,6 +7,7 @@ sources:
   - "concepts/sdd.md"
   - "concepts/sdd-workflow.md"
 created: "2026-06-16T00:00:00Z"
+rag_score: 0.48
 updated: "2026-06-16T00:00:00Z"
 summary: "Como o Spec-Driven Development se aplica a projetos Go: spec-first com padrões idiomáticos, testes como cidadãos de primeira classe, e o pipeline SDD como garantia de qualidade."
 provenance:

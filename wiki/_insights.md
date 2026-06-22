@@ -8,6 +8,7 @@ lifecycle: draft
 lifecycle_changed: "2026-06-17"
 tier: peripheral
 created: "2026-06-17"
+rag_score: 0.48
 updated: "2026-06-17"
 ---
 

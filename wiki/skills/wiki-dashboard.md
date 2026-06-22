@@ -6,6 +6,7 @@ sources: [.hermes/skills/wiki/dashboard/SKILL.md]
 summary: "Cria dashboards dinamicos no vault: visoes por categoria, tags, lifecycle. Usa Obsidian Bases e Dataview."
 lifecycle: draft
 created: "2026-06-13"
+rag_score: 0.48
 superseded_by: "[[skills/brain|brain]]"
 updated: "2026-06-13"
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Usando MDX"
+title: Usando MDX
 category: references
 tags:
   - mdx
@@ -7,15 +7,11 @@ tags:
   - props
   - provider
   - layout
-summary: >-
-  Documentação oficial sobre como usar arquivos MDX — passar props,
-  componentes, layouts e usar o MDXProvider para context-based component
-  passing.
+summary: Documentação oficial sobre como usar arquivos MDX — passar props, componentes, layouts e usar o MDXProvider para context-based component passing.
 status: approved
 lifecycle: reviewed
 created: 2026-06-21
-sources:
-  - https://mdxjs.com/docs/using-mdx/
+rag_score: 0.5
 ---
 
 # Usando MDX

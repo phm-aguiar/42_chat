@@ -4,6 +4,7 @@ category: projects
 tags: [sdd, infra, github-actions, ci]
 summary: "Inicialização do repo 42_chat: estrutura SDD, CI/CD, templates base."
 created: "2026-06-13"
+rag_score: 0.48
 updated: "2026-06-13"
 sources:
   - repo:specs/features/001-start-repo/

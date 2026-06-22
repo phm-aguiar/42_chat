@@ -10,6 +10,7 @@ sources:
   - "references/go/go-code-review-rules.md"
   - "synthesis/thinking-go.md"
 created: "2026-06-21T00:00:00Z"
+rag_score: 0.5
 updated: "2026-06-21T00:00:00Z"
 summary: "O ecossistema de tooling Go como um gradiente de disciplinas — do automático (gofmt) ao manual (code review com thinking tools). Como linting, estilo e revisão formam camadas complementares de qualidade."
 provenance:

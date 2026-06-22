@@ -7,6 +7,7 @@ summary: "Busca híbrida (lexical + vetorial + semântica) no vault Obsidian. Mo
 lifecycle: draft
 tier: core
 created: "2026-06-13"
+rag_score: 0.4892
 superseded_by: "[[skills/brain|brain]]"
 updated: "2026-06-20"
 ---

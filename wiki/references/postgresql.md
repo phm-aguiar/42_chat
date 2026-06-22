@@ -2,6 +2,7 @@
 title: "PostgreSQL no 42 Chat"
 tags: [postgresql, go, database]
 created: 2026-06-21
+rag_score: 0.5
 category: references
 summary: Padrões de uso do PostgreSQL no 42 Chat Core — connection pool, migrations, queries parametrizadas, schema design e escolha lib/pq.
 provenance:
